@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Click alignment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="signed-out">
+    <button id="sign-in">Sign in with Google</button>
+  </div>
+
+  <div id="loading" hidden>
+    <p id="loading-msg">Loading…</p>
+  </div>
+
+  <div id="line-area" hidden>
+    <div class="line-row">
+      <button id="play-song" hidden title="Play the clip with a click on every syllable">▶</button>
+      <div id="line" class="line"></div>
+    </div>
+  </div>
+
+  <div id="task" hidden>
+    <p id="prompt"></p>
+    <p>
+      <button id="start">Play</button>
+      <button id="stop" disabled>Stop</button>
+    </p>
+    <p><input id="offset" type="range" min="0" max="0" step="1" value="0" disabled style="width: 100%"></p>
+    <p id="readout"></p>
+    <p id="submit-row">
+      <button id="done" disabled>✓ Submit</button>
+    </p>
+  </div>
+
+  <div id="song-complete" hidden>
+    <p>That's all the syllables. To do another song, <a href="#" id="another">click here</a>.</p>
+  </div>
+
+  <div id="all-done" hidden>
+    <div id="all-lines"></div>
+    <p>That's all the songs I've got so far. Thanks for playing!</p>
+  </div>
+
+  <p id="account" hidden><span id="who"></span> <button id="sign-out">Sign out</button></p>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

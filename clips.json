@@ -1,0 +1,114 @@
+{
+  "clips": [
+    {
+      "id": "2pac-all-eyez-on-me",
+      "title": "All Eyez On Me",
+      "file": "clips/2pac_all_eyez.wav",
+      "words": [
+        { "text": "was", "syllables": 1 },
+        { "text": "hyper", "syllables": 2 },
+        { "text": "as", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "kid", "syllables": 1 },
+        { "text": "cold", "syllables": 1 },
+        { "text": "as", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "teenager", "syllables": 3 }
+      ]
+    },
+    {
+      "id": "bdk-set-it-off",
+      "title": "Set It Off",
+      "file": "clips/bdk_set_it_off.wav",
+      "words": [
+        { "text": "I", "syllables": 1 },
+        { "text": "get", "syllables": 1 },
+        { "text": "dramatic", "syllables": 3 },
+        { "text": "and", "syllables": 1 },
+        { "text": "rhymes", "syllables": 1 },
+        { "text": "start", "syllables": 1 },
+        { "text": "flowin'", "syllables": 2 },
+        { "text": "automatic'ly", "syllables": 5 }
+      ]
+    },
+    {
+      "id": "eminem-my-name-is",
+      "title": "My Name Is",
+      "file": "clips/eminem_my_name_is.wav",
+      "words": [
+        { "text": "I", "syllables": 1 },
+        { "text": "lay", "syllables": 1 },
+        { "text": "awake", "syllables": 2 },
+        { "text": "and", "syllables": 1 },
+        { "text": "strap", "syllables": 1 },
+        { "text": "myself", "syllables": 2 },
+        { "text": "in", "syllables": 1 },
+        { "text": "the", "syllables": 1 },
+        { "text": "bed", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "method-man-plo-style",
+      "title": "PLO Style",
+      "file": "clips/meth_plo_style.wav",
+      "words": [
+        { "text": "anger", "syllables": 2 },
+        { "text": "comin'", "syllables": 2 },
+        { "text": "from", "syllables": 1 },
+        { "text": "the", "syllables": 1 },
+        { "text": "thirty", "syllables": 2 },
+        { "text": "sixth", "syllables": 1 },
+        { "text": "chamber", "syllables": 2 }
+      ]
+    },
+    {
+      "id": "nas-it-aint-hard-to-tell",
+      "title": "It Ain't Hard To Tell",
+      "file": "clips/nas_aint_hard.wav",
+      "words": [
+        { "text": "speak", "syllables": 1 },
+        { "text": "with", "syllables": 1 },
+        { "text": "criminal", "syllables": 3 },
+        { "text": "slang", "syllables": 1 },
+        { "text": "begin", "syllables": 2 },
+        { "text": "like", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "violin", "syllables": 3 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch",
+      "title": "Munch",
+      "file": "clips/ice_spice_munch.wav",
+      "words": [
+        { "text": "know", "syllables": 1 },
+        { "text": "they", "syllables": 1 },
+        { "text": "be", "syllables": 1 },
+        { "text": "mad", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "be", "syllables": 1 },
+        { "text": "on", "syllables": 1 },
+        { "text": "the", "syllables": 1 },
+        { "text": "scene", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "migos-supastars",
+      "title": "Supastars",
+      "file": "clips/migos_supastars.wav",
+      "words": [
+        { "text": "you", "syllables": 1 },
+        { "text": "got", "syllables": 1 },
+        { "text": "that", "syllables": 1 },
+        { "text": "swag", "syllables": 1 },
+        { "text": "you", "syllables": 1 },
+        { "text": "got", "syllables": 1 },
+        { "text": "that", "syllables": 1 },
+        { "text": "sauce", "syllables": 1 },
+        { "text": "then", "syllables": 1 },
+        { "text": "sell", "syllables": 1 },
+        { "text": "it", "syllables": 1 }
+      ]
+    }
+  ]
+}

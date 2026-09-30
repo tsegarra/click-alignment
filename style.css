@@ -1,0 +1,104 @@
+/* The lyric line, with the play-song button to its left. */
+.line-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* The lyric line: a two-row grid built from one flex column per word.
+   Top row: the word. Bottom row: one box per syllable. */
+.line {
+  position: relative; /* for the segment outline */
+  flex: 1; /* fill the rest of .line-row */
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden; /* fitLine() shrinks the font so nothing is actually cut off */
+  min-width: 0;
+  margin: 1em 0;
+}
+
+/* Columns grow to fill the line's full width. */
+.line .column {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #999;
+}
+
+/* Collapse shared borders between neighbouring columns, like a table. */
+.line .column + .column {
+  border-left: none;
+}
+
+.line .word,
+.line .syllables {
+  padding: 0.25em 0.5em;
+}
+
+.line .word {
+  white-space: nowrap;
+  border-bottom: 1px solid #999;
+}
+
+.line .syllables {
+  display: flex;
+  gap: 0.25em;
+  justify-content: center;
+}
+
+.line .syllable {
+  width: 0.75em;
+  height: 0.75em;
+  background: #bbb;
+}
+
+.line .syllable.aligned {
+  background: #3a3;
+}
+
+.line .syllable.aligned {
+  cursor: pointer;
+}
+
+/* The syllable currently being aligned. */
+.line .syllable.active {
+  outline: 2px solid #000;
+  outline-offset: 1px;
+}
+
+/* The audible segment of the line. */
+.line .segment {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  border: 3px solid #d00;
+  pointer-events: none;
+}
+
+/* The submit button, right-aligned under the task. */
+#submit-row {
+  text-align: right;
+}
+
+#done {
+  background: #3a3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#done:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* The signed-in account line, set off from the task by a rule. */
+#account {
+  border-top: 1px solid #ccc;
+  padding-top: 0.75em;
+  font-size: 0.85em;
+}
