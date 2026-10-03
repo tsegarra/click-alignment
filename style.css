@@ -302,3 +302,8 @@ u.orange {
 #status {
   color: #c0392b;
 }
+
+#song-menu {
+  margin: 0 0.5em;
+  font: inherit;
+}

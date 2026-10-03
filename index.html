@@ -53,12 +53,20 @@
     <p>That's all the syllables. To do another song, <a href="#" id="another">click here</a>.</p>
   </div>
 
+  <div id="song-review" hidden>
+    <p id="review-msg"></p>
+  </div>
+
   <div id="all-done" hidden>
     <div id="all-lines"></div>
     <p>That's all the songs I've got so far. Thanks for playing!</p>
   </div>
 
-  <p id="account" hidden><span id="who"></span> <button id="sign-out">Sign out</button></p>
+  <p id="account" hidden>
+    <span id="who"></span>
+    <select id="song-menu" aria-label="Go to a song"></select>
+    <button id="sign-out">Sign out</button>
+  </p>
 
   <script type="module" src="app.js"></script>
 </body>

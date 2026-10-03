@@ -15,10 +15,9 @@ import { firebaseConfig } from './firebase-config.js';
 
 const SCHEDULER_INTERVAL_MS = 25; // how often the scheduler wakes up
 const SCHEDULE_AHEAD_S = 0.1;     // how far ahead it schedules audio
-const PAD_S = 0.1;                // silence before and after each loop
-const SHORT_LOOP_MS = 600;        // loops shorter than this repeat less often, so they don't grate
-const SHORT_LOOP_PERIOD_S = 1;    // time between starts of a short loop
+const LEAD_IN_S = 0.1;            // silence before a clip played in full, so early clicks still sound
 const MIN_RANGE_MS = 100;         // the Start and End handles can't get closer than this
+const EDIT_WINDOW_MS = 250;       // redoing an aligned syllable loops this much either side of its click
 const FADE_S = 0.003;             // fade at the loop's edges, so cutting the audio doesn't pop
 const MUSIC_GAIN = 0.7;           // volume of the music
 const CLICK_GAIN = 0.35;          // volume of the clicks
@@ -45,6 +44,7 @@ let range = { startMs: 0, endMs: 0 }; // the looped part of the clip
 let clickFrac = 0.5;        // click stage: where the click is, as a fraction of the range
 let rangeMoved = false;     // whether a handle has moved since the range stage began (enables Next)
 let writing = false;        // a response is being saved
+let reviewing = false;      // the song was picked from the footer menu: after each save, return to its page
 
 const clipMs = () => buffers.get(clip.id).duration * 1000;
 const clickMs = () => range.startMs + clickFrac * (range.endMs - range.startMs);
@@ -52,11 +52,12 @@ const clickMs = () => range.startMs + clickFrac * (range.endMs - range.startMs);
 // What the bar spans: the whole clip in the range stage, the chosen range in the click stage.
 const view = () => (phase === 'range' ? { startMs: 0, endMs: clipMs() } : range);
 
-const SCREENS = ['signed-out', 'loading', 'task', 'song-complete', 'all-done'];
+const SCREENS = ['signed-out', 'loading', 'task', 'song-complete', 'song-review', 'all-done'];
 function show(name) {
   for (const s of SCREENS) $(s).hidden = s !== name;
   $('account').hidden = name === 'signed-out';
-  $('line-area').hidden = name !== 'task' && name !== 'song-complete';
+  $('line-area').hidden = !['task', 'song-complete', 'song-review'].includes(name);
+  renderSongMenu();
 }
 
 const docId = (clipId, syllableIndex) => `${user.uid}_${clipId}_${syllableIndex}`;
@@ -86,6 +87,7 @@ function nextUnaligned(c, from = -1) {
 // Opens the first song with unaligned syllables, or the all-done page if there are none.
 // Returns true if a song was found.
 function nextSong() {
+  reviewing = false;
   for (const c of clips) {
     const idx = nextUnaligned(c);
     if (idx !== null) {
@@ -113,6 +115,48 @@ async function openSong(c, idx) {
   }
   show('task');
   selectTarget(idx);
+}
+
+// The song's page, opened from the footer menu: its line, where any block can be clicked to (re)align it.
+async function openReview(c) {
+  stop();
+  clip = c;
+  reviewing = true;
+  $('loading-msg').textContent = 'Loading audio…';
+  show('loading');
+  try {
+    await loadBuffer(c);
+  } catch (err) {
+    $('loading-msg').textContent = err.message;
+    return;
+  }
+  showReview();
+}
+
+function showReview() {
+  stop();
+  renderLine(null);
+  const msg = [`Your alignments for “${clip.title}”. Click a green block to redo it.`];
+  if (nextUnaligned(clip) !== null) msg.push('Gray blocks aren’t aligned yet; click one to align it.');
+  $('review-msg').textContent = msg.join(' ');
+  show('song-review');
+}
+
+// The footer menu of every song, marked by how much of it is aligned.
+// It shows the song being reviewed, and otherwise its placeholder.
+function renderSongMenu() {
+  const menu = $('song-menu');
+  menu.hidden = !clips;
+  if (!clips || !user) return;
+  const placeholder = new Option('Go to a song…', '');
+  placeholder.disabled = true;
+  const options = clips.map((c) => {
+    const done = indices(c).filter((i) => isAligned(c, i)).length;
+    const mark = done === 0 ? '' : done === syllableCount(c) ? ' (aligned)' : ' (partly aligned)';
+    return new Option(c.title + mark, c.id);
+  });
+  menu.replaceChildren(placeholder, ...options);
+  menu.value = reviewing && clip ? clip.id : '';
 }
 
 // On the all-done page: every song's line, each with its own play button.
@@ -271,11 +315,12 @@ function orangeUnderline(text) {
 
 // ---------- Search ----------
 
-function selectTarget(idx) {
+// keepRange: start from the range chosen for the previous syllable instead of the whole clip.
+function selectTarget(idx, keepRange = false) {
   target = idx;
   $('status').textContent = '';
   renderLine(target);
-  resetSearch();
+  resetSearch(keepRange);
 }
 
 // Picks a syllable from the lyric line, including from the song-complete screen.
@@ -285,10 +330,23 @@ function selectSyllable(idx) {
   selectTarget(idx);
 }
 
-function resetSearch() {
-  phase = 'range';
-  range = { startMs: 0, endMs: clipMs() };
-  rangeMoved = false;
+// An already-aligned syllable skips straight to the click stage, looping a window around its saved click.
+function resetSearch(keepRange = false) {
+  const saved = keepRange ? null : responses.get(docId(clip.id, target));
+  if (saved) {
+    const t = clamp(saved.clickTimeMs, 0, clipMs());
+    range = {
+      startMs: Math.max(0, Math.min(t - EDIT_WINDOW_MS, clipMs() - MIN_RANGE_MS)),
+      endMs: Math.min(clipMs(), Math.max(t + EDIT_WINDOW_MS, MIN_RANGE_MS)),
+    };
+    phase = 'click';
+    clickFrac = (t - range.startMs) / (range.endMs - range.startMs);
+    rangeMoved = true; // so Back, then Next, works without moving a handle
+  } else {
+    phase = 'range';
+    if (!keepRange) range = { startMs: 0, endMs: clipMs() };
+    rangeMoved = keepRange; // a carried-over range is already trimmed, so Next works right away
+  }
   if (timer) start();
   render();
 }
@@ -348,9 +406,14 @@ async function submit() {
   try {
     await setDoc(doc(db, 'responses', id), data);
     responses.set(id, data);
+    renderSongMenu();
+    // A first-time alignment moves on to the next unaligned syllable, keeping the loop window.
+    // Redoing an aligned syllable from a song's page returns to that page.
     const idx = nextUnaligned(clip, target);
-    if (idx !== null) {
-      selectTarget(idx);
+    if (reviewing && (prev || idx === null)) {
+      showReview();
+    } else if (idx !== null) {
+      selectTarget(idx, true);
     } else {
       stop();
       renderLine(null);
@@ -427,9 +490,9 @@ const buffers = new Map(); // clip id -> AudioBuffer
 
 let timer = null;
 let sources = []; // scheduled sources, so Stop can cancel them
-let loops = [];   // the last two loops: { loopStart, audioStart, offsetS, endS, src, gain, clicked }
-                  // (loopStart: context time of the silence before the audio; offsetS: where in the clip
-                  // the audio starts; endS: context time the audio ends, which follows the End handle)
+let loops = [];   // the last two loops: { audioStart, offsetS, endS, src, gain, clicked }
+                  // (offsetS: where in the clip the audio starts;
+                  // endS: context time the audio ends, which follows the End handle)
 
 async function loadBuffer(c) {
   if (buffers.has(c.id)) return buffers.get(c.id);
@@ -473,10 +536,9 @@ function playClick(when) {
   track(src);
 }
 
-// Starts a loop of the range: PAD_S of silence, then the range's audio (its end is set by retime),
+// Starts a loop of the range's audio at `audioStart` (its end is set by retime),
 // with short fades so the cut edges don't pop.
-function startLoop(loopStart) {
-  const audioStart = loopStart + PAD_S;
+function startLoop(audioStart) {
   const src = ctx.createBufferSource();
   src.buffer = buffers.get(clip.id);
   const gain = ctx.createGain();
@@ -485,7 +547,7 @@ function startLoop(loopStart) {
   src.connect(gain).connect(ctx.destination);
   src.start(audioStart, range.startMs / 1000);
   track(src);
-  const loop = { loopStart, audioStart, offsetS: range.startMs / 1000, endS: Infinity, src, gain, clicked: false };
+  const loop = { audioStart, offsetS: range.startMs / 1000, endS: Infinity, src, gain, clicked: false };
   retime(loop, audioStart + (range.endMs - range.startMs) / 1000, ctx.currentTime);
   loops = [...loops.slice(-1), loop];
   return loop;
@@ -528,10 +590,7 @@ function schedule() {
   retime(cur, passed ? now : cur.audioStart + range.endMs / 1000 - cur.offsetS, now);
   scheduleClick(cur, now, horizon);
 
-  if (cur.endS + PAD_S < horizon) {
-    const period = range.endMs - range.startMs < SHORT_LOOP_MS ? SHORT_LOOP_PERIOD_S : 0;
-    scheduleClick(startLoop(Math.max(cur.endS + PAD_S, cur.loopStart + period)), now, horizon);
-  }
+  if (cur.endS < horizon) scheduleClick(startLoop(cur.endS), now, horizon);
 }
 
 function stop() {
@@ -566,7 +625,7 @@ async function playSong(c) {
     return;
   }
   // The leading pad leaves room for clicks placed slightly before the clip begins.
-  const t0 = ctx.currentTime + 0.1 + PAD_S;
+  const t0 = ctx.currentTime + 0.1 + LEAD_IN_S;
   const src = ctx.createBufferSource();
   src.buffer = buffer;
   const gain = ctx.createGain();
@@ -592,7 +651,7 @@ function renderPlayState() {
 }
 
 // The playhead follows what's audible now (compensating for output latency),
-// and hides during the silence between loops.
+// and hides when nothing in the view is playing.
 function drawPlayhead() {
   requestAnimationFrame(drawPlayhead);
   if (!timer) return;
@@ -617,6 +676,7 @@ onAuthStateChanged(auth, async (u) => {
   user = u;
   stop();
   clip = null;
+  reviewing = false;
   if (!u) { show('signed-out'); return; }
   $('who').textContent = `Logged in as ${u.email}`;
   $('loading-msg').textContent = 'Loading…';
@@ -643,6 +703,12 @@ $('next').addEventListener('click', next);
 $('back').addEventListener('click', back);
 $('submit').addEventListener('click', submit);
 $('play-song').addEventListener('click', () => playSong(clip));
+
+$('song-menu').addEventListener('change', (e) => {
+  const c = clips.find((x) => x.id === e.target.value);
+  if (writing || !c) { renderSongMenu(); return; }
+  openReview(c);
+});
 
 $('another').addEventListener('click', (e) => {
   e.preventDefault();
