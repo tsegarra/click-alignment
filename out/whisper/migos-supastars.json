@@ -1,0 +1,52 @@
+{
+  "text": " You got that swag. You got that swag, then sell it.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 0.86,
+      "text": " You got that swag.",
+      "tokens": [
+        50365,
+        509,
+        658,
+        300,
+        42064,
+        13,
+        50408
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33926705310219213,
+      "compression_ratio": 1.186046511627907,
+      "no_speech_prob": 0.10186751186847687
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 0.98,
+      "end": 2.46,
+      "text": " You got that swag, then sell it.",
+      "tokens": [
+        50414,
+        509,
+        658,
+        300,
+        42064,
+        11,
+        550,
+        3607,
+        309,
+        13,
+        50488
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33926705310219213,
+      "compression_ratio": 1.186046511627907,
+      "no_speech_prob": 0.10186751186847687
+    }
+  ],
+  "language": "en",
+  "model": "large-v3",
+  "normalized": "you got that swag you got that swag then sell it"
+}

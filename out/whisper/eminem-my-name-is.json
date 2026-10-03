@@ -1,0 +1,33 @@
+{
+  "text": " I lay awake and strap myself in the bed.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.16,
+      "text": " I lay awake and strap myself in the bed.",
+      "tokens": [
+        50365,
+        286,
+        2360,
+        15994,
+        293,
+        18359,
+        2059,
+        294,
+        264,
+        2901,
+        13,
+        50473
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.183730804003202,
+      "compression_ratio": 0.8333333333333334,
+      "no_speech_prob": 0.08018544316291809
+    }
+  ],
+  "language": "en",
+  "model": "large-v3",
+  "normalized": "i lay awake and strap myself in the bed"
+}

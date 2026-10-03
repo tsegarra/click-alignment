@@ -183,6 +183,40 @@ function renderAllLines() {
   }
 }
 
+// Downloads the user's alignments as JSON: every song, with each syllable's word and saved click.
+function downloadAlignments() {
+  const iso = (t) => (t?.toDate ? t.toDate() : t)?.toISOString?.() ?? null; // Firestore Timestamp or Date
+  const songs = clips.map((c) => ({
+    id: c.id,
+    title: c.title,
+    file: c.file,
+    syllables: indices(c).map((i) => {
+      const { word, syllable } = locate(c, i);
+      const r = responses.get(docId(c.id, i));
+      return {
+        index: i,
+        word: c.words[word].text,
+        wordIndex: word,
+        syllableInWord: syllable,
+        clickTimeMs: r?.clickTimeMs ?? null,
+        offsetMs: r?.offsetMs ?? null,
+        segmentStartMs: r?.segmentStartMs ?? null,
+        segmentEndMs: r?.segmentEndMs ?? null,
+        revision: r?.revision ?? null,
+        updatedAt: r ? iso(r.updatedAt) : null,
+      };
+    }),
+  }));
+  const data = { exportedAt: new Date().toISOString(), uid: user.uid, email: user.email, songs };
+
+  const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `alignments-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 // ---------- Lyric line ----------
 
 // Flat syllable index -> word index and syllable position within that word.
@@ -405,7 +439,7 @@ async function submit() {
   render();
   try {
     await setDoc(doc(db, 'responses', id), data);
-    responses.set(id, data);
+    responses.set(id, { ...data, updatedAt: new Date() }); // stand-in for the server timestamp
     renderSongMenu();
     // A first-time alignment moves on to the next unaligned syllable, keeping the loop window.
     // Redoing an aligned syllable from a song's page returns to that page.
@@ -703,6 +737,7 @@ $('next').addEventListener('click', next);
 $('back').addEventListener('click', back);
 $('submit').addEventListener('click', submit);
 $('play-song').addEventListener('click', () => playSong(clip));
+$('download').addEventListener('click', downloadAlignments);
 
 $('song-menu').addEventListener('change', (e) => {
   const c = clips.find((x) => x.id === e.target.value);

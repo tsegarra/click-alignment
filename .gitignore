@@ -1,1 +1,6 @@
 .idea
+.claude
+.venv-whisper/
+out/corpus/
+out/aligned/
+user-data

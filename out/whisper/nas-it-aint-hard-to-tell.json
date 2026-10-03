@@ -1,0 +1,32 @@
+{
+  "text": " Speak with criminal slang, begin like a violin",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.96,
+      "text": " Speak with criminal slang, begin like a violin",
+      "tokens": [
+        50365,
+        27868,
+        365,
+        8628,
+        42517,
+        11,
+        1841,
+        411,
+        257,
+        22878,
+        50513
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.16663567225138345,
+      "compression_ratio": 0.8679245283018868,
+      "no_speech_prob": 0.2648567259311676
+    }
+  ],
+  "language": "en",
+  "model": "large-v3",
+  "normalized": "speak with criminal slang begin like a violin"
+}

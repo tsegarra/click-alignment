@@ -1,0 +1,34 @@
+{
+  "text": " Was hyper as a kid, cold as a teenager.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.24,
+      "text": " Was hyper as a kid, cold as a teenager.",
+      "tokens": [
+        50365,
+        3027,
+        9848,
+        382,
+        257,
+        1636,
+        11,
+        3554,
+        382,
+        257,
+        21440,
+        13,
+        50477
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.13450393506458827,
+      "compression_ratio": 0.9512195121951219,
+      "no_speech_prob": 0.48329514265060425
+    }
+  ],
+  "language": "en",
+  "model": "large-v3",
+  "normalized": "was hyper as a kid cold as a teenager"
+}
