@@ -23,16 +23,30 @@
   </div>
 
   <div id="task" hidden>
-    <p id="prompt"></p>
+    <div id="prompt"></div>
+
+    <p><button id="play">▶ Play</button></p>
+
+    <div id="bar" class="disabled" aria-disabled="true">
+      <div id="zone"></div>
+      <div id="playhead" hidden></div>
+    </div>
+
+    <div id="handles" class="disabled" aria-disabled="true">
+      <div id="start-row" class="handle-row" aria-label="Drag to move the start of the loop">
+        <div id="start-handle" class="handle">Start</div>
+      </div>
+      <div id="end-row" class="handle-row" aria-label="Drag to move the end of the loop">
+        <div id="end-handle" class="handle">End</div>
+      </div>
+    </div>
+
     <p>
-      <button id="start">Play</button>
-      <button id="stop" disabled>Stop</button>
+      <button id="back">◂ Back</button>
+      <button id="next" class="advance" disabled>Next ▸</button>
+      <button id="submit" class="advance" hidden>✓ Submit</button>
     </p>
-    <p><input id="offset" type="range" min="0" max="0" step="1" value="0" disabled style="width: 100%"></p>
-    <p id="readout"></p>
-    <p id="submit-row">
-      <button id="done" disabled>✓ Submit</button>
-    </p>
+    <p id="status"></p>
   </div>
 
   <div id="song-complete" hidden>

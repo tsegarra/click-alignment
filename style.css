@@ -66,39 +66,239 @@
   outline-offset: 1px;
 }
 
-/* The audible segment of the line. */
-.line .segment {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  box-sizing: border-box;
-  border: 3px solid #d00;
-  pointer-events: none;
-}
-
-/* The submit button, right-aligned under the task. */
-#submit-row {
-  text-align: right;
-}
-
-#done {
-  background: #3a3;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 0.5em 1em;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#done:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
 /* The signed-in account line, set off from the task by a rule. */
 #account {
   border-top: 1px solid #ccc;
   padding-top: 0.75em;
   font-size: 0.85em;
+}
+
+body {
+  max-width: 60em;
+  margin: 1em auto;
+  padding: 0 16px;
+  font-family: system-ui, sans-serif;
+}
+
+/* Every syllable on the main line can be picked as the target. */
+#line .syllable {
+  cursor: pointer;
+}
+
+/* The long rectangle: the whole audible window. */
+#bar {
+  position: relative;
+  height: 5em;
+  background: #eee;
+  border: 1px solid #999;
+  touch-action: none; /* dragging shouldn't scroll the page on touch screens */
+  user-select: none;
+  cursor: pointer;
+  z-index: 1; /* the zone's connector lines draw over the handle rows below */
+}
+
+/* The draggable half-width zone: the only audible part of the loop. */
+#zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  box-sizing: border-box;
+  background: rgba(40, 110, 230, 0.35);
+  border-left: 3px solid #0b3a8a;
+  border-right: 3px solid #0b3a8a;
+  cursor: grab;
+}
+
+/* Lines continuing the zone's edges down to the straight edges of the Start and End handles.
+   Each reaches past the bar's 1px border and the rows' 0.5em gaps to the bottom of its handle. */
+#zone::before,
+#zone::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  width: 3px;
+  background: #0b3a8a;
+  pointer-events: none;
+}
+
+#zone::before {
+  left: -3px;
+  height: calc(1px + 0.5em + 3em);
+}
+
+#zone::after {
+  right: -3px;
+  height: calc(1px + 2 * (0.5em + 3em));
+}
+
+#zone.single::before,
+#zone.single::after {
+  display: none;
+}
+
+/* Single-click mode: the zone is just a line at the click. */
+#zone.single {
+  width: 0;
+  border-right: none;
+  margin-left: -1.5px;
+  background: none;
+}
+
+#bar.dragging,
+#bar.dragging #zone {
+  cursor: grabbing;
+}
+
+/* Range stage: the zone is moved with the handles below, not dragged. */
+#bar.fixed,
+#bar.fixed #zone {
+  cursor: default;
+}
+
+/* The two syllables the range stage keeps in the loop, and the prompt text that names them. */
+.line .syllable.in-range {
+  outline: 2px solid #e67e00;
+  outline-offset: 1px;
+}
+
+.orange {
+  color: #e67e00;
+}
+
+u.orange {
+  color: inherit;
+  text-decoration-color: #e67e00;
+  text-decoration-thickness: 2px;
+}
+
+#prompt ul {
+  margin: 0.25em 0 0;
+}
+
+/* A row with one wide handle; dragging anywhere in the row moves the handle by as much. */
+.handle-row {
+  position: relative;
+  height: 3em;
+  /* Matches the bar's side borders, so the handles line up exactly with the zone's edges. */
+  border: solid transparent;
+  border-width: 0 1px;
+  margin-top: 0.5em;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.handle-row.dragging {
+  cursor: grabbing;
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #1a5fd0;
+  color: #fff;
+  border-radius: 0.5em;
+  font-size: 0.85em;
+  line-height: 1.2;
+}
+
+/* Each handle's outer edge marks its boundary, so both stay fully visible at the bar's ends. */
+#start-handle {
+  border-left: 3px solid #0b3a8a;
+  border-radius: 0 0.5em 0.5em 0;
+}
+
+#end-handle {
+  border-right: 3px solid #0b3a8a;
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+#playhead {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  margin-left: -1px;
+  background: #d00;
+  pointer-events: none;
+}
+
+/* Play and Stop share one full-width button; its label and colour follow the playback state. */
+#play {
+  display: block;
+  width: 100%;
+  padding: 0.75em;
+  border: none;
+  border-radius: 0.5em;
+  background: #1a5fd0;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#play:hover {
+  background: #154ca8;
+}
+
+#play.playing {
+  background: #c0392b;
+}
+
+#play.playing:hover {
+  background: #a33024;
+}
+
+/* Until the clip is playing, the bar and the handles are grayed out and can't be moved. */
+#bar.disabled,
+#handles.disabled {
+  opacity: 0.4;
+  filter: grayscale(1);
+}
+
+#bar.disabled,
+#bar.disabled #zone,
+#handles.disabled .handle-row {
+  cursor: not-allowed;
+}
+
+/* The button that moves on from each stage: Next turns green once a handle has moved; Done is always ready. */
+.advance {
+  display: block;
+  width: 100%;
+  margin-top: 0.5em;
+  padding: 0.75em;
+  border: none;
+  border-radius: 0.5em;
+  background: #2e9e44;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.advance[hidden] {
+  display: none;
+}
+
+.advance:hover:not(:disabled) {
+  background: #25863a;
+}
+
+.advance:disabled {
+  background: #b9d9c0;
+  cursor: not-allowed;
+}
+
+#status {
+  color: #c0392b;
 }

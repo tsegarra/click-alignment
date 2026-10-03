@@ -1,5 +1,8 @@
-// Click alignment app: Google sign-in, a queue of (clip, syllable) tasks per song,
-// and an audio engine that loops the clip and plays a movable click on every loop.
+// Click alignment app: Google sign-in, songs worked through one syllable at a time, and a two-stage
+// alignment interface.
+// Range stage: the whole clip loops, and the user moves the Start and End handles until the loop holds
+// just two syllables, the target and one named neighbour. The loop follows the handles as they move.
+// Click stage: that range loops with a single click the user drags until it lands on the target.
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import {
@@ -12,27 +15,42 @@ import { firebaseConfig } from './firebase-config.js';
 
 const SCHEDULER_INTERVAL_MS = 25; // how often the scheduler wakes up
 const SCHEDULE_AHEAD_S = 0.1;     // how far ahead it schedules audio
-const PAD_S = 0.1;                // silence before and after each loop of the clip
-const MIN_SEGMENT_MS = 500;       // shortest audible segment
+const PAD_S = 0.1;                // silence before and after each loop
+const SHORT_LOOP_MS = 600;        // loops shorter than this repeat less often, so they don't grate
+const SHORT_LOOP_PERIOD_S = 1;    // time between starts of a short loop
+const MIN_RANGE_MS = 100;         // the Start and End handles can't get closer than this
+const FADE_S = 0.003;             // fade at the loop's edges, so cutting the audio doesn't pop
+const MUSIC_GAIN = 0.7;           // volume of the music
+const CLICK_GAIN = 0.35;          // volume of the clicks
+const CLICK_HZ = 2000;            // pitch of the click
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
 const $ = (id) => document.getElementById(id);
-const startBtn = $('start');
-const stopBtn = $('stop');
-const slider = $('offset');
-const readout = $('readout');
-const doneBtn = $('done');
+const bar = $('bar');
+const zoneEl = $('zone');
+const playhead = $('playhead');
 
 // ---------- App state ----------
 
 let user = null;
-let clips = null;            // from clips.json
-let responses = new Map();   // doc id -> response data, for the signed-in user
-let song = null;             // { clip, byIndex: Map(syllableIndex -> task), tasks: [task], pos, editing: task | null }
-let writing = false;
+let clips = null;           // from clips.json
+let responses = new Map();  // doc id -> response data, for the signed-in user
+let clip = null;            // the song being worked on
+let target = 0;             // flat index of the syllable being aligned
+let phase = 'range';        // 'range': trim the loop to two syllables; 'click': line a click up with the target
+let range = { startMs: 0, endMs: 0 }; // the looped part of the clip
+let clickFrac = 0.5;        // click stage: where the click is, as a fraction of the range
+let rangeMoved = false;     // whether a handle has moved since the range stage began (enables Next)
+let writing = false;        // a response is being saved
+
+const clipMs = () => buffers.get(clip.id).duration * 1000;
+const clickMs = () => range.startMs + clickFrac * (range.endMs - range.startMs);
+
+// What the bar spans: the whole clip in the range stage, the chosen range in the click stage.
+const view = () => (phase === 'range' ? { startMs: 0, endMs: clipMs() } : range);
 
 const SCREENS = ['signed-out', 'loading', 'task', 'song-complete', 'all-done'];
 function show(name) {
@@ -42,6 +60,7 @@ function show(name) {
 }
 
 const docId = (clipId, syllableIndex) => `${user.uid}_${clipId}_${syllableIndex}`;
+const isAligned = (c, idx) => responses.has(docId(c.id, idx));
 
 async function loadClipList() {
   const res = await fetch('clips.json');
@@ -53,47 +72,83 @@ async function loadClipList() {
   return data.clips;
 }
 
-// Binary-search task order. Each task is { syllable, lo, hi }: the syllable to align,
-// and the already-aligned syllables bounding its audible segment (null = clip start/end).
-// The middle syllable comes first with the whole clip audible; then the middle of each
-// half, and so on. Within each level, tasks alternate between halves of the line
-// (e.g. left-left, right-left, left-right, right-right) so consecutive tasks play
-// different stretches of audio.
-function binarySearchOrder(n) {
-  // Returns the subtree's tasks grouped by depth.
-  const build = (a, b, lo, hi) => {
-    if (a > b) return [];
-    const m = Math.floor((a + b) / 2);
-    const left = build(a, m - 1, lo, m);
-    const right = build(m + 1, b, m, hi);
-    const levels = [[{ syllable: m, lo, hi }]];
-    for (let d = 0; d < Math.max(left.length, right.length); d++) {
-      levels.push(interleave(left[d] ?? [], right[d] ?? []));
+// ---------- Songs ----------
+
+const syllableCount = (c) => c.words.reduce((n, w) => n + w.syllables, 0);
+const indices = (c) => [...Array(syllableCount(c)).keys()];
+
+// The first unaligned syllable after `from`, wrapping around to the line's start; null if all are aligned.
+function nextUnaligned(c, from = -1) {
+  const todo = indices(c).filter((i) => !isAligned(c, i));
+  return todo.find((i) => i > from) ?? todo[0] ?? null;
+}
+
+// Opens the first song with unaligned syllables, or the all-done page if there are none.
+// Returns true if a song was found.
+function nextSong() {
+  for (const c of clips) {
+    const idx = nextUnaligned(c);
+    if (idx !== null) {
+      openSong(c, idx);
+      return true;
     }
-    return levels;
-  };
-  return build(0, n - 1, null, null).flat();
-}
-
-function interleave(xs, ys) {
-  const out = [];
-  for (let i = 0; i < Math.max(xs.length, ys.length); i++) {
-    if (i < xs.length) out.push(xs[i]);
-    if (i < ys.length) out.push(ys[i]);
   }
-  return out;
+  clip = null;
+  stop();
+  show('all-done');
+  renderAllLines();
+  return false;
 }
 
-const syllableCount = (clip) => clip.words.reduce((n, w) => n + w.syllables, 0);
+async function openSong(c, idx) {
+  stop();
+  clip = c;
+  $('loading-msg').textContent = 'Loading audio…';
+  show('loading');
+  try {
+    await loadBuffer(c);
+  } catch (err) {
+    $('loading-msg').textContent = err.message;
+    return;
+  }
+  show('task');
+  selectTarget(idx);
+}
+
+// On the all-done page: every song's line, each with its own play button.
+// Clicking an aligned syllable reopens that song to redo it.
+function renderAllLines() {
+  const list = $('all-lines');
+  for (const old of list.querySelectorAll('.line')) lineObserver.unobserve(old);
+  list.replaceChildren();
+  for (const c of clips) {
+    const btn = document.createElement('button');
+    btn.textContent = '▶';
+    btn.title = 'Play the clip with a click on every syllable';
+    btn.addEventListener('click', () => playSong(c));
+
+    const line = document.createElement('div');
+    line.className = 'line';
+    buildLine(line, c, null, (idx) => openSong(c, idx), false);
+
+    const row = document.createElement('div');
+    row.className = 'line-row';
+    row.append(btn, line);
+    list.append(row);
+    lineObserver.observe(line);
+  }
+}
+
+// ---------- Lyric line ----------
 
 // Flat syllable index -> word index and syllable position within that word.
-function locate(clip, idx) {
-  for (let w = 0; w < clip.words.length; w++) {
-    const n = clip.words[w].syllables;
+function locate(c, idx) {
+  for (let w = 0; w < c.words.length; w++) {
+    const n = c.words[w].syllables;
     if (idx < n) return { word: w, syllable: idx };
     idx -= n;
   }
-  throw new Error(`Syllable ${idx} is out of range for clip ${clip.id}.`);
+  throw new Error(`Syllable ${idx} is out of range for clip ${c.id}.`);
 }
 
 function ordinal(n) {
@@ -110,131 +165,27 @@ function boldUnderline(text) {
   return b;
 }
 
-function songFor(clip) {
-  const all = binarySearchOrder(syllableCount(clip));
-  const tasks = all.filter((t) => !responses.has(docId(clip.id, t.syllable)));
-  const byIndex = new Map(all.map((t) => [t.syllable, t]));
-  return { clip, byIndex, tasks, pos: 0, editing: null };
-}
-
-// Returns true if a song with unfinished syllables was found.
-function nextSong() {
-  for (const clip of clips) {
-    const s = songFor(clip);
-    if (s.tasks.length) {
-      song = s;
-      showTask(null);
-      return true;
-    }
-  }
-  song = null;
-  stop();
-  show('all-done');
-  renderAllLines();
-  return false;
-}
-
-// On the all-done page: every song's line, each with its own play button.
-// Clicking an aligned syllable reopens that song to redo it.
-function renderAllLines() {
-  const list = $('all-lines');
-  for (const old of list.querySelectorAll('.line')) lineObserver.unobserve(old);
-  list.replaceChildren();
-  for (const clip of clips) {
-    const btn = document.createElement('button');
-    btn.textContent = '▶';
-    btn.title = 'Play the clip with a click on every syllable';
-    btn.addEventListener('click', () => playSongClicked(clip));
-
-    const line = document.createElement('div');
-    line.className = 'line';
-    buildLine(line, clip, null, (idx) => {
-      song = songFor(clip);
-      edit(idx);
-    });
-
-    const row = document.createElement('div');
-    row.className = 'line-row';
-    row.append(btn, line);
-    list.append(row);
-    lineObserver.observe(line);
-  }
-}
-
-// The task being worked on: an already-aligned syllable the user clicked to redo,
-// otherwise the next unfinished task.
-const activeTask = () => song.editing ?? song.tasks[song.pos];
-
-// Clip-relative time (ms) of an already-aligned syllable.
-const alignedTimeMs = (idx) => responses.get(docId(song.clip.id, idx)).clickTimeMs;
-
-const normalizeWord = (text) => text.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
-
-// The boundary syllables of the task's audible segment, as { lo, hi } (null = clip start/end).
-// Starts from the task's own bounds and widens outward, one aligned syllable at a time,
-// while the words the segment touches appear more than once in the line (so the listener
-// can tell which "as a" they're hearing) or the segment is shorter than MIN_SEGMENT_MS.
-// Each step widens whichever side fixes that, otherwise whichever side adds fewer syllables.
-function segmentBounds(task) {
-  const { clip } = song;
-  const n = syllableCount(clip);
-  const words = clip.words.map((w) => normalizeWord(w.text));
-  const aligned = [...Array(n).keys()].filter((i) => responses.has(docId(clip.id, i)));
-
-  const ambiguous = (lo, hi) => {
-    const first = locate(clip, lo ?? 0).word;
-    const last = locate(clip, (hi ?? n) - 1).word;
-    const len = last - first + 1;
-    let count = 0;
-    for (let i = 0; i + len <= words.length; i++) {
-      if (words.slice(i, i + len).every((w, k) => w === words[first + k])) count++;
-    }
-    return count > 1;
-  };
-  // A null end is the end of the clip, which we treat as far enough away.
-  const tooShort = (lo, hi) =>
-    (hi === null ? Infinity : alignedTimeMs(hi)) - (lo === null ? 0 : alignedTimeMs(lo)) < MIN_SEGMENT_MS;
-  const needsWidening = (lo, hi) => ambiguous(lo, hi) || tooShort(lo, hi);
-
-  let { lo, hi } = task;
-  while (needsWidening(lo, hi)) {
-    // Terminates: every step moves a bound outward, and the whole clip never needs widening.
-    const options = [];
-    if (lo !== null) {
-      const next = aligned.filter((i) => i < lo).at(-1) ?? null;
-      options.push({ lo: next, hi, grows: lo - (next ?? 0) });
-    }
-    if (hi !== null) {
-      const next = aligned.find((i) => i > hi) ?? null;
-      options.push({ lo, hi: next, grows: (next ?? n) - hi });
-    }
-    for (const o of options) o.fixes = !needsWidening(o.lo, o.hi);
-    options.sort((a, b) => (b.fixes - a.fixes) || (a.grows - b.grows));
-    ({ lo, hi } = options[0]);
-  }
-  return { lo, hi };
-}
-
-// Draws the lyric line. `task` is the task being aligned, or null.
-function renderLine(task) {
-  buildLine($('line'), song.clip, task ? task.syllable : null, edit);
+// Draws the main lyric line. `active` is the syllable being aligned, or null.
+// Clicking any syllable aligns (or re-aligns) it.
+function renderLine(active) {
+  buildLine($('line'), clip, active, selectSyllable, true);
 
   // Once every syllable is aligned, offer to play the whole clip with all the clicks.
-  $('play-song').hidden = !allAligned();
+  $('play-song').hidden = nextUnaligned(clip) !== null;
 
-  lineTask = task;
   fitLine($('line'));
 }
 
-// Fills `line` with the clip's words and syllable boxes. `active` is the flat index of
-// the syllable being aligned, or null; clicking an aligned syllable calls onEdit(index).
-function buildLine(line, clip, active, onEdit) {
-  const word = active === null ? -1 : locate(clip, active).word;
+// Fills `line` with the clip's words and syllable boxes. `active` is the flat index of the syllable
+// being aligned, or null. Clicking a syllable calls onSelect(index): any syllable if `allClickable`,
+// otherwise only aligned ones.
+function buildLine(line, c, active, onSelect, allClickable) {
+  const word = active === null ? -1 : locate(c, active).word;
 
   line.replaceChildren();
   // One column per word: the word on top, its syllable boxes underneath.
   let flat = 0; // flat syllable index of the current word's first syllable
-  clip.words.forEach((w, i) => {
+  c.words.forEach((w, i) => {
     const cell = document.createElement('div');
     cell.className = 'word';
     if (i !== word) {
@@ -251,10 +202,11 @@ function buildLine(line, clip, active, onEdit) {
       const box = document.createElement('span');
       box.className = 'syllable';
       if (flat === active) box.classList.add('active');
-      if (responses.has(docId(clip.id, flat))) {
-        box.classList.add('aligned');
+      const aligned = isAligned(c, flat);
+      if (aligned) box.classList.add('aligned');
+      if (aligned || allClickable) {
         const idx = flat;
-        box.addEventListener('click', () => onEdit(idx));
+        box.addEventListener('click', () => onSelect(idx));
       }
       syllables.append(box);
     }
@@ -266,170 +218,232 @@ function buildLine(line, clip, active, onEdit) {
   });
 }
 
-// The task whose segment is outlined on the main line, or null.
-let lineTask = null;
-
-// Shrinks the line's font (never grows it) until every word fits on one row,
-// then (for the main line) redraws the segment outline to match the new layout.
+// Shrinks the line's font (never grows it) until every word fits on one row.
 function fitLine(line) {
   line.style.fontSize = '';
-  line.querySelector('.segment')?.remove();
   if (line.clientWidth === 0) return; // hidden: refit when it's shown (see the ResizeObserver)
-  const base = parseFloat(getComputedStyle(line).fontSize);
-  let size = base;
+  let size = parseFloat(getComputedStyle(line).fontSize);
   // Borders don't scale with the font, so the first guess can be slightly off; repeat a few times.
   for (let i = 0; i < 5 && line.scrollWidth > line.clientWidth; i++) {
     size *= line.clientWidth / line.scrollWidth * 0.99;
     line.style.fontSize = `${size}px`;
   }
-  if (line === $('line') && lineTask) outlineSegment(lineTask);
 }
 
 // Refit whenever a line's width changes (window resize, or the line becoming visible).
 const lineWidths = new WeakMap();
 const lineObserver = new ResizeObserver((entries) => {
-  for (const { target } of entries) {
-    const w = target.clientWidth;
-    if (w !== lineWidths.get(target)) { lineWidths.set(target, w); fitLine(target); }
+  for (const { target: line } of entries) {
+    const w = line.clientWidth;
+    if (w !== lineWidths.get(line)) { lineWidths.set(line, w); fitLine(line); }
   }
 });
 lineObserver.observe($('line'));
 
-const allAligned = () =>
-  [...Array(syllableCount(song.clip)).keys()].every((i) => responses.has(docId(song.clip.id, i)));
-
-// Outlines in red the syllables that are audible: from the segment's starting boundary
-// syllable (heard from its onset) up to, not including, the ending boundary syllable.
-// Needs the line to be laid out, so call it only while the line is visible.
-function outlineSegment(task) {
-  const line = $('line');
-  const boxes = line.querySelectorAll('.syllable');
-  const { lo, hi } = segmentBounds(task);
-  const first = lo ?? 0;
-  const last = (hi ?? boxes.length) - 1;
-  // Extend to the column's edge when the segment starts/ends at a word boundary,
-  // otherwise stop between two syllable boxes of the same word.
-  const edge = (idx, side) => {
-    const box = boxes[idx];
-    const col = box.closest('.column');
-    const sibling = side === 'left' ? box.previousElementSibling : box.nextElementSibling;
-    if (!sibling) return side === 'left' ? col.offsetLeft : col.offsetLeft + col.offsetWidth;
-    return side === 'left' ? box.offsetLeft - 2 : box.offsetLeft + box.offsetWidth + 2;
-  };
-  const left = edge(first, 'left');
-  const outline = document.createElement('div');
-  outline.className = 'segment';
-  outline.style.left = `${left}px`;
-  outline.style.width = `${edge(last, 'right') - left}px`;
-  line.append(outline);
+// The neighbour that stays in the loop with the target: the next syllable, or the previous one at the end
+// of the clip (null if the clip has only one syllable).
+function adjacent() {
+  if (target + 1 < syllableCount(clip)) return target + 1;
+  return target > 0 ? target - 1 : null;
 }
 
-// `clickMs` is where to put the click (clip-relative ms), or null for the segment's middle.
-function showTask(clickMs) {
-  const { clip } = song;
-  const task = activeTask();
-  const { word, syllable } = locate(clip, task.syllable);
+// "the 2nd syllable of “criminal”", with the ordinal underlined in orange.
+function describe(idx) {
+  const { word, syllable } = locate(clip, idx);
+  const w = clip.words[word];
+  const which = w.syllables === 1 ? 'only' : ordinal(syllable + 1);
+  return ['the ', orangeUnderline(which), ` syllable of “${w.text}”`];
+}
 
-  // For long words, also count from the end when the syllable is past the middle.
-  const n = clip.words[word].syllables;
-  const fromEnd = n - syllable;
-  const hint = n < 4 || fromEnd >= syllable + 1 ? ''
-    : fromEnd === 1 ? ' (the last syllable of the word)'
-    : ` (${ordinal(fromEnd)} from the end of the word)`;
-  $('prompt').replaceChildren(
-    'Align the click to the ', boldUnderline(ordinal(syllable + 1)),
-    ` syllable${hint} in the underlined word.`,
-  );
+function orange(text) {
+  const b = document.createElement('strong');
+  b.className = 'orange';
+  b.textContent = text;
+  return b;
+}
 
-  wantedClickMs = clickMs;
-  current = clipBuffers.get(clip.id) ?? null;
-  if (timer) start(); // playing: restart the loop on the new segment
-  configureSlider();
-  updateReadout();
+function orangeUnderline(text) {
+  const u = document.createElement('u');
+  u.className = 'orange';
+  u.textContent = text;
+  return u;
+}
+
+// ---------- Search ----------
+
+function selectTarget(idx) {
+  target = idx;
+  $('status').textContent = '';
+  renderLine(target);
+  resetSearch();
+}
+
+// Picks a syllable from the lyric line, including from the song-complete screen.
+function selectSyllable(idx) {
+  if (writing) return;
   show('task');
-  renderLine(task);
-  updateButtons();
-  if (!slider.disabled) slider.focus();
+  selectTarget(idx);
 }
 
-function updateButtons() {
-  doneBtn.disabled = writing || !current;
+function resetSearch() {
+  phase = 'range';
+  range = { startMs: 0, endMs: clipMs() };
+  rangeMoved = false;
+  if (timer) start();
+  render();
 }
 
-async function done() {
-  const syllableIndex = activeTask().syllable;
-  const id = docId(song.clip.id, syllableIndex);
+const clamp = (x, lo, hi) => Math.min(Math.max(x, lo), hi);
+
+function setEdge(edge, ms) {
+  const before = range[`${edge}Ms`];
+  if (edge === 'start') range.startMs = clamp(ms, 0, range.endMs - MIN_RANGE_MS);
+  else range.endMs = clamp(ms, range.startMs + MIN_RANGE_MS, clipMs());
+  if (range[`${edge}Ms`] !== before) rangeMoved = true;
+  if (timer) schedule(); // the current loop follows right away
+  render();
+}
+
+function setClick(frac) {
+  clickFrac = clamp(frac, 0, 1);
+  render();
+}
+
+// Range stage -> click stage, looping just the chosen range.
+function next() {
+  phase = 'click';
+  clickFrac = 0.5;
+  if (timer) start();
+  render();
+}
+
+// Click stage -> range stage, with the handles where they were.
+function back() {
+  phase = 'range';
+  if (timer) start();
+  render();
+}
+
+// Saves the click as the syllable's time, then moves on to the next unaligned syllable.
+async function submit() {
+  const id = docId(clip.id, target);
   const prev = responses.get(id);
+  const time = clickMs();
   const data = {
     uid: user.uid,
     email: user.email,
-    clipId: song.clip.id,
-    syllableIndex,
-    offsetMs: clickMs - current.duration * 500, // relative to the middle of the whole clip
-    clickTimeMs: clickMs,
-    segmentStartMs: segment.startMs,
-    segmentEndMs: segment.endMs,
+    clipId: clip.id,
+    syllableIndex: target,
+    offsetMs: time - clipMs() / 2, // relative to the middle of the whole clip
+    clickTimeMs: time,
+    segmentStartMs: range.startMs,
+    segmentEndMs: range.endMs,
     revision: prev ? (prev.revision ?? 0) + 1 : 0,
     updatedAt: serverTimestamp(),
     userAgent: navigator.userAgent,
   };
 
   writing = true;
-  updateButtons();
+  render();
   try {
     await setDoc(doc(db, 'responses', id), data);
     responses.set(id, data);
-    // After redoing a syllable, pick up where the unfinished ones left off.
-    if (song.editing !== null) song.editing = null;
-    else song.pos++;
-    if (song.pos < song.tasks.length) {
-      showTask(null);
+    const idx = nextUnaligned(clip, target);
+    if (idx !== null) {
+      selectTarget(idx);
     } else {
       stop();
       renderLine(null);
       show('song-complete');
     }
   } catch (err) {
-    readout.textContent = `Couldn't save: ${err.message}`;
+    $('status').textContent = `Couldn't save: ${err.message}`;
   } finally {
     writing = false;
-    updateButtons();
+    render();
   }
 }
 
-// Go back to an already-aligned syllable, starting from its saved click time.
-function edit(syllableIndex) {
-  if (writing) return;
-  song.editing = song.byIndex.get(syllableIndex);
-  showTask(alignedTimeMs(syllableIndex));
-  if (!timer && current) start();
+const pct = (frac) => `${frac * 100}%`;
+
+function render() {
+  if (!clip || !buffers.has(clip.id)) return;
+  const v = view();
+  const frac = (ms) => (ms - v.startMs) / (v.endMs - v.startMs);
+  const clicking = phase === 'click';
+
+  if (clicking) {
+    zoneEl.style.left = pct(clickFrac);
+    zoneEl.style.width = '0';
+  } else {
+    zoneEl.style.left = pct(frac(range.startMs));
+    zoneEl.style.width = pct(frac(range.endMs) - frac(range.startMs));
+  }
+  zoneEl.classList.toggle('single', clicking);
+  bar.classList.toggle('fixed', !clicking);
+
+  $('handles').hidden = clicking;
+  $('start-handle').style.left = pct(frac(range.startMs));
+  $('end-handle').style.right = pct(1 - frac(range.endMs));
+
+  const adj = adjacent();
+  $('line').querySelectorAll('.syllable').forEach((box, i) => {
+    box.classList.toggle('in-range', !clicking && (i === target || i === adj));
+  });
+
+  if (clicking) {
+    $('prompt').replaceChildren(
+      'Drag the blue line until the click lands on ', ...describe(target), '.',
+    );
+  } else if (adj === null) {
+    $('prompt').replaceChildren(
+      'Move the Start and End handles until you can only hear the syllable outlined above in ', orange('ORANGE'),
+      ': ', ...describe(target), '.',
+    );
+  } else {
+    const list = document.createElement('ul');
+    for (const idx of [target, adj].sort((a, b) => a - b)) {
+      const li = document.createElement('li');
+      li.append(...describe(idx));
+      list.append(li);
+    }
+    $('prompt').replaceChildren(
+      'Move the Start and End handles until you can only hear the 2 syllables outlined above in ', orange('ORANGE'),
+      ':', list,
+    );
+  }
+  $('back').hidden = !clicking;
+  $('next').hidden = clicking;
+  $('next').disabled = !rangeMoved;
+  $('submit').hidden = !clicking;
+  $('submit').disabled = writing;
 }
 
 // ---------- Audio engine ----------
 
-let ctx = null;
-let clickBuffer = null;
-const clipBuffers = new Map(); // clip id -> AudioBuffer
+// Created up front so clips can be decoded; it stays suspended until the first Play.
+const ctx = new AudioContext();
+const buffers = new Map(); // clip id -> AudioBuffer
 
-let current = null;      // AudioBuffer of the clip being looped
-let segment = null;      // { startMs, endMs }: clip-relative part of the clip that is audible
-let clickMs = 0;         // click time, clip-relative ms
-let wantedClickMs = null; // click time to restore when the slider is next configured; null = segment middle
-let nextLoopStart = 0;   // context time of the next loop (leading silence) to schedule
-let nextClickLoop = 0;   // start time of the loop whose click isn't scheduled yet
 let timer = null;
-let sources = [];        // scheduled sources, so Stop can cancel them
+let sources = []; // scheduled sources, so Stop can cancel them
+let loops = [];   // the last two loops: { loopStart, audioStart, offsetS, endS, src, gain, clicked }
+                  // (loopStart: context time of the silence before the audio; offsetS: where in the clip
+                  // the audio starts; endS: context time the audio ends, which follows the End handle)
 
-async function loadBuffer(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Couldn't load ${url} (HTTP ${res.status}).`);
-  return ctx.decodeAudioData(await res.arrayBuffer());
+async function loadBuffer(c) {
+  if (buffers.has(c.id)) return buffers.get(c.id);
+  const res = await fetch(c.file);
+  if (!res.ok) throw new Error(`Couldn't load ${c.file} (HTTP ${res.status}).`);
+  const buffer = await ctx.decodeAudioData(await res.arrayBuffer());
+  buffers.set(c.id, buffer);
+  return buffer;
 }
 
-// A short 2 kHz tone burst that starts at full strength and decays fast.
+// A short tone burst that starts at full strength and decays fast.
 // Its onset is exactly sample 0, so the scheduled time is the heard time.
 // The tone is driven through tanh (soft clipping) to make it louder without exceeding full scale.
-function makeClickBuffer() {
+function makeClickBuffer(hz) {
   const sr = ctx.sampleRate;
   const length = Math.round(sr * 0.04);
   const buffer = ctx.createBuffer(1, length, sr);
@@ -437,59 +451,86 @@ function makeClickBuffer() {
   const DRIVE = 4;
   for (let i = 0; i < length; i++) {
     const t = i / sr;
-    const x = Math.sin(2 * Math.PI * 2000 * t) * Math.exp(-t / 0.01);
+    const x = Math.sin(2 * Math.PI * hz * t) * Math.exp(-t / 0.01);
     data[i] = Math.tanh(DRIVE * x) / Math.tanh(DRIVE);
   }
   return buffer;
 }
+const click = makeClickBuffer(CLICK_HZ);
 
-async function loadAudio() {
-  readout.textContent = 'Loading audio…';
-  clickBuffer = makeClickBuffer();
-  await Promise.all(clips.map(async (c) => {
-    clipBuffers.set(c.id, await loadBuffer(c.file));
-  }));
+function track(src) {
+  src.onended = () => { sources = sources.filter((s) => s !== src); };
+  sources.push(src);
 }
 
-// Music is played quieter than the click so the click stands out.
-const MUSIC_GAIN = 0.7;
-
-function play(buffer, when, offset = 0, duration = undefined) {
+function playClick(when) {
   const src = ctx.createBufferSource();
-  src.buffer = buffer;
-  if (buffer === clickBuffer) {
-    src.connect(ctx.destination);
-  } else {
-    const gain = ctx.createGain();
-    gain.gain.value = MUSIC_GAIN;
-    src.connect(gain).connect(ctx.destination);
-  }
-  src.onended = () => { sources = sources.filter((s) => s !== src); };
-  src.start(when, offset, duration);
-  sources.push(src);
+  src.buffer = click;
+  const gain = ctx.createGain();
+  gain.gain.value = CLICK_GAIN;
+  src.connect(gain).connect(ctx.destination);
+  src.start(when);
+  track(src);
+}
+
+// Starts a loop of the range: PAD_S of silence, then the range's audio (its end is set by retime),
+// with short fades so the cut edges don't pop.
+function startLoop(loopStart) {
+  const audioStart = loopStart + PAD_S;
+  const src = ctx.createBufferSource();
+  src.buffer = buffers.get(clip.id);
+  const gain = ctx.createGain();
+  gain.gain.setValueAtTime(0, audioStart);
+  gain.gain.linearRampToValueAtTime(MUSIC_GAIN, audioStart + FADE_S);
+  src.connect(gain).connect(ctx.destination);
+  src.start(audioStart, range.startMs / 1000);
+  track(src);
+  const loop = { loopStart, audioStart, offsetS: range.startMs / 1000, endS: Infinity, src, gain, clicked: false };
+  retime(loop, audioStart + (range.endMs - range.startMs) / 1000, ctx.currentTime);
+  loops = [...loops.slice(-1), loop];
+  return loop;
+}
+
+// Moves a loop's end (and its fade-out) to `endS`, or as soon after now as the fades allow.
+// Does nothing once the fade-out has begun.
+function retime(loop, endS, now) {
+  if (now >= loop.endS - FADE_S) return;
+  const from = Math.max(now, loop.audioStart + FADE_S + 1e-4); // keep the fade-in
+  endS = Math.max(endS, from + FADE_S);
+  if (Math.abs(endS - loop.endS) < 1e-4) return;
+  const g = loop.gain.gain;
+  g.cancelScheduledValues(from);
+  g.setValueAtTime(MUSIC_GAIN, endS - FADE_S);
+  g.linearRampToValueAtTime(0, endS);
+  loop.src.stop(endS); // a later stop() replaces an earlier one
+  loop.endS = endS;
+}
+
+// Click stage: each loop's click is scheduled as late as possible,
+// so dragging takes effect within the current loop when it can.
+function scheduleClick(loop, now, horizon) {
+  if (phase !== 'click' || loop.clicked) return;
+  const t = loop.audioStart + clickMs() / 1000 - loop.offsetS;
+  if (t >= horizon) return;
+  if (t >= now) playClick(t); // else: the click was dragged past it
+  loop.clicked = true;
 }
 
 function schedule() {
   const now = ctx.currentTime;
   const horizon = now + SCHEDULE_AHEAD_S;
-  const segStart = segment.startMs / 1000;
-  const segDur = (segment.endMs - segment.startMs) / 1000;
-  const loopLen = PAD_S + current.duration + PAD_S;
+  const cur = loops.at(-1);
 
-  // Each loop is the whole clip's timeline (silence, clip, silence), but only the
-  // audible segment is played; the rest of the clip is muted.
-  while (nextLoopStart < horizon) {
-    play(current, nextLoopStart + PAD_S + segStart, segStart, segDur);
-    nextLoopStart += loopLen;
-  }
+  // The current loop follows the handles: it ends at the End handle,
+  // and stops now if the Start handle has moved past what's playing.
+  const playingS = cur.offsetS + (now - cur.audioStart);
+  const passed = now > cur.audioStart && playingS < range.startMs / 1000;
+  retime(cur, passed ? now : cur.audioStart + range.endMs / 1000 - cur.offsetS, now);
+  scheduleClick(cur, now, horizon);
 
-  // Clicks are scheduled separately from the audio, as late as possible,
-  // so slider moves take effect within the current loop when they can.
-  for (;;) {
-    const clickTime = nextClickLoop + PAD_S + clickMs / 1000;
-    if (clickTime >= horizon) break;
-    if (clickTime >= now) play(clickBuffer, clickTime); // else: slider jumped past it; skip this loop
-    nextClickLoop += loopLen;
+  if (cur.endS + PAD_S < horizon) {
+    const period = range.endMs - range.startMs < SHORT_LOOP_MS ? SHORT_LOOP_PERIOD_S : 0;
+    scheduleClick(startLoop(Math.max(cur.endS + PAD_S, cur.loopStart + period)), now, horizon);
   }
 }
 
@@ -500,74 +541,69 @@ function stop() {
     try { s.stop(); } catch { /* already stopped */ }
   }
   sources = [];
-  startBtn.disabled = false;
-  stopBtn.disabled = true;
+  loops = [];
+  playhead.hidden = true;
+  renderPlayState();
 }
 
 function start() {
   stop();
-  current = clipBuffers.get(song.clip.id);
-  configureSlider();
-  updateReadout();
-  updateButtons();
-
-  nextLoopStart = nextClickLoop = ctx.currentTime + 0.1;
+  startLoop(ctx.currentTime + 0.05);
   schedule();
   timer = setInterval(schedule, SCHEDULER_INTERVAL_MS);
-
-  startBtn.disabled = true;
-  stopBtn.disabled = false;
-  slider.focus();
+  renderPlayState();
 }
 
 // Plays the whole clip once, with a click at every syllable's aligned time.
-function playSong(clip) {
+async function playSong(c) {
   stop();
-  const buffer = clipBuffers.get(clip.id);
+  ctx.resume();
+  let buffer;
+  try {
+    buffer = await loadBuffer(c);
+  } catch (err) {
+    alert(err.message);
+    return;
+  }
   // The leading pad leaves room for clicks placed slightly before the clip begins.
   const t0 = ctx.currentTime + 0.1 + PAD_S;
-  play(buffer, t0);
-  for (let i = 0; i < syllableCount(clip); i++) {
-    const { clickTimeMs } = responses.get(docId(clip.id, i));
-    play(clickBuffer, Math.max(t0 + clickTimeMs / 1000, ctx.currentTime));
+  const src = ctx.createBufferSource();
+  src.buffer = buffer;
+  const gain = ctx.createGain();
+  gain.gain.value = MUSIC_GAIN;
+  src.connect(gain).connect(ctx.destination);
+  src.start(t0);
+  track(src);
+  for (const i of indices(c)) {
+    const { clickTimeMs } = responses.get(docId(c.id, i));
+    playClick(Math.max(t0 + clickTimeMs / 1000, ctx.currentTime));
   }
 }
 
-// The audible part of the clip for the active task: between the aligned times of its
-// (possibly widened) boundary syllables, or the clip's start/end where it has none.
-function computeSegment() {
-  const { lo, hi } = segmentBounds(activeTask());
-  const durMs = current.duration * 1000;
-  const clamp = (t) => Math.min(Math.max(t, 0), durMs);
-  let startMs = lo === null ? 0 : clamp(alignedTimeMs(lo));
-  let endMs = hi === null ? durMs : clamp(alignedTimeMs(hi));
-  if (endMs - startMs < MIN_SEGMENT_MS) {
-    // Only possible for a very short clip, or with boundary times at the clip's edges: widen around the middle.
-    const mid = Math.min(Math.max((startMs + endMs) / 2, MIN_SEGMENT_MS / 2), durMs - MIN_SEGMENT_MS / 2);
-    startMs = mid - MIN_SEGMENT_MS / 2;
-    endMs = mid + MIN_SEGMENT_MS / 2;
-  }
-  return { startMs, endMs };
+// One button toggles playback; the bar and handles only respond while the clip is playing.
+function renderPlayState() {
+  const playing = timer !== null;
+  $('play').textContent = playing ? '■ Stop' : '▶ Play';
+  $('play').classList.toggle('playing', playing);
+  bar.classList.toggle('disabled', !playing);
+  $('handles').classList.toggle('disabled', !playing);
+  bar.setAttribute('aria-disabled', String(!playing));
+  $('handles').setAttribute('aria-disabled', String(!playing));
 }
 
-// The slider spans the whole loop: the clip plus the silence on either side.
-// It starts at the middle of the audible segment.
-function configureSlider() {
-  if (!current) { slider.disabled = true; return; }
-  segment = computeSegment();
-  const min = -Math.floor(PAD_S * 1000);
-  const max = Math.floor(current.duration * 1000 + PAD_S * 1000);
-  if (wantedClickMs === null) wantedClickMs = Math.round((segment.startMs + segment.endMs) / 2);
-  clickMs = Math.min(Math.max(wantedClickMs, min), max);
-  slider.min = min;
-  slider.max = max;
-  slider.value = clickMs;
-  slider.disabled = false;
+// The playhead follows what's audible now (compensating for output latency),
+// and hides during the silence between loops.
+function drawPlayhead() {
+  requestAnimationFrame(drawPlayhead);
+  if (!timer) return;
+  const t = ctx.currentTime - (ctx.outputLatency || 0);
+  const loop = loops.find((l) => t >= l.audioStart && t < l.endS);
+  const v = view();
+  const frac = loop ? ((loop.offsetS + t - loop.audioStart) * 1000 - v.startMs) / (v.endMs - v.startMs) : -1;
+  playhead.hidden = frac < 0 || frac > 1;
+  playhead.style.left = pct(frac);
 }
-
-function updateReadout() {
-  readout.textContent = '';
-}
+requestAnimationFrame(drawPlayhead);
 
 // ---------- Events ----------
 
@@ -580,7 +616,7 @@ $('sign-out').addEventListener('click', () => signOut(auth));
 onAuthStateChanged(auth, async (u) => {
   user = u;
   stop();
-  song = null;
+  clip = null;
   if (!u) { show('signed-out'); return; }
   $('who').textContent = `Logged in as ${u.email}`;
   $('loading-msg').textContent = 'Loading…';
@@ -595,48 +631,66 @@ onAuthStateChanged(auth, async (u) => {
   }
 });
 
-startBtn.addEventListener('click', async () => {
-  startBtn.disabled = true;
-  // Create and resume the context synchronously inside the click,
-  // before any await, so every browser treats it as user-initiated.
-  if (!ctx) ctx = new AudioContext();
-  ctx.resume();
-  try {
-    if (clipBuffers.size === 0) await loadAudio();
-    start();
-  } catch (err) {
-    readout.textContent = err.message;
-    startBtn.disabled = false;
+$('play').addEventListener('click', () => {
+  if (timer) {
+    stop();
+    return;
   }
+  ctx.resume();
+  start();
 });
-
-async function playSongClicked(clip) {
-  if (!ctx) ctx = new AudioContext();
-  ctx.resume();
-  try {
-    if (clipBuffers.size === 0) await loadAudio();
-    playSong(clip);
-  } catch (err) {
-    readout.textContent = err.message;
-  }
-}
-
-$('play-song').addEventListener('click', () => playSongClicked(song.clip));
-
-stopBtn.addEventListener('click', stop);
-doneBtn.addEventListener('click', done);
+$('next').addEventListener('click', next);
+$('back').addEventListener('click', back);
+$('submit').addEventListener('click', submit);
+$('play-song').addEventListener('click', () => playSong(clip));
 
 $('another').addEventListener('click', (e) => {
   e.preventDefault();
-  if (nextSong() && current) start();
+  nextSong();
 });
 
-slider.addEventListener('input', () => {
-  clickMs = wantedClickMs = Number(slider.value);
-  updateReadout();
+// Click stage: the click jumps to where the bar is pressed and follows the pointer.
+let draggingClick = false;
+const pointerFrac = (e) => {
+  const rect = bar.getBoundingClientRect();
+  return (e.clientX - rect.left) / rect.width;
+};
+bar.addEventListener('pointerdown', (e) => {
+  if (phase !== 'click' || !timer) return;
+  draggingClick = true;
+  setClick(pointerFrac(e));
+  bar.setPointerCapture(e.pointerId);
+  bar.classList.add('dragging');
 });
+bar.addEventListener('pointermove', (e) => {
+  if (draggingClick && timer) setClick(pointerFrac(e));
+});
+for (const type of ['pointerup', 'pointercancel']) {
+  bar.addEventListener(type, () => {
+    draggingClick = false;
+    bar.classList.remove('dragging');
+  });
+}
 
-// Arrow keys don't move the slider.
-slider.addEventListener('keydown', (e) => {
-  if (e.key.startsWith('Arrow')) e.preventDefault();
-});
+// Range stage: pressing anywhere in a handle's row and dragging moves that handle by as much.
+for (const edge of ['start', 'end']) {
+  const row = $(`${edge}-row`);
+  let grab = null; // { x, ms }: pointer position and the handle's time when pressed
+  row.addEventListener('pointerdown', (e) => {
+    if (!timer) return;
+    grab = { x: e.clientX, ms: range[`${edge}Ms`] };
+    row.setPointerCapture(e.pointerId);
+    row.classList.add('dragging');
+  });
+  row.addEventListener('pointermove', (e) => {
+    if (!grab || !timer) return;
+    const msPerPx = clipMs() / row.getBoundingClientRect().width;
+    setEdge(edge, grab.ms + (e.clientX - grab.x) * msPerPx);
+  });
+  for (const type of ['pointerup', 'pointercancel']) {
+    row.addEventListener(type, () => {
+      grab = null;
+      row.classList.remove('dragging');
+    });
+  }
+}
