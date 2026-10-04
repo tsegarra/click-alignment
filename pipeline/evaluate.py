@@ -8,7 +8,9 @@ phone intervals for Whisper's words, so:
      click goes with MFA's nth syllable. Clicks past the end of MFA's syllables are unscored.
 
 A click is a single point, and it isn't obvious which point in a syllable it corresponds to, so
-two MFA anchors are scored: the syllable onset (first consonant) and the vowel onset.
+two MFA anchors are scored: the syllable onset (first consonant) and the vowel onset. A third
+anchor, VPR ("Vowel Plus Rules", see vpr.py), moves MFA's vowel onset onto a nearby loudness
+burst when there is a clear one, and otherwise shifts it by a fixed amount.
 
 Writes out/syllables.csv (one row per manual click), out/report.md and out/report.html.
 Standard library only.
@@ -23,10 +25,14 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 import report_html
+import vpr
 
 ROOT = Path(__file__).resolve().parent.parent
-ANCHORS = ("onset", "vowel")
+ANCHORS = ("onset", "vowel", "vpr")
+ANCHOR_NAMES = {"onset": "MFA syllable onset", "vowel": "MFA vowel onset", "vpr": "VPR"}
 SILENCE = {"", "sp", "sil", "spn", "<eps>"}
+VPR_TIE_MS = 5        # |err| changes this small count as "no change" (MFA has 10 ms frames)
+VPR_MIN_GAP_S = 0.03  # VPR's backward search stops this far after the previous vowel onset
 
 # Legal English onset clusters (ARPAbet), for maximal-onset syllabification.
 LIQUIDS_GLIDES = {"L", "R", "W", "Y"}
@@ -108,6 +114,19 @@ def load_mfa(path):
     return out
 
 
+def add_vpr(mfa, audio):
+    """Adds 'vpr' (s), 'vpr_rule' and 'vpr_jump_db' to every syllable of one clip's MFA words."""
+    env = vpr.envelope_db(audio)
+    prev_vowel = None
+    for w in mfa:
+        for syl in w["syllables"]:
+            # Search back no further than just past the previous syllable's vowel onset.
+            earliest = 0 if prev_vowel is None else (prev_vowel + VPR_MIN_GAP_S) * 1000
+            t, rule, jump_db = vpr.vpr(env, syl["vowel"] * 1000, earliest)
+            syl["vpr"], syl["vpr_rule"], syl["vpr_jump_db"] = t / 1000, rule, round(jump_db, 1)
+            prev_vowel = syl["vowel"]
+
+
 def summarize(errors):
     if not errors:
         return None
@@ -143,6 +162,7 @@ def main():
         whisper_text = json.loads((out / "whisper" / f"{cid}.json").read_text())["normalized"]
         mfa_path = out / "aligned" / cid / f"{cid}.json"
         mfa = load_mfa(mfa_path) if mfa_path.exists() else []
+        add_vpr(mfa, ROOT / clip["file"])
         mfa_sylls = [{**syl, "word": w["word"], "syllable_in_word": k, "of": len(w["syllables"]),
                       "phones": " ".join(w["phones"])}
                      for w in mfa for k, syl in enumerate(w["syllables"])]
@@ -165,7 +185,8 @@ def main():
                 same = same_word(m["word"], syl["word"]) and m["syllable_in_word"] == si
                 row.update(status="same_word" if same else "different_word", mfa_word=m["word"],
                            mfa_syllable_in_word=m["syllable_in_word"], mfa_syllables=m["of"],
-                           mfa_phones=m["phones"])
+                           mfa_phones=m["phones"], vpr_rule=m["vpr_rule"],
+                           vpr_jump_db=m["vpr_jump_db"])
                 for a in ANCHORS:
                     t = m[a] * 1000
                     row[f"mfa_{a}_ms"] = round(t, 1)
@@ -173,7 +194,8 @@ def main():
             rows.append(row)
 
     fields = ["clip", "index", "word", "syllable_in_word", "ref_syllables", "click_ms", "status",
-              "mfa_word", "mfa_syllable_in_word", "mfa_syllables", "mfa_phones"]
+              "mfa_word", "mfa_syllable_in_word", "mfa_syllables", "mfa_phones",
+              "vpr_rule", "vpr_jump_db"]
     fields += [f"{k}_{a}_ms" for a in ANCHORS for k in ("mfa", "err")]
     with open(out / "syllables.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields)
@@ -183,10 +205,39 @@ def main():
     write_report(out / "report.md", rows, clip_info, args.user_data)
     scored = [r for r in rows if "err_onset_ms" in r]
     subsets = (("All scored", scored), ("Same word on both sides", [r for r in scored if r["status"] == "same_word"]))
+    # Reference for VPR: the vowel onset moved by a constant. Each syllable's shift is the mean
+    # bias of all the *other* syllables, so the shift isn't fitted to the syllable it's scored on.
+    total = sum(r["err_vowel_ms"] for r in scored)
+    for r in scored:
+        r["err_vowel_shift_ms"] = r["err_vowel_ms"] - (total - r["err_vowel_ms"]) / (len(scored) - 1)
     summaries = [{"subset": name, "anchor": a, "stats": summarize([r[f"err_{a}_ms"] for r in sub])}
-                 for name, sub in subsets for a in ANCHORS]
-    report_html.write(out / "report.html", rows, clip_info, clips, args.user_data, summaries)
+                 for name, sub in subsets for a in ANCHORS + ("vowel_shift",)]
+    by_rule = [(f"{label} (rule: {rule})", [r for r in scored if r["vpr_rule"] == rule])
+               for rule, label in (("jump", f"Burst ≥ {vpr.JUMP_MIN_DB:g} dB"),
+                                   ("shift", "No clear burst"))]
+    comparison = [compare_vpr(name, sub, base)
+                  for base in ("vowel", "vowel_shift")
+                  for name, sub in subsets[:1] + tuple(by_rule) if sub]
+    report_html.write(out / "report.html", rows, clip_info, clips, args.user_data, summaries,
+                      comparison)
     print((out / "report.md").read_text())
+
+
+def compare_vpr(name, rows, base):
+    """Paired, per-syllable comparison of VPR against a baseline anchor."""
+    before = [abs(r[f"err_{base}_ms"]) for r in rows]
+    after = [abs(r["err_vpr_ms"]) for r in rows]
+    change = [a - b for a, b in zip(after, before)]
+    return {
+        "subset": name, "n": len(rows), "base": base,
+        "vowel": summarize([r[f"err_{base}_ms"] for r in rows]),
+        "vpr": summarize([r["err_vpr_ms"] for r in rows]),
+        "median_change": statistics.median(change),
+        "mean_change": statistics.fmean(change),
+        "better": sum(c < -VPR_TIE_MS for c in change),
+        "same": sum(abs(c) <= VPR_TIE_MS for c in change),
+        "worse": sum(c > VPR_TIE_MS for c in change),
+    }
 
 
 def fmt_summary(s):
@@ -230,7 +281,7 @@ def write_report(path, rows, clip_info, user_data):
     for title, subset in (("All scored syllables", scored), ("Same word on both sides", exact)):
         L += ["", f"## Timing error: {title.lower()}", ""]
         for a in ANCHORS:
-            L += [f"**MFA {a} vs click**", "", header,
+            L += [f"**{ANCHOR_NAMES[a]} vs click**", "", header,
                   fmt_summary(summarize([r[f"err_{a}_ms"] for r in subset])), ""]
 
     L += ["## Per clip (all scored syllables, vowel-onset anchor, then syllable-onset anchor)", "",

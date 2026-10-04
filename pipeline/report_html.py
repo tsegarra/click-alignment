@@ -1,5 +1,5 @@
-"""Renders out/report.html: per-clip waveforms with the click / MFA onset / MFA vowel markers,
-followed by the summary statistics. Called from evaluate.py; standard library only."""
+"""Renders out/report.html: per-clip waveforms with the click / MFA onset / MFA vowel / VPR
+markers, followed by the summary statistics and the VPR-vs-vowel comparison. Called from evaluate.py; standard library only."""
 
 import json
 import wave
@@ -25,8 +25,8 @@ def peaks(path):
     return len(samples) / rate * 1000, out
 
 
-def write(path, rows, clip_info, clips, user_data, summaries):
-    data = {"userData": user_data, "summaries": summaries, "clips": []}
+def write(path, rows, clip_info, clips, user_data, summaries, comparison):
+    data = {"userData": user_data, "summaries": summaries, "comparison": comparison, "clips": []}
     for c in clip_info:
         clip = clips[c["id"]]
         duration, pk = peaks(ROOT / clip["file"])
@@ -35,7 +35,10 @@ def write(path, rows, clip_info, clips, user_data, summaries):
             sylls.append({
                 "word": r["word"], "syl": r["syllable_in_word"], "of": r["ref_syllables"],
                 "click": r["click_ms"], "onset": r.get("mfa_onset_ms"), "vowel": r.get("mfa_vowel_ms"),
+                "vpr": r.get("mfa_vpr_ms"), "vprRule": r.get("vpr_rule"),
+                "vprJump": r.get("vpr_jump_db"),
                 "errOnset": r.get("err_onset_ms"), "errVowel": r.get("err_vowel_ms"),
+                "errVpr": r.get("err_vpr_ms"),
                 "status": r["status"], "mfaWord": r["mfa_word"],
                 "mfaSyl": r["mfa_syllable_in_word"], "mfaOf": r["mfa_syllables"],
             })
@@ -63,7 +66,8 @@ TEMPLATE = r"""<!doctype html>
   --page: #f9f9f7; --surface: #fcfcfb; --border: rgba(11,11,11,0.10);
   --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
   --grid: #e1e0d9; --axis: #c3c2b7; --wave: #c3c2b7; --word-band: #f0efec;
-  --click: #2a78d6; --onset: #eb6834; --vowel: #1baf7a;
+  --click: #2a78d6; --onset: #eb6834; --vowel: #1baf7a; --vpr: #d42a3c;
+  --good: #1a8a5f; --bad: #c4314b;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -71,7 +75,8 @@ TEMPLATE = r"""<!doctype html>
     --page: #0d0d0d; --surface: #1a1a19; --border: rgba(255,255,255,0.10);
     --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
     --grid: #2c2c2a; --axis: #383835; --wave: #4a4a46; --word-band: #242422;
-    --click: #3987e5; --onset: #d95926; --vowel: #199e70;
+    --click: #3987e5; --onset: #d95926; --vowel: #199e70; --vpr: #f0485a;
+    --good: #3fbf8c; --bad: #f06a80;
   }
 }
 :root[data-theme="dark"] {
@@ -79,7 +84,8 @@ TEMPLATE = r"""<!doctype html>
   --page: #0d0d0d; --surface: #1a1a19; --border: rgba(255,255,255,0.10);
   --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
   --grid: #2c2c2a; --axis: #383835; --wave: #4a4a46; --word-band: #242422;
-  --click: #3987e5; --onset: #d95926; --vowel: #199e70;
+  --click: #3987e5; --onset: #d95926; --vowel: #199e70; --vpr: #f0485a;
+    --good: #3fbf8c; --bad: #f06a80;
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--page); color: var(--ink);
@@ -134,7 +140,18 @@ text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
   <h2>Summary</h2>
   <div class="table-wrap"><table id="summary"></table></div>
   <p class="note">Error = MFA time − click time; positive means MFA is later than the click.
-    “After bias removed” subtracts the mean error of that row, measured on the same syllables.</p>
+    “After bias removed” subtracts the mean error of that row, measured on the same syllables.
+    “Vowel onset, minus its mean bias” is a reference for VPR: MFA’s vowel onset moved earlier by a
+    constant, where each syllable’s shift is the mean vowel error of all the other scored syllables.</p>
+  <h2>VPR vs. MFA vowel onset</h2>
+  <p class="sub" id="cmp-sub"></p>
+  <div class="table-wrap"><table id="compare"></table></div>
+  <p class="note">VPR takes the halfway point of the steepest 10 ms loudness jump before the vowel
+    when that jump is at least 15 dB (a burst), and otherwise MFA’s vowel onset moved 21 ms earlier.
+    Each syllable’s |err| under VPR is compared with its |err| under the baseline. Changes within
+    ±5 ms count as unchanged (MFA works in 10 ms frames). “Change” columns are VPR − baseline, so
+    negative means VPR is closer to the click. The 21 ms was measured on these same clicks, so the
+    shifted rows here are in-sample; the holdout data is the real test.</p>
   <h2>Per clip</h2>
   <div class="table-wrap"><table id="perclip"></table></div>
 </main>
@@ -145,7 +162,9 @@ const MARKERS = [
   { key: 'click', label: 'Manual click', err: null },
   { key: 'onset', label: 'MFA syllable onset', err: 'errOnset' },
   { key: 'vowel', label: 'MFA vowel onset', err: 'errVowel' },
+  { key: 'vpr', label: 'Vowel Plus Rules (VPR)', err: 'errVpr' },
 ];
+const DASH = { click: '', onset: '4 3', vowel: '1.5 2.5', vpr: '7 2 1.5 2' };
 const NS = 'http://www.w3.org/2000/svg';
 const fmtMs = v => v == null ? '–' : `${Math.round(v)} ms`;
 const fmtErr = v => v == null ? '–' : `${v > 0 ? '+' : v < 0 ? '−' : ''}${Math.abs(Math.round(v))} ms`;
@@ -164,14 +183,14 @@ function glyph(kind, x, y, parent, extra = {}) {
   const color = `var(--${kind})`;
   if (kind === 'click') return el('path', { d: `M${x - 5},${y - 7} L${x + 5},${y - 7} L${x},${y}Z`, fill: color, ...extra }, parent);
   if (kind === 'onset') return el('rect', { x: x - 4, y: y - 4, width: 8, height: 8, fill: color, ...extra }, parent);
+  if (kind === 'vpr') return el('path', { d: `M${x},${y - 6} L${x + 5},${y} L${x},${y + 6} L${x - 5},${y}Z`, fill: color, ...extra }, parent);
   return el('circle', { cx: x, cy: y, r: 4.5, fill: color, ...extra }, parent);
 }
 
 function swatch(kind) {
   const s = document.createElementNS(NS, 'svg');
   s.setAttribute('width', 26); s.setAttribute('height', 16); s.setAttribute('class', 'sw');
-  const dash = kind === 'onset' ? '4 3' : kind === 'vowel' ? '1.5 2.5' : '';
-  el('line', { x1: 13, x2: 13, y1: 1, y2: 15, stroke: `var(--${kind})`, 'stroke-width': 2, 'stroke-dasharray': dash }, s);
+  el('line', { x1: 13, x2: 13, y1: 1, y2: 15, stroke: `var(--${kind})`, 'stroke-width': 2, 'stroke-dasharray': DASH[kind] }, s);
   glyph(kind, 13, kind === 'click' ? 8 : 8, s);
   return s;
 }
@@ -199,7 +218,10 @@ function showTip(ev, s) {
   const mfa = s.mfaWord
     ? `paired with “${esc(s.mfaWord)}”${s.mfaOf > 1 ? `, syllable ${s.mfaSyl + 1} of ${s.mfaOf}` : ''}`
     : 'no MFA syllable at this position';
-  tip.innerHTML = `<div class="t">“${esc(s.word)}”${which}</div>${rows}<div class="st">${mfa}</div>`;
+  const rule = s.vprRule
+    ? `<div class="st">VPR: ${s.vprRule === 'jump' ? 'burst' : 'no clear burst, vowel onset shifted'} · steepest jump ${s.vprJump.toFixed(1)} dB</div>`
+    : '';
+  tip.innerHTML = `<div class="t">“${esc(s.word)}”${which}</div>${rows}<div class="st">${mfa}</div>${rule}`;
   tip.style.display = 'block';
   const pad = 14, r = tip.getBoundingClientRect();
   let x = ev.clientX + pad, y = ev.clientY + pad;
@@ -266,10 +288,9 @@ function drawClip(c, plot) {
     for (const m of MARKERS) {
       if (s[m.key] == null) continue;
       const px = x(s[m.key]);
-      const dash = m.key === 'onset' ? '4 3' : m.key === 'vowel' ? '1.5 2.5' : '';
       el('line', { x1: px, x2: px, y1: WAVE_TOP - 6, y2: WAVE_BOT, stroke: `var(--${m.key})`,
-        'stroke-width': 2, 'stroke-dasharray': dash }, g);
-      const gy = m.key === 'click' ? WAVE_TOP - 4 : m.key === 'onset' ? WAVE_TOP + 2 : WAVE_BOT - 2;
+        'stroke-width': 2, 'stroke-dasharray': DASH[m.key] }, g);
+      const gy = { click: WAVE_TOP - 4, onset: WAVE_TOP + 2, vowel: WAVE_BOT - 2, vpr: WAVE_BOT - 16 }[m.key];
       glyph(m.key, px, gy, g, { stroke: 'var(--surface)', 'stroke-width': 1.5 });
     }
     // Hit target: wider than the marks, spanning the trio.
@@ -306,6 +327,42 @@ function drawClip(c, plot) {
   return { x, playhead };
 }
 
+// Playback: the clip through Web Audio with a click at each VPR time, so the clicks are
+// sample-accurate. The click is the same tone burst as the clicking UI (app.js).
+const MUSIC_GAIN = 0.7, CLICK_GAIN = 0.35, CLICK_HZ = 2000, LEAD_IN_S = 0.1;
+let actx = null, clickBuf = null;
+const buffers = new Map();
+function audioCtx() {
+  if (actx) return actx;
+  actx = new AudioContext();
+  const sr = actx.sampleRate, length = Math.round(sr * 0.04), DRIVE = 4;
+  clickBuf = actx.createBuffer(1, length, sr);
+  const d = clickBuf.getChannelData(0);
+  for (let i = 0; i < length; i++) {
+    const t = i / sr;
+    d[i] = Math.tanh(DRIVE * Math.sin(2 * Math.PI * CLICK_HZ * t) * Math.exp(-t / 0.01)) / Math.tanh(DRIVE);
+  }
+  return actx;
+}
+async function loadBuffer(url) {
+  if (!buffers.has(url)) {
+    buffers.set(url, fetch(url).then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.arrayBuffer();
+    }).then(b => actx.decodeAudioData(b)).catch(e => { buffers.delete(url); throw e; }));
+  }
+  return buffers.get(url);
+}
+function startSource(buffer, gainValue, when) {
+  const src = actx.createBufferSource();
+  src.buffer = buffer;
+  const g = actx.createGain();
+  g.gain.value = gainValue;
+  src.connect(g).connect(actx.destination);
+  src.start(when);
+  return src;
+}
+
 const clipsEl = document.getElementById('clips');
 const renders = [];
 let playing = null;
@@ -315,10 +372,10 @@ for (const c of DATA.clips) {
   const scored = c.syllables.filter(s => s.errVowel != null);
   const med = arr => { const a = [...arr].sort((p, q) => p - q); const m = a.length >> 1; return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2; };
   const statLine = scored.length
-    ? `median |err| vowel ${Math.round(med(scored.map(s => Math.abs(s.errVowel))))} ms · onset ${Math.round(med(scored.map(s => Math.abs(s.errOnset))))} ms · ${c.refSyllables === c.mfaSyllables ? `${c.refSyllables} syllables on both sides` : `⚠ ${c.refSyllables} lyric vs ${c.mfaSyllables} MFA syllables`} · WER ${pct(c.wer)}`
+    ? `median |err| VPR ${Math.round(med(scored.map(s => Math.abs(s.errVpr))))} ms · vowel ${Math.round(med(scored.map(s => Math.abs(s.errVowel))))} ms · onset ${Math.round(med(scored.map(s => Math.abs(s.errOnset))))} ms · ${c.refSyllables === c.mfaSyllables ? `${c.refSyllables} syllables on both sides` : `⚠ ${c.refSyllables} lyric vs ${c.mfaSyllables} MFA syllables`} · WER ${pct(c.wer)}`
     : 'not aligned';
   card.innerHTML = `<header><h3>${esc(c.title)}</h3><span class="stats">${statLine}</span>
-    <button class="play" type="button">▶ Play</button></header>
+    <button class="play" type="button" title="Plays the clip with a click at each VPR time">▶ Play</button></header>
     <div class="lines"><b>lyrics</b><span>${esc(c.lyrics)}</span><b>whisper</b><span>${esc(c.whisper)}</span></div>
     <div class="plot"></div>`;
   clipsEl.append(card);
@@ -327,25 +384,42 @@ for (const c of DATA.clips) {
   renders.push(entry);
 
   const btn = card.querySelector('.play');
-  const audio = new Audio(c.audio);
-  btn.addEventListener('click', () => {
-    if (playing && playing.audio !== audio) playing.stop();
-    if (!audio.paused) { stop(); return; }
-    audio.currentTime = 0;
-    audio.play().catch(() => { btn.textContent = 'Audio unavailable'; });
+  let sources = [], t0 = 0, endAt = 0;
+  btn.addEventListener('click', async () => {
+    if (playing && playing.stop !== stop) playing.stop();
+    if (sources.length) { stop(); return; }
+    audioCtx().resume();
+    let buffer;
+    try { buffer = await loadBuffer(c.audio); }
+    catch (e) { btn.textContent = 'Audio unavailable'; console.error(c.audio, e); return; }
+    // The lead-in leaves room for VPR times slightly before the clip begins.
+    t0 = actx.currentTime + 0.05 + LEAD_IN_S;
+    endAt = t0 + buffer.duration;
+    sources = [startSource(buffer, MUSIC_GAIN, t0)];
+    for (const s of c.syllables) {
+      if (s.vpr != null) sources.push(startSource(clickBuf, CLICK_GAIN, Math.max(t0 + s.vpr / 1000, actx.currentTime)));
+    }
     btn.textContent = '■ Stop';
-    playing = { audio, stop };
+    playing = { stop };
     const tick = () => {
-      if (audio.paused) return;
-      const px = entry.r.x(audio.currentTime * 1000);
+      if (!sources.length) return;
+      // What's audible now, compensating for output latency.
+      const t = actx.currentTime - (actx.outputLatency || 0) - t0;
+      if (actx.currentTime >= endAt + 0.1) { stop(); return; }
+      const px = entry.r.x(Math.max(0, t) * 1000);
       entry.r.playhead.setAttribute('x1', px); entry.r.playhead.setAttribute('x2', px);
-      entry.r.playhead.setAttribute('opacity', 1);
+      entry.r.playhead.setAttribute('opacity', t >= 0 ? 1 : 0);
       requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
   });
-  function stop() { audio.pause(); btn.textContent = '▶ Play'; entry.r.playhead.setAttribute('opacity', 0); }
-  audio.addEventListener('ended', stop);
+  function stop() {
+    sources.forEach(s => { try { s.stop(); } catch {} });
+    sources = [];
+    btn.textContent = '▶ Play';
+    entry.r.playhead.setAttribute('opacity', 0);
+    if (playing && playing.stop === stop) playing = null;
+  }
 }
 const drawAll = () => renders.forEach(e => { e.r = drawClip(e.c, e.plot); });
 requestAnimationFrame(drawAll);
@@ -357,26 +431,53 @@ function summaryRow(cells) { return `<tr>${cells.map(c => `<td>${c}</td>`).join(
 const head = ['Syllables', 'MFA anchor', 'n', 'Bias', 'Median |err|', 'Mean |err|', 'Mean |err|, bias removed', 'RMSE', '≤ 25 ms', '≤ 50 ms', '≤ 100 ms'];
 let html = `<thead><tr>${head.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>`;
 for (const s of DATA.summaries) {
-  const sw = swatch(s.anchor).outerHTML;
+  const sw = swatch(s.anchor === 'vowel_shift' ? 'vowel' : s.anchor).outerHTML;
   const m = s.stats;
-  html += summaryRow([esc(s.subset), `${sw}${s.anchor === 'onset' ? 'Syllable onset' : 'Vowel onset'}`, m.n,
+  html += summaryRow([esc(s.subset), `${sw}${{ onset: 'Syllable onset', vowel: 'Vowel onset', vpr: 'VPR', vowel_shift: 'Vowel onset, minus its mean bias' }[s.anchor]}`, m.n,
     fmtErr(m.bias), fmtMs(m.median_ae), fmtMs(m.mae), fmtMs(m.mae_debiased), fmtMs(m.rmse),
     pct(m.within_25), pct(m.within_50), pct(m.within_100)]);
 }
 document.getElementById('summary').innerHTML = html + '</tbody>';
 
-const ph = ['Clip', 'Whisper', 'Syllables (lyrics / MFA)', 'Scored', 'Bias, vowel', 'Median |err|, vowel', 'Bias, onset', 'Median |err|, onset'];
+const ph = ['Clip', 'Whisper', 'Syllables (lyrics / MFA)', 'Scored', 'Bias, VPR', 'Median |err|, VPR', 'Bias, vowel', 'Median |err|, vowel', 'Bias, onset', 'Median |err|, onset'];
 html = `<thead><tr>${ph.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>`;
 for (const c of DATA.clips) {
   const sc = c.syllables.filter(s => s.errVowel != null);
   const mean = a => a.reduce((p, q) => p + q, 0) / a.length;
   const med = a => { const b = [...a].sort((p, q) => p - q); const k = b.length >> 1; return b.length % 2 ? b[k] : (b[k - 1] + b[k]) / 2; };
-  const v = sc.map(s => s.errVowel), o = sc.map(s => s.errOnset);
+  const v = sc.map(s => s.errVowel), o = sc.map(s => s.errOnset), r = sc.map(s => s.errVpr);
   html += summaryRow([esc(c.title), `WER ${pct(c.wer)}`, `${c.refSyllables} / ${c.mfaSyllables}`, `${sc.length}/${c.syllables.length}`,
+    sc.length ? fmtErr(mean(r)) : '–', sc.length ? fmtMs(med(r.map(Math.abs))) : '–',
     sc.length ? fmtErr(mean(v)) : '–', sc.length ? fmtMs(med(v.map(Math.abs))) : '–',
     sc.length ? fmtErr(mean(o)) : '–', sc.length ? fmtMs(med(o.map(Math.abs))) : '–']);
 }
 document.getElementById('perclip').innerHTML = html + '</tbody>';
+
+// VPR vs. vowel onset: the two anchors side by side, then the per-syllable outcome.
+{
+  const sw = k => swatch(k).outerHTML;
+  // d < 0 means VPR (b) is better: smaller magnitude for errors, larger share for hit rates.
+  const pair = (a, b, f, higherIsBetter = false) => {
+    const d = higherIsBetter ? a - b : Math.abs(b) - Math.abs(a);
+    const color = Math.abs(d) < 0.5 ? 'var(--ink)' : (d < 0 ? 'var(--good)' : 'var(--bad)');
+    return `${f(a)} → <span style="color:${color};font-weight:600">${f(b)}</span>`;
+  };
+  const head = ['Baseline', 'Syllables', 'n', 'Bias', 'Median |err|', 'Mean |err|', 'RMSE', '≤ 25 ms', '≤ 50 ms',
+    'Closer / same / further', 'Median change', 'Mean change'];
+  let t = `<thead><tr>${head.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>`;
+  for (const c of DATA.comparison) {
+    const a = c.vowel, b = c.vpr;
+    const bar = `<span style="color:var(--good)">${c.better}</span> / ${c.same} / <span style="color:var(--bad)">${c.worse}</span>`;
+    const base = c.base === 'vowel' ? 'Vowel onset' : 'Vowel onset, minus its mean bias';
+    t += summaryRow([base, esc(c.subset), c.n, pair(a.bias, b.bias, fmtErr), pair(a.median_ae, b.median_ae, fmtMs),
+      pair(a.mae, b.mae, fmtMs), pair(a.rmse, b.rmse, fmtMs),
+      pair(a.within_25, b.within_25, pct, true), pair(a.within_50, b.within_50, pct, true),
+      bar, fmtErr(c.median_change), fmtErr(c.mean_change)]);
+  }
+  document.getElementById('compare').innerHTML = t + '</tbody>';
+  document.getElementById('cmp-sub').innerHTML =
+    `Each cell reads baseline → ${sw('vpr')}VPR; green means VPR is closer to the clicks, red further.`;
+}
 </script>
 </body>
 </html>

@@ -12,32 +12,44 @@ Manual data: `user-data/alignments-2026-10-03.json`. Error = MFA time − click 
 
 ## Timing error: all scored syllables
 
-**MFA onset vs click**
+**MFA syllable onset vs click**
 
 | n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
 |---|---|---|---|---|---|---|---|
 | 82 | -42 | 39 | 49 | 37 | 34% | 57% | 93% |
 
-**MFA vowel vs click**
+**MFA vowel onset vs click**
 
 | n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
 |---|---|---|---|---|---|---|---|
 | 82 | +21 | 22 | 26 | 18 | 57% | 90% | 99% |
 
+**VPR vs click**
+
+| n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
+|---|---|---|---|---|---|---|---|
+| 82 | +1 | 12 | 17 | 17 | 80% | 95% | 99% |
+
 
 ## Timing error: same word on both sides
 
-**MFA onset vs click**
+**MFA syllable onset vs click**
 
 | n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
 |---|---|---|---|---|---|---|---|
 | 77 | -42 | 38 | 50 | 38 | 34% | 58% | 92% |
 
-**MFA vowel vs click**
+**MFA vowel onset vs click**
 
 | n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
 |---|---|---|---|---|---|---|---|
 | 77 | +22 | 22 | 26 | 18 | 56% | 90% | 99% |
+
+**VPR vs click**
+
+| n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
+|---|---|---|---|---|---|---|---|
+| 77 | +2 | 11 | 17 | 17 | 81% | 95% | 99% |
 
 ## Per clip (all scored syllables, vowel-onset anchor, then syllable-onset anchor)
 
