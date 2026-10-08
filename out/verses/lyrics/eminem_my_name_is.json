@@ -1,0 +1,654 @@
+{
+ "lines": [
+  {
+   "text": "Hi, kids, do you like violence?",
+   "norm": "hi kids do you like violence",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 23.0,
+   "e": 26.62
+  },
+  {
+   "text": "Wanna see me stick nine-inch nails through each one of my eyelids?",
+   "norm": "wanna see me stick nine inch nails through each one of my eyelids",
+   "words": 13,
+   "matched": 11,
+   "guessed": false,
+   "s": 27.16,
+   "e": 30.1
+  },
+  {
+   "text": "Wanna copy me and do exactly like I did?",
+   "norm": "wanna copy me and do exactly like i did",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 30.78,
+   "e": 33.1
+  },
+  {
+   "text": "Try 'cid and get fucked up worse than my life is?",
+   "norm": "try cid and get fucked up worse than my life is",
+   "words": 11,
+   "matched": 10,
+   "guessed": false,
+   "s": 33.5,
+   "e": 36.12
+  },
+  {
+   "text": "My brain's dead weight, I'm tryna get my head straight",
+   "norm": "my brain's dead weight i'm tryna get my head straight",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 36.48,
+   "e": 38.86
+  },
+  {
+   "text": "But I can't figure out which Spice Girl I want to impregnate",
+   "norm": "but i can't figure out which spice girl i want to impregnate",
+   "words": 12,
+   "matched": 10,
+   "guessed": false,
+   "s": 38.96,
+   "e": 42.0
+  },
+  {
+   "text": "And Dr. Dre said, \"Slim Shady, you a basehead\"",
+   "norm": "and dr dre said slim shady you a basehead",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 42.32,
+   "e": 44.54
+  },
+  {
+   "text": "\"Then why's your face red? Man, you wasted\"",
+   "norm": "then why's your face red man you wasted",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 45.42,
+   "e": 47.84
+  },
+  {
+   "text": "Well, since age twelve, I've felt like I'm someone else",
+   "norm": "well since age twelve i've felt like i'm someone else",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 47.98,
+   "e": 50.34
+  },
+  {
+   "text": "'Cause I hung my original self from the top bunk with a belt",
+   "norm": "cause i hung my original self from the top bunk with a belt",
+   "words": 13,
+   "matched": 13,
+   "guessed": false,
+   "s": 50.42,
+   "e": 53.16
+  },
+  {
+   "text": "Got pissed off and ripped Pamela Lee's tits off",
+   "norm": "got pissed off and ripped pamela lee's tits off",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 53.34,
+   "e": 56.2
+  },
+  {
+   "text": "And smacked her so hard I knocked her clothes backwards like Kris Kross",
+   "norm": "and smacked her so hard i knocked her clothes backwards like kris kross",
+   "words": 13,
+   "matched": 11,
+   "guessed": false,
+   "s": 56.2,
+   "e": 59.14
+  },
+  {
+   "text": "I smoke a fat pound of grass, and fall on my ass",
+   "norm": "i smoke a fat pound of grass and fall on my ass",
+   "words": 12,
+   "matched": 10,
+   "guessed": false,
+   "s": 59.660000000000004,
+   "e": 62.12
+  },
+  {
+   "text": "Faster than a fat bitch who sat down too fast",
+   "norm": "faster than a fat bitch who sat down too fast",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 62.12,
+   "e": 64.58
+  },
+  {
+   "text": "Come here, slut; \"Shady, wait a minute, that's my girl, dawg\"",
+   "norm": "come here slut shady wait a minute that's my girl dawg",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 64.82,
+   "e": 68.08
+  },
+  {
+   "text": "I don't give a fuck, God sent me to piss the world off",
+   "norm": "i don't give a fuck god sent me to piss the world off",
+   "words": 13,
+   "matched": 13,
+   "guessed": false,
+   "s": 68.08,
+   "e": 70.74
+  },
+  {
+   "text": "Hi, my name is, what? My name is, who?",
+   "norm": "hi my name is what my name is who",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 70.92,
+   "e": 73.76
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 5,
+   "guessed": false,
+   "s": 74.08,
+   "e": 76.22
+  },
+  {
+   "text": "Hi, my name is, huh? My name is, what?",
+   "norm": "hi my name is huh my name is what",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 76.44,
+   "e": 79.64
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 5,
+   "guessed": false,
+   "s": 79.92,
+   "e": 82.02
+  },
+  {
+   "text": "Hi, my name is, what? My name is, who?",
+   "norm": "hi my name is what my name is who",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 82.16,
+   "e": 85.3
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 5,
+   "guessed": false,
+   "s": 85.66,
+   "e": 87.8
+  },
+  {
+   "text": "Hi, my name is, huh? My name is, what?",
+   "norm": "hi my name is huh my name is what",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 87.96,
+   "e": 91.1
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 4,
+   "guessed": false,
+   "s": 91.42,
+   "e": 93.58
+  },
+  {
+   "text": "My English teacher wanted to have sex in junior high",
+   "norm": "my english teacher wanted to have sex in junior high",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 93.74,
+   "e": 96.28
+  },
+  {
+   "text": "The only problem was, my English teacher was a guy",
+   "norm": "the only problem was my english teacher was a guy",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 96.52,
+   "e": 99.14
+  },
+  {
+   "text": "I smacked him in his face with an eraser",
+   "norm": "i smacked him in his face with an eraser",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 99.42,
+   "e": 101.22
+  },
+  {
+   "text": "Chased him with a stapler and stapled his nuts to a stack of paper",
+   "norm": "chased him with a stapler and stapled his nuts to a stack of paper",
+   "words": 14,
+   "matched": 14,
+   "guessed": false,
+   "s": 101.68,
+   "e": 105.16
+  },
+  {
+   "text": "Walked in the strip club, had my jacket zipped up",
+   "norm": "walked in the strip club had my jacket zipped up",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 105.54,
+   "e": 108.12
+  },
+  {
+   "text": "Flashed the bartender, then stuck my dick in the tip cup",
+   "norm": "flashed the bartender then stuck my dick in the tip cup",
+   "words": 11,
+   "matched": 8,
+   "guessed": false,
+   "s": 108.32000000000001,
+   "e": 110.94
+  },
+  {
+   "text": "Extraterrestrial, killin' pedestrians",
+   "norm": "extraterrestrial killin pedestrians",
+   "words": 3,
+   "matched": 3,
+   "guessed": false,
+   "s": 111.9,
+   "e": 113.2
+  },
+  {
+   "text": "Rapin' lesbians while they're screaming, \"Let's just be friends\"",
+   "norm": "rapin lesbians while they're screaming let's just be friends",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 114.19999999999999,
+   "e": 116.96
+  },
+  {
+   "text": "Ninety-nine percent of my life, I was lied to",
+   "norm": "ninety nine percent of my life i was lied to",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 117.22,
+   "e": 119.5
+  },
+  {
+   "text": "I just found out my mom does more dope than I do",
+   "norm": "i just found out my mom does more dope than i do",
+   "words": 12,
+   "matched": 12,
+   "guessed": false,
+   "s": 120.1,
+   "e": 122.46
+  },
+  {
+   "text": "I told her I'd grow up to be a famous rapper",
+   "norm": "i told her i'd grow up to be a famous rapper",
+   "words": 11,
+   "matched": 10,
+   "guessed": false,
+   "s": 122.46,
+   "e": 125.0
+  },
+  {
+   "text": "Make a record about doin' drugs and name it after her",
+   "norm": "make a record about doin drugs and name it after her",
+   "words": 11,
+   "matched": 10,
+   "guessed": false,
+   "s": 125.0,
+   "e": 128.20999999999998
+  },
+  {
+   "text": "You know you blew up when the women rush your stands",
+   "norm": "you know you blew up when the women rush your stands",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 128.20999999999998,
+   "e": 130.88
+  },
+  {
+   "text": "And try to touch your hands like some screamin' Usher fans",
+   "norm": "and try to touch your hands like some screamin usher fans",
+   "words": 11,
+   "matched": 10,
+   "guessed": false,
+   "s": 130.88,
+   "e": 133.76
+  },
+  {
+   "text": "This guy at White Castle asked for my autograph",
+   "norm": "this guy at white castle asked for my autograph",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 133.76,
+   "e": 136.32
+  },
+  {
+   "text": "So I signed it, \"Dear Dave, thanks for the support, asshole\"",
+   "norm": "so i signed it dear dave thanks for the support asshole",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 136.32,
+   "e": 139.62
+  },
+  {
+   "text": "Hi, my name is, huh? My name is, who?",
+   "norm": "hi my name is huh my name is who",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 139.62,
+   "e": 142.92
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 4,
+   "guessed": false,
+   "s": 143.24,
+   "e": 144.98
+  },
+  {
+   "text": "Hi, my name is, what? My name is, who?",
+   "norm": "hi my name is what my name is who",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 145.48,
+   "e": 148.68
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 1,
+   "guessed": true,
+   "s": 148.68,
+   "e": 151.32
+  },
+  {
+   "text": "Hi, my name is, huh? My name is, who?",
+   "norm": "hi my name is huh my name is who",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 151.32,
+   "e": 154.42
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 3,
+   "guessed": false,
+   "s": 154.88,
+   "e": 156.5
+  },
+  {
+   "text": "Hi, my name is, what? My name is, who?",
+   "norm": "hi my name is what my name is who",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 157.1,
+   "e": 160.24
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 3,
+   "guessed": false,
+   "s": 160.56,
+   "e": 162.28
+  },
+  {
+   "text": "Stop the tape, this kid needs to be locked away",
+   "norm": "stop the tape this kid needs to be locked away",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 162.8,
+   "e": 165.32
+  },
+  {
+   "text": "Dr. Dre, don't just stand there, operate",
+   "norm": "dr dre don't just stand there operate",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 166.02,
+   "e": 168.42
+  },
+  {
+   "text": "I'm not ready to leave, it's too scary to die",
+   "norm": "i'm not ready to leave it's too scary to die",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 168.46,
+   "e": 171.02
+  },
+  {
+   "text": "I'll have to be carried inside the cemetery and buried alive",
+   "norm": "i'll have to be carried inside the cemetery and buried alive",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 171.28,
+   "e": 174.18
+  },
+  {
+   "text": "Am I comin' or goin'? I can barely decide",
+   "norm": "am i comin or goin i can barely decide",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 174.7,
+   "e": 177.18
+  },
+  {
+   "text": "I just drank a fifth of vodka, dare me to drive?",
+   "norm": "i just drank a fifth of vodka dare me to drive",
+   "words": 11,
+   "matched": 7,
+   "guessed": false,
+   "s": 177.6,
+   "e": 179.9
+  },
+  {
+   "text": "All my life I was very deprived",
+   "norm": "all my life i was very deprived",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 180.88,
+   "e": 182.06
+  },
+  {
+   "text": "I ain't had a woman in years and my palms are too hairy to hide",
+   "norm": "i ain't had a woman in years and my palms are too hairy to hide",
+   "words": 15,
+   "matched": 14,
+   "guessed": false,
+   "s": 182.54000000000002,
+   "e": 185.92
+  },
+  {
+   "text": "Clothes ripped like the Incredible Hulk",
+   "norm": "clothes ripped like the incredible hulk",
+   "words": 6,
+   "matched": 5,
+   "guessed": false,
+   "s": 186.56,
+   "e": 188.38
+  },
+  {
+   "text": "I spit when I talk, I'll fuck anything that walks",
+   "norm": "i spit when i talk i'll fuck anything that walks",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 188.54,
+   "e": 191.48
+  },
+  {
+   "text": "When I was little, I used to get so hungry I would throw fits",
+   "norm": "when i was little i used to get so hungry i would throw fits",
+   "words": 14,
+   "matched": 14,
+   "guessed": false,
+   "s": 191.88,
+   "e": 194.36
+  },
+  {
+   "text": "How you gonna breastfeed me, Mom? You ain't got no tits",
+   "norm": "how you gonna breastfeed me mom you ain't got no tits",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 194.68,
+   "e": 197.42
+  },
+  {
+   "text": "I lay awake and strap myself in the bed",
+   "norm": "i lay awake and strap myself in the bed",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 197.76,
+   "e": 200.0
+  },
+  {
+   "text": "With a bulletproof vest on and shoot myself in the head",
+   "norm": "with a bulletproof vest on and shoot myself in the head",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 200.0,
+   "e": 202.88
+  },
+  {
+   "text": "'Cause I'm steamin' mad, and by the way, when you see my dad",
+   "norm": "cause i'm steamin mad and by the way when you see my dad",
+   "words": 13,
+   "matched": 13,
+   "guessed": false,
+   "s": 203.24,
+   "e": 206.14
+  },
+  {
+   "text": "Tell him that I slit his throat in this dream I had",
+   "norm": "tell him that i slit his throat in this dream i had",
+   "words": 12,
+   "matched": 12,
+   "guessed": false,
+   "s": 206.38,
+   "e": 209.02
+  },
+  {
+   "text": "Hi, my name is, what? My name is, who?",
+   "norm": "hi my name is what my name is who",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 209.88,
+   "e": 212.04
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 3,
+   "guessed": false,
+   "s": 212.44,
+   "e": 214.28
+  },
+  {
+   "text": "Hi, my name is, huh? My name is, what?",
+   "norm": "hi my name is huh my name is what",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 214.74,
+   "e": 217.88
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 3,
+   "guessed": false,
+   "s": 218.16,
+   "e": 220.0
+  },
+  {
+   "text": "Hi, my name is, who? My name is, huh?",
+   "norm": "hi my name is who my name is huh",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 220.48,
+   "e": 223.58
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 3,
+   "guessed": false,
+   "s": 223.88,
+   "e": 225.84
+  },
+  {
+   "text": "Hi, my name is, huh? My name is, who?",
+   "norm": "hi my name is huh my name is who",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 226.24,
+   "e": 229.36
+  },
+  {
+   "text": "My name is, chka-chka, Slim Shady",
+   "norm": "my name is chka chka slim shady",
+   "words": 7,
+   "matched": 3,
+   "guessed": false,
+   "s": 229.64,
+   "e": 231.57999999999998
+  }
+ ],
+ "lyricWords": 689,
+ "matchedWords": 616
+}

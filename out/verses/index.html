@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full Verses · VPR</title>
+<style>
+
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface: #fcfcfb; --border: rgba(11,11,11,0.10);
+  --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --wave: #c3c2b7; --word-band: #f0efec;
+  --vpr: #d42a3c; --accent: #2a78d6; --warn: #b8690f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --border: rgba(255,255,255,0.10);
+    --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --wave: #4a4a46; --word-band: #242422;
+    --vpr: #f0485a; --accent: #3987e5; --warn: #e0973a;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --border: rgba(255,255,255,0.10);
+  --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --wave: #4a4a46; --word-band: #242422;
+  --vpr: #f0485a; --accent: #3987e5; --warn: #e0973a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 1200px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+.sub { color: var(--ink-2); margin: 0 0 16px; }
+a { color: var(--accent); }
+
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 13px; }
+th, td { padding: 8px 12px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--grid); }
+th { color: var(--ink-2); font-weight: 500; }
+th:first-child, td:first-child { text-align: left; }
+tr:last-child td { border-bottom: 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Full verses: VPR clicks</h1>
+  <p class="sub">Lyrics (full_verses/*.txt, located with Whisper) → MFA → VPR. No ground truth; open a verse to check the clicks by ear.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Verse</th><th>Lyrics span</th><th>Lines</th><th>Words aligned</th><th>Lyric words found by Whisper</th><th>Lines guessed</th><th>VPR clicks</th><th>Burst rule</th><th>Stretches without words</th></tr></thead>
+    <tbody><tr><td><a href="2pac_all_eyez_full.html">2pac all eyez full</a></td><td>0:05.7–1:05.1</td><td>8</td><td>222</td><td>91%</td><td>–</td><td>280</td><td>22%</td><td>–</td></tr><tr><td><a href="bdk_set_it_off_full.html">bdk set it off full</a></td><td>0:00.4–2:40.0</td><td>22</td><td>533</td><td>92%</td><td>–</td><td>664</td><td>23%</td><td>1</td></tr><tr><td><a href="eminem_my_name_is.html">eminem my name is</a></td><td>0:22.0–3:52.6</td><td>29</td><td>689</td><td>89%</td><td>1</td><td>807</td><td>29%</td><td>–</td></tr><tr><td><a href="ice_spice_munch.html">ice spice munch</a></td><td>0:02.6–1:25.7</td><td>12</td><td>421</td><td>87%</td><td>1</td><td>484</td><td>14%</td><td>–</td></tr><tr><td><a href="meth_plo_style_full.html">meth plo style full</a></td><td>0:23.4–0:57.3</td><td>5</td><td>99</td><td>91%</td><td>–</td><td>125</td><td>20%</td><td>–</td></tr><tr><td><a href="migos_superstar.html">migos superstar</a></td><td>0:10.2–4:53.2</td><td>37</td><td>744</td><td>87%</td><td>3</td><td>881</td><td>27%</td><td>–</td></tr><tr><td><a href="nas_aint_hard_full.html">nas aint hard full</a></td><td>0:00.1–2:22.0</td><td>20</td><td>344</td><td>89%</td><td>1</td><td>455</td><td>14%</td><td>2</td></tr></tbody>
+  </table></div>
+</main>
+</body>
+</html>

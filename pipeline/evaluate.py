@@ -114,9 +114,11 @@ def load_mfa(path):
     return out
 
 
-def add_vpr(mfa, audio):
-    """Adds 'vpr' (s), 'vpr_rule' and 'vpr_jump_db' to every syllable of one clip's MFA words."""
-    env = vpr.envelope_db(audio)
+def add_vpr(mfa, audio, env=None):
+    """Adds 'vpr' (s), 'vpr_rule' and 'vpr_jump_db' to every syllable of one clip's MFA words.
+    env: the clip's vpr.envelope_db, if already computed."""
+    if env is None:
+        env = vpr.envelope_db(audio)
     prev_vowel = None
     for w in mfa:
         for syl in w["syllables"]:

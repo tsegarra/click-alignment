@@ -1,0 +1,3048 @@
+{
+  "text": " To my brothers at PNL My other brother Killer K to attack P.L.O. Style wrecking the world What's up baby y'all Yeah no doubt green eyes want love You know the steeze though P.L.O. Style, boo the monks with the ass P.L.O. Style, boo the monks with the ass P.L.O. Style, boo the monks with the ass P.L.O. Style, style, style Here come the ruckus, the motherfucking ruckus Thousands of cutthroats and crumb-snatching fuckers Straight from the green, I be givin' you the pain. Anger, comin' from the 36th chamber. Bang, to cow, hittin' with the Budapest style. Shotgun, slimmin' in your chest piece, blow. Frame, gets blown all over the terrain. Like a man without no arms, you can't hang. Time for a change of the guard. You been arrested for lyric fraud, now you barred. For real, check it, I pull strings like B.B. King on guitar. I'm the true fist of the North Star. Oh, what a tango, we weave. We practice to deceive guns be clicking running with my clan. We be sticking whatever my sweet family stays together Represent what I have been killer Hill resident rest in peace to my niggas to sin The street life is the only life I know I live by the coast Alice Matt PLO Iranian thoughts are covered like an Arabian grab the nigga who on the spot and put a knife It was getting satisfaction niggas won't be lasting long unless they get protection for real So what's happening commercial rap hate it with the patch the MET HOT You got me drinking all night in the MPV just maxin looking for hoes You know relax it bitches know the hour it be time for some action PLO peace to that nigga Barry I know what up this take them to the bridge Who the monks with the alveolo style Buddha monks with the alveolo staff who the monks with the alveolo staff",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.4,
+      "text": " To my brothers at PNL",
+      "tokens": [
+        50365,
+        1407,
+        452,
+        8452,
+        412,
+        430,
+        45,
+        43,
+        50465
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " To",
+          "start": 0.0,
+          "end": 0.2,
+          "probability": 0.3300117254257202
+        },
+        {
+          "word": " my",
+          "start": 0.2,
+          "end": 0.32,
+          "probability": 0.9712496995925903
+        },
+        {
+          "word": " brothers",
+          "start": 0.32,
+          "end": 0.68,
+          "probability": 0.773754894733429
+        },
+        {
+          "word": " at",
+          "start": 0.68,
+          "end": 0.88,
+          "probability": 0.7091384530067444
+        },
+        {
+          "word": " PNL",
+          "start": 0.88,
+          "end": 1.4,
+          "probability": 0.8435453375180563
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 5.16,
+      "text": " My other brother Killer K to attack",
+      "tokens": [
+        50465,
+        1222,
+        661,
+        3708,
+        39846,
+        591,
+        281,
+        2690,
+        50615
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " My",
+          "start": 2.0,
+          "end": 2.3,
+          "probability": 0.19830185174942017
+        },
+        {
+          "word": " other",
+          "start": 2.3,
+          "end": 3.58,
+          "probability": 0.45026981830596924
+        },
+        {
+          "word": " brother",
+          "start": 3.58,
+          "end": 3.9,
+          "probability": 0.9708124399185181
+        },
+        {
+          "word": " Killer",
+          "start": 3.9,
+          "end": 4.24,
+          "probability": 0.26205602288246155
+        },
+        {
+          "word": " K",
+          "start": 4.24,
+          "end": 4.46,
+          "probability": 0.8199693560600281
+        },
+        {
+          "word": " to",
+          "start": 4.46,
+          "end": 4.74,
+          "probability": 0.4968351125717163
+        },
+        {
+          "word": " attack",
+          "start": 4.74,
+          "end": 5.16,
+          "probability": 0.9256210923194885
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 5.16,
+      "end": 7.02,
+      "text": " P.L.O. Style wrecking the world",
+      "tokens": [
+        50615,
+        430,
+        13,
+        43,
+        13,
+        46,
+        13,
+        27004,
+        21478,
+        278,
+        264,
+        1002,
+        50715
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " P",
+          "start": 5.16,
+          "end": 5.36,
+          "probability": 0.031629301607608795
+        },
+        {
+          "word": ".L",
+          "start": 5.36,
+          "end": 5.64,
+          "probability": 0.7769977748394012
+        },
+        {
+          "word": ".O.",
+          "start": 5.64,
+          "end": 5.74,
+          "probability": 0.9965240955352783
+        },
+        {
+          "word": " Style",
+          "start": 5.74,
+          "end": 6.0,
+          "probability": 0.6138640642166138
+        },
+        {
+          "word": " wrecking",
+          "start": 6.0,
+          "end": 6.52,
+          "probability": 0.625856950879097
+        },
+        {
+          "word": " the",
+          "start": 6.52,
+          "end": 6.64,
+          "probability": 0.9933252334594727
+        },
+        {
+          "word": " world",
+          "start": 6.64,
+          "end": 7.02,
+          "probability": 0.9946898221969604
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 7.02,
+      "end": 8.76,
+      "text": " What's up baby y'all",
+      "tokens": [
+        50715,
+        708,
+        311,
+        493,
+        3186,
+        288,
+        6,
+        336,
+        50815
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " What's",
+          "start": 7.02,
+          "end": 8.02,
+          "probability": 0.5059796720743179
+        },
+        {
+          "word": " up",
+          "start": 8.02,
+          "end": 8.12,
+          "probability": 0.9925289750099182
+        },
+        {
+          "word": " baby",
+          "start": 8.12,
+          "end": 8.4,
+          "probability": 0.6822759509086609
+        },
+        {
+          "word": " y",
+          "start": 8.4,
+          "end": 8.42,
+          "probability": 0.35101252794265747
+        },
+        {
+          "word": "'all",
+          "start": 8.42,
+          "end": 8.76,
+          "probability": 0.9372058510780334
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 8.76,
+      "end": 10.92,
+      "text": " Yeah no doubt green eyes want love",
+      "tokens": [
+        50815,
+        865,
+        572,
+        6385,
+        3092,
+        2575,
+        528,
+        959,
+        50915
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " Yeah",
+          "start": 8.76,
+          "end": 9.18,
+          "probability": 0.15703384578227997
+        },
+        {
+          "word": " no",
+          "start": 9.18,
+          "end": 9.42,
+          "probability": 0.5063605904579163
+        },
+        {
+          "word": " doubt",
+          "start": 9.42,
+          "end": 9.74,
+          "probability": 0.9960911870002747
+        },
+        {
+          "word": " green",
+          "start": 9.74,
+          "end": 10.02,
+          "probability": 0.6253709197044373
+        },
+        {
+          "word": " eyes",
+          "start": 10.02,
+          "end": 10.28,
+          "probability": 0.9474961757659912
+        },
+        {
+          "word": " want",
+          "start": 10.28,
+          "end": 10.6,
+          "probability": 0.966277539730072
+        },
+        {
+          "word": " love",
+          "start": 10.6,
+          "end": 10.92,
+          "probability": 0.9966863989830017
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 12.239999999999993,
+      "end": 13.94,
+      "text": " You know the steeze though",
+      "tokens": [
+        50915,
+        509,
+        458,
+        264,
+        342,
+        1653,
+        1381,
+        1673,
+        51065
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " You",
+          "start": 12.239999999999993,
+          "end": 12.759999999999996,
+          "probability": 0.6036180257797241
+        },
+        {
+          "word": " know",
+          "start": 12.759999999999996,
+          "end": 13.28,
+          "probability": 0.948445200920105
+        },
+        {
+          "word": " the",
+          "start": 13.28,
+          "end": 13.42,
+          "probability": 0.6186406016349792
+        },
+        {
+          "word": " steeze",
+          "start": 13.42,
+          "end": 13.78,
+          "probability": 0.5368581513563792
+        },
+        {
+          "word": " though",
+          "start": 13.78,
+          "end": 13.94,
+          "probability": 0.7327666282653809
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 13.94,
+      "end": 17.04,
+      "text": " P.L.O. Style, boo the monks with the ass",
+      "tokens": [
+        51065,
+        430,
+        13,
+        43,
+        13,
+        46,
+        13,
+        27004,
+        11,
+        23113,
+        264,
+        32201,
+        365,
+        264,
+        1256,
+        51215
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " P",
+          "start": 13.94,
+          "end": 14.58,
+          "probability": 0.8537039756774902
+        },
+        {
+          "word": ".L",
+          "start": 14.58,
+          "end": 14.82,
+          "probability": 0.9940076470375061
+        },
+        {
+          "word": ".O.",
+          "start": 14.82,
+          "end": 14.98,
+          "probability": 0.9995956420898438
+        },
+        {
+          "word": " Style,",
+          "start": 14.98,
+          "end": 15.3,
+          "probability": 0.9462342858314514
+        },
+        {
+          "word": " boo",
+          "start": 15.68,
+          "end": 15.86,
+          "probability": 0.22923150658607483
+        },
+        {
+          "word": " the",
+          "start": 15.86,
+          "end": 16.06,
+          "probability": 0.8487143516540527
+        },
+        {
+          "word": " monks",
+          "start": 16.06,
+          "end": 16.32,
+          "probability": 0.9355067014694214
+        },
+        {
+          "word": " with",
+          "start": 16.32,
+          "end": 16.54,
+          "probability": 0.9325301647186279
+        },
+        {
+          "word": " the",
+          "start": 16.54,
+          "end": 16.78,
+          "probability": 0.8167709708213806
+        },
+        {
+          "word": " ass",
+          "start": 16.78,
+          "end": 17.04,
+          "probability": 0.359672486782074
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 17.04,
+      "end": 19.7,
+      "text": " P.L.O. Style, boo the monks with the ass",
+      "tokens": [
+        51215,
+        430,
+        13,
+        43,
+        13,
+        46,
+        13,
+        27004,
+        11,
+        23113,
+        264,
+        32201,
+        365,
+        264,
+        1256,
+        51315
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " P",
+          "start": 17.04,
+          "end": 17.32,
+          "probability": 0.8262767791748047
+        },
+        {
+          "word": ".L",
+          "start": 17.32,
+          "end": 17.5,
+          "probability": 0.9982888102531433
+        },
+        {
+          "word": ".O.",
+          "start": 17.5,
+          "end": 17.66,
+          "probability": 0.9998728334903717
+        },
+        {
+          "word": " Style,",
+          "start": 17.66,
+          "end": 17.96,
+          "probability": 0.9866684675216675
+        },
+        {
+          "word": " boo",
+          "start": 18.24,
+          "end": 18.52,
+          "probability": 0.9801484942436218
+        },
+        {
+          "word": " the",
+          "start": 18.52,
+          "end": 18.72,
+          "probability": 0.9968034029006958
+        },
+        {
+          "word": " monks",
+          "start": 18.72,
+          "end": 18.96,
+          "probability": 0.9964872598648071
+        },
+        {
+          "word": " with",
+          "start": 18.96,
+          "end": 19.16,
+          "probability": 0.9874413013458252
+        },
+        {
+          "word": " the",
+          "start": 19.16,
+          "end": 19.4,
+          "probability": 0.997065007686615
+        },
+        {
+          "word": " ass",
+          "start": 19.4,
+          "end": 19.7,
+          "probability": 0.9982132911682129
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 19.7,
+      "end": 22.28,
+      "text": " P.L.O. Style, boo the monks with the ass",
+      "tokens": [
+        51315,
+        430,
+        13,
+        43,
+        13,
+        46,
+        13,
+        27004,
+        11,
+        23113,
+        264,
+        32201,
+        365,
+        264,
+        1256,
+        51465
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " P",
+          "start": 19.7,
+          "end": 19.92,
+          "probability": 0.9916119575500488
+        },
+        {
+          "word": ".L",
+          "start": 19.92,
+          "end": 20.12,
+          "probability": 0.9996577203273773
+        },
+        {
+          "word": ".O.",
+          "start": 20.12,
+          "end": 20.28,
+          "probability": 0.9999315738677979
+        },
+        {
+          "word": " Style,",
+          "start": 20.3,
+          "end": 20.64,
+          "probability": 0.997250497341156
+        },
+        {
+          "word": " boo",
+          "start": 20.84,
+          "end": 21.12,
+          "probability": 0.9938759207725525
+        },
+        {
+          "word": " the",
+          "start": 21.12,
+          "end": 21.34,
+          "probability": 0.9988059997558594
+        },
+        {
+          "word": " monks",
+          "start": 21.34,
+          "end": 21.6,
+          "probability": 0.9974728226661682
+        },
+        {
+          "word": " with",
+          "start": 21.6,
+          "end": 21.8,
+          "probability": 0.997467041015625
+        },
+        {
+          "word": " the",
+          "start": 21.8,
+          "end": 22.0,
+          "probability": 0.9965614676475525
+        },
+        {
+          "word": " ass",
+          "start": 22.0,
+          "end": 22.28,
+          "probability": 0.9995545744895935
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 22.28,
+      "end": 24.44,
+      "text": " P.L.O. Style, style, style",
+      "tokens": [
+        51465,
+        430,
+        13,
+        43,
+        13,
+        46,
+        13,
+        27004,
+        11,
+        3758,
+        11,
+        3758,
+        51565
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " P",
+          "start": 22.28,
+          "end": 22.52,
+          "probability": 0.9944900274276733
+        },
+        {
+          "word": ".L",
+          "start": 22.52,
+          "end": 22.74,
+          "probability": 0.9994265735149384
+        },
+        {
+          "word": ".O.",
+          "start": 22.74,
+          "end": 22.88,
+          "probability": 0.9998762309551239
+        },
+        {
+          "word": " Style,",
+          "start": 22.88,
+          "end": 23.22,
+          "probability": 0.9929719567298889
+        },
+        {
+          "word": " style,",
+          "start": 23.44,
+          "end": 23.88,
+          "probability": 0.5842020511627197
+        },
+        {
+          "word": " style",
+          "start": 24.02,
+          "end": 24.44,
+          "probability": 0.8428817391395569
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 0,
+      "start": 24.44,
+      "end": 27.08,
+      "text": " Here come the ruckus, the motherfucking ruckus",
+      "tokens": [
+        51565,
+        1692,
+        808,
+        264,
+        367,
+        1134,
+        301,
+        11,
+        264,
+        29537,
+        33260,
+        367,
+        1134,
+        301,
+        51715
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " Here",
+          "start": 24.44,
+          "end": 24.92,
+          "probability": 0.7587928771972656
+        },
+        {
+          "word": " come",
+          "start": 24.92,
+          "end": 25.14,
+          "probability": 0.7172057628631592
+        },
+        {
+          "word": " the",
+          "start": 25.14,
+          "end": 25.32,
+          "probability": 0.9837393164634705
+        },
+        {
+          "word": " ruckus,",
+          "start": 25.32,
+          "end": 25.8,
+          "probability": 0.9596589207649231
+        },
+        {
+          "word": " the",
+          "start": 25.84,
+          "end": 25.96,
+          "probability": 0.9807065725326538
+        },
+        {
+          "word": " motherfucking",
+          "start": 25.96,
+          "end": 26.66,
+          "probability": 0.8065052926540375
+        },
+        {
+          "word": " ruckus",
+          "start": 26.66,
+          "end": 27.08,
+          "probability": 0.99430912733078
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 0,
+      "start": 27.08,
+      "end": 29.74,
+      "text": " Thousands of cutthroats and crumb-snatching fuckers",
+      "tokens": [
+        51715,
+        40535,
+        295,
+        1723,
+        392,
+        340,
+        1720,
+        293,
+        941,
+        2860,
+        12,
+        18860,
+        29569,
+        3275,
+        433,
+        51815
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.27121611645347193,
+      "compression_ratio": 1.9223744292237444,
+      "no_speech_prob": 0.5422525405883789,
+      "words": [
+        {
+          "word": " Thousands",
+          "start": 27.08,
+          "end": 27.68,
+          "probability": 0.9786621928215027
+        },
+        {
+          "word": " of",
+          "start": 27.68,
+          "end": 27.96,
+          "probability": 0.9760006070137024
+        },
+        {
+          "word": " cutthroats",
+          "start": 27.96,
+          "end": 28.46,
+          "probability": 0.9285045266151428
+        },
+        {
+          "word": " and",
+          "start": 28.46,
+          "end": 28.62,
+          "probability": 0.9634648561477661
+        },
+        {
+          "word": " crumb",
+          "start": 28.62,
+          "end": 28.9,
+          "probability": 0.7754252851009369
+        },
+        {
+          "word": "-snatching",
+          "start": 28.9,
+          "end": 29.24,
+          "probability": 0.7862135867277781
+        },
+        {
+          "word": " fuckers",
+          "start": 29.24,
+          "end": 29.74,
+          "probability": 0.9113046526908875
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 32.22,
+      "text": " Straight from the green, I be givin' you the pain.",
+      "tokens": [
+        50365,
+        26908,
+        490,
+        264,
+        3092,
+        11,
+        286,
+        312,
+        290,
+        592,
+        259,
+        6,
+        291,
+        264,
+        1822,
+        13,
+        50483
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " Straight",
+          "start": 30.0,
+          "end": 30.14,
+          "probability": 0.528367280960083
+        },
+        {
+          "word": " from",
+          "start": 30.14,
+          "end": 30.4,
+          "probability": 0.9917333126068115
+        },
+        {
+          "word": " the",
+          "start": 30.4,
+          "end": 30.6,
+          "probability": 0.9830402731895447
+        },
+        {
+          "word": " green,",
+          "start": 30.6,
+          "end": 30.88,
+          "probability": 0.8151209950447083
+        },
+        {
+          "word": " I",
+          "start": 30.98,
+          "end": 31.14,
+          "probability": 0.9904515743255615
+        },
+        {
+          "word": " be",
+          "start": 31.14,
+          "end": 31.26,
+          "probability": 0.5991447567939758
+        },
+        {
+          "word": " givin'",
+          "start": 31.26,
+          "end": 31.66,
+          "probability": 0.8293642103672028
+        },
+        {
+          "word": " you",
+          "start": 31.66,
+          "end": 31.78,
+          "probability": 0.9909511804580688
+        },
+        {
+          "word": " the",
+          "start": 31.78,
+          "end": 31.94,
+          "probability": 0.892134428024292
+        },
+        {
+          "word": " pain.",
+          "start": 31.94,
+          "end": 32.22,
+          "probability": 0.9741044044494629
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 3000,
+      "start": 32.62,
+      "end": 34.88,
+      "text": " Anger, comin' from the 36th chamber.",
+      "tokens": [
+        50499,
+        4521,
+        260,
+        11,
+        35814,
+        6,
+        490,
+        264,
+        8652,
+        392,
+        13610,
+        13,
+        50615
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " Anger,",
+          "start": 32.62,
+          "end": 33.1,
+          "probability": 0.9492311179637909
+        },
+        {
+          "word": " comin'",
+          "start": 33.1,
+          "end": 33.42,
+          "probability": 0.9330902099609375
+        },
+        {
+          "word": " from",
+          "start": 33.54,
+          "end": 33.68,
+          "probability": 0.9957932233810425
+        },
+        {
+          "word": " the",
+          "start": 33.68,
+          "end": 33.88,
+          "probability": 0.9983386993408203
+        },
+        {
+          "word": " 36th",
+          "start": 33.88,
+          "end": 34.48,
+          "probability": 0.5905555188655853
+        },
+        {
+          "word": " chamber.",
+          "start": 34.48,
+          "end": 34.88,
+          "probability": 0.9139233231544495
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 3000,
+      "start": 35.1,
+      "end": 38.14,
+      "text": " Bang, to cow, hittin' with the Budapest style.",
+      "tokens": [
+        50631,
+        11538,
+        11,
+        281,
+        8408,
+        11,
+        276,
+        593,
+        259,
+        6,
+        365,
+        264,
+        6384,
+        569,
+        377,
+        3758,
+        13,
+        50780
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " Bang,",
+          "start": 35.1,
+          "end": 35.58,
+          "probability": 0.9855405688285828
+        },
+        {
+          "word": " to",
+          "start": 35.58,
+          "end": 35.84,
+          "probability": 0.7888521552085876
+        },
+        {
+          "word": " cow,",
+          "start": 35.84,
+          "end": 36.18,
+          "probability": 0.8342500925064087
+        },
+        {
+          "word": " hittin'",
+          "start": 36.44,
+          "end": 36.84,
+          "probability": 0.9576794505119324
+        },
+        {
+          "word": " with",
+          "start": 36.88,
+          "end": 37.0,
+          "probability": 0.9972902536392212
+        },
+        {
+          "word": " the",
+          "start": 37.0,
+          "end": 37.22,
+          "probability": 0.8862851858139038
+        },
+        {
+          "word": " Budapest",
+          "start": 37.22,
+          "end": 37.76,
+          "probability": 0.9313371976216634
+        },
+        {
+          "word": " style.",
+          "start": 37.76,
+          "end": 38.14,
+          "probability": 0.9823300242424011
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 3000,
+      "start": 38.56,
+      "end": 40.8,
+      "text": " Shotgun, slimmin' in your chest piece, blow.",
+      "tokens": [
+        50800,
+        28845,
+        7414,
+        11,
+        25357,
+        2367,
+        6,
+        294,
+        428,
+        7443,
+        2522,
+        11,
+        888,
+        305,
+        13,
+        50913
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " Shotgun,",
+          "start": 38.56,
+          "end": 39.04,
+          "probability": 0.9978251755237579
+        },
+        {
+          "word": " slimmin'",
+          "start": 39.16,
+          "end": 39.62,
+          "probability": 0.7498677670955658
+        },
+        {
+          "word": " in",
+          "start": 39.62,
+          "end": 39.72,
+          "probability": 0.995317816734314
+        },
+        {
+          "word": " your",
+          "start": 39.72,
+          "end": 39.9,
+          "probability": 0.9937546253204346
+        },
+        {
+          "word": " chest",
+          "start": 39.9,
+          "end": 40.16,
+          "probability": 0.9913820624351501
+        },
+        {
+          "word": " piece,",
+          "start": 40.16,
+          "end": 40.38,
+          "probability": 0.4200940728187561
+        },
+        {
+          "word": " blow.",
+          "start": 40.52,
+          "end": 40.8,
+          "probability": 0.41733257472515106
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 3000,
+      "start": 41.16,
+      "end": 43.34,
+      "text": " Frame, gets blown all over the terrain.",
+      "tokens": [
+        50929,
+        31628,
+        11,
+        2170,
+        16479,
+        439,
+        670,
+        264,
+        17674,
+        13,
+        51042
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " Frame,",
+          "start": 41.16,
+          "end": 41.64,
+          "probability": 0.9948462247848511
+        },
+        {
+          "word": " gets",
+          "start": 41.66,
+          "end": 42.02,
+          "probability": 0.9973554611206055
+        },
+        {
+          "word": " blown",
+          "start": 42.02,
+          "end": 42.28,
+          "probability": 0.9954681396484375
+        },
+        {
+          "word": " all",
+          "start": 42.28,
+          "end": 42.54,
+          "probability": 0.999757707118988
+        },
+        {
+          "word": " over",
+          "start": 42.54,
+          "end": 42.78,
+          "probability": 0.9999058246612549
+        },
+        {
+          "word": " the",
+          "start": 42.78,
+          "end": 42.96,
+          "probability": 0.9996577501296997
+        },
+        {
+          "word": " terrain.",
+          "start": 42.96,
+          "end": 43.34,
+          "probability": 0.9991990923881531
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 3000,
+      "start": 43.62,
+      "end": 46.14,
+      "text": " Like a man without no arms, you can't hang.",
+      "tokens": [
+        51059,
+        1743,
+        257,
+        587,
+        1553,
+        572,
+        5812,
+        11,
+        291,
+        393,
+        380,
+        3967,
+        13,
+        51178
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " Like",
+          "start": 43.62,
+          "end": 44.0,
+          "probability": 0.999785840511322
+        },
+        {
+          "word": " a",
+          "start": 44.0,
+          "end": 44.14,
+          "probability": 0.9999504089355469
+        },
+        {
+          "word": " man",
+          "start": 44.14,
+          "end": 44.4,
+          "probability": 0.9999680519104004
+        },
+        {
+          "word": " without",
+          "start": 44.4,
+          "end": 44.78,
+          "probability": 0.9844306111335754
+        },
+        {
+          "word": " no",
+          "start": 44.78,
+          "end": 45.14,
+          "probability": 0.9992406368255615
+        },
+        {
+          "word": " arms,",
+          "start": 45.14,
+          "end": 45.42,
+          "probability": 0.9999243021011353
+        },
+        {
+          "word": " you",
+          "start": 45.46,
+          "end": 45.56,
+          "probability": 0.9998489618301392
+        },
+        {
+          "word": " can't",
+          "start": 45.56,
+          "end": 45.94,
+          "probability": 0.9991180598735809
+        },
+        {
+          "word": " hang.",
+          "start": 45.94,
+          "end": 46.14,
+          "probability": 0.9998224377632141
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 3000,
+      "start": 46.34,
+      "end": 48.1,
+      "text": " Time for a change of the guard.",
+      "tokens": [
+        51193,
+        6161,
+        337,
+        257,
+        1319,
+        295,
+        264,
+        6290,
+        13,
+        51275
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " Time",
+          "start": 46.34,
+          "end": 46.76,
+          "probability": 0.9989946484565735
+        },
+        {
+          "word": " for",
+          "start": 46.76,
+          "end": 46.94,
+          "probability": 0.9998719692230225
+        },
+        {
+          "word": " a",
+          "start": 46.94,
+          "end": 47.12,
+          "probability": 0.9998202919960022
+        },
+        {
+          "word": " change",
+          "start": 47.12,
+          "end": 47.44,
+          "probability": 0.9997608065605164
+        },
+        {
+          "word": " of",
+          "start": 47.44,
+          "end": 47.66,
+          "probability": 0.9807120561599731
+        },
+        {
+          "word": " the",
+          "start": 47.66,
+          "end": 47.8,
+          "probability": 0.999605119228363
+        },
+        {
+          "word": " guard.",
+          "start": 47.8,
+          "end": 48.1,
+          "probability": 0.9933581948280334
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 3000,
+      "start": 48.24,
+      "end": 50.82,
+      "text": " You been arrested for lyric fraud, now you barred.",
+      "tokens": [
+        51286,
+        509,
+        668,
+        12469,
+        337,
+        42409,
+        14560,
+        11,
+        586,
+        291,
+        2159,
+        986,
+        13,
+        51410
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " You",
+          "start": 48.24,
+          "end": 48.46,
+          "probability": 0.9997068047523499
+        },
+        {
+          "word": " been",
+          "start": 48.46,
+          "end": 48.6,
+          "probability": 0.5227877497673035
+        },
+        {
+          "word": " arrested",
+          "start": 48.6,
+          "end": 49.08,
+          "probability": 0.9998966455459595
+        },
+        {
+          "word": " for",
+          "start": 49.08,
+          "end": 49.42,
+          "probability": 0.9760812520980835
+        },
+        {
+          "word": " lyric",
+          "start": 49.42,
+          "end": 49.68,
+          "probability": 0.9969593286514282
+        },
+        {
+          "word": " fraud,",
+          "start": 49.68,
+          "end": 50.02,
+          "probability": 0.9996534585952759
+        },
+        {
+          "word": " now",
+          "start": 50.14,
+          "end": 50.26,
+          "probability": 0.9988889098167419
+        },
+        {
+          "word": " you",
+          "start": 50.26,
+          "end": 50.46,
+          "probability": 0.9998685121536255
+        },
+        {
+          "word": " barred.",
+          "start": 50.46,
+          "end": 50.82,
+          "probability": 0.8624840974807739
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 3000,
+      "start": 50.88,
+      "end": 53.88,
+      "text": " For real, check it, I pull strings like B.B. King on guitar.",
+      "tokens": [
+        51419,
+        1171,
+        957,
+        11,
+        1520,
+        309,
+        11,
+        286,
+        2235,
+        13985,
+        411,
+        363,
+        13,
+        33,
+        13,
+        3819,
+        322,
+        7531,
+        13,
+        51570
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " For",
+          "start": 50.88,
+          "end": 51.1,
+          "probability": 0.9962725639343262
+        },
+        {
+          "word": " real,",
+          "start": 51.1,
+          "end": 51.36,
+          "probability": 0.9972071051597595
+        },
+        {
+          "word": " check",
+          "start": 51.44,
+          "end": 51.64,
+          "probability": 0.998654842376709
+        },
+        {
+          "word": " it,",
+          "start": 51.64,
+          "end": 51.86,
+          "probability": 0.9981616139411926
+        },
+        {
+          "word": " I",
+          "start": 51.94,
+          "end": 52.12,
+          "probability": 0.9998077750205994
+        },
+        {
+          "word": " pull",
+          "start": 52.12,
+          "end": 52.3,
+          "probability": 0.9995129108428955
+        },
+        {
+          "word": " strings",
+          "start": 52.3,
+          "end": 52.56,
+          "probability": 0.9998431205749512
+        },
+        {
+          "word": " like",
+          "start": 52.56,
+          "end": 52.84,
+          "probability": 0.9998488426208496
+        },
+        {
+          "word": " B",
+          "start": 52.84,
+          "end": 53.0,
+          "probability": 0.9185802340507507
+        },
+        {
+          "word": ".B.",
+          "start": 53.0,
+          "end": 53.16,
+          "probability": 0.9993870854377747
+        },
+        {
+          "word": " King",
+          "start": 53.18,
+          "end": 53.32,
+          "probability": 0.9998414516448975
+        },
+        {
+          "word": " on",
+          "start": 53.32,
+          "end": 53.6,
+          "probability": 0.999202311038971
+        },
+        {
+          "word": " guitar.",
+          "start": 53.6,
+          "end": 53.88,
+          "probability": 0.9980660080909729
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 3000,
+      "start": 54.22,
+      "end": 56.3,
+      "text": " I'm the true fist of the North Star.",
+      "tokens": [
+        51578,
+        286,
+        478,
+        264,
+        2074,
+        21849,
+        295,
+        264,
+        4067,
+        5705,
+        13,
+        51691
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 54.22,
+          "end": 54.64,
+          "probability": 0.999658614397049
+        },
+        {
+          "word": " the",
+          "start": 54.64,
+          "end": 54.72,
+          "probability": 0.9995757937431335
+        },
+        {
+          "word": " true",
+          "start": 54.72,
+          "end": 54.98,
+          "probability": 0.9737946391105652
+        },
+        {
+          "word": " fist",
+          "start": 54.98,
+          "end": 55.34,
+          "probability": 0.9392382502555847
+        },
+        {
+          "word": " of",
+          "start": 55.34,
+          "end": 55.58,
+          "probability": 0.9997238516807556
+        },
+        {
+          "word": " the",
+          "start": 55.58,
+          "end": 55.74,
+          "probability": 0.9998776912689209
+        },
+        {
+          "word": " North",
+          "start": 55.74,
+          "end": 55.96,
+          "probability": 0.9641880989074707
+        },
+        {
+          "word": " Star.",
+          "start": 55.96,
+          "end": 56.3,
+          "probability": 0.9199432134628296
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 3000,
+      "start": 56.68,
+      "end": 58.98,
+      "text": " Oh, what a tango, we weave.",
+      "tokens": [
+        51720,
+        876,
+        11,
+        437,
+        257,
+        10266,
+        78,
+        11,
+        321,
+        29145,
+        13,
+        51820
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2352575626013414,
+      "compression_ratio": 1.5629139072847682,
+      "no_speech_prob": 0.4316043257713318,
+      "words": [
+        {
+          "word": " Oh,",
+          "start": 56.68,
+          "end": 57.14,
+          "probability": 0.9606021642684937
+        },
+        {
+          "word": " what",
+          "start": 57.34,
+          "end": 57.8,
+          "probability": 0.9907541275024414
+        },
+        {
+          "word": " a",
+          "start": 57.8,
+          "end": 58.04,
+          "probability": 0.9999110698699951
+        },
+        {
+          "word": " tango,",
+          "start": 58.04,
+          "end": 58.44,
+          "probability": 0.892227292060852
+        },
+        {
+          "word": " we",
+          "start": 58.44,
+          "end": 58.6,
+          "probability": 0.2746661305427551
+        },
+        {
+          "word": " weave.",
+          "start": 58.6,
+          "end": 58.98,
+          "probability": 0.7108027338981628
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 6000,
+      "start": 60.0,
+      "end": 67.1,
+      "text": " We practice to deceive guns be clicking running with my clan. We be sticking whatever my sweet family stays together",
+      "tokens": [
+        50365,
+        492,
+        3124,
+        281,
+        43440,
+        10153,
+        312,
+        9697,
+        2614,
+        365,
+        452,
+        25887,
+        13,
+        492,
+        312,
+        13465,
+        2035,
+        452,
+        3844,
+        1605,
+        10834,
+        1214,
+        50717
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3636440061173349,
+      "compression_ratio": 1.6534296028880866,
+      "no_speech_prob": 0.6352832913398743,
+      "words": [
+        {
+          "word": " We",
+          "start": 60.0,
+          "end": 60.18,
+          "probability": 0.36119344830513
+        },
+        {
+          "word": " practice",
+          "start": 60.18,
+          "end": 60.74,
+          "probability": 0.856950581073761
+        },
+        {
+          "word": " to",
+          "start": 60.74,
+          "end": 61.14,
+          "probability": 0.9639102220535278
+        },
+        {
+          "word": " deceive",
+          "start": 61.14,
+          "end": 61.6,
+          "probability": 0.9623209834098816
+        },
+        {
+          "word": " guns",
+          "start": 61.6,
+          "end": 62.02,
+          "probability": 0.5365335941314697
+        },
+        {
+          "word": " be",
+          "start": 62.02,
+          "end": 62.28,
+          "probability": 0.8223103284835815
+        },
+        {
+          "word": " clicking",
+          "start": 62.28,
+          "end": 62.62,
+          "probability": 0.7981663942337036
+        },
+        {
+          "word": " running",
+          "start": 62.62,
+          "end": 63.16,
+          "probability": 0.6909552216529846
+        },
+        {
+          "word": " with",
+          "start": 63.16,
+          "end": 63.38,
+          "probability": 0.9734495282173157
+        },
+        {
+          "word": " my",
+          "start": 63.38,
+          "end": 63.58,
+          "probability": 0.9922193288803101
+        },
+        {
+          "word": " clan.",
+          "start": 63.58,
+          "end": 63.84,
+          "probability": 0.8239454030990601
+        },
+        {
+          "word": " We",
+          "start": 63.98,
+          "end": 64.06,
+          "probability": 0.9978311657905579
+        },
+        {
+          "word": " be",
+          "start": 64.06,
+          "end": 64.2,
+          "probability": 0.8664150238037109
+        },
+        {
+          "word": " sticking",
+          "start": 64.2,
+          "end": 64.64,
+          "probability": 0.9396151900291443
+        },
+        {
+          "word": " whatever",
+          "start": 64.64,
+          "end": 65.04,
+          "probability": 0.7987630367279053
+        },
+        {
+          "word": " my",
+          "start": 65.04,
+          "end": 65.58,
+          "probability": 0.9338064193725586
+        },
+        {
+          "word": " sweet",
+          "start": 65.58,
+          "end": 65.78,
+          "probability": 0.48525944352149963
+        },
+        {
+          "word": " family",
+          "start": 65.78,
+          "end": 66.3,
+          "probability": 0.9701545238494873
+        },
+        {
+          "word": " stays",
+          "start": 66.3,
+          "end": 66.66,
+          "probability": 0.8047683238983154
+        },
+        {
+          "word": " together",
+          "start": 66.66,
+          "end": 67.1,
+          "probability": 0.996973991394043
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 6000,
+      "start": 67.1,
+      "end": 72.28,
+      "text": " Represent what I have been killer Hill resident rest in peace to my niggas to sin",
+      "tokens": [
+        50738,
+        19945,
+        437,
+        286,
+        362,
+        668,
+        13364,
+        9109,
+        10832,
+        1472,
+        294,
+        4336,
+        281,
+        452,
+        297,
+        6249,
+        296,
+        281,
+        3343,
+        50986
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3636440061173349,
+      "compression_ratio": 1.6534296028880866,
+      "no_speech_prob": 0.6352832913398743,
+      "words": [
+        {
+          "word": " Represent",
+          "start": 67.1,
+          "end": 67.58,
+          "probability": 0.040071964263916016
+        },
+        {
+          "word": " what",
+          "start": 67.58,
+          "end": 68.4,
+          "probability": 0.9101161360740662
+        },
+        {
+          "word": " I",
+          "start": 68.4,
+          "end": 68.6,
+          "probability": 0.9705280661582947
+        },
+        {
+          "word": " have",
+          "start": 68.6,
+          "end": 68.76,
+          "probability": 0.76768559217453
+        },
+        {
+          "word": " been",
+          "start": 68.76,
+          "end": 69.0,
+          "probability": 0.9566315412521362
+        },
+        {
+          "word": " killer",
+          "start": 69.0,
+          "end": 69.48,
+          "probability": 0.6563537120819092
+        },
+        {
+          "word": " Hill",
+          "start": 69.48,
+          "end": 69.72,
+          "probability": 0.6077292561531067
+        },
+        {
+          "word": " resident",
+          "start": 69.72,
+          "end": 70.26,
+          "probability": 0.9656583070755005
+        },
+        {
+          "word": " rest",
+          "start": 70.26,
+          "end": 70.66,
+          "probability": 0.8231562972068787
+        },
+        {
+          "word": " in",
+          "start": 70.66,
+          "end": 70.82,
+          "probability": 0.8419251441955566
+        },
+        {
+          "word": " peace",
+          "start": 70.82,
+          "end": 71.08,
+          "probability": 0.9838612079620361
+        },
+        {
+          "word": " to",
+          "start": 71.08,
+          "end": 71.26,
+          "probability": 0.6556357145309448
+        },
+        {
+          "word": " my",
+          "start": 71.26,
+          "end": 71.46,
+          "probability": 0.6859118938446045
+        },
+        {
+          "word": " niggas",
+          "start": 71.46,
+          "end": 71.86,
+          "probability": 0.893799622853597
+        },
+        {
+          "word": " to",
+          "start": 71.86,
+          "end": 71.92,
+          "probability": 0.6190482974052429
+        },
+        {
+          "word": " sin",
+          "start": 71.92,
+          "end": 72.28,
+          "probability": 0.1701875627040863
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 6000,
+      "start": 72.28,
+      "end": 77.7,
+      "text": " The street life is the only life I know I live by the coast Alice Matt PLO",
+      "tokens": [
+        50986,
+        440,
+        4838,
+        993,
+        307,
+        264,
+        787,
+        993,
+        286,
+        458,
+        286,
+        1621,
+        538,
+        264,
+        8684,
+        16004,
+        7397,
+        6999,
+        46,
+        51250
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3636440061173349,
+      "compression_ratio": 1.6534296028880866,
+      "no_speech_prob": 0.6352832913398743,
+      "words": [
+        {
+          "word": " The",
+          "start": 72.28,
+          "end": 72.72,
+          "probability": 0.5881545543670654
+        },
+        {
+          "word": " street",
+          "start": 72.72,
+          "end": 73.02,
+          "probability": 0.9620463252067566
+        },
+        {
+          "word": " life",
+          "start": 73.02,
+          "end": 73.38,
+          "probability": 0.9896960258483887
+        },
+        {
+          "word": " is",
+          "start": 73.38,
+          "end": 73.62,
+          "probability": 0.9965207576751709
+        },
+        {
+          "word": " the",
+          "start": 73.62,
+          "end": 73.76,
+          "probability": 0.9988203644752502
+        },
+        {
+          "word": " only",
+          "start": 73.76,
+          "end": 74.06,
+          "probability": 0.999584972858429
+        },
+        {
+          "word": " life",
+          "start": 74.06,
+          "end": 74.38,
+          "probability": 0.9938867688179016
+        },
+        {
+          "word": " I",
+          "start": 74.38,
+          "end": 74.62,
+          "probability": 0.6384015679359436
+        },
+        {
+          "word": " know",
+          "start": 74.62,
+          "end": 74.88,
+          "probability": 0.9960442781448364
+        },
+        {
+          "word": " I",
+          "start": 74.88,
+          "end": 75.4,
+          "probability": 0.9242947697639465
+        },
+        {
+          "word": " live",
+          "start": 75.4,
+          "end": 75.64,
+          "probability": 0.965949296951294
+        },
+        {
+          "word": " by",
+          "start": 75.64,
+          "end": 75.84,
+          "probability": 0.9667941331863403
+        },
+        {
+          "word": " the",
+          "start": 75.84,
+          "end": 76.06,
+          "probability": 0.9845836162567139
+        },
+        {
+          "word": " coast",
+          "start": 76.06,
+          "end": 76.34,
+          "probability": 0.537541389465332
+        },
+        {
+          "word": " Alice",
+          "start": 76.34,
+          "end": 76.74,
+          "probability": 0.2693789005279541
+        },
+        {
+          "word": " Matt",
+          "start": 76.74,
+          "end": 77.06,
+          "probability": 0.4461469352245331
+        },
+        {
+          "word": " PLO",
+          "start": 77.06,
+          "end": 77.7,
+          "probability": 0.746344119310379
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 6000,
+      "start": 77.7,
+      "end": 82.84,
+      "text": " Iranian thoughts are covered like an Arabian grab the nigga who on the spot and put a knife",
+      "tokens": [
+        51273,
+        24934,
+        4598,
+        366,
+        5343,
+        411,
+        364,
+        8625,
+        952,
+        4444,
+        264,
+        41626,
+        567,
+        322,
+        264,
+        4008,
+        293,
+        829,
+        257,
+        7976,
+        51509
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3636440061173349,
+      "compression_ratio": 1.6534296028880866,
+      "no_speech_prob": 0.6352832913398743,
+      "words": [
+        {
+          "word": " Iranian",
+          "start": 77.7,
+          "end": 78.26,
+          "probability": 0.7108570337295532
+        },
+        {
+          "word": " thoughts",
+          "start": 78.26,
+          "end": 78.92,
+          "probability": 0.7634533047676086
+        },
+        {
+          "word": " are",
+          "start": 78.92,
+          "end": 79.18,
+          "probability": 0.7604622840881348
+        },
+        {
+          "word": " covered",
+          "start": 79.18,
+          "end": 79.48,
+          "probability": 0.972855806350708
+        },
+        {
+          "word": " like",
+          "start": 79.48,
+          "end": 79.74,
+          "probability": 0.9942010045051575
+        },
+        {
+          "word": " an",
+          "start": 79.74,
+          "end": 79.9,
+          "probability": 0.6394131779670715
+        },
+        {
+          "word": " Arabian",
+          "start": 79.9,
+          "end": 80.52,
+          "probability": 0.9905796349048615
+        },
+        {
+          "word": " grab",
+          "start": 80.52,
+          "end": 80.8,
+          "probability": 0.6753823757171631
+        },
+        {
+          "word": " the",
+          "start": 80.8,
+          "end": 81.0,
+          "probability": 0.9662747383117676
+        },
+        {
+          "word": " nigga",
+          "start": 81.0,
+          "end": 81.24,
+          "probability": 0.9631430506706238
+        },
+        {
+          "word": " who",
+          "start": 81.24,
+          "end": 81.44,
+          "probability": 0.9356956481933594
+        },
+        {
+          "word": " on",
+          "start": 81.44,
+          "end": 81.66,
+          "probability": 0.8945150375366211
+        },
+        {
+          "word": " the",
+          "start": 81.66,
+          "end": 81.78,
+          "probability": 0.9949900507926941
+        },
+        {
+          "word": " spot",
+          "start": 81.78,
+          "end": 82.0,
+          "probability": 0.98525071144104
+        },
+        {
+          "word": " and",
+          "start": 82.0,
+          "end": 82.32,
+          "probability": 0.3360259532928467
+        },
+        {
+          "word": " put",
+          "start": 82.32,
+          "end": 82.44,
+          "probability": 0.8595937490463257
+        },
+        {
+          "word": " a",
+          "start": 82.44,
+          "end": 82.64,
+          "probability": 0.6130706071853638
+        },
+        {
+          "word": " knife",
+          "start": 82.64,
+          "end": 82.84,
+          "probability": 0.150140181183815
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 6000,
+      "start": 82.84,
+      "end": 88.14,
+      "text": " It was getting satisfaction niggas won't be lasting long unless they get protection for real",
+      "tokens": [
+        51509,
+        467,
+        390,
+        1242,
+        18715,
+        297,
+        6249,
+        296,
+        1582,
+        380,
+        312,
+        20714,
+        938,
+        5969,
+        436,
+        483,
+        6334,
+        337,
+        957,
+        51774
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3636440061173349,
+      "compression_ratio": 1.6534296028880866,
+      "no_speech_prob": 0.6352832913398743,
+      "words": [
+        {
+          "word": " It",
+          "start": 82.84,
+          "end": 83.18,
+          "probability": 0.03345808386802673
+        },
+        {
+          "word": " was",
+          "start": 83.18,
+          "end": 83.34,
+          "probability": 0.32050782442092896
+        },
+        {
+          "word": " getting",
+          "start": 83.34,
+          "end": 83.52,
+          "probability": 0.1207384243607521
+        },
+        {
+          "word": " satisfaction",
+          "start": 83.52,
+          "end": 84.1,
+          "probability": 0.7389586567878723
+        },
+        {
+          "word": " niggas",
+          "start": 84.1,
+          "end": 84.98,
+          "probability": 0.9413697322209676
+        },
+        {
+          "word": " won't",
+          "start": 84.98,
+          "end": 85.22,
+          "probability": 0.9904259741306305
+        },
+        {
+          "word": " be",
+          "start": 85.22,
+          "end": 85.24,
+          "probability": 0.9993513226509094
+        },
+        {
+          "word": " lasting",
+          "start": 85.24,
+          "end": 85.7,
+          "probability": 0.6243538856506348
+        },
+        {
+          "word": " long",
+          "start": 85.7,
+          "end": 86.12,
+          "probability": 0.9943234920501709
+        },
+        {
+          "word": " unless",
+          "start": 86.12,
+          "end": 86.64,
+          "probability": 0.9680454134941101
+        },
+        {
+          "word": " they",
+          "start": 86.64,
+          "end": 86.86,
+          "probability": 0.9970557689666748
+        },
+        {
+          "word": " get",
+          "start": 86.86,
+          "end": 87.04,
+          "probability": 0.982402503490448
+        },
+        {
+          "word": " protection",
+          "start": 87.04,
+          "end": 87.44,
+          "probability": 0.9720748066902161
+        },
+        {
+          "word": " for",
+          "start": 87.44,
+          "end": 87.94,
+          "probability": 0.9462025761604309
+        },
+        {
+          "word": " real",
+          "start": 87.94,
+          "end": 88.14,
+          "probability": 0.9052727818489075
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 9000,
+      "start": 90.0,
+      "end": 95.38,
+      "text": " So what's happening commercial rap hate it with the patch the MET HOT",
+      "tokens": [
+        50365,
+        407,
+        437,
+        311,
+        2737,
+        6841,
+        5099,
+        4700,
+        309,
+        365,
+        264,
+        9972,
+        264,
+        376,
+        4850,
+        389,
+        5068,
+        50643
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4884597476166074,
+      "compression_ratio": 1.728888888888889,
+      "no_speech_prob": 0.6236968040466309,
+      "words": [
+        {
+          "word": " So",
+          "start": 90.0,
+          "end": 90.34,
+          "probability": 0.19441482424736023
+        },
+        {
+          "word": " what's",
+          "start": 90.34,
+          "end": 90.6,
+          "probability": 0.9210592806339264
+        },
+        {
+          "word": " happening",
+          "start": 90.6,
+          "end": 90.92,
+          "probability": 0.7186751365661621
+        },
+        {
+          "word": " commercial",
+          "start": 90.92,
+          "end": 91.26,
+          "probability": 0.7580841779708862
+        },
+        {
+          "word": " rap",
+          "start": 91.26,
+          "end": 91.76,
+          "probability": 0.8474821448326111
+        },
+        {
+          "word": " hate",
+          "start": 91.76,
+          "end": 92.06,
+          "probability": 0.35017818212509155
+        },
+        {
+          "word": " it",
+          "start": 92.06,
+          "end": 92.18,
+          "probability": 0.9919597506523132
+        },
+        {
+          "word": " with",
+          "start": 92.18,
+          "end": 92.34,
+          "probability": 0.905384361743927
+        },
+        {
+          "word": " the",
+          "start": 92.34,
+          "end": 92.5,
+          "probability": 0.9154431819915771
+        },
+        {
+          "word": " patch",
+          "start": 92.5,
+          "end": 92.72,
+          "probability": 0.7776422500610352
+        },
+        {
+          "word": " the",
+          "start": 92.72,
+          "end": 93.2,
+          "probability": 0.30359241366386414
+        },
+        {
+          "word": " MET",
+          "start": 93.2,
+          "end": 94.42,
+          "probability": 0.3963477909564972
+        },
+        {
+          "word": " HOT",
+          "start": 94.42,
+          "end": 95.38,
+          "probability": 0.31330349296331406
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 9000,
+      "start": 95.38,
+      "end": 100.62,
+      "text": " You got me drinking all night in the MPV just maxin looking for hoes",
+      "tokens": [
+        50643,
+        509,
+        658,
+        385,
+        7583,
+        439,
+        1818,
+        294,
+        264,
+        14146,
+        53,
+        445,
+        11469,
+        259,
+        1237,
+        337,
+        1106,
+        279,
+        50891
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4884597476166074,
+      "compression_ratio": 1.728888888888889,
+      "no_speech_prob": 0.6236968040466309,
+      "words": [
+        {
+          "word": " You",
+          "start": 95.38,
+          "end": 95.82,
+          "probability": 0.044357407838106155
+        },
+        {
+          "word": " got",
+          "start": 95.82,
+          "end": 95.98,
+          "probability": 0.9947251677513123
+        },
+        {
+          "word": " me",
+          "start": 95.98,
+          "end": 96.1,
+          "probability": 0.9982661604881287
+        },
+        {
+          "word": " drinking",
+          "start": 96.1,
+          "end": 96.4,
+          "probability": 0.9427803754806519
+        },
+        {
+          "word": " all",
+          "start": 96.4,
+          "end": 96.68,
+          "probability": 0.23882968723773956
+        },
+        {
+          "word": " night",
+          "start": 96.68,
+          "end": 97.16,
+          "probability": 0.9124383926391602
+        },
+        {
+          "word": " in",
+          "start": 97.16,
+          "end": 97.62,
+          "probability": 0.8922988176345825
+        },
+        {
+          "word": " the",
+          "start": 97.62,
+          "end": 97.74,
+          "probability": 0.9320087432861328
+        },
+        {
+          "word": " MPV",
+          "start": 97.74,
+          "end": 98.48,
+          "probability": 0.6991463601589203
+        },
+        {
+          "word": " just",
+          "start": 98.48,
+          "end": 98.98,
+          "probability": 0.6021090745925903
+        },
+        {
+          "word": " maxin",
+          "start": 98.98,
+          "end": 99.58,
+          "probability": 0.5651246160268784
+        },
+        {
+          "word": " looking",
+          "start": 99.58,
+          "end": 99.88,
+          "probability": 0.7633092999458313
+        },
+        {
+          "word": " for",
+          "start": 99.88,
+          "end": 100.2,
+          "probability": 0.9937708973884583
+        },
+        {
+          "word": " hoes",
+          "start": 100.2,
+          "end": 100.62,
+          "probability": 0.7735205292701721
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 9000,
+      "start": 100.62,
+      "end": 105.86,
+      "text": " You know relax it bitches know the hour it be time for some action PLO peace to that nigga",
+      "tokens": [
+        50891,
+        509,
+        458,
+        5789,
+        309,
+        42094,
+        458,
+        264,
+        1773,
+        309,
+        312,
+        565,
+        337,
+        512,
+        3069,
+        6999,
+        46,
+        4336,
+        281,
+        300,
+        41626,
+        51161
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4884597476166074,
+      "compression_ratio": 1.728888888888889,
+      "no_speech_prob": 0.6236968040466309,
+      "words": [
+        {
+          "word": " You",
+          "start": 100.62,
+          "end": 100.64,
+          "probability": 0.16682536900043488
+        },
+        {
+          "word": " know",
+          "start": 100.64,
+          "end": 100.82,
+          "probability": 0.7755484580993652
+        },
+        {
+          "word": " relax",
+          "start": 100.82,
+          "end": 101.28,
+          "probability": 0.6491538286209106
+        },
+        {
+          "word": " it",
+          "start": 101.28,
+          "end": 101.62,
+          "probability": 0.49975717067718506
+        },
+        {
+          "word": " bitches",
+          "start": 101.62,
+          "end": 102.0,
+          "probability": 0.9053048491477966
+        },
+        {
+          "word": " know",
+          "start": 102.0,
+          "end": 102.2,
+          "probability": 0.864625096321106
+        },
+        {
+          "word": " the",
+          "start": 102.2,
+          "end": 102.38,
+          "probability": 0.7221679091453552
+        },
+        {
+          "word": " hour",
+          "start": 102.38,
+          "end": 102.66,
+          "probability": 0.916808009147644
+        },
+        {
+          "word": " it",
+          "start": 102.66,
+          "end": 102.9,
+          "probability": 0.5198705196380615
+        },
+        {
+          "word": " be",
+          "start": 102.9,
+          "end": 103.0,
+          "probability": 0.9062315821647644
+        },
+        {
+          "word": " time",
+          "start": 103.0,
+          "end": 103.34,
+          "probability": 0.9039218425750732
+        },
+        {
+          "word": " for",
+          "start": 103.34,
+          "end": 103.54,
+          "probability": 0.797734797000885
+        },
+        {
+          "word": " some",
+          "start": 103.54,
+          "end": 103.78,
+          "probability": 0.9919459223747253
+        },
+        {
+          "word": " action",
+          "start": 103.78,
+          "end": 104.2,
+          "probability": 0.8793585300445557
+        },
+        {
+          "word": " PLO",
+          "start": 104.2,
+          "end": 104.96,
+          "probability": 0.7351230978965759
+        },
+        {
+          "word": " peace",
+          "start": 104.96,
+          "end": 105.24,
+          "probability": 0.549869954586029
+        },
+        {
+          "word": " to",
+          "start": 105.24,
+          "end": 105.46,
+          "probability": 0.8700344562530518
+        },
+        {
+          "word": " that",
+          "start": 105.46,
+          "end": 105.62,
+          "probability": 0.7255944609642029
+        },
+        {
+          "word": " nigga",
+          "start": 105.62,
+          "end": 105.86,
+          "probability": 0.9202877879142761
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 9000,
+      "start": 105.86,
+      "end": 108.54,
+      "text": " Barry I know what up this take them to the bridge",
+      "tokens": [
+        51161,
+        21639,
+        286,
+        458,
+        437,
+        493,
+        341,
+        747,
+        552,
+        281,
+        264,
+        7283,
+        51296
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4884597476166074,
+      "compression_ratio": 1.728888888888889,
+      "no_speech_prob": 0.6236968040466309,
+      "words": [
+        {
+          "word": " Barry",
+          "start": 105.86,
+          "end": 106.2,
+          "probability": 0.2597692608833313
+        },
+        {
+          "word": " I",
+          "start": 106.2,
+          "end": 106.46,
+          "probability": 0.16903731226921082
+        },
+        {
+          "word": " know",
+          "start": 106.46,
+          "end": 106.72,
+          "probability": 0.930854856967926
+        },
+        {
+          "word": " what",
+          "start": 106.72,
+          "end": 107.0,
+          "probability": 0.9371612071990967
+        },
+        {
+          "word": " up",
+          "start": 107.0,
+          "end": 107.26,
+          "probability": 0.9497562646865845
+        },
+        {
+          "word": " this",
+          "start": 107.26,
+          "end": 107.48,
+          "probability": 0.6303694248199463
+        },
+        {
+          "word": " take",
+          "start": 107.48,
+          "end": 107.74,
+          "probability": 0.9786707758903503
+        },
+        {
+          "word": " them",
+          "start": 107.74,
+          "end": 107.94,
+          "probability": 0.45522940158843994
+        },
+        {
+          "word": " to",
+          "start": 107.94,
+          "end": 108.02,
+          "probability": 0.9942575693130493
+        },
+        {
+          "word": " the",
+          "start": 108.02,
+          "end": 108.2,
+          "probability": 0.9978566765785217
+        },
+        {
+          "word": " bridge",
+          "start": 108.2,
+          "end": 108.54,
+          "probability": 0.4105602204799652
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 9000,
+      "start": 108.54,
+      "end": 117.8,
+      "text": " Who the monks with the alveolo style Buddha monks with the alveolo staff who the monks with the alveolo staff",
+      "tokens": [
+        51379,
+        2102,
+        264,
+        32201,
+        365,
+        264,
+        419,
+        303,
+        7902,
+        3758,
+        16375,
+        32201,
+        365,
+        264,
+        419,
+        303,
+        7902,
+        3525,
+        567,
+        264,
+        32201,
+        365,
+        264,
+        419,
+        303,
+        7902,
+        3525,
+        51761
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4884597476166074,
+      "compression_ratio": 1.728888888888889,
+      "no_speech_prob": 0.6236968040466309,
+      "words": [
+        {
+          "word": " Who",
+          "start": 108.54,
+          "end": 109.36,
+          "probability": 0.017500536516308784
+        },
+        {
+          "word": " the",
+          "start": 109.36,
+          "end": 110.82,
+          "probability": 0.5346142053604126
+        },
+        {
+          "word": " monks",
+          "start": 110.82,
+          "end": 111.04,
+          "probability": 0.7745808362960815
+        },
+        {
+          "word": " with",
+          "start": 111.04,
+          "end": 111.26,
+          "probability": 0.9470146894454956
+        },
+        {
+          "word": " the",
+          "start": 111.26,
+          "end": 111.4,
+          "probability": 0.9462525248527527
+        },
+        {
+          "word": " alveolo",
+          "start": 111.4,
+          "end": 112.16,
+          "probability": 0.24692473312218985
+        },
+        {
+          "word": " style",
+          "start": 112.16,
+          "end": 112.56,
+          "probability": 0.6176941394805908
+        },
+        {
+          "word": " Buddha",
+          "start": 112.56,
+          "end": 113.28,
+          "probability": 0.33934417366981506
+        },
+        {
+          "word": " monks",
+          "start": 113.28,
+          "end": 113.66,
+          "probability": 0.9157307147979736
+        },
+        {
+          "word": " with",
+          "start": 113.66,
+          "end": 113.9,
+          "probability": 0.9635372161865234
+        },
+        {
+          "word": " the",
+          "start": 113.9,
+          "end": 114.08,
+          "probability": 0.9605317115783691
+        },
+        {
+          "word": " alveolo",
+          "start": 114.08,
+          "end": 114.8,
+          "probability": 0.7145414054393768
+        },
+        {
+          "word": " staff",
+          "start": 114.8,
+          "end": 115.24,
+          "probability": 0.7045519351959229
+        },
+        {
+          "word": " who",
+          "start": 115.24,
+          "end": 115.84,
+          "probability": 0.40733519196510315
+        },
+        {
+          "word": " the",
+          "start": 115.84,
+          "end": 116.04,
+          "probability": 0.9350543022155762
+        },
+        {
+          "word": " monks",
+          "start": 116.04,
+          "end": 116.28,
+          "probability": 0.7767505049705505
+        },
+        {
+          "word": " with",
+          "start": 116.28,
+          "end": 116.5,
+          "probability": 0.9250028729438782
+        },
+        {
+          "word": " the",
+          "start": 116.5,
+          "end": 116.64,
+          "probability": 0.9348822832107544
+        },
+        {
+          "word": " alveolo",
+          "start": 116.64,
+          "end": 117.4,
+          "probability": 0.8789905905723572
+        },
+        {
+          "word": " staff",
+          "start": 117.4,
+          "end": 117.8,
+          "probability": 0.8434489369392395
+        }
+      ]
+    }
+  ],
+  "language": "en",
+  "model": "large-v3",
+  "normalized": "to my brothers at pnl my other brother killer k to attack p l o style wrecking the world what's up baby y'all yeah no doubt green eyes want love you know the steeze though p l o style boo the monks with the ass p l o style boo the monks with the ass p l o style boo the monks with the ass p l o style style style here come the ruckus the motherfucking ruckus thousands of cutthroats and crumb snatching fuckers straight from the green i be givin you the pain anger comin from the thirty sixth chamber bang to cow hittin with the budapest style shotgun slimmin in your chest piece blow frame gets blown all over the terrain like a man without no arms you can't hang time for a change of the guard you been arrested for lyric fraud now you barred for real check it i pull strings like b b king on guitar i'm the true fist of the north star oh what a tango we weave we practice to deceive guns be clicking running with my clan we be sticking whatever my sweet family stays together represent what i have been killer hill resident rest in peace to my niggas to sin the street life is the only life i know i live by the coast alice matt plo iranian thoughts are covered like an arabian grab the nigga who on the spot and put a knife it was getting satisfaction niggas won't be lasting long unless they get protection for real so what's happening commercial rap hate it with the patch the met hot you got me drinking all night in the mpv just maxin looking for hoes you know relax it bitches know the hour it be time for some action plo peace to that nigga barry i know what up this take them to the bridge who the monks with the alveolo style buddha monks with the alveolo staff who the monks with the alveolo staff"
+}

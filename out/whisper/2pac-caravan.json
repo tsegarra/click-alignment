@@ -1,0 +1,28 @@
+{
+  "text": " I got a caravan",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 0.9400000000000001,
+      "text": " I got a caravan",
+      "tokens": [
+        50365,
+        286,
+        658,
+        257,
+        1032,
+        21071,
+        50412
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3108239471912384,
+      "compression_ratio": 0.6521739130434783,
+      "no_speech_prob": 0.43731480836868286
+    }
+  ],
+  "language": "en",
+  "model": "large-v3",
+  "normalized": "i got a caravan"
+}

@@ -1,0 +1,204 @@
+{
+ "lines": [
+  {
+   "text": "I bet you got it twisted you don't know who to trust",
+   "norm": "i bet you got it twisted you don't know who to trust",
+   "words": 12,
+   "matched": 12,
+   "guessed": false,
+   "s": 6.740000000000002,
+   "e": 9.28
+  },
+  {
+   "text": "So many playa hatin' niggas tryin' to sound like us",
+   "norm": "so many playa hatin niggas tryin to sound like us",
+   "words": 10,
+   "matched": 8,
+   "guessed": false,
+   "s": 9.28,
+   "e": 11.82
+  },
+  {
+   "text": "Say they ready for the funk, but I don't think they knowin'",
+   "norm": "say they ready for the funk but i don't think they knowin",
+   "words": 12,
+   "matched": 12,
+   "guessed": false,
+   "s": 11.82,
+   "e": 14.34
+  },
+  {
+   "text": "Straight to the depths of hell is where those cowards goin'",
+   "norm": "straight to the depths of hell is where those cowards goin",
+   "words": 11,
+   "matched": 10,
+   "guessed": false,
+   "s": 14.34,
+   "e": 16.82
+  },
+  {
+   "text": "Well are you still down nigga, holla when you see me",
+   "norm": "well are you still down nigga holla when you see me",
+   "words": 11,
+   "matched": 8,
+   "guessed": false,
+   "s": 17.08,
+   "e": 19.48
+  },
+  {
+   "text": "And let these devils be sorry for the day they finally freed me",
+   "norm": "and let these devils be sorry for the day they finally freed me",
+   "words": 13,
+   "matched": 13,
+   "guessed": false,
+   "s": 19.48,
+   "e": 22.06
+  },
+  {
+   "text": "I got a caravan of niggas every time we ride",
+   "norm": "i got a caravan of niggas every time we ride",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 22.06,
+   "e": 24.54
+  },
+  {
+   "text": "Hittin' motherfuckers up when we pass by",
+   "norm": "hittin motherfuckers up when we pass by",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 24.54,
+   "e": 27.08
+  },
+  {
+   "text": "Until I die; live the life of a boss playa",
+   "norm": "until i die live the life of a boss playa",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 27.08,
+   "e": 29.439999999999998
+  },
+  {
+   "text": "Cause even when I'm high, fuck with me and get crossed later",
+   "norm": "cause even when i'm high fuck with me and get crossed later",
+   "words": 12,
+   "matched": 11,
+   "guessed": false,
+   "s": 29.78,
+   "e": 32.1
+  },
+  {
+   "text": "The futures in my eyes, cause all I want is cash and thangs",
+   "norm": "the futures in my eyes cause all i want is cash and thangs",
+   "words": 13,
+   "matched": 13,
+   "guessed": false,
+   "s": 32.1,
+   "e": 35.08
+  },
+  {
+   "text": "A five-double-oh Benz flauntin' flashy rings, uh",
+   "norm": "a five double oh benz flauntin flashy rings uh",
+   "words": 9,
+   "matched": 6,
+   "guessed": false,
+   "s": 35.1,
+   "e": 37.96
+  },
+  {
+   "text": "Bitches pursue me like a dream",
+   "norm": "bitches pursue me like a dream",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 37.96,
+   "e": 39.68
+  },
+  {
+   "text": "Been know to disappear before your eyes just like a dope fiend",
+   "norm": "been know to disappear before your eyes just like a dope fiend",
+   "words": 12,
+   "matched": 9,
+   "guessed": false,
+   "s": 39.82,
+   "e": 42.48
+  },
+  {
+   "text": "It seems, my main thing was to be major paid",
+   "norm": "it seems my main thing was to be major paid",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 42.68,
+   "e": 45.32
+  },
+  {
+   "text": "The game sharper than a motherfuckin' razor blade",
+   "norm": "the game sharper than a motherfuckin razor blade",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 45.32,
+   "e": 47.78
+  },
+  {
+   "text": "Say money bring bitches, bitches bring lies",
+   "norm": "say money bring bitches bitches bring lies",
+   "words": 7,
+   "matched": 6,
+   "guessed": false,
+   "s": 48.08,
+   "e": 50.44
+  },
+  {
+   "text": "One nigga's gettin' jealous, and motherfuckers die",
+   "norm": "one nigga's gettin jealous and motherfuckers die",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 50.44,
+   "e": 53.0
+  },
+  {
+   "text": "Depend on me like the first and fifteenth",
+   "norm": "depend on me like the first and fifteenth",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 53.0,
+   "e": 54.92
+  },
+  {
+   "text": "They might hold me for a second, but these punks won't get me",
+   "norm": "they might hold me for a second but these punks won't get me",
+   "words": 13,
+   "matched": 13,
+   "guessed": false,
+   "s": 54.92,
+   "e": 57.64
+  },
+  {
+   "text": "We got four niggas, in low riders, and ski masks",
+   "norm": "we got four niggas in low riders and ski masks",
+   "words": 10,
+   "matched": 7,
+   "guessed": false,
+   "s": 57.64,
+   "e": 60.76
+  },
+  {
+   "text": "Screamin' THUG LIFE every time they pass - all eyes on me",
+   "norm": "screamin thug life every time they pass all eyes on me",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 60.82,
+   "e": 64.06
+  }
+ ],
+ "lyricWords": 222,
+ "matchedWords": 202
+}

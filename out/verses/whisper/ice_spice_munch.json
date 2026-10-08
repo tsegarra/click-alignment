@@ -1,0 +1,3919 @@
+{
+  "text": " You thought I was feelin' you? That nigga a munch Nigga eat it, he ate it for lunch Bitch, I'm a baddie, I get what I want, like You thought I was feelin' you? That nigga a munch Nigga eat it, he ate it for lunch Bitch, I'm a baddie, I get what I want, like Bitch, they ain't bad, let's keep it a bean Know they be mad, I be on the scene Ass too fat, can't fit in a jean Use my stitch, but it's not what it seem I got that ready, I'm keepin' it clean Fuckin' with niggas, that's totin' a bean Sayin' you love me, but what do you mean? Pretty ass fuckin' ain't like that I mean Baddest bitch out, you shittin' me? I swear that these bitches my mini-me's He wanna sex, niggas be dreamin' I'm from the X, niggas be scheming I'm on they next, they is not breathin' Thumb in her check, blow they neemins You thought I was feelin' you? That nigga a munch Nigga eat her, he ate her for lunch Bitch on my body, I get what I want like You thought I was feelin' you? That nigga a munch Nigga eat her, he ate her for lunch Bitch on my body, I get what I want like Bitch on my body, I get what I please You know my body, I do it with ease He with my body, he tellin' me please I'm walkin' past him, he sniffin' my breeze He jackin' me, but he not my boo He like the jewelry I wear on my boobs How can I link you when I got a shoe? Don't want your love, I just want the blue Grabbing my ass while I'm doing my dance She won't stare, ain't cause shorty a fan Gotta stick to the plan He mad as fuck, I won't give him a chance But still he gon' do what I say I swear I'll be stuck in my ways But still he gon' do what I say I swear I'll be stuck in my ways You thought I was feeling you? That nigga a munch Nigga, either he ate it for lunch Bitch, I'm a baddie, I get what I want, like You thought I was feeling you? That nigga a munch Nigga, either he ate it for lunch Bitch, I'm a baddie, I get what I want, like",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 3.640000000000006,
+      "end": 4.74,
+      "text": " You thought I was feelin' you?",
+      "tokens": [
+        50365,
+        509,
+        1194,
+        286,
+        390,
+        841,
+        259,
+        6,
+        291,
+        30,
+        50607
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " You",
+          "start": 3.640000000000006,
+          "end": 3.92,
+          "probability": 0.43744924664497375
+        },
+        {
+          "word": " thought",
+          "start": 3.92,
+          "end": 4.18,
+          "probability": 0.9442348480224609
+        },
+        {
+          "word": " I",
+          "start": 4.18,
+          "end": 4.3,
+          "probability": 0.9619799852371216
+        },
+        {
+          "word": " was",
+          "start": 4.3,
+          "end": 4.38,
+          "probability": 0.9973920583724976
+        },
+        {
+          "word": " feelin'",
+          "start": 4.38,
+          "end": 4.62,
+          "probability": 0.711888387799263
+        },
+        {
+          "word": " you?",
+          "start": 4.64,
+          "end": 4.74,
+          "probability": 0.9894741177558899
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.420000000000012,
+      "end": 6.4,
+      "text": " That nigga a munch",
+      "tokens": [
+        50651,
+        663,
+        41626,
+        257,
+        275,
+        1680,
+        50692
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " That",
+          "start": 5.420000000000012,
+          "end": 5.700000000000006,
+          "probability": 0.8744249939918518
+        },
+        {
+          "word": " nigga",
+          "start": 5.700000000000006,
+          "end": 5.98,
+          "probability": 0.7616376876831055
+        },
+        {
+          "word": " a",
+          "start": 5.98,
+          "end": 6.16,
+          "probability": 0.9846166372299194
+        },
+        {
+          "word": " munch",
+          "start": 6.16,
+          "end": 6.4,
+          "probability": 0.9948152899742126
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.4,
+      "end": 7.82,
+      "text": " Nigga eat it, he ate it for lunch",
+      "tokens": [
+        50692,
+        39554,
+        3680,
+        1862,
+        309,
+        11,
+        415,
+        8468,
+        309,
+        337,
+        6349,
+        50766
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Nigga",
+          "start": 6.4,
+          "end": 6.82,
+          "probability": 0.8708395659923553
+        },
+        {
+          "word": " eat",
+          "start": 6.82,
+          "end": 6.98,
+          "probability": 0.4496504068374634
+        },
+        {
+          "word": " it,",
+          "start": 6.98,
+          "end": 7.04,
+          "probability": 0.33390316367149353
+        },
+        {
+          "word": " he",
+          "start": 7.12,
+          "end": 7.18,
+          "probability": 0.9881373047828674
+        },
+        {
+          "word": " ate",
+          "start": 7.18,
+          "end": 7.38,
+          "probability": 0.9861055016517639
+        },
+        {
+          "word": " it",
+          "start": 7.38,
+          "end": 7.46,
+          "probability": 0.9988440275192261
+        },
+        {
+          "word": " for",
+          "start": 7.46,
+          "end": 7.58,
+          "probability": 0.9975608587265015
+        },
+        {
+          "word": " lunch",
+          "start": 7.58,
+          "end": 7.82,
+          "probability": 0.9999146461486816
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 7.82,
+      "end": 9.46,
+      "text": " Bitch, I'm a baddie, I get what I want, like",
+      "tokens": [
+        50766,
+        40678,
+        11,
+        286,
+        478,
+        257,
+        1578,
+        11231,
+        11,
+        286,
+        483,
+        437,
+        286,
+        528,
+        11,
+        411,
+        50843
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Bitch,",
+          "start": 7.82,
+          "end": 8.16,
+          "probability": 0.9967105388641357
+        },
+        {
+          "word": " I'm",
+          "start": 8.18,
+          "end": 8.34,
+          "probability": 0.9471822381019592
+        },
+        {
+          "word": " a",
+          "start": 8.34,
+          "end": 8.34,
+          "probability": 0.49304962158203125
+        },
+        {
+          "word": " baddie,",
+          "start": 8.34,
+          "end": 8.62,
+          "probability": 0.977590024471283
+        },
+        {
+          "word": " I",
+          "start": 8.64,
+          "end": 8.72,
+          "probability": 0.9996284246444702
+        },
+        {
+          "word": " get",
+          "start": 8.72,
+          "end": 8.82,
+          "probability": 0.9919850826263428
+        },
+        {
+          "word": " what",
+          "start": 8.82,
+          "end": 8.98,
+          "probability": 0.9994341731071472
+        },
+        {
+          "word": " I",
+          "start": 8.98,
+          "end": 9.08,
+          "probability": 0.999825656414032
+        },
+        {
+          "word": " want,",
+          "start": 9.08,
+          "end": 9.28,
+          "probability": 0.9995456337928772
+        },
+        {
+          "word": " like",
+          "start": 9.3,
+          "end": 9.46,
+          "probability": 0.9998401403427124
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 9.46,
+      "end": 10.5,
+      "text": " You thought I was feelin' you?",
+      "tokens": [
+        50843,
+        509,
+        1194,
+        286,
+        390,
+        841,
+        259,
+        6,
+        291,
+        30,
+        50896
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " You",
+          "start": 9.46,
+          "end": 9.72,
+          "probability": 0.9783188700675964
+        },
+        {
+          "word": " thought",
+          "start": 9.72,
+          "end": 9.94,
+          "probability": 0.9974945783615112
+        },
+        {
+          "word": " I",
+          "start": 9.94,
+          "end": 10.06,
+          "probability": 0.9998795986175537
+        },
+        {
+          "word": " was",
+          "start": 10.06,
+          "end": 10.18,
+          "probability": 0.9999897480010986
+        },
+        {
+          "word": " feelin'",
+          "start": 10.18,
+          "end": 10.32,
+          "probability": 0.999437540769577
+        },
+        {
+          "word": " you?",
+          "start": 10.44,
+          "end": 10.5,
+          "probability": 0.9998631477355957
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 11.32,
+      "end": 12.2,
+      "text": " That nigga a munch",
+      "tokens": [
+        50939,
+        663,
+        41626,
+        257,
+        275,
+        1680,
+        50981
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " That",
+          "start": 11.32,
+          "end": 11.52,
+          "probability": 0.9987928867340088
+        },
+        {
+          "word": " nigga",
+          "start": 11.52,
+          "end": 11.74,
+          "probability": 0.999962329864502
+        },
+        {
+          "word": " a",
+          "start": 11.74,
+          "end": 11.92,
+          "probability": 0.9999172687530518
+        },
+        {
+          "word": " munch",
+          "start": 11.92,
+          "end": 12.2,
+          "probability": 0.9999210238456726
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 12.2,
+      "end": 13.62,
+      "text": " Nigga eat it, he ate it for lunch",
+      "tokens": [
+        50981,
+        39554,
+        3680,
+        1862,
+        309,
+        11,
+        415,
+        8468,
+        309,
+        337,
+        6349,
+        51055
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Nigga",
+          "start": 12.2,
+          "end": 12.56,
+          "probability": 0.9996627271175385
+        },
+        {
+          "word": " eat",
+          "start": 12.56,
+          "end": 12.78,
+          "probability": 0.9996480941772461
+        },
+        {
+          "word": " it,",
+          "start": 12.78,
+          "end": 12.84,
+          "probability": 0.9999936819076538
+        },
+        {
+          "word": " he",
+          "start": 12.9,
+          "end": 12.96,
+          "probability": 0.9999122619628906
+        },
+        {
+          "word": " ate",
+          "start": 12.96,
+          "end": 13.16,
+          "probability": 0.9998007416725159
+        },
+        {
+          "word": " it",
+          "start": 13.16,
+          "end": 13.26,
+          "probability": 0.9999946355819702
+        },
+        {
+          "word": " for",
+          "start": 13.26,
+          "end": 13.36,
+          "probability": 0.9999915361404419
+        },
+        {
+          "word": " lunch",
+          "start": 13.36,
+          "end": 13.62,
+          "probability": 0.9999157190322876
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 13.62,
+      "end": 15.26,
+      "text": " Bitch, I'm a baddie, I get what I want, like",
+      "tokens": [
+        51055,
+        40678,
+        11,
+        286,
+        478,
+        257,
+        1578,
+        11231,
+        11,
+        286,
+        483,
+        437,
+        286,
+        528,
+        11,
+        411,
+        51131
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Bitch,",
+          "start": 13.62,
+          "end": 13.94,
+          "probability": 0.9996620416641235
+        },
+        {
+          "word": " I'm",
+          "start": 13.96,
+          "end": 14.1,
+          "probability": 0.9999247789382935
+        },
+        {
+          "word": " a",
+          "start": 14.1,
+          "end": 14.14,
+          "probability": 0.99604731798172
+        },
+        {
+          "word": " baddie,",
+          "start": 14.14,
+          "end": 14.4,
+          "probability": 0.9998740255832672
+        },
+        {
+          "word": " I",
+          "start": 14.44,
+          "end": 14.5,
+          "probability": 0.9998992681503296
+        },
+        {
+          "word": " get",
+          "start": 14.5,
+          "end": 14.64,
+          "probability": 0.9999796152114868
+        },
+        {
+          "word": " what",
+          "start": 14.64,
+          "end": 14.76,
+          "probability": 0.9999914169311523
+        },
+        {
+          "word": " I",
+          "start": 14.76,
+          "end": 14.86,
+          "probability": 0.9998760223388672
+        },
+        {
+          "word": " want,",
+          "start": 14.86,
+          "end": 15.06,
+          "probability": 0.9999029636383057
+        },
+        {
+          "word": " like",
+          "start": 15.08,
+          "end": 15.26,
+          "probability": 0.999962568283081
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 15.26,
+      "end": 16.88,
+      "text": " Bitch, they ain't bad, let's keep it a bean",
+      "tokens": [
+        51131,
+        40678,
+        11,
+        436,
+        7862,
+        380,
+        1578,
+        11,
+        718,
+        311,
+        1066,
+        309,
+        257,
+        16230,
+        51216
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Bitch,",
+          "start": 15.26,
+          "end": 15.78,
+          "probability": 0.9987179040908813
+        },
+        {
+          "word": " they",
+          "start": 15.78,
+          "end": 15.92,
+          "probability": 0.6083680987358093
+        },
+        {
+          "word": " ain't",
+          "start": 15.92,
+          "end": 16.06,
+          "probability": 0.9918778240680695
+        },
+        {
+          "word": " bad,",
+          "start": 16.06,
+          "end": 16.14,
+          "probability": 0.9010485410690308
+        },
+        {
+          "word": " let's",
+          "start": 16.22,
+          "end": 16.32,
+          "probability": 0.9997154176235199
+        },
+        {
+          "word": " keep",
+          "start": 16.32,
+          "end": 16.46,
+          "probability": 0.9999687671661377
+        },
+        {
+          "word": " it",
+          "start": 16.46,
+          "end": 16.56,
+          "probability": 0.9998893737792969
+        },
+        {
+          "word": " a",
+          "start": 16.56,
+          "end": 16.64,
+          "probability": 0.9923513531684875
+        },
+        {
+          "word": " bean",
+          "start": 16.64,
+          "end": 16.88,
+          "probability": 0.5955715179443359
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 16.88,
+      "end": 18.28,
+      "text": " Know they be mad, I be on the scene",
+      "tokens": [
+        51216,
+        10265,
+        436,
+        312,
+        5244,
+        11,
+        286,
+        312,
+        322,
+        264,
+        4145,
+        51288
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Know",
+          "start": 16.88,
+          "end": 17.18,
+          "probability": 0.8885248303413391
+        },
+        {
+          "word": " they",
+          "start": 17.18,
+          "end": 17.26,
+          "probability": 0.9038187265396118
+        },
+        {
+          "word": " be",
+          "start": 17.26,
+          "end": 17.34,
+          "probability": 0.9935027956962585
+        },
+        {
+          "word": " mad,",
+          "start": 17.34,
+          "end": 17.56,
+          "probability": 0.9998555183410645
+        },
+        {
+          "word": " I",
+          "start": 17.62,
+          "end": 17.7,
+          "probability": 0.9991999268531799
+        },
+        {
+          "word": " be",
+          "start": 17.7,
+          "end": 17.82,
+          "probability": 0.799622654914856
+        },
+        {
+          "word": " on",
+          "start": 17.82,
+          "end": 17.96,
+          "probability": 0.9998892545700073
+        },
+        {
+          "word": " the",
+          "start": 17.96,
+          "end": 18.04,
+          "probability": 0.9223754405975342
+        },
+        {
+          "word": " scene",
+          "start": 18.04,
+          "end": 18.28,
+          "probability": 0.9983336329460144
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 0,
+      "start": 18.28,
+      "end": 19.82,
+      "text": " Ass too fat, can't fit in a jean",
+      "tokens": [
+        51288,
+        6281,
+        886,
+        4046,
+        11,
+        393,
+        380,
+        3318,
+        294,
+        257,
+        1506,
+        282,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Ass",
+          "start": 18.28,
+          "end": 18.62,
+          "probability": 0.7749618887901306
+        },
+        {
+          "word": " too",
+          "start": 18.62,
+          "end": 18.78,
+          "probability": 0.9994149208068848
+        },
+        {
+          "word": " fat,",
+          "start": 18.78,
+          "end": 18.96,
+          "probability": 0.9949733018875122
+        },
+        {
+          "word": " can't",
+          "start": 19.0,
+          "end": 19.24,
+          "probability": 0.999941349029541
+        },
+        {
+          "word": " fit",
+          "start": 19.24,
+          "end": 19.36,
+          "probability": 0.9998939037322998
+        },
+        {
+          "word": " in",
+          "start": 19.36,
+          "end": 19.46,
+          "probability": 0.9995181560516357
+        },
+        {
+          "word": " a",
+          "start": 19.46,
+          "end": 19.54,
+          "probability": 0.9797558784484863
+        },
+        {
+          "word": " jean",
+          "start": 19.54,
+          "end": 19.82,
+          "probability": 0.9970188736915588
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 0,
+      "start": 19.82,
+      "end": 21.18,
+      "text": " Use my stitch, but it's not what it seem",
+      "tokens": [
+        51364,
+        8278,
+        452,
+        5635,
+        11,
+        457,
+        309,
+        311,
+        406,
+        437,
+        309,
+        1643,
+        51433
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Use",
+          "start": 19.82,
+          "end": 20.1,
+          "probability": 0.7579744458198547
+        },
+        {
+          "word": " my",
+          "start": 20.1,
+          "end": 20.24,
+          "probability": 0.9992306232452393
+        },
+        {
+          "word": " stitch,",
+          "start": 20.24,
+          "end": 20.44,
+          "probability": 0.6976378560066223
+        },
+        {
+          "word": " but",
+          "start": 20.46,
+          "end": 20.58,
+          "probability": 0.9951410293579102
+        },
+        {
+          "word": " it's",
+          "start": 20.58,
+          "end": 20.72,
+          "probability": 0.9974088668823242
+        },
+        {
+          "word": " not",
+          "start": 20.72,
+          "end": 20.78,
+          "probability": 0.9997938275337219
+        },
+        {
+          "word": " what",
+          "start": 20.78,
+          "end": 20.88,
+          "probability": 0.9821314811706543
+        },
+        {
+          "word": " it",
+          "start": 20.88,
+          "end": 20.96,
+          "probability": 0.9993547797203064
+        },
+        {
+          "word": " seem",
+          "start": 20.96,
+          "end": 21.18,
+          "probability": 0.9920462369918823
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 0,
+      "start": 21.18,
+      "end": 22.66,
+      "text": " I got that ready, I'm keepin' it clean",
+      "tokens": [
+        51433,
+        286,
+        658,
+        300,
+        1919,
+        11,
+        286,
+        478,
+        1066,
+        259,
+        6,
+        309,
+        2541,
+        51506
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " I",
+          "start": 21.18,
+          "end": 21.48,
+          "probability": 0.9993071556091309
+        },
+        {
+          "word": " got",
+          "start": 21.48,
+          "end": 21.58,
+          "probability": 0.9999009370803833
+        },
+        {
+          "word": " that",
+          "start": 21.58,
+          "end": 21.74,
+          "probability": 0.9988697171211243
+        },
+        {
+          "word": " ready,",
+          "start": 21.74,
+          "end": 21.92,
+          "probability": 0.460846483707428
+        },
+        {
+          "word": " I'm",
+          "start": 22.0,
+          "end": 22.06,
+          "probability": 0.9999737739562988
+        },
+        {
+          "word": " keepin'",
+          "start": 22.06,
+          "end": 22.32,
+          "probability": 0.9794789254665375
+        },
+        {
+          "word": " it",
+          "start": 22.32,
+          "end": 22.36,
+          "probability": 0.9999711513519287
+        },
+        {
+          "word": " clean",
+          "start": 22.36,
+          "end": 22.66,
+          "probability": 0.99988853931427
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 0,
+      "start": 22.66,
+      "end": 24.08,
+      "text": " Fuckin' with niggas, that's totin' a bean",
+      "tokens": [
+        51506,
+        10965,
+        259,
+        6,
+        365,
+        297,
+        6249,
+        296,
+        11,
+        300,
+        311,
+        1993,
+        259,
+        6,
+        257,
+        16230,
+        51576
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Fuckin'",
+          "start": 22.66,
+          "end": 23.08,
+          "probability": 0.9864273965358734
+        },
+        {
+          "word": " with",
+          "start": 23.08,
+          "end": 23.12,
+          "probability": 0.9865977764129639
+        },
+        {
+          "word": " niggas,",
+          "start": 23.12,
+          "end": 23.42,
+          "probability": 0.9996024171511332
+        },
+        {
+          "word": " that's",
+          "start": 23.44,
+          "end": 23.58,
+          "probability": 0.9985450804233551
+        },
+        {
+          "word": " totin'",
+          "start": 23.58,
+          "end": 23.76,
+          "probability": 0.826049417257309
+        },
+        {
+          "word": " a",
+          "start": 23.76,
+          "end": 23.84,
+          "probability": 0.929269015789032
+        },
+        {
+          "word": " bean",
+          "start": 23.84,
+          "end": 24.08,
+          "probability": 0.7648426294326782
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 0,
+      "start": 24.08,
+      "end": 25.52,
+      "text": " Sayin' you love me, but what do you mean?",
+      "tokens": [
+        51576,
+        6463,
+        259,
+        6,
+        291,
+        959,
+        385,
+        11,
+        457,
+        437,
+        360,
+        291,
+        914,
+        30,
+        51647
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Sayin'",
+          "start": 24.08,
+          "end": 24.54,
+          "probability": 0.9194346964359283
+        },
+        {
+          "word": " you",
+          "start": 24.54,
+          "end": 24.62,
+          "probability": 0.9997346997261047
+        },
+        {
+          "word": " love",
+          "start": 24.62,
+          "end": 24.78,
+          "probability": 0.9998636245727539
+        },
+        {
+          "word": " me,",
+          "start": 24.78,
+          "end": 24.88,
+          "probability": 0.9999963045120239
+        },
+        {
+          "word": " but",
+          "start": 24.92,
+          "end": 25.0,
+          "probability": 0.9964190721511841
+        },
+        {
+          "word": " what",
+          "start": 25.0,
+          "end": 25.1,
+          "probability": 0.9999309778213501
+        },
+        {
+          "word": " do",
+          "start": 25.1,
+          "end": 25.22,
+          "probability": 0.9999077320098877
+        },
+        {
+          "word": " you",
+          "start": 25.22,
+          "end": 25.28,
+          "probability": 0.9999661445617676
+        },
+        {
+          "word": " mean?",
+          "start": 25.28,
+          "end": 25.52,
+          "probability": 0.9997782111167908
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 0,
+      "start": 25.72,
+      "end": 26.96,
+      "text": " Pretty ass fuckin' ain't like that I mean",
+      "tokens": [
+        51656,
+        10693,
+        1256,
+        20022,
+        6,
+        7862,
+        380,
+        411,
+        300,
+        286,
+        914,
+        51722
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Pretty",
+          "start": 25.72,
+          "end": 25.88,
+          "probability": 0.9730864763259888
+        },
+        {
+          "word": " ass",
+          "start": 25.88,
+          "end": 26.06,
+          "probability": 0.8801410794258118
+        },
+        {
+          "word": " fuckin'",
+          "start": 26.06,
+          "end": 26.22,
+          "probability": 0.8327767848968506
+        },
+        {
+          "word": " ain't",
+          "start": 26.32,
+          "end": 26.42,
+          "probability": 0.770666092634201
+        },
+        {
+          "word": " like",
+          "start": 26.42,
+          "end": 26.56,
+          "probability": 0.9975630044937134
+        },
+        {
+          "word": " that",
+          "start": 26.56,
+          "end": 26.66,
+          "probability": 0.9517064690589905
+        },
+        {
+          "word": " I",
+          "start": 26.66,
+          "end": 26.76,
+          "probability": 0.4248363971710205
+        },
+        {
+          "word": " mean",
+          "start": 26.76,
+          "end": 26.96,
+          "probability": 0.6964423656463623
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 0,
+      "start": 26.96,
+      "end": 28.14,
+      "text": " Baddest bitch out, you shittin' me?",
+      "tokens": [
+        51722,
+        11523,
+        23748,
+        11960,
+        484,
+        11,
+        291,
+        402,
+        593,
+        259,
+        6,
+        385,
+        30,
+        51779
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15094685872395833,
+      "compression_ratio": 2.1404109589041096,
+      "no_speech_prob": 0.283950537443161,
+      "words": [
+        {
+          "word": " Baddest",
+          "start": 26.96,
+          "end": 27.4,
+          "probability": 0.9910039007663727
+        },
+        {
+          "word": " bitch",
+          "start": 27.4,
+          "end": 27.52,
+          "probability": 0.9975670576095581
+        },
+        {
+          "word": " out,",
+          "start": 27.52,
+          "end": 27.7,
+          "probability": 0.4590423107147217
+        },
+        {
+          "word": " you",
+          "start": 27.72,
+          "end": 27.82,
+          "probability": 0.9998791217803955
+        },
+        {
+          "word": " shittin'",
+          "start": 27.82,
+          "end": 28.06,
+          "probability": 0.900148351987203
+        },
+        {
+          "word": " me?",
+          "start": 28.08,
+          "end": 28.14,
+          "probability": 0.999636173248291
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 31.16,
+      "text": " I swear that these bitches my mini-me's",
+      "tokens": [
+        50365,
+        286,
+        11902,
+        300,
+        613,
+        42094,
+        452,
+        8382,
+        12,
+        1398,
+        311,
+        50515
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " I",
+          "start": 30.0,
+          "end": 30.08,
+          "probability": 0.8862032890319824
+        },
+        {
+          "word": " swear",
+          "start": 30.08,
+          "end": 30.18,
+          "probability": 0.8606444597244263
+        },
+        {
+          "word": " that",
+          "start": 30.18,
+          "end": 30.28,
+          "probability": 0.9591270685195923
+        },
+        {
+          "word": " these",
+          "start": 30.28,
+          "end": 30.4,
+          "probability": 0.9633622765541077
+        },
+        {
+          "word": " bitches",
+          "start": 30.4,
+          "end": 30.6,
+          "probability": 0.9701542854309082
+        },
+        {
+          "word": " my",
+          "start": 30.6,
+          "end": 30.74,
+          "probability": 0.9727166295051575
+        },
+        {
+          "word": " mini",
+          "start": 30.74,
+          "end": 30.96,
+          "probability": 0.7838209867477417
+        },
+        {
+          "word": "-me's",
+          "start": 30.96,
+          "end": 31.16,
+          "probability": 0.8927476207415262
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 3000,
+      "start": 32.68000000000001,
+      "end": 34.4,
+      "text": " He wanna sex, niggas be dreamin'",
+      "tokens": [
+        50515,
+        634,
+        1948,
+        3260,
+        11,
+        297,
+        6249,
+        296,
+        312,
+        3055,
+        259,
+        6,
+        50590
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " He",
+          "start": 32.68000000000001,
+          "end": 32.96000000000001,
+          "probability": 0.4570537805557251
+        },
+        {
+          "word": " wanna",
+          "start": 32.96000000000001,
+          "end": 33.24,
+          "probability": 0.6793981194496155
+        },
+        {
+          "word": " sex,",
+          "start": 33.24,
+          "end": 33.44,
+          "probability": 0.9285220503807068
+        },
+        {
+          "word": " niggas",
+          "start": 33.66,
+          "end": 33.84,
+          "probability": 0.9878363807996114
+        },
+        {
+          "word": " be",
+          "start": 33.84,
+          "end": 33.94,
+          "probability": 0.9992772936820984
+        },
+        {
+          "word": " dreamin'",
+          "start": 33.94,
+          "end": 34.4,
+          "probability": 0.9464707374572754
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 3000,
+      "start": 34.4,
+      "end": 35.78,
+      "text": " I'm from the X, niggas be scheming",
+      "tokens": [
+        50590,
+        286,
+        478,
+        490,
+        264,
+        1783,
+        11,
+        297,
+        6249,
+        296,
+        312,
+        22627,
+        278,
+        50660
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 34.4,
+          "end": 34.56,
+          "probability": 0.9222391247749329
+        },
+        {
+          "word": " from",
+          "start": 34.56,
+          "end": 34.62,
+          "probability": 0.8627946376800537
+        },
+        {
+          "word": " the",
+          "start": 34.62,
+          "end": 34.74,
+          "probability": 0.9863026738166809
+        },
+        {
+          "word": " X,",
+          "start": 34.74,
+          "end": 34.92,
+          "probability": 0.9411722421646118
+        },
+        {
+          "word": " niggas",
+          "start": 35.1,
+          "end": 35.28,
+          "probability": 0.999592125415802
+        },
+        {
+          "word": " be",
+          "start": 35.28,
+          "end": 35.36,
+          "probability": 0.999818742275238
+        },
+        {
+          "word": " scheming",
+          "start": 35.36,
+          "end": 35.78,
+          "probability": 0.6049163639545441
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 3000,
+      "start": 35.78,
+      "end": 37.26,
+      "text": " I'm on they next, they is not breathin'",
+      "tokens": [
+        50660,
+        286,
+        478,
+        322,
+        436,
+        958,
+        11,
+        436,
+        307,
+        406,
+        6045,
+        259,
+        6,
+        50730
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 35.78,
+          "end": 36.0,
+          "probability": 0.9948066174983978
+        },
+        {
+          "word": " on",
+          "start": 36.0,
+          "end": 36.04,
+          "probability": 0.8500628471374512
+        },
+        {
+          "word": " they",
+          "start": 36.04,
+          "end": 36.14,
+          "probability": 0.5127828121185303
+        },
+        {
+          "word": " next,",
+          "start": 36.14,
+          "end": 36.44,
+          "probability": 0.6851406693458557
+        },
+        {
+          "word": " they",
+          "start": 36.6,
+          "end": 36.64,
+          "probability": 0.9524565935134888
+        },
+        {
+          "word": " is",
+          "start": 36.64,
+          "end": 36.76,
+          "probability": 0.48357850313186646
+        },
+        {
+          "word": " not",
+          "start": 36.76,
+          "end": 36.84,
+          "probability": 0.9983904361724854
+        },
+        {
+          "word": " breathin'",
+          "start": 36.84,
+          "end": 37.26,
+          "probability": 0.975907564163208
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 3000,
+      "start": 37.3,
+      "end": 38.56,
+      "text": " Thumb in her check, blow they neemins",
+      "tokens": [
+        50730,
+        334,
+        2860,
+        294,
+        720,
+        1520,
+        11,
+        6327,
+        436,
+        408,
+        443,
+        1292,
+        50800
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " Thumb",
+          "start": 37.3,
+          "end": 37.4,
+          "probability": 0.8628911375999451
+        },
+        {
+          "word": " in",
+          "start": 37.4,
+          "end": 37.5,
+          "probability": 0.7714146375656128
+        },
+        {
+          "word": " her",
+          "start": 37.5,
+          "end": 37.6,
+          "probability": 0.3994976282119751
+        },
+        {
+          "word": " check,",
+          "start": 37.6,
+          "end": 37.8,
+          "probability": 0.8857624530792236
+        },
+        {
+          "word": " blow",
+          "start": 37.98,
+          "end": 38.12,
+          "probability": 0.9970818161964417
+        },
+        {
+          "word": " they",
+          "start": 38.12,
+          "end": 38.28,
+          "probability": 0.4412519037723541
+        },
+        {
+          "word": " neemins",
+          "start": 38.28,
+          "end": 38.56,
+          "probability": 0.5664393405119578
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 3000,
+      "start": 38.56,
+      "end": 39.4,
+      "text": " You thought I was feelin' you?",
+      "tokens": [
+        50800,
+        509,
+        1194,
+        286,
+        390,
+        841,
+        259,
+        6,
+        291,
+        30,
+        50885
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " You",
+          "start": 38.56,
+          "end": 38.86,
+          "probability": 0.9875875115394592
+        },
+        {
+          "word": " thought",
+          "start": 38.86,
+          "end": 38.88,
+          "probability": 0.9699808955192566
+        },
+        {
+          "word": " I",
+          "start": 38.88,
+          "end": 39.0,
+          "probability": 0.9987779259681702
+        },
+        {
+          "word": " was",
+          "start": 39.0,
+          "end": 39.08,
+          "probability": 0.9989132881164551
+        },
+        {
+          "word": " feelin'",
+          "start": 39.08,
+          "end": 39.28,
+          "probability": 0.7495415955781937
+        },
+        {
+          "word": " you?",
+          "start": 39.32,
+          "end": 39.4,
+          "probability": 0.998264729976654
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 3000,
+      "start": 40.120000000000005,
+      "end": 41.1,
+      "text": " That nigga a munch",
+      "tokens": [
+        50885,
+        663,
+        41626,
+        257,
+        275,
+        1680,
+        50930
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " That",
+          "start": 40.120000000000005,
+          "end": 40.400000000000006,
+          "probability": 0.9274211525917053
+        },
+        {
+          "word": " nigga",
+          "start": 40.400000000000006,
+          "end": 40.68,
+          "probability": 0.9606034755706787
+        },
+        {
+          "word": " a",
+          "start": 40.68,
+          "end": 40.88,
+          "probability": 0.9908384680747986
+        },
+        {
+          "word": " munch",
+          "start": 40.88,
+          "end": 41.1,
+          "probability": 0.9977981746196747
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 3000,
+      "start": 41.1,
+      "end": 42.54,
+      "text": " Nigga eat her, he ate her for lunch",
+      "tokens": [
+        50930,
+        39554,
+        3680,
+        1862,
+        720,
+        11,
+        415,
+        8468,
+        720,
+        337,
+        6349,
+        51005
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " Nigga",
+          "start": 41.1,
+          "end": 41.52,
+          "probability": 0.8335582613945007
+        },
+        {
+          "word": " eat",
+          "start": 41.52,
+          "end": 41.66,
+          "probability": 0.5799002051353455
+        },
+        {
+          "word": " her,",
+          "start": 41.66,
+          "end": 41.78,
+          "probability": 0.6269018054008484
+        },
+        {
+          "word": " he",
+          "start": 41.82,
+          "end": 41.88,
+          "probability": 0.9938666224479675
+        },
+        {
+          "word": " ate",
+          "start": 41.88,
+          "end": 42.08,
+          "probability": 0.9911921620368958
+        },
+        {
+          "word": " her",
+          "start": 42.08,
+          "end": 42.16,
+          "probability": 0.5076465010643005
+        },
+        {
+          "word": " for",
+          "start": 42.16,
+          "end": 42.3,
+          "probability": 0.9992644190788269
+        },
+        {
+          "word": " lunch",
+          "start": 42.3,
+          "end": 42.54,
+          "probability": 0.9998972415924072
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 3000,
+      "start": 42.54,
+      "end": 44.18,
+      "text": " Bitch on my body, I get what I want like",
+      "tokens": [
+        51005,
+        40678,
+        322,
+        452,
+        1772,
+        11,
+        286,
+        483,
+        437,
+        286,
+        528,
+        411,
+        51085
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " Bitch",
+          "start": 42.54,
+          "end": 42.84,
+          "probability": 0.9981428384780884
+        },
+        {
+          "word": " on",
+          "start": 42.84,
+          "end": 42.98,
+          "probability": 0.3271804749965668
+        },
+        {
+          "word": " my",
+          "start": 42.98,
+          "end": 43.08,
+          "probability": 0.9991214871406555
+        },
+        {
+          "word": " body,",
+          "start": 43.08,
+          "end": 43.28,
+          "probability": 0.579976499080658
+        },
+        {
+          "word": " I",
+          "start": 43.34,
+          "end": 43.4,
+          "probability": 0.9982174038887024
+        },
+        {
+          "word": " get",
+          "start": 43.4,
+          "end": 43.56,
+          "probability": 0.9974508881568909
+        },
+        {
+          "word": " what",
+          "start": 43.56,
+          "end": 43.68,
+          "probability": 0.9994494318962097
+        },
+        {
+          "word": " I",
+          "start": 43.68,
+          "end": 43.78,
+          "probability": 0.9997774958610535
+        },
+        {
+          "word": " want",
+          "start": 43.78,
+          "end": 43.98,
+          "probability": 0.9993565678596497
+        },
+        {
+          "word": " like",
+          "start": 43.98,
+          "end": 44.18,
+          "probability": 0.6097393035888672
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 3000,
+      "start": 44.18,
+      "end": 45.18,
+      "text": " You thought I was feelin' you?",
+      "tokens": [
+        51085,
+        509,
+        1194,
+        286,
+        390,
+        841,
+        259,
+        6,
+        291,
+        30,
+        51175
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " You",
+          "start": 44.18,
+          "end": 44.42,
+          "probability": 0.9915726184844971
+        },
+        {
+          "word": " thought",
+          "start": 44.42,
+          "end": 44.66,
+          "probability": 0.9968823194503784
+        },
+        {
+          "word": " I",
+          "start": 44.66,
+          "end": 44.76,
+          "probability": 0.999916672706604
+        },
+        {
+          "word": " was",
+          "start": 44.76,
+          "end": 44.88,
+          "probability": 0.9999885559082031
+        },
+        {
+          "word": " feelin'",
+          "start": 44.88,
+          "end": 45.02,
+          "probability": 0.9997188150882721
+        },
+        {
+          "word": " you?",
+          "start": 45.12,
+          "end": 45.18,
+          "probability": 0.9997912049293518
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "seek": 3000,
+      "start": 45.32,
+      "end": 46.9,
+      "text": " That nigga a munch",
+      "tokens": [
+        51175,
+        663,
+        41626,
+        257,
+        275,
+        1680,
+        51220
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " That",
+          "start": 45.32,
+          "end": 45.44,
+          "probability": 0.9986463189125061
+        },
+        {
+          "word": " nigga",
+          "start": 45.44,
+          "end": 46.42,
+          "probability": 0.9999315738677979
+        },
+        {
+          "word": " a",
+          "start": 46.42,
+          "end": 46.64,
+          "probability": 0.9998855590820312
+        },
+        {
+          "word": " munch",
+          "start": 46.64,
+          "end": 46.9,
+          "probability": 0.9999262094497681
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 3000,
+      "start": 46.9,
+      "end": 48.32,
+      "text": " Nigga eat her, he ate her for lunch",
+      "tokens": [
+        51220,
+        39554,
+        3680,
+        1862,
+        720,
+        11,
+        415,
+        8468,
+        720,
+        337,
+        6349,
+        51295
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " Nigga",
+          "start": 46.9,
+          "end": 47.26,
+          "probability": 0.9987550377845764
+        },
+        {
+          "word": " eat",
+          "start": 47.26,
+          "end": 47.48,
+          "probability": 0.9999388456344604
+        },
+        {
+          "word": " her,",
+          "start": 47.48,
+          "end": 47.58,
+          "probability": 0.9999926090240479
+        },
+        {
+          "word": " he",
+          "start": 47.6,
+          "end": 47.68,
+          "probability": 0.9999057054519653
+        },
+        {
+          "word": " ate",
+          "start": 47.68,
+          "end": 47.84,
+          "probability": 0.9995360374450684
+        },
+        {
+          "word": " her",
+          "start": 47.84,
+          "end": 47.96,
+          "probability": 0.9996987581253052
+        },
+        {
+          "word": " for",
+          "start": 47.96,
+          "end": 48.06,
+          "probability": 0.9999912977218628
+        },
+        {
+          "word": " lunch",
+          "start": 48.06,
+          "end": 48.32,
+          "probability": 0.999879002571106
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "seek": 3000,
+      "start": 48.32,
+      "end": 49.96,
+      "text": " Bitch on my body, I get what I want like",
+      "tokens": [
+        51295,
+        40678,
+        322,
+        452,
+        1772,
+        11,
+        286,
+        483,
+        437,
+        286,
+        528,
+        411,
+        51365
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " Bitch",
+          "start": 48.32,
+          "end": 48.66,
+          "probability": 0.9995139837265015
+        },
+        {
+          "word": " on",
+          "start": 48.66,
+          "end": 48.76,
+          "probability": 0.9989736080169678
+        },
+        {
+          "word": " my",
+          "start": 48.76,
+          "end": 48.86,
+          "probability": 0.9999836683273315
+        },
+        {
+          "word": " body,",
+          "start": 48.86,
+          "end": 49.08,
+          "probability": 0.9994305968284607
+        },
+        {
+          "word": " I",
+          "start": 49.12,
+          "end": 49.2,
+          "probability": 0.9999173879623413
+        },
+        {
+          "word": " get",
+          "start": 49.2,
+          "end": 49.34,
+          "probability": 0.9999542236328125
+        },
+        {
+          "word": " what",
+          "start": 49.34,
+          "end": 49.46,
+          "probability": 0.9999655485153198
+        },
+        {
+          "word": " I",
+          "start": 49.46,
+          "end": 49.6,
+          "probability": 0.9998668432235718
+        },
+        {
+          "word": " want",
+          "start": 49.6,
+          "end": 49.76,
+          "probability": 0.9997174143791199
+        },
+        {
+          "word": " like",
+          "start": 49.76,
+          "end": 49.96,
+          "probability": 0.9999563694000244
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "seek": 3000,
+      "start": 49.96,
+      "end": 51.18,
+      "text": " Bitch on my body, I get what I please",
+      "tokens": [
+        51365,
+        40678,
+        322,
+        452,
+        1772,
+        11,
+        286,
+        483,
+        437,
+        286,
+        1767,
+        51435
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " Bitch",
+          "start": 49.96,
+          "end": 50.12,
+          "probability": 0.9979276657104492
+        },
+        {
+          "word": " on",
+          "start": 50.12,
+          "end": 50.22,
+          "probability": 0.9993471503257751
+        },
+        {
+          "word": " my",
+          "start": 50.22,
+          "end": 50.28,
+          "probability": 0.9999773502349854
+        },
+        {
+          "word": " body,",
+          "start": 50.28,
+          "end": 50.5,
+          "probability": 0.997974693775177
+        },
+        {
+          "word": " I",
+          "start": 50.56,
+          "end": 50.64,
+          "probability": 0.9999403953552246
+        },
+        {
+          "word": " get",
+          "start": 50.64,
+          "end": 50.76,
+          "probability": 0.9998656511306763
+        },
+        {
+          "word": " what",
+          "start": 50.76,
+          "end": 50.84,
+          "probability": 0.9998185038566589
+        },
+        {
+          "word": " I",
+          "start": 50.84,
+          "end": 50.96,
+          "probability": 0.9998070597648621
+        },
+        {
+          "word": " please",
+          "start": 50.96,
+          "end": 51.18,
+          "probability": 0.9890537261962891
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 3000,
+      "start": 51.18,
+      "end": 52.7,
+      "text": " You know my body, I do it with ease",
+      "tokens": [
+        51435,
+        509,
+        458,
+        452,
+        1772,
+        11,
+        286,
+        360,
+        309,
+        365,
+        12708,
+        51510
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " You",
+          "start": 51.18,
+          "end": 51.46,
+          "probability": 0.9943892359733582
+        },
+        {
+          "word": " know",
+          "start": 51.46,
+          "end": 51.58,
+          "probability": 0.9990026354789734
+        },
+        {
+          "word": " my",
+          "start": 51.58,
+          "end": 51.66,
+          "probability": 0.9996834993362427
+        },
+        {
+          "word": " body,",
+          "start": 51.66,
+          "end": 51.94,
+          "probability": 0.9998501539230347
+        },
+        {
+          "word": " I",
+          "start": 51.98,
+          "end": 52.06,
+          "probability": 0.9999163150787354
+        },
+        {
+          "word": " do",
+          "start": 52.06,
+          "end": 52.18,
+          "probability": 0.9991223216056824
+        },
+        {
+          "word": " it",
+          "start": 52.18,
+          "end": 52.3,
+          "probability": 0.9955276846885681
+        },
+        {
+          "word": " with",
+          "start": 52.3,
+          "end": 52.4,
+          "probability": 0.9965820908546448
+        },
+        {
+          "word": " ease",
+          "start": 52.4,
+          "end": 52.7,
+          "probability": 0.9980345368385315
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 3000,
+      "start": 52.7,
+      "end": 54.0,
+      "text": " He with my body, he tellin' me please",
+      "tokens": [
+        51510,
+        634,
+        365,
+        452,
+        1772,
+        11,
+        415,
+        980,
+        259,
+        6,
+        385,
+        1767,
+        51585
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " He",
+          "start": 52.7,
+          "end": 52.94,
+          "probability": 0.990380048751831
+        },
+        {
+          "word": " with",
+          "start": 52.94,
+          "end": 53.02,
+          "probability": 0.6662444472312927
+        },
+        {
+          "word": " my",
+          "start": 53.02,
+          "end": 53.12,
+          "probability": 0.9994401335716248
+        },
+        {
+          "word": " body,",
+          "start": 53.12,
+          "end": 53.38,
+          "probability": 0.9998396635055542
+        },
+        {
+          "word": " he",
+          "start": 53.46,
+          "end": 53.5,
+          "probability": 0.9999077320098877
+        },
+        {
+          "word": " tellin'",
+          "start": 53.5,
+          "end": 53.7,
+          "probability": 0.9800175130367279
+        },
+        {
+          "word": " me",
+          "start": 53.74,
+          "end": 53.8,
+          "probability": 0.9998929500579834
+        },
+        {
+          "word": " please",
+          "start": 53.8,
+          "end": 54.0,
+          "probability": 0.9699491262435913
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 3000,
+      "start": 54.0,
+      "end": 55.56,
+      "text": " I'm walkin' past him, he sniffin' my breeze",
+      "tokens": [
+        51585,
+        286,
+        478,
+        1792,
+        259,
+        6,
+        1791,
+        796,
+        11,
+        415,
+        31101,
+        259,
+        6,
+        452,
+        24532,
+        51655
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " I'm",
+          "start": 54.0,
+          "end": 54.42,
+          "probability": 0.9430029094219208
+        },
+        {
+          "word": " walkin'",
+          "start": 54.42,
+          "end": 54.6,
+          "probability": 0.795857161283493
+        },
+        {
+          "word": " past",
+          "start": 54.62,
+          "end": 54.74,
+          "probability": 0.6714780330657959
+        },
+        {
+          "word": " him,",
+          "start": 54.74,
+          "end": 54.9,
+          "probability": 0.9725589752197266
+        },
+        {
+          "word": " he",
+          "start": 54.9,
+          "end": 54.98,
+          "probability": 0.999896764755249
+        },
+        {
+          "word": " sniffin'",
+          "start": 54.98,
+          "end": 55.18,
+          "probability": 0.9693456888198853
+        },
+        {
+          "word": " my",
+          "start": 55.2,
+          "end": 55.28,
+          "probability": 0.9984493255615234
+        },
+        {
+          "word": " breeze",
+          "start": 55.28,
+          "end": 55.56,
+          "probability": 0.986718475818634
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 3000,
+      "start": 55.56,
+      "end": 56.94,
+      "text": " He jackin' me, but he not my boo",
+      "tokens": [
+        51655,
+        634,
+        7109,
+        259,
+        6,
+        385,
+        11,
+        457,
+        415,
+        406,
+        452,
+        23113,
+        51725
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15114376491970485,
+      "compression_ratio": 2.218430034129693,
+      "no_speech_prob": 0.16608858108520508,
+      "words": [
+        {
+          "word": " He",
+          "start": 55.56,
+          "end": 55.84,
+          "probability": 0.9991567134857178
+        },
+        {
+          "word": " jackin'",
+          "start": 55.84,
+          "end": 56.12,
+          "probability": 0.977676123380661
+        },
+        {
+          "word": " me,",
+          "start": 56.12,
+          "end": 56.18,
+          "probability": 0.9993088245391846
+        },
+        {
+          "word": " but",
+          "start": 56.28,
+          "end": 56.42,
+          "probability": 0.9999275207519531
+        },
+        {
+          "word": " he",
+          "start": 56.42,
+          "end": 56.5,
+          "probability": 0.999975323677063
+        },
+        {
+          "word": " not",
+          "start": 56.5,
+          "end": 56.62,
+          "probability": 0.9991204142570496
+        },
+        {
+          "word": " my",
+          "start": 56.62,
+          "end": 56.76,
+          "probability": 0.9995456337928772
+        },
+        {
+          "word": " boo",
+          "start": 56.76,
+          "end": 56.94,
+          "probability": 0.7921895980834961
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 5694,
+      "start": 56.94,
+      "end": 58.44,
+      "text": " He like the jewelry I wear on my boobs",
+      "tokens": [
+        50365,
+        634,
+        411,
+        264,
+        19982,
+        286,
+        3728,
+        322,
+        452,
+        40439,
+        50446
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " He",
+          "start": 56.94,
+          "end": 57.26,
+          "probability": 0.8311684727668762
+        },
+        {
+          "word": " like",
+          "start": 57.26,
+          "end": 57.4,
+          "probability": 0.9938767552375793
+        },
+        {
+          "word": " the",
+          "start": 57.4,
+          "end": 57.5,
+          "probability": 0.9919241070747375
+        },
+        {
+          "word": " jewelry",
+          "start": 57.5,
+          "end": 57.7,
+          "probability": 0.9906290173530579
+        },
+        {
+          "word": " I",
+          "start": 57.7,
+          "end": 57.84,
+          "probability": 0.9366719126701355
+        },
+        {
+          "word": " wear",
+          "start": 57.84,
+          "end": 58.0,
+          "probability": 0.9983256459236145
+        },
+        {
+          "word": " on",
+          "start": 58.0,
+          "end": 58.06,
+          "probability": 0.9812058210372925
+        },
+        {
+          "word": " my",
+          "start": 58.06,
+          "end": 58.16,
+          "probability": 0.9990018010139465
+        },
+        {
+          "word": " boobs",
+          "start": 58.16,
+          "end": 58.44,
+          "probability": 0.9959425330162048
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 5694,
+      "start": 58.44,
+      "end": 59.82,
+      "text": " How can I link you when I got a shoe?",
+      "tokens": [
+        50446,
+        1012,
+        393,
+        286,
+        2113,
+        291,
+        562,
+        286,
+        658,
+        257,
+        12796,
+        30,
+        50515
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " How",
+          "start": 58.44,
+          "end": 58.66,
+          "probability": 0.7957971692085266
+        },
+        {
+          "word": " can",
+          "start": 58.66,
+          "end": 58.82,
+          "probability": 0.9992296695709229
+        },
+        {
+          "word": " I",
+          "start": 58.82,
+          "end": 58.92,
+          "probability": 0.9993866682052612
+        },
+        {
+          "word": " link",
+          "start": 58.92,
+          "end": 59.08,
+          "probability": 0.9970704317092896
+        },
+        {
+          "word": " you",
+          "start": 59.08,
+          "end": 59.2,
+          "probability": 0.9994533658027649
+        },
+        {
+          "word": " when",
+          "start": 59.2,
+          "end": 59.32,
+          "probability": 0.8165178298950195
+        },
+        {
+          "word": " I",
+          "start": 59.32,
+          "end": 59.42,
+          "probability": 0.9997838139533997
+        },
+        {
+          "word": " got",
+          "start": 59.42,
+          "end": 59.54,
+          "probability": 0.8126723766326904
+        },
+        {
+          "word": " a",
+          "start": 59.54,
+          "end": 59.66,
+          "probability": 0.9968225955963135
+        },
+        {
+          "word": " shoe?",
+          "start": 59.66,
+          "end": 59.82,
+          "probability": 0.5766515135765076
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "seek": 5694,
+      "start": 59.92,
+      "end": 61.18,
+      "text": " Don't want your love, I just want the blue",
+      "tokens": [
+        50524,
+        1468,
+        380,
+        528,
+        428,
+        959,
+        11,
+        286,
+        445,
+        528,
+        264,
+        3344,
+        50584
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " Don't",
+          "start": 59.92,
+          "end": 60.2,
+          "probability": 0.9979847371578217
+        },
+        {
+          "word": " want",
+          "start": 60.2,
+          "end": 60.3,
+          "probability": 0.9054672122001648
+        },
+        {
+          "word": " your",
+          "start": 60.3,
+          "end": 60.36,
+          "probability": 0.9928560256958008
+        },
+        {
+          "word": " love,",
+          "start": 60.36,
+          "end": 60.56,
+          "probability": 0.9853869676589966
+        },
+        {
+          "word": " I",
+          "start": 60.58,
+          "end": 60.66,
+          "probability": 0.9993558526039124
+        },
+        {
+          "word": " just",
+          "start": 60.66,
+          "end": 60.76,
+          "probability": 0.9997840523719788
+        },
+        {
+          "word": " want",
+          "start": 60.76,
+          "end": 60.92,
+          "probability": 0.9998575448989868
+        },
+        {
+          "word": " the",
+          "start": 60.92,
+          "end": 61.04,
+          "probability": 0.999658465385437
+        },
+        {
+          "word": " blue",
+          "start": 61.04,
+          "end": 61.18,
+          "probability": 0.9952932000160217
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 5694,
+      "start": 61.18,
+      "end": 62.8,
+      "text": " Grabbing my ass while I'm doing my dance",
+      "tokens": [
+        50584,
+        20357,
+        4324,
+        452,
+        1256,
+        1339,
+        286,
+        478,
+        884,
+        452,
+        4489,
+        50663
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " Grabbing",
+          "start": 61.18,
+          "end": 61.72,
+          "probability": 0.8000048398971558
+        },
+        {
+          "word": " my",
+          "start": 61.72,
+          "end": 61.82,
+          "probability": 0.9998103976249695
+        },
+        {
+          "word": " ass",
+          "start": 61.82,
+          "end": 61.98,
+          "probability": 0.999210000038147
+        },
+        {
+          "word": " while",
+          "start": 61.98,
+          "end": 62.1,
+          "probability": 0.9985122084617615
+        },
+        {
+          "word": " I'm",
+          "start": 62.1,
+          "end": 62.22,
+          "probability": 0.9999563097953796
+        },
+        {
+          "word": " doing",
+          "start": 62.22,
+          "end": 62.36,
+          "probability": 0.9962373971939087
+        },
+        {
+          "word": " my",
+          "start": 62.36,
+          "end": 62.5,
+          "probability": 0.9998708963394165
+        },
+        {
+          "word": " dance",
+          "start": 62.5,
+          "end": 62.8,
+          "probability": 0.9998490810394287
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 5694,
+      "start": 62.8,
+      "end": 64.2,
+      "text": " She won't stare, ain't cause shorty a fan",
+      "tokens": [
+        50663,
+        1240,
+        1582,
+        380,
+        22432,
+        11,
+        7862,
+        380,
+        3082,
+        2099,
+        88,
+        257,
+        3429,
+        50734
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " She",
+          "start": 62.8,
+          "end": 63.0,
+          "probability": 0.6723785996437073
+        },
+        {
+          "word": " won't",
+          "start": 63.0,
+          "end": 63.28,
+          "probability": 0.884682297706604
+        },
+        {
+          "word": " stare,",
+          "start": 63.28,
+          "end": 63.42,
+          "probability": 0.36023396253585815
+        },
+        {
+          "word": " ain't",
+          "start": 63.46,
+          "end": 63.56,
+          "probability": 0.9174493253231049
+        },
+        {
+          "word": " cause",
+          "start": 63.56,
+          "end": 63.62,
+          "probability": 0.319158136844635
+        },
+        {
+          "word": " shorty",
+          "start": 63.62,
+          "end": 63.9,
+          "probability": 0.9413441717624664
+        },
+        {
+          "word": " a",
+          "start": 63.9,
+          "end": 63.94,
+          "probability": 0.9984696507453918
+        },
+        {
+          "word": " fan",
+          "start": 63.94,
+          "end": 64.2,
+          "probability": 0.9994334578514099
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "seek": 5694,
+      "start": 64.64,
+      "end": 65.64,
+      "text": " Gotta stick to the plan",
+      "tokens": [
+        50734,
+        21527,
+        2897,
+        281,
+        264,
+        1393,
+        50806
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " Gotta",
+          "start": 64.64,
+          "end": 64.92,
+          "probability": 0.93780118227005
+        },
+        {
+          "word": " stick",
+          "start": 64.92,
+          "end": 65.2,
+          "probability": 0.9996521472930908
+        },
+        {
+          "word": " to",
+          "start": 65.2,
+          "end": 65.32,
+          "probability": 0.9999603033065796
+        },
+        {
+          "word": " the",
+          "start": 65.32,
+          "end": 65.42,
+          "probability": 0.9998538494110107
+        },
+        {
+          "word": " plan",
+          "start": 65.42,
+          "end": 65.64,
+          "probability": 0.9999816417694092
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 5694,
+      "start": 65.64,
+      "end": 67.08,
+      "text": " He mad as fuck, I won't give him a chance",
+      "tokens": [
+        50806,
+        634,
+        5244,
+        382,
+        3275,
+        11,
+        286,
+        1582,
+        380,
+        976,
+        796,
+        257,
+        2931,
+        50879
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " He",
+          "start": 65.64,
+          "end": 65.9,
+          "probability": 0.940526008605957
+        },
+        {
+          "word": " mad",
+          "start": 65.9,
+          "end": 66.06,
+          "probability": 0.9988396763801575
+        },
+        {
+          "word": " as",
+          "start": 66.06,
+          "end": 66.16,
+          "probability": 0.9992808699607849
+        },
+        {
+          "word": " fuck,",
+          "start": 66.16,
+          "end": 66.28,
+          "probability": 0.9990085959434509
+        },
+        {
+          "word": " I",
+          "start": 66.32,
+          "end": 66.42,
+          "probability": 0.9999688863754272
+        },
+        {
+          "word": " won't",
+          "start": 66.42,
+          "end": 66.52,
+          "probability": 0.9998782575130463
+        },
+        {
+          "word": " give",
+          "start": 66.52,
+          "end": 66.64,
+          "probability": 0.9999270439147949
+        },
+        {
+          "word": " him",
+          "start": 66.64,
+          "end": 66.76,
+          "probability": 0.999994158744812
+        },
+        {
+          "word": " a",
+          "start": 66.76,
+          "end": 66.84,
+          "probability": 0.9999667406082153
+        },
+        {
+          "word": " chance",
+          "start": 66.84,
+          "end": 67.08,
+          "probability": 0.9999818801879883
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "seek": 5694,
+      "start": 67.08,
+      "end": 68.16,
+      "text": " But still he gon' do what I say",
+      "tokens": [
+        50879,
+        583,
+        920,
+        415,
+        26307,
+        6,
+        360,
+        437,
+        286,
+        584,
+        50932
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " But",
+          "start": 67.08,
+          "end": 67.32,
+          "probability": 0.9957515001296997
+        },
+        {
+          "word": " still",
+          "start": 67.32,
+          "end": 67.4,
+          "probability": 0.9998059868812561
+        },
+        {
+          "word": " he",
+          "start": 67.4,
+          "end": 67.5,
+          "probability": 0.6178789138793945
+        },
+        {
+          "word": " gon'",
+          "start": 67.5,
+          "end": 67.64,
+          "probability": 0.9606979489326477
+        },
+        {
+          "word": " do",
+          "start": 67.66,
+          "end": 67.7,
+          "probability": 0.9999891519546509
+        },
+        {
+          "word": " what",
+          "start": 67.7,
+          "end": 67.82,
+          "probability": 0.9999567270278931
+        },
+        {
+          "word": " I",
+          "start": 67.82,
+          "end": 67.94,
+          "probability": 0.9999837875366211
+        },
+        {
+          "word": " say",
+          "start": 67.94,
+          "end": 68.16,
+          "probability": 0.9999451637268066
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 5694,
+      "start": 68.16,
+      "end": 69.7,
+      "text": " I swear I'll be stuck in my ways",
+      "tokens": [
+        50932,
+        286,
+        11902,
+        286,
+        603,
+        312,
+        5541,
+        294,
+        452,
+        2098,
+        51009
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " I",
+          "start": 68.16,
+          "end": 68.68,
+          "probability": 0.9847750067710876
+        },
+        {
+          "word": " swear",
+          "start": 68.68,
+          "end": 68.86,
+          "probability": 0.9997819066047668
+        },
+        {
+          "word": " I'll",
+          "start": 68.86,
+          "end": 69.02,
+          "probability": 0.7728789746761322
+        },
+        {
+          "word": " be",
+          "start": 69.02,
+          "end": 69.04,
+          "probability": 0.9999673366546631
+        },
+        {
+          "word": " stuck",
+          "start": 69.04,
+          "end": 69.2,
+          "probability": 0.9994625449180603
+        },
+        {
+          "word": " in",
+          "start": 69.2,
+          "end": 69.32,
+          "probability": 0.997962236404419
+        },
+        {
+          "word": " my",
+          "start": 69.32,
+          "end": 69.4,
+          "probability": 0.9999791383743286
+        },
+        {
+          "word": " ways",
+          "start": 69.4,
+          "end": 69.7,
+          "probability": 0.9192700982093811
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 5694,
+      "start": 69.7,
+      "end": 71.06,
+      "text": " But still he gon' do what I say",
+      "tokens": [
+        51009,
+        583,
+        920,
+        415,
+        26307,
+        6,
+        360,
+        437,
+        286,
+        584,
+        51077
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " But",
+          "start": 69.7,
+          "end": 70.12,
+          "probability": 0.9672759771347046
+        },
+        {
+          "word": " still",
+          "start": 70.12,
+          "end": 70.3,
+          "probability": 0.9999899864196777
+        },
+        {
+          "word": " he",
+          "start": 70.3,
+          "end": 70.38,
+          "probability": 0.9998868703842163
+        },
+        {
+          "word": " gon'",
+          "start": 70.38,
+          "end": 70.5,
+          "probability": 0.9996402263641357
+        },
+        {
+          "word": " do",
+          "start": 70.6,
+          "end": 70.62,
+          "probability": 0.9999958276748657
+        },
+        {
+          "word": " what",
+          "start": 70.62,
+          "end": 70.72,
+          "probability": 0.9999918937683105
+        },
+        {
+          "word": " I",
+          "start": 70.72,
+          "end": 70.82,
+          "probability": 0.9999823570251465
+        },
+        {
+          "word": " say",
+          "start": 70.82,
+          "end": 71.06,
+          "probability": 0.999971866607666
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "seek": 5694,
+      "start": 71.06,
+      "end": 72.6,
+      "text": " I swear I'll be stuck in my ways",
+      "tokens": [
+        51077,
+        286,
+        11902,
+        286,
+        603,
+        312,
+        5541,
+        294,
+        452,
+        2098,
+        51153
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " I",
+          "start": 71.06,
+          "end": 71.56,
+          "probability": 0.9995348453521729
+        },
+        {
+          "word": " swear",
+          "start": 71.56,
+          "end": 71.72,
+          "probability": 0.999800980091095
+        },
+        {
+          "word": " I'll",
+          "start": 71.72,
+          "end": 71.9,
+          "probability": 0.9999640583992004
+        },
+        {
+          "word": " be",
+          "start": 71.9,
+          "end": 71.94,
+          "probability": 0.9999788999557495
+        },
+        {
+          "word": " stuck",
+          "start": 71.94,
+          "end": 72.08,
+          "probability": 0.999966025352478
+        },
+        {
+          "word": " in",
+          "start": 72.08,
+          "end": 72.22,
+          "probability": 0.999993085861206
+        },
+        {
+          "word": " my",
+          "start": 72.22,
+          "end": 72.28,
+          "probability": 0.9999909400939941
+        },
+        {
+          "word": " ways",
+          "start": 72.28,
+          "end": 72.6,
+          "probability": 0.9969172477722168
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "seek": 5694,
+      "start": 73.03999999999999,
+      "end": 74.12,
+      "text": " You thought I was feeling you?",
+      "tokens": [
+        51153,
+        509,
+        1194,
+        286,
+        390,
+        2633,
+        291,
+        30,
+        51230
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " You",
+          "start": 73.03999999999999,
+          "end": 73.32,
+          "probability": 0.9861671328544617
+        },
+        {
+          "word": " thought",
+          "start": 73.32,
+          "end": 73.54,
+          "probability": 0.9940727353096008
+        },
+        {
+          "word": " I",
+          "start": 73.54,
+          "end": 73.66,
+          "probability": 0.9999395608901978
+        },
+        {
+          "word": " was",
+          "start": 73.66,
+          "end": 73.78,
+          "probability": 0.9999691247940063
+        },
+        {
+          "word": " feeling",
+          "start": 73.78,
+          "end": 73.92,
+          "probability": 0.7932772636413574
+        },
+        {
+          "word": " you?",
+          "start": 73.92,
+          "end": 74.12,
+          "probability": 0.9999125003814697
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "seek": 5694,
+      "start": 74.82,
+      "end": 75.8,
+      "text": " That nigga a munch",
+      "tokens": [
+        51267,
+        663,
+        41626,
+        257,
+        275,
+        1680,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " That",
+          "start": 74.82,
+          "end": 75.1,
+          "probability": 0.9708166122436523
+        },
+        {
+          "word": " nigga",
+          "start": 75.1,
+          "end": 75.36,
+          "probability": 0.9449862241744995
+        },
+        {
+          "word": " a",
+          "start": 75.36,
+          "end": 75.56,
+          "probability": 0.9926579594612122
+        },
+        {
+          "word": " munch",
+          "start": 75.56,
+          "end": 75.8,
+          "probability": 0.9984930455684662
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "seek": 5694,
+      "start": 75.8,
+      "end": 77.22,
+      "text": " Nigga, either he ate it for lunch",
+      "tokens": [
+        51314,
+        39554,
+        3680,
+        11,
+        2139,
+        415,
+        8468,
+        309,
+        337,
+        6349,
+        51388
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " Nigga,",
+          "start": 75.8,
+          "end": 76.2,
+          "probability": 0.9537295997142792
+        },
+        {
+          "word": " either",
+          "start": 76.2,
+          "end": 76.38,
+          "probability": 0.604709267616272
+        },
+        {
+          "word": " he",
+          "start": 76.38,
+          "end": 76.58,
+          "probability": 0.9996784925460815
+        },
+        {
+          "word": " ate",
+          "start": 76.58,
+          "end": 76.76,
+          "probability": 0.99796462059021
+        },
+        {
+          "word": " it",
+          "start": 76.76,
+          "end": 76.86,
+          "probability": 0.9999051094055176
+        },
+        {
+          "word": " for",
+          "start": 76.86,
+          "end": 76.98,
+          "probability": 0.9999724626541138
+        },
+        {
+          "word": " lunch",
+          "start": 76.98,
+          "end": 77.22,
+          "probability": 0.9999585151672363
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "seek": 5694,
+      "start": 77.22,
+      "end": 78.84,
+      "text": " Bitch, I'm a baddie, I get what I want, like",
+      "tokens": [
+        51388,
+        40678,
+        11,
+        286,
+        478,
+        257,
+        1578,
+        11231,
+        11,
+        286,
+        483,
+        437,
+        286,
+        528,
+        11,
+        411,
+        51465
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " Bitch,",
+          "start": 77.22,
+          "end": 77.56,
+          "probability": 0.9987873435020447
+        },
+        {
+          "word": " I'm",
+          "start": 77.58,
+          "end": 77.72,
+          "probability": 0.9142853617668152
+        },
+        {
+          "word": " a",
+          "start": 77.72,
+          "end": 77.74,
+          "probability": 0.7760753631591797
+        },
+        {
+          "word": " baddie,",
+          "start": 77.74,
+          "end": 78.02,
+          "probability": 0.9787420034408569
+        },
+        {
+          "word": " I",
+          "start": 78.04,
+          "end": 78.1,
+          "probability": 0.9999401569366455
+        },
+        {
+          "word": " get",
+          "start": 78.1,
+          "end": 78.24,
+          "probability": 0.9980931878089905
+        },
+        {
+          "word": " what",
+          "start": 78.24,
+          "end": 78.36,
+          "probability": 0.999914288520813
+        },
+        {
+          "word": " I",
+          "start": 78.36,
+          "end": 78.48,
+          "probability": 0.9999878406524658
+        },
+        {
+          "word": " want,",
+          "start": 78.48,
+          "end": 78.68,
+          "probability": 0.9998711347579956
+        },
+        {
+          "word": " like",
+          "start": 78.7,
+          "end": 78.84,
+          "probability": 0.9998950958251953
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "seek": 5694,
+      "start": 78.84,
+      "end": 79.9,
+      "text": " You thought I was feeling you?",
+      "tokens": [
+        51465,
+        509,
+        1194,
+        286,
+        390,
+        2633,
+        291,
+        30,
+        51518
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " You",
+          "start": 78.84,
+          "end": 79.12,
+          "probability": 0.9984579086303711
+        },
+        {
+          "word": " thought",
+          "start": 79.12,
+          "end": 79.34,
+          "probability": 0.9992448091506958
+        },
+        {
+          "word": " I",
+          "start": 79.34,
+          "end": 79.44,
+          "probability": 0.9999740123748779
+        },
+        {
+          "word": " was",
+          "start": 79.44,
+          "end": 79.54,
+          "probability": 0.9999970197677612
+        },
+        {
+          "word": " feeling",
+          "start": 79.54,
+          "end": 79.7,
+          "probability": 0.9999419450759888
+        },
+        {
+          "word": " you?",
+          "start": 79.7,
+          "end": 79.9,
+          "probability": 0.9999865293502808
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "seek": 5694,
+      "start": 80.7,
+      "end": 81.58,
+      "text": " That nigga a munch",
+      "tokens": [
+        51557,
+        663,
+        41626,
+        257,
+        275,
+        1680,
+        51603
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " That",
+          "start": 80.7,
+          "end": 80.9,
+          "probability": 0.9991139769554138
+        },
+        {
+          "word": " nigga",
+          "start": 80.9,
+          "end": 81.12,
+          "probability": 0.9999618530273438
+        },
+        {
+          "word": " a",
+          "start": 81.12,
+          "end": 81.32,
+          "probability": 0.9999740123748779
+        },
+        {
+          "word": " munch",
+          "start": 81.32,
+          "end": 81.58,
+          "probability": 0.9999416470527649
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "seek": 5694,
+      "start": 81.58,
+      "end": 83.0,
+      "text": " Nigga, either he ate it for lunch",
+      "tokens": [
+        51603,
+        39554,
+        3680,
+        11,
+        2139,
+        415,
+        8468,
+        309,
+        337,
+        6349,
+        51678
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " Nigga,",
+          "start": 81.58,
+          "end": 82.0,
+          "probability": 0.9996694028377533
+        },
+        {
+          "word": " either",
+          "start": 82.0,
+          "end": 82.2,
+          "probability": 0.9995798468589783
+        },
+        {
+          "word": " he",
+          "start": 82.2,
+          "end": 82.38,
+          "probability": 0.9999889135360718
+        },
+        {
+          "word": " ate",
+          "start": 82.38,
+          "end": 82.54,
+          "probability": 0.9999397993087769
+        },
+        {
+          "word": " it",
+          "start": 82.54,
+          "end": 82.66,
+          "probability": 0.9999994039535522
+        },
+        {
+          "word": " for",
+          "start": 82.66,
+          "end": 82.74,
+          "probability": 0.9999986886978149
+        },
+        {
+          "word": " lunch",
+          "start": 82.74,
+          "end": 83.0,
+          "probability": 0.9999737739562988
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "seek": 5694,
+      "start": 83.0,
+      "end": 84.7,
+      "text": " Bitch, I'm a baddie, I get what I want, like",
+      "tokens": [
+        51678,
+        40678,
+        11,
+        286,
+        478,
+        257,
+        1578,
+        11231,
+        11,
+        286,
+        483,
+        437,
+        286,
+        528,
+        11,
+        411,
+        51754
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12048943690989973,
+      "compression_ratio": 2.2162162162162162,
+      "no_speech_prob": 0.42124491930007935,
+      "words": [
+        {
+          "word": " Bitch,",
+          "start": 83.0,
+          "end": 83.34,
+          "probability": 0.9993321299552917
+        },
+        {
+          "word": " I'm",
+          "start": 83.38,
+          "end": 83.5,
+          "probability": 0.9999936819076538
+        },
+        {
+          "word": " a",
+          "start": 83.5,
+          "end": 83.5,
+          "probability": 0.9998984336853027
+        },
+        {
+          "word": " baddie,",
+          "start": 83.5,
+          "end": 83.8,
+          "probability": 0.9999145865440369
+        },
+        {
+          "word": " I",
+          "start": 83.82,
+          "end": 83.88,
+          "probability": 0.9999892711639404
+        },
+        {
+          "word": " get",
+          "start": 83.88,
+          "end": 84.04,
+          "probability": 0.9999876022338867
+        },
+        {
+          "word": " what",
+          "start": 84.04,
+          "end": 84.14,
+          "probability": 0.9999978542327881
+        },
+        {
+          "word": " I",
+          "start": 84.14,
+          "end": 84.24,
+          "probability": 0.999991774559021
+        },
+        {
+          "word": " want,",
+          "start": 84.24,
+          "end": 84.44,
+          "probability": 0.9999818801879883
+        },
+        {
+          "word": " like",
+          "start": 84.48,
+          "end": 84.7,
+          "probability": 0.9999899864196777
+        }
+      ]
+    }
+  ],
+  "language": "en",
+  "model": "large-v3",
+  "normalized": "you thought i was feelin you that nigga a munch nigga eat it he ate it for lunch bitch i'm a baddie i get what i want like you thought i was feelin you that nigga a munch nigga eat it he ate it for lunch bitch i'm a baddie i get what i want like bitch they ain't bad let's keep it a bean know they be mad i be on the scene ass too fat can't fit in a jean use my stitch but it's not what it seem i got that ready i'm keepin it clean fuckin with niggas that's totin a bean sayin you love me but what do you mean pretty ass fuckin ain't like that i mean baddest bitch out you shittin me i swear that these bitches my mini me's he wanna sex niggas be dreamin i'm from the x niggas be scheming i'm on they next they is not breathin thumb in her check blow they neemins you thought i was feelin you that nigga a munch nigga eat her he ate her for lunch bitch on my body i get what i want like you thought i was feelin you that nigga a munch nigga eat her he ate her for lunch bitch on my body i get what i want like bitch on my body i get what i please you know my body i do it with ease he with my body he tellin me please i'm walkin past him he sniffin my breeze he jackin me but he not my boo he like the jewelry i wear on my boobs how can i link you when i got a shoe don't want your love i just want the blue grabbing my ass while i'm doing my dance she won't stare ain't cause shorty a fan gotta stick to the plan he mad as fuck i won't give him a chance but still he gon do what i say i swear i'll be stuck in my ways but still he gon do what i say i swear i'll be stuck in my ways you thought i was feeling you that nigga a munch nigga either he ate it for lunch bitch i'm a baddie i get what i want like you thought i was feeling you that nigga a munch nigga either he ate it for lunch bitch i'm a baddie i get what i want like"
+}

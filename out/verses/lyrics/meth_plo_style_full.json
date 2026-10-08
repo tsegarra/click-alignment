@@ -1,0 +1,114 @@
+{
+ "lines": [
+  {
+   "text": "Here comes the ruckus, the motherfucking ruckus",
+   "norm": "here comes the ruckus the motherfucking ruckus",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 24.44,
+   "e": 27.08
+  },
+  {
+   "text": "Thousands of cut-throats and crumb-snatching fuckers",
+   "norm": "thousands of cut throats and crumb snatching fuckers",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 27.08,
+   "e": 29.74
+  },
+  {
+   "text": "Straight from the brain, I'll be giving you the pain",
+   "norm": "straight from the brain i'll be giving you the pain",
+   "words": 10,
+   "matched": 8,
+   "guessed": false,
+   "s": 30.0,
+   "e": 32.22
+  },
+  {
+   "text": "Anger, coming from the 36th Chamber, bang!",
+   "norm": "anger coming from the thirty sixth chamber bang",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 32.62,
+   "e": 35.58
+  },
+  {
+   "text": "Tical, hitting with the Buddha-Fist style",
+   "norm": "tical hitting with the buddha fist style",
+   "words": 7,
+   "matched": 4,
+   "guessed": false,
+   "s": 36.22,
+   "e": 38.14
+  },
+  {
+   "text": "Shotgun slamming in your chestpiece, bloaw!",
+   "norm": "shotgun slamming in your chestpiece bloaw",
+   "words": 6,
+   "matched": 5,
+   "guessed": false,
+   "s": 38.56,
+   "e": 40.8
+  },
+  {
+   "text": "Frame is blown all over the terrain",
+   "norm": "frame is blown all over the terrain",
+   "words": 7,
+   "matched": 6,
+   "guessed": false,
+   "s": 41.16,
+   "e": 43.34
+  },
+  {
+   "text": "Like a man without no arms, you can't hang",
+   "norm": "like a man without no arms you can't hang",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 43.62,
+   "e": 46.14
+  },
+  {
+   "text": "Time for a change of the guard",
+   "norm": "time for a change of the guard",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 46.34,
+   "e": 48.1
+  },
+  {
+   "text": "You've been arrested for lyric fraud, now you barred",
+   "norm": "you've been arrested for lyric fraud now you barred",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 48.24,
+   "e": 50.82
+  },
+  {
+   "text": "For real, check it, I pull strings like B.B. King on guitar",
+   "norm": "for real check it i pull strings like b b king on guitar",
+   "words": 13,
+   "matched": 13,
+   "guessed": false,
+   "s": 50.88,
+   "e": 53.88
+  },
+  {
+   "text": "I'm the true Fist of the North Star!",
+   "norm": "i'm the true fist of the north star",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 54.22,
+   "e": 56.3
+  }
+ ],
+ "lyricWords": 99,
+ "matchedWords": 90
+}

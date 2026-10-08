@@ -1,0 +1,870 @@
+{
+ "lines": [
+  {
+   "text": "Yeah, yeah, yeah, yeah",
+   "norm": "yeah yeah yeah yeah",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 11.200000000000008,
+   "e": 16.32
+  },
+  {
+   "text": "Yeah, yeah, yeah, yeah",
+   "norm": "yeah yeah yeah yeah",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 16.34,
+   "e": 19.98
+  },
+  {
+   "text": "Superstars, superstars, superstars out",
+   "norm": "superstars superstars superstars out",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 19.98,
+   "e": 23.44
+  },
+  {
+   "text": "Brand new cars, we buy the bar now",
+   "norm": "brand new cars we buy the bar now",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 23.64,
+   "e": 26.56
+  },
+  {
+   "text": "Swang doors now, fuck on hoes now",
+   "norm": "swang doors now fuck on hoes now",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 26.56,
+   "e": 29.72
+  },
+  {
+   "text": "Tats and golds, uh, rock the shows, uh",
+   "norm": "tats and golds uh rock the shows uh",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 30.18,
+   "e": 32.84
+  },
+  {
+   "text": "Big bank rolls, now she go, uh",
+   "norm": "big bank rolls now she go uh",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 33.34,
+   "e": 36.06
+  },
+  {
+   "text": "For the team, uh, now she wet, don't ski, uh",
+   "norm": "for the team uh now she wet don't ski uh",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 36.38,
+   "e": 39.18
+  },
+  {
+   "text": "Thinkin' 'bout postin' her on the 'gram, and delete her",
+   "norm": "thinkin bout postin her on the gram and delete her",
+   "words": 10,
+   "matched": 7,
+   "guessed": false,
+   "s": 39.9,
+   "e": 42.98
+  },
+  {
+   "text": "Whole gang in the field, we don't do bleachers, uh",
+   "norm": "whole gang in the field we don't do bleachers uh",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 42.98,
+   "e": 45.88
+  },
+  {
+   "text": "Pockets lettuce, uh",
+   "norm": "pockets lettuce uh",
+   "words": 3,
+   "matched": 2,
+   "guessed": false,
+   "s": 46.0,
+   "e": 47.08
+  },
+  {
+   "text": "Bitch, don't think I'm ready, uh uh",
+   "norm": "bitch don't think i'm ready uh uh",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 47.24,
+   "e": 49.1
+  },
+  {
+   "text": "You got that swag",
+   "norm": "you got that swag",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 49.16,
+   "e": 49.9
+  },
+  {
+   "text": "You got that sauce then sell it, uh uh",
+   "norm": "you got that sauce then sell it uh uh",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 50.0,
+   "e": 52.26
+  },
+  {
+   "text": "Free my niggas, cash 'em out we bailin'",
+   "norm": "free my niggas cash em out we bailin",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 52.32,
+   "e": 54.86
+  },
+  {
+   "text": "Saw my teacher, I was the same student, failin'",
+   "norm": "saw my teacher i was the same student failin",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 55.26,
+   "e": 57.72
+  },
+  {
+   "text": "Now I got a lawyer, straight cash, no settlement",
+   "norm": "now i got a lawyer straight cash no settlement",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 58.32,
+   "e": 61.04
+  },
+  {
+   "text": "I'm out my element, out my, out my element",
+   "norm": "i'm out my element out my out my element",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 61.04,
+   "e": 64.24
+  },
+  {
+   "text": "My niggas the same, don't need no clout, no fame",
+   "norm": "my niggas the same don't need no clout no fame",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 64.24,
+   "e": 67.32
+  },
+  {
+   "text": "Bought the gang, all brand new chains",
+   "norm": "bought the gang all brand new chains",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 68.02000000000001,
+   "e": 70.58
+  },
+  {
+   "text": "Swerve the lane, call the group \"The gang\"",
+   "norm": "swerve the lane call the group the gang",
+   "words": 8,
+   "matched": 6,
+   "guessed": false,
+   "s": 71.36,
+   "e": 73.68
+  },
+  {
+   "text": "Whip that thing, then she give me brain",
+   "norm": "whip that thing then she give me brain",
+   "words": 8,
+   "matched": 6,
+   "guessed": false,
+   "s": 74.48,
+   "e": 76.82
+  },
+  {
+   "text": "Them boys fool you tryna do it, bring the toolies out",
+   "norm": "them boys fool you tryna do it bring the toolies out",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 77.02,
+   "e": 80.24
+  },
+  {
+   "text": "Niggas don't want no smoke, they pull up with they coochies out",
+   "norm": "niggas don't want no smoke they pull up with they coochies out",
+   "words": 12,
+   "matched": 12,
+   "guessed": false,
+   "s": 80.24,
+   "e": 83.54
+  },
+  {
+   "text": "It's times three, it's times three, that's how it goes",
+   "norm": "it's times three it's times three that's how it goes",
+   "words": 10,
+   "matched": 6,
+   "guessed": false,
+   "s": 83.54,
+   "e": 86.21000000000001
+  },
+  {
+   "text": "Park a million dollars at the bando",
+   "norm": "park a million dollars at the bando",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 86.21000000000001,
+   "e": 89.04
+  },
+  {
+   "text": "We gon' make 'em eat that dope until we go",
+   "norm": "we gon make em eat that dope until we go",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 90.0,
+   "e": 92.5
+  },
+  {
+   "text": "Rich niggas straight to the top floor",
+   "norm": "rich niggas straight to the top floor",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 92.5,
+   "e": 94.68
+  },
+  {
+   "text": "On more PJs than Pablo",
+   "norm": "on more pjs than pablo",
+   "words": 5,
+   "matched": 5,
+   "guessed": false,
+   "s": 94.68,
+   "e": 96.18
+  },
+  {
+   "text": "Wrist like water, go to Cabo",
+   "norm": "wrist like water go to cabo",
+   "words": 6,
+   "matched": 5,
+   "guessed": false,
+   "s": 96.3,
+   "e": 97.84
+  },
+  {
+   "text": "Cash in the walls, hollow",
+   "norm": "cash in the walls hollow",
+   "words": 5,
+   "matched": 5,
+   "guessed": false,
+   "s": 97.84,
+   "e": 99.28
+  },
+  {
+   "text": "Your money too small, micro",
+   "norm": "your money too small micro",
+   "words": 5,
+   "matched": 5,
+   "guessed": false,
+   "s": 99.28,
+   "e": 100.92
+  },
+  {
+   "text": "Huncho on the call, gotta reload",
+   "norm": "huncho on the call gotta reload",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 100.92,
+   "e": 102.48
+  },
+  {
+   "text": "Yeah, yeah, yeah, yeah",
+   "norm": "yeah yeah yeah yeah",
+   "words": 4,
+   "matched": 0,
+   "guessed": true,
+   "s": 102.48,
+   "e": 105.9
+  },
+  {
+   "text": "Yeah, yeah, yeah, yeah",
+   "norm": "yeah yeah yeah yeah",
+   "words": 4,
+   "matched": 0,
+   "guessed": true,
+   "s": 105.9,
+   "e": 109.32000000000001
+  },
+  {
+   "text": "Superstars, superstars, superstars out",
+   "norm": "superstars superstars superstars out",
+   "words": 4,
+   "matched": 3,
+   "guessed": false,
+   "s": 109.32000000000001,
+   "e": 111.9
+  },
+  {
+   "text": "Brand new cars, we buy the bar now",
+   "norm": "brand new cars we buy the bar now",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 111.9,
+   "e": 115.06
+  },
+  {
+   "text": "Swang doors now, fuck on hoes now",
+   "norm": "swang doors now fuck on hoes now",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 115.06,
+   "e": 118.2
+  },
+  {
+   "text": "Tats and golds, uh, rock the shows, uh",
+   "norm": "tats and golds uh rock the shows uh",
+   "words": 8,
+   "matched": 5,
+   "guessed": false,
+   "s": 120.0,
+   "e": 121.3
+  },
+  {
+   "text": "Big bank rolls, now she go, uh",
+   "norm": "big bank rolls now she go uh",
+   "words": 7,
+   "matched": 5,
+   "guessed": false,
+   "s": 121.8,
+   "e": 124.54
+  },
+  {
+   "text": "For the team, uh, now she wet, don't ski, uh",
+   "norm": "for the team uh now she wet don't ski uh",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 125.02,
+   "e": 127.66
+  },
+  {
+   "text": "Thinkin' 'bout postin' her on the 'gram, and delete her",
+   "norm": "thinkin bout postin her on the gram and delete her",
+   "words": 10,
+   "matched": 8,
+   "guessed": false,
+   "s": 128.02,
+   "e": 130.86
+  },
+  {
+   "text": "Whole gang in the field, we don't do bleachers",
+   "norm": "whole gang in the field we don't do bleachers",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 130.86,
+   "e": 134.04
+  },
+  {
+   "text": "Thinkin' 'bout postin' her on the 'gram, and delete her",
+   "norm": "thinkin bout postin her on the gram and delete her",
+   "words": 10,
+   "matched": 8,
+   "guessed": false,
+   "s": 134.04,
+   "e": 137.2
+  },
+  {
+   "text": "Whole gang in the field, we don't do bleachers",
+   "norm": "whole gang in the field we don't do bleachers",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 137.2,
+   "e": 140.42
+  },
+  {
+   "text": "Ice the gang, had to ice the gang",
+   "norm": "ice the gang had to ice the gang",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 140.42,
+   "e": 143.14
+  },
+  {
+   "text": "So much ice, had to ice the lane",
+   "norm": "so much ice had to ice the lane",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 143.74,
+   "e": 146.3
+  },
+  {
+   "text": "Freeze the dud, had to freeze the lame",
+   "norm": "freeze the dud had to freeze the lame",
+   "words": 8,
+   "matched": 6,
+   "guessed": false,
+   "s": 147.0,
+   "e": 149.46
+  },
+  {
+   "text": "Camera phone, Scarface, Al Capone",
+   "norm": "camera phone scarface al capone",
+   "words": 5,
+   "matched": 2,
+   "guessed": false,
+   "s": 150.22,
+   "e": 151.74
+  },
+  {
+   "text": "Turn your lights off, nigga, we've been on",
+   "norm": "turn your lights off nigga we've been on",
+   "words": 8,
+   "matched": 6,
+   "guessed": false,
+   "s": 153.5,
+   "e": 156.5
+  },
+  {
+   "text": "Came from my block and growed up, guess I'm homegrown",
+   "norm": "came from my block and growed up guess i'm homegrown",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 156.58,
+   "e": 159.7
+  },
+  {
+   "text": "Well known, cookie, that is my cologne",
+   "norm": "well known cookie that is my cologne",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 159.7,
+   "e": 162.0
+  },
+  {
+   "text": "I put my wrist inside the freezer, came out froze",
+   "norm": "i put my wrist inside the freezer came out froze",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 162.84,
+   "e": 165.2
+  },
+  {
+   "text": "I put my heart inside this shit 'cause I was chose",
+   "norm": "i put my heart inside this shit cause i was chose",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 166.02,
+   "e": 169.16
+  },
+  {
+   "text": "I put my heart inside and only God knows",
+   "norm": "i put my heart inside and only god knows",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 169.16,
+   "e": 172.4
+  },
+  {
+   "text": "Get a Kleenex for that baby, wipe his nose",
+   "norm": "get a kleenex for that baby wipe his nose",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 172.4,
+   "e": 175.56
+  },
+  {
+   "text": "What's a leg? We shootin' heads 'til they explode",
+   "norm": "what's a leg we shootin heads til they explode",
+   "words": 9,
+   "matched": 5,
+   "guessed": false,
+   "s": 175.56,
+   "e": 177.8
+  },
+  {
+   "text": "Yeah, yeah, yeah, yeah",
+   "norm": "yeah yeah yeah yeah",
+   "words": 4,
+   "matched": 3,
+   "guessed": false,
+   "s": 179.22,
+   "e": 181.44
+  },
+  {
+   "text": "Yeah, yeah, yeah, yeah",
+   "norm": "yeah yeah yeah yeah",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 181.62,
+   "e": 184.5
+  },
+  {
+   "text": "Superstars, superstars, superstars out",
+   "norm": "superstars superstars superstars out",
+   "words": 4,
+   "matched": 3,
+   "guessed": false,
+   "s": 186.35999999999999,
+   "e": 187.64
+  },
+  {
+   "text": "Brand new cars, we buy the bar now",
+   "norm": "brand new cars we buy the bar now",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 188.02,
+   "e": 190.9
+  },
+  {
+   "text": "Swang doors now, fuck on hoes now",
+   "norm": "swang doors now fuck on hoes now",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 190.9,
+   "e": 194.02
+  },
+  {
+   "text": "Tats and golds, uh, rock the shows, uh",
+   "norm": "tats and golds uh rock the shows uh",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 194.02,
+   "e": 197.16
+  },
+  {
+   "text": "Big bank rolls, now she go, uh",
+   "norm": "big bank rolls now she go uh",
+   "words": 7,
+   "matched": 5,
+   "guessed": false,
+   "s": 197.64,
+   "e": 200.38
+  },
+  {
+   "text": "For the team, uh, now she wet, don't ski, uh",
+   "norm": "for the team uh now she wet don't ski uh",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 200.42,
+   "e": 203.48
+  },
+  {
+   "text": "Thinkin' 'bout postin' her on the 'gram, and delete her",
+   "norm": "thinkin bout postin her on the gram and delete her",
+   "words": 10,
+   "matched": 8,
+   "guessed": false,
+   "s": 203.9,
+   "e": 206.72
+  },
+  {
+   "text": "Whole gang in the field, we don't do bleachers",
+   "norm": "whole gang in the field we don't do bleachers",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 207.58,
+   "e": 209.92
+  },
+  {
+   "text": "Thinkin' 'bout postin' her on the 'gram, and delete her",
+   "norm": "thinkin bout postin her on the gram and delete her",
+   "words": 10,
+   "matched": 7,
+   "guessed": false,
+   "s": 210.42,
+   "e": 213.56
+  },
+  {
+   "text": "Whole gang in the field, we don't do bleachers",
+   "norm": "whole gang in the field we don't do bleachers",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 213.64,
+   "e": 216.18
+  },
+  {
+   "text": "Woo! Woo! Woo! Woo! Woo! Offset!",
+   "norm": "woo woo woo woo woo offset",
+   "words": 6,
+   "matched": 0,
+   "guessed": true,
+   "s": 216.18,
+   "e": 216.74
+  },
+  {
+   "text": "Wraith with the stars out",
+   "norm": "wraith with the stars out",
+   "words": 5,
+   "matched": 5,
+   "guessed": false,
+   "s": 216.74,
+   "e": 217.8
+  },
+  {
+   "text": "Trappin' out the boarded house",
+   "norm": "trappin out the boarded house",
+   "words": 5,
+   "matched": 3,
+   "guessed": false,
+   "s": 218.4,
+   "e": 219.46
+  },
+  {
+   "text": "The bricks get deported out",
+   "norm": "the bricks get deported out",
+   "words": 5,
+   "matched": 4,
+   "guessed": false,
+   "s": 219.82,
+   "e": 220.98
+  },
+  {
+   "text": "Niggas grouped out for a shout",
+   "norm": "niggas grouped out for a shout",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 221.48,
+   "e": 222.48
+  },
+  {
+   "text": "Marvin the Martian, I'ma put your brain up for auction",
+   "norm": "marvin the martian i'ma put your brain up for auction",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 223.04,
+   "e": 225.34
+  },
+  {
+   "text": "Proceed with caution, skele' AP is frosted",
+   "norm": "proceed with caution skele ap is frosted",
+   "words": 7,
+   "matched": 6,
+   "guessed": false,
+   "s": 226.12,
+   "e": 228.6
+  },
+  {
+   "text": "I sit back and read the offence, my hoe is addicted to faucets",
+   "norm": "i sit back and read the offence my hoe is addicted to faucets",
+   "words": 13,
+   "matched": 12,
+   "guessed": false,
+   "s": 228.9,
+   "e": 231.8
+  },
+  {
+   "text": "Chanel bag is ostrich, stay down, come up in the process",
+   "norm": "chanel bag is ostrich stay down come up in the process",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 232.0,
+   "e": 234.70999999999998
+  },
+  {
+   "text": "Hey, private jet, yeah, thotty wanna fuck the same sex, yeah",
+   "norm": "hey private jet yeah thotty wanna fuck the same sex yeah",
+   "words": 11,
+   "matched": 8,
+   "guessed": false,
+   "s": 234.70999999999998,
+   "e": 238.28
+  },
+  {
+   "text": "Diamond mill' mill', yeah, I'ma keep the bitch on welfare",
+   "norm": "diamond mill mill yeah i'ma keep the bitch on welfare",
+   "words": 10,
+   "matched": 7,
+   "guessed": false,
+   "s": 238.28,
+   "e": 241.2
+  },
+  {
+   "text": "The pink stone real rare, bling bling blaow, yeah",
+   "norm": "the pink stone real rare bling bling blaow yeah",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 241.2,
+   "e": 244.62
+  },
+  {
+   "text": "Mama got style, yeah, Chanel reptile, player",
+   "norm": "mama got style yeah chanel reptile player",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 244.62,
+   "e": 247.84
+  },
+  {
+   "text": "Geeked on Mars, gotta give the grace up to God",
+   "norm": "geeked on mars gotta give the grace up to god",
+   "words": 10,
+   "matched": 5,
+   "guessed": false,
+   "s": 248.32,
+   "e": 250.62
+  },
+  {
+   "text": "Three rock stars, nobody seein' the gang, on God",
+   "norm": "three rock stars nobody seein the gang on god",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 251.2,
+   "e": 253.7
+  },
+  {
+   "text": "Yeah, yeah, yeah, yeah",
+   "norm": "yeah yeah yeah yeah",
+   "words": 4,
+   "matched": 3,
+   "guessed": false,
+   "s": 254.74,
+   "e": 256.68
+  },
+  {
+   "text": "Yeah, yeah, yeah, yeah",
+   "norm": "yeah yeah yeah yeah",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 256.68,
+   "e": 260.24
+  },
+  {
+   "text": "Superstars, superstars, superstars out",
+   "norm": "superstars superstars superstars out",
+   "words": 4,
+   "matched": 3,
+   "guessed": false,
+   "s": 261.46,
+   "e": 263.64
+  },
+  {
+   "text": "Brand new cars, we buy the bar now",
+   "norm": "brand new cars we buy the bar now",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 264.0,
+   "e": 266.7
+  },
+  {
+   "text": "Swang doors now, fuck on hoes now",
+   "norm": "swang doors now fuck on hoes now",
+   "words": 7,
+   "matched": 6,
+   "guessed": false,
+   "s": 266.86,
+   "e": 269.86
+  },
+  {
+   "text": "Tats and golds, uh, rock the shows, uh",
+   "norm": "tats and golds uh rock the shows uh",
+   "words": 8,
+   "matched": 5,
+   "guessed": false,
+   "s": 270.47999999999996,
+   "e": 272.88000000000005
+  },
+  {
+   "text": "Big bank rolls, now she go, uh",
+   "norm": "big bank rolls now she go uh",
+   "words": 7,
+   "matched": 5,
+   "guessed": false,
+   "s": 273.5,
+   "e": 276.0
+  },
+  {
+   "text": "For the team, uh, now she wet, don't ski, uh",
+   "norm": "for the team uh now she wet don't ski uh",
+   "words": 10,
+   "matched": 8,
+   "guessed": false,
+   "s": 276.7,
+   "e": 279.08000000000004
+  },
+  {
+   "text": "Thinkin' 'bout postin' her on the 'gram, and delete her",
+   "norm": "thinkin bout postin her on the gram and delete her",
+   "words": 10,
+   "matched": 7,
+   "guessed": false,
+   "s": 280.08,
+   "e": 283.12
+  },
+  {
+   "text": "Whole gang in the field, we don't do bleachers",
+   "norm": "whole gang in the field we don't do bleachers",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 283.18,
+   "e": 285.76
+  },
+  {
+   "text": "Thinkin' 'bout postin' her on the 'gram, and delete her",
+   "norm": "thinkin bout postin her on the gram and delete her",
+   "words": 10,
+   "matched": 7,
+   "guessed": false,
+   "s": 286.24,
+   "e": 289.44
+  },
+  {
+   "text": "Whole gang in the field, we don't do bleachers",
+   "norm": "whole gang in the field we don't do bleachers",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 289.52,
+   "e": 292.16
+  }
+ ],
+ "lyricWords": 743,
+ "matchedWords": 643
+}

@@ -109,6 +109,68 @@
         { "text": "sell", "syllables": 1 },
         { "text": "it", "syllables": 1 }
       ]
+    },
+    {
+      "id": "2pac-hell-is",
+      "title": "All Eyez On Me: of hell is where",
+      "file": "clips/2pac_hell_is.wav",
+      "words": [
+        { "text": "of", "syllables": 1 },
+        { "text": "hell", "syllables": 1 },
+        { "text": "is", "syllables": 1 },
+        { "text": "where", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "2pac-holla",
+      "title": "All Eyez On Me: nigga holla when",
+      "file": "clips/2pac_holla.wav",
+      "words": [
+        { "text": "nigga", "syllables": 2 },
+        { "text": "holla", "syllables": 2 },
+        { "text": "when", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "2pac-caravan",
+      "title": "All Eyez On Me: got a caravan",
+      "file": "clips/2pac_caravan.wav",
+      "words": [
+        { "text": "got", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "caravan", "syllables": 3 }
+      ]
+    },
+    {
+      "id": "2pac-until",
+      "title": "All Eyez On Me: by until I die",
+      "file": "clips/2pac_until.wav",
+      "words": [
+        { "text": "by", "syllables": 1 },
+        { "text": "until", "syllables": 2 },
+        { "text": "I", "syllables": 1 },
+        { "text": "die", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "2pac-later",
+      "title": "All Eyez On Me: crossed later the",
+      "file": "clips/2pac_later.wav",
+      "words": [
+        { "text": "crossed", "syllables": 1 },
+        { "text": "later", "syllables": 2 },
+        { "text": "the", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "2pac-my-eyes",
+      "title": "All Eyez On Me: in my eyes",
+      "file": "clips/2pac_my_eyes.wav",
+      "words": [
+        { "text": "in", "syllables": 1 },
+        { "text": "my", "syllables": 1 },
+        { "text": "eyes", "syllables": 1 }
+      ]
     }
   ]
 }

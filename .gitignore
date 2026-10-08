@@ -4,3 +4,6 @@
 out/corpus/
 out/aligned/
 user-data
+out/verses/corpus/
+out/verses/aligned/
+out/whisper

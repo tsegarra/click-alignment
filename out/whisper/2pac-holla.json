@@ -1,0 +1,33 @@
+{
+  "text": " Nick, I holla when you say it.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.0,
+      "text": " Nick, I holla when you say it.",
+      "tokens": [
+        50365,
+        9449,
+        11,
+        286,
+        1106,
+        3505,
+        562,
+        291,
+        584,
+        309,
+        13,
+        50415
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7190989714402419,
+      "compression_ratio": 0.7894736842105263,
+      "no_speech_prob": 0.49253934621810913
+    }
+  ],
+  "language": "en",
+  "model": "large-v3",
+  "normalized": "nick i holla when you say it"
+}

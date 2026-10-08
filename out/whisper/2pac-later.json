@@ -1,0 +1,25 @@
+{
+  "text": " False Lady",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 0.56,
+      "text": " False Lady",
+      "tokens": [
+        50365,
+        50040,
+        11256,
+        50393
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -1.2690528869628905,
+      "compression_ratio": 0.5555555555555556,
+      "no_speech_prob": 0.3294955790042877
+    }
+  ],
+  "language": "en",
+  "model": "large-v3",
+  "normalized": "false lady"
+}

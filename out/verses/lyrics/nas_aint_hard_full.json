@@ -1,0 +1,366 @@
+{
+ "lines": [
+  {
+   "text": "It ain't hard to tell, I excel, then prevail",
+   "norm": "it ain't hard to tell i excel then prevail",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 1.1199999999999994,
+   "e": 4.4
+  },
+  {
+   "text": "The mic is contacted, I attract clientele",
+   "norm": "the mic is contacted i attract clientele",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 4.4,
+   "e": 7.22
+  },
+  {
+   "text": "My mic check is life or death, breathin' a sniper's breath",
+   "norm": "my mic check is life or death breathin a sniper's breath",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 7.22,
+   "e": 9.84
+  },
+  {
+   "text": "I exhale the yellow smoke of Buddha through righteous steps",
+   "norm": "i exhale the yellow smoke of buddha through righteous steps",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 9.84,
+   "e": 12.58
+  },
+  {
+   "text": "Deep like The Shining, sparkle like a diamond",
+   "norm": "deep like the shining sparkle like a diamond",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 12.58,
+   "e": 14.9
+  },
+  {
+   "text": "Sneak a Uzi on the island in my army jacket linin'",
+   "norm": "sneak a uzi on the island in my army jacket linin",
+   "words": 11,
+   "matched": 9,
+   "guessed": false,
+   "s": 14.9,
+   "e": 17.62
+  },
+  {
+   "text": "Hit the Earth like a comet invasion!",
+   "norm": "hit the earth like a comet invasion",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 17.66,
+   "e": 19.36
+  },
+  {
+   "text": "Nas is like the Afrocentric Asian: half-man, half-amazin'",
+   "norm": "nas is like the afrocentric asian half man half amazin",
+   "words": 10,
+   "matched": 7,
+   "guessed": false,
+   "s": 19.759999999999998,
+   "e": 22.74
+  },
+  {
+   "text": "'Cause in my physical I can express through song",
+   "norm": "cause in my physical i can express through song",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 22.74,
+   "e": 25.24
+  },
+  {
+   "text": "Delete stress like Motrin, then extend strong",
+   "norm": "delete stress like motrin then extend strong",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 25.24,
+   "e": 27.82
+  },
+  {
+   "text": "I drink Mo\u00ebt with Medusa, give her shotguns in Hell",
+   "norm": "i drink mo t with medusa give her shotguns in hell",
+   "words": 11,
+   "matched": 8,
+   "guessed": false,
+   "s": 27.82,
+   "e": 30.54
+  },
+  {
+   "text": "From the spliff that I lift and inhale; it ain't hard to tell",
+   "norm": "from the spliff that i lift and inhale it ain't hard to tell",
+   "words": 13,
+   "matched": 12,
+   "guessed": false,
+   "s": 30.54,
+   "e": 33.9
+  },
+  {
+   "text": "The Buddha monk's in your trunk, turn the bass up",
+   "norm": "the buddha monk's in your trunk turn the bass up",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 53.5,
+   "e": 56.28
+  },
+  {
+   "text": "Not stories by Aesop",
+   "norm": "not stories by aesop",
+   "words": 4,
+   "matched": 0,
+   "guessed": true,
+   "s": 56.28,
+   "e": 57.82
+  },
+  {
+   "text": "Place your loot up, parties I shoot up",
+   "norm": "place your loot up parties i shoot up",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 57.82,
+   "e": 59.5
+  },
+  {
+   "text": "Nas, I analyze, drop a jew-el, inhale from the L",
+   "norm": "nas i analyze drop a jew el inhale from the l",
+   "words": 11,
+   "matched": 8,
+   "guessed": false,
+   "s": 59.54,
+   "e": 62.52
+  },
+  {
+   "text": "School a fool well, you feel it like Braille",
+   "norm": "school a fool well you feel it like braille",
+   "words": 9,
+   "matched": 6,
+   "guessed": false,
+   "s": 62.64,
+   "e": 64.48
+  },
+  {
+   "text": "It ain't hard to tell, I kick a skill, like Shaquille holds a pill",
+   "norm": "it ain't hard to tell i kick a skill like shaquille holds a pill",
+   "words": 14,
+   "matched": 14,
+   "guessed": false,
+   "s": 64.68,
+   "e": 67.86
+  },
+  {
+   "text": "Vocabulary spills, I'm Ill plus Matic",
+   "norm": "vocabulary spills i'm ill plus matic",
+   "words": 6,
+   "matched": 4,
+   "guessed": false,
+   "s": 68.02,
+   "e": 70.14
+  },
+  {
+   "text": "I freak beats, slam it, like Iron Sheik",
+   "norm": "i freak beats slam it like iron sheik",
+   "words": 8,
+   "matched": 6,
+   "guessed": false,
+   "s": 70.64,
+   "e": 72.46
+  },
+  {
+   "text": "Jam like a TEC with correct techniques",
+   "norm": "jam like a tec with correct techniques",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 72.56,
+   "e": 74.74
+  },
+  {
+   "text": "So analyze me, surprise me, but can't magmatize me",
+   "norm": "so analyze me surprise me but can't magmatize me",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 74.92,
+   "e": 77.86
+  },
+  {
+   "text": "Scannin' while you're plannin' ways to sabotage me",
+   "norm": "scannin while you're plannin ways to sabotage me",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 77.86,
+   "e": 80.56
+  },
+  {
+   "text": "I leave 'em froze, like heroin in your nose",
+   "norm": "i leave em froze like heroin in your nose",
+   "words": 9,
+   "matched": 6,
+   "guessed": false,
+   "s": 80.56,
+   "e": 82.94
+  },
+  {
+   "text": "Nas will rock well; it ain't hard to tell",
+   "norm": "nas will rock well it ain't hard to tell",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 83.06,
+   "e": 85.48
+  },
+  {
+   "text": "This rhythmatic explosion",
+   "norm": "this rhythmatic explosion",
+   "words": 3,
+   "matched": 3,
+   "guessed": false,
+   "s": 105.32,
+   "e": 107.08
+  },
+  {
+   "text": "Is what your frame of mind has chosen",
+   "norm": "is what your frame of mind has chosen",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 107.08,
+   "e": 109.06
+  },
+  {
+   "text": "I'll leave your brain stimulated, niggas is frozen",
+   "norm": "i'll leave your brain stimulated niggas is frozen",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 109.06,
+   "e": 111.58
+  },
+  {
+   "text": "Speak with criminal slang, begin like a violin",
+   "norm": "speak with criminal slang begin like a violin",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 111.58,
+   "e": 114.34
+  },
+  {
+   "text": "End like Leviathan, it's deep? Well, let me try again",
+   "norm": "end like leviathan it's deep well let me try again",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 114.34,
+   "e": 116.96
+  },
+  {
+   "text": "Wisdom be leakin' out my grapefruit, troop",
+   "norm": "wisdom be leakin out my grapefruit troop",
+   "words": 7,
+   "matched": 6,
+   "guessed": false,
+   "s": 117.6,
+   "e": 119.26
+  },
+  {
+   "text": "I dominate break loops, givin' mics men-e-strual cycles",
+   "norm": "i dominate break loops givin mics men e strual cycles",
+   "words": 10,
+   "matched": 7,
+   "guessed": false,
+   "s": 119.32,
+   "e": 122.1
+  },
+  {
+   "text": "Street's disciple, I rock beats that's mega trifle",
+   "norm": "street's disciple i rock beats that's mega trifle",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 122.28,
+   "e": 124.84
+  },
+  {
+   "text": "And groove even smoother than moves by Villanova",
+   "norm": "and groove even smoother than moves by villanova",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 124.86,
+   "e": 127.36
+  },
+  {
+   "text": "You're still a soldier, I'm like Sly Stone in Cobra",
+   "norm": "you're still a soldier i'm like sly stone in cobra",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 127.42,
+   "e": 129.96
+  },
+  {
+   "text": "Packin' like a Rasta in the weed spot",
+   "norm": "packin like a rasta in the weed spot",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 130.16,
+   "e": 132.0
+  },
+  {
+   "text": "Vocals will squeeze Glocks",
+   "norm": "vocals will squeeze glocks",
+   "words": 4,
+   "matched": 3,
+   "guessed": false,
+   "s": 132.18,
+   "e": 133.44
+  },
+  {
+   "text": "MCs eavesdrop, though they need not to sneak",
+   "norm": "mcs eavesdrop though they need not to sneak",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 133.44,
+   "e": 135.76
+  },
+  {
+   "text": "My poetry's deep, I never fell",
+   "norm": "my poetry's deep i never fell",
+   "words": 6,
+   "matched": 5,
+   "guessed": false,
+   "s": 135.9,
+   "e": 137.56
+  },
+  {
+   "text": "Nas' raps should be locked in a cell; it ain't hard to tell",
+   "norm": "nas raps should be locked in a cell it ain't hard to tell",
+   "words": 13,
+   "matched": 13,
+   "guessed": false,
+   "s": 137.84,
+   "e": 141.0
+  }
+ ],
+ "lyricWords": 344,
+ "matchedWords": 306
+}

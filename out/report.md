@@ -1,14 +1,19 @@
 # Whisper → MFA vs. manual click alignments
 
-Manual data: `user-data/alignments-2026-10-03.json`. Error = MFA time − click time (positive = MFA later).
+Manual data: `user-data/alignments-2026-10-07.json`. Error = MFA time − click time (positive = MFA later).
 
 ## Coverage
 
-- Manual clicks: 82
+- Manual clicks: 108
 - Pairing: the nth click is compared with MFA's nth syllable in the line; word boundaries are ignored.
-- Scored (MFA has a syllable at that position): 82 (100%)
-  - paired syllable is the same syllable of the same word: 77
-  - paired syllable belongs to a different word: 5
+- Scored (MFA has a syllable at that position): 107 (99%)
+  - paired syllable is the same syllable of the same word: 87
+  - paired syllable belongs to a different word: 20
+- Not scored, MFA ran out of syllables: 1
+- **2pac-hell-is: 4 lyric syllables vs 5 MFA syllables**, so positional pairing drifts after the first difference
+- **2pac-holla: 5 lyric syllables vs 8 MFA syllables**, so positional pairing drifts after the first difference
+- **2pac-caravan: 5 lyric syllables vs 6 MFA syllables**, so positional pairing drifts after the first difference
+- **2pac-later: 4 lyric syllables vs 3 MFA syllables**, so positional pairing drifts after the first difference
 
 ## Timing error: all scored syllables
 
@@ -16,19 +21,19 @@ Manual data: `user-data/alignments-2026-10-03.json`. Error = MFA time − click 
 
 | n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
 |---|---|---|---|---|---|---|---|
-| 82 | -42 | 39 | 49 | 37 | 34% | 57% | 93% |
+| 107 | -49 | 42 | 57 | 45 | 30% | 55% | 88% |
 
 **MFA vowel onset vs click**
 
 | n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
 |---|---|---|---|---|---|---|---|
-| 82 | +21 | 22 | 26 | 18 | 57% | 90% | 99% |
+| 107 | +14 | 23 | 35 | 29 | 51% | 82% | 93% |
 
 **VPR vs click**
 
 | n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
 |---|---|---|---|---|---|---|---|
-| 82 | +1 | 12 | 17 | 17 | 80% | 95% | 99% |
+| 107 | -8 | 17 | 29 | 30 | 69% | 87% | 93% |
 
 
 ## Timing error: same word on both sides
@@ -37,19 +42,19 @@ Manual data: `user-data/alignments-2026-10-03.json`. Error = MFA time − click 
 
 | n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
 |---|---|---|---|---|---|---|---|
-| 77 | -42 | 38 | 50 | 38 | 34% | 58% | 92% |
+| 87 | -42 | 39 | 50 | 40 | 33% | 57% | 92% |
 
 **MFA vowel onset vs click**
 
 | n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
 |---|---|---|---|---|---|---|---|
-| 77 | +22 | 22 | 26 | 18 | 56% | 90% | 99% |
+| 87 | +24 | 22 | 28 | 21 | 54% | 87% | 98% |
 
 **VPR vs click**
 
 | n | bias (ms) | median \|err\| | mean \|err\| | mean \|err\| after removing bias | ≤25 ms | ≤50 ms | ≤100 ms |
 |---|---|---|---|---|---|---|---|
-| 77 | +2 | 11 | 17 | 17 | 81% | 95% | 99% |
+| 87 | +3 | 12 | 20 | 20 | 77% | 92% | 98% |
 
 ## Per clip (all scored syllables, vowel-onset anchor, then syllable-onset anchor)
 
@@ -62,6 +67,12 @@ Manual data: `user-data/alignments-2026-10-03.json`. Error = MFA time − click 
 | nas-it-aint-hard-to-tell | 0% | 13/13 | 13/13 | +25 | 22 | -67 | 50 |
 | ice-spice-munch | 44% | 9/9 | 9/9 | +23 | 26 | -24 | 14 |
 | migos-supastars | 9% | 11/11 | 11/11 | +30 | 23 | -27 | 24 |
+| 2pac-hell-is | 75% | 4/5 | 4/4 | -6 | 14 | -63 | 54 |
+| 2pac-holla | 167% | 5/8 | 5/5 | +76 | 52 | -6 | 43 |
+| 2pac-caravan | 33% | 5/6 | 5/5 | -153 | 147 | -205 | 223 |
+| 2pac-until | 0% | 5/5 | 5/5 | +21 | 20 | -41 | 72 |
+| 2pac-later | 100% | 4/3 | 3/4 | +33 | 21 | -33 | 29 |
+| 2pac-my-eyes | 100% | 3/3 | 3/3 | -15 | 49 | -65 | 41 |
 
 ## Transcripts and syllable pairing
 
@@ -202,3 +213,77 @@ Manual data: `user-data/alignments-2026-10-03.json`. Error = MFA time − click 
 | 8 | then (1/1) | then (1/1) | DH EH1 N | same_word | 1950 | +0 | +30 |
 | 9 | sell (1/1) | sell (1/1) | S EH1 L | same_word | 2162 | -82 | +18 |
 | 10 | it (1/1) | it (1/1) | IH0 T | same_word | 2382 | -2 | -2 |
+
+### 2pac-hell-is
+
+- lyrics:  `of hell is where`
+- whisper: `the hell is with a`
+
+| click | lyric syllable | MFA syllable | phones | status | click ms | onset err | vowel err |
+|---|---|---|---|---|---|---|---|
+| 0 | of (1/1) | the (1/1) | DH AH0 | different_word | 43 | -43 | -13 |
+| 1 | hell (1/1) | hell (1/1) | HH EH1 L | same_word | 238 | -148 | -28 |
+| 2 | is (1/1) | is (1/1) | IH0 Z | same_word | 545 | +5 | +5 |
+| 3 | where (1/1) | with (1/1) | W IH0 DH | different_word | 716 | -66 | +14 |
+
+### 2pac-holla
+
+- lyrics:  `nigga holla when`
+- whisper: `nick i holla when you say it`
+
+| click | lyric syllable | MFA syllable | phones | status | click ms | onset err | vowel err |
+|---|---|---|---|---|---|---|---|
+| 0 | nigga (1/2) | nick (1/1) | N IH1 K | different_word | 38 | -38 | +52 |
+| 1 | nigga (2/2) | i (1/1) | AY1 | different_word | 256 | +44 | +44 |
+| 2 | holla (1/2) | holla (1/2) | HH AA1 L AH0 | same_word | 325 | +5 | +165 |
+| 3 | holla (2/2) | holla (2/2) | HH AA1 L AH0 | same_word | 477 | +43 | +73 |
+| 4 | when (1/1) | when (1/1) | HH W IH1 N | same_word | 695 | -85 | +45 |
+
+### 2pac-caravan
+
+- lyrics:  `got a caravan`
+- whisper: `i got a caravan`
+
+| click | lyric syllable | MFA syllable | phones | status | click ms | onset err | vowel err |
+|---|---|---|---|---|---|---|---|
+| 0 | got (1/1) | i (1/1) | AY1 | different_word | 146 | -116 | -116 |
+| 1 | a (1/1) | got (1/1) | G AA1 T | different_word | 294 | -224 | -104 |
+| 2 | caravan (1/3) | a (1/1) | AH0 | different_word | 557 | -207 | -207 |
+| 3 | caravan (2/3) | caravan (1/3) | K EH1 R AH0 V AE2 N | different_word | 647 | -257 | -147 |
+| 4 | caravan (3/3) | caravan (2/3) | K EH1 R AH0 V AE2 N | different_word | 793 | -223 | -193 |
+
+### 2pac-until
+
+- lyrics:  `by until I die`
+- whisper: `bye until i die`
+
+| click | lyric syllable | MFA syllable | phones | status | click ms | onset err | vowel err |
+|---|---|---|---|---|---|---|---|
+| 0 | by (1/1) | bye (1/1) | B AY1 | same_word | 82 | -82 | -12 |
+| 1 | until (1/2) | until (1/2) | AH0 N T IH1 L | same_word | 467 | +33 | +33 |
+| 2 | until (2/2) | until (2/2) | AH0 N T IH1 L | same_word | 670 | -80 | +20 |
+| 3 | I (1/1) | i (1/1) | AY1 | same_word | 834 | -4 | -4 |
+| 4 | die (1/1) | die (1/1) | D AY1 | same_word | 952 | -72 | +68 |
+
+### 2pac-later
+
+- lyrics:  `crossed later the`
+- whisper: `false lady`
+
+| click | lyric syllable | MFA syllable | phones | status | click ms | onset err | vowel err |
+|---|---|---|---|---|---|---|---|
+| 0 | crossed (1/1) | false (1/1) | F AO1 L S | different_word | 69 | -69 | +11 |
+| 1 | later (1/2) | lady (1/2) | L EY1 D IY0 | different_word | 352 | -2 | +68 |
+| 2 | later (2/2) | lady (2/2) | L EY1 D IY0 | different_word | 549 | -29 | +21 |
+| 3 | the (1/1) |  |  | no_mfa_syllable | 723 |  |  |
+
+### 2pac-my-eyes
+
+- lyrics:  `in my eyes`
+- whisper: `the ma'a`
+
+| click | lyric syllable | MFA syllable | phones | status | click ms | onset err | vowel err |
+|---|---|---|---|---|---|---|---|
+| 0 | in (1/1) | the (1/1) | DH IY0 | different_word | 32 | -32 | +28 |
+| 1 | my (1/1) | ma'a (1/2) | M AE1 AH0 | different_word | 161 | -41 | +49 |
+| 2 | eyes (1/1) | ma'a (2/2) | M AE1 AH0 | different_word | 392 | -122 | -122 |

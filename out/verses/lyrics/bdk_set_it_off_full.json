@@ -1,0 +1,591 @@
+{
+ "lines": [
+  {
+   "text": "Let it roll, get bold, I just can't hold",
+   "norm": "let it roll get bold i just can't hold",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 1.439999999999998,
+   "e": 3.76
+  },
+  {
+   "text": "Back or fold 'cause I'm a man with soul",
+   "norm": "back or fold cause i'm a man with soul",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 3.76,
+   "e": 5.26
+  },
+  {
+   "text": "In control and effect, so what the heck?",
+   "norm": "in control and effect so what the heck",
+   "words": 8,
+   "matched": 6,
+   "guessed": false,
+   "s": 5.26,
+   "e": 7.36
+  },
+  {
+   "text": "Rock the discotheques and this groove is what's next",
+   "norm": "rock the discotheques and this groove is what's next",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 7.4,
+   "e": 9.64
+  },
+  {
+   "text": "Attack, react, exact, the mack'll move you with",
+   "norm": "attack react exact the mack'll move you with",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 9.64,
+   "e": 12.08
+  },
+  {
+   "text": "A strong song, as long as you groove to this",
+   "norm": "a strong song as long as you groove to this",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 12.08,
+   "e": 14.0
+  },
+  {
+   "text": "I keep the crowd loud when you're hype",
+   "norm": "i keep the crowd loud when you're hype",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 14.0,
+   "e": 15.76
+  },
+  {
+   "text": "Do damage onstage and injure the mic",
+   "norm": "do damage onstage and injure the mic",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 15.76,
+   "e": 17.86
+  },
+  {
+   "text": "As I shoot the gift, MCs stand stiff",
+   "norm": "as i shoot the gift mcs stand stiff",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 17.86,
+   "e": 19.88
+  },
+  {
+   "text": "While my rhymes stick to you like Skippy and Jif",
+   "norm": "while my rhymes stick to you like skippy and jif",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 19.88,
+   "e": 21.98
+  },
+  {
+   "text": "Feel my blood fist or my death kiss",
+   "norm": "feel my blood fist or my death kiss",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 21.98,
+   "e": 24.0
+  },
+  {
+   "text": "The rap soloist, you don't want none of this",
+   "norm": "the rap soloist you don't want none of this",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 24.0,
+   "e": 26.1
+  },
+  {
+   "text": "Supreme in this era, I reign with terror",
+   "norm": "supreme in this era i reign with terror",
+   "words": 8,
+   "matched": 5,
+   "guessed": false,
+   "s": 26.28,
+   "e": 28.3
+  },
+  {
+   "text": "When I grab the mic, believe you're gonna hear a",
+   "norm": "when i grab the mic believe you're gonna hear a",
+   "words": 10,
+   "matched": 3,
+   "guessed": false,
+   "s": 28.46,
+   "e": 30.5
+  },
+  {
+   "text": "Fascinatin' rhyme as I enchant them",
+   "norm": "fascinatin rhyme as i enchant them",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 30.5,
+   "e": 32.54
+  },
+  {
+   "text": "So let's all sing the Big Daddy anthem",
+   "norm": "so let's all sing the big daddy anthem",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 32.66,
+   "e": 34.64
+  },
+  {
+   "text": "Go with the flow, my rhymes grow like an Afro",
+   "norm": "go with the flow my rhymes grow like an afro",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 34.76,
+   "e": 36.76
+  },
+  {
+   "text": "I entertain again and Kane'll never have no",
+   "norm": "i entertain again and kane'll never have no",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 36.8,
+   "e": 38.84
+  },
+  {
+   "text": "Problem, I can sneeze, sniffle, or cough",
+   "norm": "problem i can sneeze sniffle or cough",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 38.84,
+   "e": 40.33
+  },
+  {
+   "text": "E-e-e-even if I stutter, I'ma still come off",
+   "norm": "e e e even if i stutter i'ma still come off",
+   "words": 11,
+   "matched": 7,
+   "guessed": false,
+   "s": 40.33,
+   "e": 42.7
+  },
+  {
+   "text": "'Cause rappers can't understand the mics I rip",
+   "norm": "cause rappers can't understand the mics i rip",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 42.84,
+   "e": 44.74
+  },
+  {
+   "text": "They sure enough ain't equipped, that's why they got flipped",
+   "norm": "they sure enough ain't equipped that's why they got flipped",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 44.82,
+   "e": 46.84
+  },
+  {
+   "text": "But my apparatus is up to status",
+   "norm": "but my apparatus is up to status",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 47.04,
+   "e": 48.9
+  },
+  {
+   "text": "Don't ask who's the baddest, of course, that is",
+   "norm": "don't ask who's the baddest of course that is",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 49.04,
+   "e": 51.24
+  },
+  {
+   "text": "The maker, breaker, taker, my rhymes ache the head",
+   "norm": "the maker breaker taker my rhymes ache the head",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 51.24,
+   "e": 53.5
+  },
+  {
+   "text": "Put it to bed, so watch what's said",
+   "norm": "put it to bed so watch what's said",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 53.58,
+   "e": 55.08
+  },
+  {
+   "text": "Save the bass for the pipe and rearrange your tone",
+   "norm": "save the bass for the pipe and rearrange your tone",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 55.2,
+   "e": 57.150000000000006
+  },
+  {
+   "text": "Or take a loss and be forced in the danger zone",
+   "norm": "or take a loss and be forced in the danger zone",
+   "words": 11,
+   "matched": 8,
+   "guessed": false,
+   "s": 57.150000000000006,
+   "e": 59.18
+  },
+  {
+   "text": "'Cause I get ill and kill at will",
+   "norm": "cause i get ill and kill at will",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 59.18,
+   "e": 60.88
+  },
+  {
+   "text": "Teachin' a skill that's real, you're no thrill",
+   "norm": "teachin a skill that's real you're no thrill",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 60.88,
+   "e": 62.839999999999996
+  },
+  {
+   "text": "So just stand still and chill as I build",
+   "norm": "so just stand still and chill as i build",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 62.98,
+   "e": 65.12
+  },
+  {
+   "text": "Science I drill until my rhymes fill",
+   "norm": "science i drill until my rhymes fill",
+   "words": 7,
+   "matched": 6,
+   "guessed": false,
+   "s": 65.12,
+   "e": 67.1
+  },
+  {
+   "text": "Your head up",
+   "norm": "your head up",
+   "words": 3,
+   "matched": 3,
+   "guessed": false,
+   "s": 67.1,
+   "e": 67.9
+  },
+  {
+   "text": "Don't even get up",
+   "norm": "don't even get up",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 67.94,
+   "e": 69.86
+  },
+  {
+   "text": "The teacher is teachin', so just shut up",
+   "norm": "the teacher is teachin so just shut up",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 69.86,
+   "e": 72.0
+  },
+  {
+   "text": "Rappers, take a step back, or you will soon regret that",
+   "norm": "rappers take a step back or you will soon regret that",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 96.72,
+   "e": 98.82
+  },
+  {
+   "text": "You ever had to confront me and you can bet that",
+   "norm": "you ever had to confront me and you can bet that",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 98.82,
+   "e": 100.9
+  },
+  {
+   "text": "I come correct, perfect, in full effect",
+   "norm": "i come correct perfect in full effect",
+   "words": 7,
+   "matched": 6,
+   "guessed": false,
+   "s": 100.9,
+   "e": 102.72
+  },
+  {
+   "text": "Disconnect, dissect, eject as I wreck shop",
+   "norm": "disconnect dissect eject as i wreck shop",
+   "words": 7,
+   "matched": 4,
+   "guessed": false,
+   "s": 102.72,
+   "e": 105.3
+  },
+  {
+   "text": "Stand in command with the clan",
+   "norm": "stand in command with the clan",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 105.3,
+   "e": 106.84
+  },
+  {
+   "text": "Caravan or van, we go man for man and",
+   "norm": "caravan or van we go man for man and",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 106.84,
+   "e": 109.2
+  },
+  {
+   "text": "Without further ado or any delay",
+   "norm": "without further ado or any delay",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 109.2,
+   "e": 111.14
+  },
+  {
+   "text": "Mister Cee as we say, call him the DJ",
+   "norm": "mister cee as we say call him the dj",
+   "words": 9,
+   "matched": 7,
+   "guessed": false,
+   "s": 111.3,
+   "e": 113.22
+  },
+  {
+   "text": "Mad Money Murf with the triple M",
+   "norm": "mad money murf with the triple m",
+   "words": 7,
+   "matched": 6,
+   "guessed": false,
+   "s": 113.22,
+   "e": 115.1
+  },
+  {
+   "text": "Smooth the barber keepin' my flat-top trim",
+   "norm": "smooth the barber keepin my flat top trim",
+   "words": 8,
+   "matched": 5,
+   "guessed": false,
+   "s": 115.56,
+   "e": 117.16
+  },
+  {
+   "text": "Scoob Lover my brother, Scrap Lover my other",
+   "norm": "scoob lover my brother scrap lover my other",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 117.24,
+   "e": 119.28
+  },
+  {
+   "text": "Dancin' with the crew, so allow the boys to smother",
+   "norm": "dancin with the crew so allow the boys to smother",
+   "words": 10,
+   "matched": 8,
+   "guessed": false,
+   "s": 119.56,
+   "e": 121.44
+  },
+  {
+   "text": "The floor, and endure just for your pleasure",
+   "norm": "the floor and endure just for your pleasure",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 121.44,
+   "e": 123.26
+  },
+  {
+   "text": "As the microphone lord proceeds to get raw",
+   "norm": "as the microphone lord proceeds to get raw",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 123.48,
+   "e": 125.52
+  },
+  {
+   "text": "Acrobatic, Asiatic, rap fanatic",
+   "norm": "acrobatic asiatic rap fanatic",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 126.12,
+   "e": 127.6
+  },
+  {
+   "text": "I get dramatic and rhymes start flowin' automatically from me",
+   "norm": "i get dramatic and rhymes start flowin automatically from me",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 127.66,
+   "e": 130.44
+  },
+  {
+   "text": "So don't play me, obey me",
+   "norm": "so don't play me obey me",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 130.44,
+   "e": 131.94
+  },
+  {
+   "text": "When asked, \"Who's the best?\", you better say me",
+   "norm": "when asked who's the best you better say me",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 132.0,
+   "e": 134.06
+  },
+  {
+   "text": "I'm sendin' sucker MC's headin' north",
+   "norm": "i'm sendin sucker mc's headin north",
+   "words": 6,
+   "matched": 5,
+   "guessed": false,
+   "s": 134.06,
+   "e": 135.78
+  },
+  {
+   "text": "And if you still want some, set if off",
+   "norm": "and if you still want some set if off",
+   "words": 9,
+   "matched": 8,
+   "guessed": false,
+   "s": 135.88,
+   "e": 137.94
+  },
+  {
+   "text": "For you to cope is just a wish and a hope",
+   "norm": "for you to cope is just a wish and a hope",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 137.94,
+   "e": 139.94
+  },
+  {
+   "text": "And if you are what you eat, then feed me dope",
+   "norm": "and if you are what you eat then feed me dope",
+   "words": 11,
+   "matched": 11,
+   "guessed": false,
+   "s": 140.02,
+   "e": 142.02
+  },
+  {
+   "text": "'Cause I'm just about as dope as dope can get",
+   "norm": "cause i'm just about as dope as dope can get",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 142.02,
+   "e": 143.92
+  },
+  {
+   "text": "Ultimate, legit, Kane is a perfect fit",
+   "norm": "ultimate legit kane is a perfect fit",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 143.98,
+   "e": 146.16
+  },
+  {
+   "text": "The king of my kingdom, completin' a cypher",
+   "norm": "the king of my kingdom completin a cypher",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 146.16,
+   "e": 148.44
+  },
+  {
+   "text": "The lyrics I bring them keeps the crowd hyper",
+   "norm": "the lyrics i bring them keeps the crowd hyper",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 148.48,
+   "e": 150.48
+  },
+  {
+   "text": "As I release the masterpiece",
+   "norm": "as i release the masterpiece",
+   "words": 5,
+   "matched": 5,
+   "guessed": false,
+   "s": 150.48,
+   "e": 151.86
+  },
+  {
+   "text": "The groove will never cease until Kane says, \"Peace\"",
+   "norm": "the groove will never cease until kane says peace",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 152.16,
+   "e": 154.56
+  },
+  {
+   "text": "So, maestro, yo, hit it",
+   "norm": "so maestro yo hit it",
+   "words": 5,
+   "matched": 5,
+   "guessed": false,
+   "s": 154.56,
+   "e": 156.8
+  },
+  {
+   "text": "Big Daddy Kane's about to come with it 'cause",
+   "norm": "big daddy kane's about to come with it cause",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 156.86,
+   "e": 158.96
+  }
+ ],
+ "lyricWords": 533,
+ "matchedWords": 490
+}

@@ -1,0 +1,501 @@
+{
+ "lines": [
+  {
+   "text": "You thought I was feelin' you?",
+   "norm": "you thought i was feelin you",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 3.640000000000006,
+   "e": 4.74
+  },
+  {
+   "text": "That nigga a munch",
+   "norm": "that nigga a munch",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 5.420000000000012,
+   "e": 6.4
+  },
+  {
+   "text": "Nigga a eater, he ate it for lunch",
+   "norm": "nigga a eater he ate it for lunch",
+   "words": 8,
+   "matched": 6,
+   "guessed": false,
+   "s": 6.4,
+   "e": 7.82
+  },
+  {
+   "text": "Bitch, I'm a baddie, I get what I want, like",
+   "norm": "bitch i'm a baddie i get what i want like",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 7.82,
+   "e": 9.46
+  },
+  {
+   "text": "You thought I was feelin' you?",
+   "norm": "you thought i was feelin you",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 9.46,
+   "e": 10.5
+  },
+  {
+   "text": "That nigga a munch",
+   "norm": "that nigga a munch",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 11.32,
+   "e": 12.2
+  },
+  {
+   "text": "Nigga a eater, he ate it for lunch",
+   "norm": "nigga a eater he ate it for lunch",
+   "words": 8,
+   "matched": 6,
+   "guessed": false,
+   "s": 12.2,
+   "e": 13.62
+  },
+  {
+   "text": "Bitch, I'm a baddie, I get what I want, like",
+   "norm": "bitch i'm a baddie i get what i want like",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 13.62,
+   "e": 15.26
+  },
+  {
+   "text": "Bitches ain't bad, let's keep it a bean",
+   "norm": "bitches ain't bad let's keep it a bean",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 15.26,
+   "e": 16.88
+  },
+  {
+   "text": "Know they be mad that I be on the scene",
+   "norm": "know they be mad that i be on the scene",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 16.88,
+   "e": 18.28
+  },
+  {
+   "text": "Ass too fat, can't fit in no jeans",
+   "norm": "ass too fat can't fit in no jeans",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 18.28,
+   "e": 19.740000000000002
+  },
+  {
+   "text": "You was my stitch, but it's not what it seem",
+   "norm": "you was my stitch but it's not what it seem",
+   "words": 10,
+   "matched": 8,
+   "guessed": false,
+   "s": 19.740000000000002,
+   "e": 21.18
+  },
+  {
+   "text": "I got that wetty, I'm keepin' it clean",
+   "norm": "i got that wetty i'm keepin it clean",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 21.18,
+   "e": 22.66
+  },
+  {
+   "text": "Fuckin' with niggas that's totin' a beam",
+   "norm": "fuckin with niggas that's totin a beam",
+   "words": 7,
+   "matched": 6,
+   "guessed": false,
+   "s": 22.66,
+   "e": 24.06
+  },
+  {
+   "text": "Sayin' you love me, but what do you mean?",
+   "norm": "sayin you love me but what do you mean",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 24.08,
+   "e": 25.52
+  },
+  {
+   "text": "Pretty as fuck and he like that I'm mean",
+   "norm": "pretty as fuck and he like that i'm mean",
+   "words": 9,
+   "matched": 6,
+   "guessed": false,
+   "s": 25.72,
+   "e": 26.96
+  },
+  {
+   "text": "Baddest bitch out, you shittin' me?",
+   "norm": "baddest bitch out you shittin me",
+   "words": 6,
+   "matched": 5,
+   "guessed": false,
+   "s": 26.96,
+   "e": 28.279999999999998
+  },
+  {
+   "text": "If you ain't a baddie, can't sit with me",
+   "norm": "if you ain't a baddie can't sit with me",
+   "words": 9,
+   "matched": 1,
+   "guessed": true,
+   "s": 28.279999999999998,
+   "e": 30.0
+  },
+  {
+   "text": "I swear that these bitches my mini-me's",
+   "norm": "i swear that these bitches my mini me's",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 30.0,
+   "e": 31.16
+  },
+  {
+   "text": "He wanna sex, niggas be dreamin'",
+   "norm": "he wanna sex niggas be dreamin",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 32.68000000000001,
+   "e": 34.4
+  },
+  {
+   "text": "I'm from the X, niggas be schemin'",
+   "norm": "i'm from the x niggas be schemin",
+   "words": 7,
+   "matched": 7,
+   "guessed": false,
+   "s": 34.4,
+   "e": 35.78
+  },
+  {
+   "text": "I'm on they necks, they is not breathin'",
+   "norm": "i'm on they necks they is not breathin",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 35.78,
+   "e": 37.26
+  },
+  {
+   "text": "Thumbin' a check, blow it in Neiman's",
+   "norm": "thumbin a check blow it in neiman's",
+   "words": 7,
+   "matched": 3,
+   "guessed": false,
+   "s": 37.3,
+   "e": 38.67
+  },
+  {
+   "text": "You thought I was feelin' you?",
+   "norm": "you thought i was feelin you",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 38.67,
+   "e": 39.4
+  },
+  {
+   "text": "That nigga a munch",
+   "norm": "that nigga a munch",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 40.120000000000005,
+   "e": 41.1
+  },
+  {
+   "text": "Nigga a eater, he ate it for lunch",
+   "norm": "nigga a eater he ate it for lunch",
+   "words": 8,
+   "matched": 5,
+   "guessed": false,
+   "s": 41.1,
+   "e": 42.54
+  },
+  {
+   "text": "Bitch, I'm a baddie I get what I want, like",
+   "norm": "bitch i'm a baddie i get what i want like",
+   "words": 10,
+   "matched": 7,
+   "guessed": false,
+   "s": 42.54,
+   "e": 44.18
+  },
+  {
+   "text": "You thought I was feelin' you?",
+   "norm": "you thought i was feelin you",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 44.18,
+   "e": 45.18
+  },
+  {
+   "text": "That nigga a munch",
+   "norm": "that nigga a munch",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 45.32,
+   "e": 46.9
+  },
+  {
+   "text": "Nigga a eater, he ate it for lunch",
+   "norm": "nigga a eater he ate it for lunch",
+   "words": 8,
+   "matched": 5,
+   "guessed": false,
+   "s": 46.9,
+   "e": 48.32
+  },
+  {
+   "text": "Bitch, I'm a baddie I get what I want, like",
+   "norm": "bitch i'm a baddie i get what i want like",
+   "words": 10,
+   "matched": 7,
+   "guessed": false,
+   "s": 48.32,
+   "e": 49.96
+  },
+  {
+   "text": "Bitch, I'm a baddie, I get what I please",
+   "norm": "bitch i'm a baddie i get what i please",
+   "words": 9,
+   "matched": 6,
+   "guessed": false,
+   "s": 49.96,
+   "e": 51.18
+  },
+  {
+   "text": "You know my body, I do it with ease",
+   "norm": "you know my body i do it with ease",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 51.18,
+   "e": 52.7
+  },
+  {
+   "text": "He want my body, he tellin' me, \"Please\"",
+   "norm": "he want my body he tellin me please",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 52.7,
+   "e": 54.0
+  },
+  {
+   "text": "I'm walkin' past him, he sniffin' my breeze",
+   "norm": "i'm walkin past him he sniffin my breeze",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 54.0,
+   "e": 55.56
+  },
+  {
+   "text": "He jackin' me, but he not my boo",
+   "norm": "he jackin me but he not my boo",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 55.56,
+   "e": 56.94
+  },
+  {
+   "text": "He like the jewelry I wear on my boobs",
+   "norm": "he like the jewelry i wear on my boobs",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 56.94,
+   "e": 58.44
+  },
+  {
+   "text": "How can I link you when I got a shoot?",
+   "norm": "how can i link you when i got a shoot",
+   "words": 10,
+   "matched": 9,
+   "guessed": false,
+   "s": 58.44,
+   "e": 59.879999999999995
+  },
+  {
+   "text": "Don't want your love, I just want the blue",
+   "norm": "don't want your love i just want the blue",
+   "words": 9,
+   "matched": 9,
+   "guessed": false,
+   "s": 59.92,
+   "e": 61.18
+  },
+  {
+   "text": "Grabbin' my ass while I'm doin' my dance",
+   "norm": "grabbin my ass while i'm doin my dance",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 61.18,
+   "e": 62.8
+  },
+  {
+   "text": "She keep on starin' 'cause shorty a fan",
+   "norm": "she keep on starin cause shorty a fan",
+   "words": 8,
+   "matched": 5,
+   "guessed": false,
+   "s": 62.8,
+   "e": 64.2
+  },
+  {
+   "text": "Gotta stick to the plan",
+   "norm": "gotta stick to the plan",
+   "words": 5,
+   "matched": 5,
+   "guessed": false,
+   "s": 64.64,
+   "e": 65.64
+  },
+  {
+   "text": "He mad as fuck, I won't give him a chance",
+   "norm": "he mad as fuck i won't give him a chance",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 65.64,
+   "e": 67.08
+  },
+  {
+   "text": "But still he gon' do what I say",
+   "norm": "but still he gon do what i say",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 67.08,
+   "e": 68.16
+  },
+  {
+   "text": "I swear I be stuck in my ways",
+   "norm": "i swear i be stuck in my ways",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 68.16,
+   "e": 69.7
+  },
+  {
+   "text": "But still he gon' do what I say",
+   "norm": "but still he gon do what i say",
+   "words": 8,
+   "matched": 8,
+   "guessed": false,
+   "s": 69.7,
+   "e": 71.06
+  },
+  {
+   "text": "I swear I be stuck in my ways",
+   "norm": "i swear i be stuck in my ways",
+   "words": 8,
+   "matched": 7,
+   "guessed": false,
+   "s": 71.06,
+   "e": 72.6
+  },
+  {
+   "text": "You thought I was feelin' you?",
+   "norm": "you thought i was feelin you",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 73.03999999999999,
+   "e": 74.12
+  },
+  {
+   "text": "That nigga a munch",
+   "norm": "that nigga a munch",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 74.82,
+   "e": 75.8
+  },
+  {
+   "text": "Nigga a eater, he ate it for lunch",
+   "norm": "nigga a eater he ate it for lunch",
+   "words": 8,
+   "matched": 6,
+   "guessed": false,
+   "s": 75.8,
+   "e": 77.22
+  },
+  {
+   "text": "Bitch, I'm a baddie I get what I want, like",
+   "norm": "bitch i'm a baddie i get what i want like",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 77.22,
+   "e": 78.84
+  },
+  {
+   "text": "You thought I was feelin' you?",
+   "norm": "you thought i was feelin you",
+   "words": 6,
+   "matched": 6,
+   "guessed": false,
+   "s": 78.84,
+   "e": 79.9
+  },
+  {
+   "text": "That nigga a munch",
+   "norm": "that nigga a munch",
+   "words": 4,
+   "matched": 4,
+   "guessed": false,
+   "s": 80.7,
+   "e": 81.58
+  },
+  {
+   "text": "Nigga a eater, he ate it for lunch",
+   "norm": "nigga a eater he ate it for lunch",
+   "words": 8,
+   "matched": 6,
+   "guessed": false,
+   "s": 81.58,
+   "e": 83.0
+  },
+  {
+   "text": "Bitch, I'm a baddie I get what I want, like",
+   "norm": "bitch i'm a baddie i get what i want like",
+   "words": 10,
+   "matched": 10,
+   "guessed": false,
+   "s": 83.0,
+   "e": 84.7
+  }
+ ],
+ "lyricWords": 421,
+ "matchedWords": 368
+}
