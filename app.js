@@ -21,6 +21,7 @@ const EDIT_WINDOW_MS = 250;       // redoing an aligned syllable loops this much
 const FADE_S = 0.003;             // fade at the loop's edges, so cutting the audio doesn't pop
 const MUSIC_GAIN = 0.7;           // volume of the music
 const CLICK_GAIN = 0.35;          // volume of the clicks
+const SAVED_CLICK_GAIN = 0.3;     // volume of other syllables' saved clicks heard while aligning, a touch quieter
 const CLICK_HZ = 2000;            // pitch of the click
 
 const app = initializeApp(firebaseConfig);
@@ -524,9 +525,10 @@ const buffers = new Map(); // clip id -> AudioBuffer
 
 let timer = null;
 let sources = []; // scheduled sources, so Stop can cancel them
-let loops = [];   // the last two loops: { audioStart, offsetS, endS, src, gain, clicked }
+let loops = [];   // the last two loops: { audioStart, offsetS, endS, src, gain, clicked, saved }
                   // (offsetS: where in the clip the audio starts;
-                  // endS: context time the audio ends, which follows the End handle)
+                  // endS: context time the audio ends, which follows the End handle;
+                  // saved: syllable index -> { src, t } for the other syllables' clicks scheduled in it)
 
 async function loadBuffer(c) {
   if (buffers.has(c.id)) return buffers.get(c.id);
@@ -560,14 +562,15 @@ function track(src) {
   sources.push(src);
 }
 
-function playClick(when) {
+function playClick(when, volume = CLICK_GAIN) {
   const src = ctx.createBufferSource();
   src.buffer = click;
   const gain = ctx.createGain();
-  gain.gain.value = CLICK_GAIN;
+  gain.gain.value = volume;
   src.connect(gain).connect(ctx.destination);
   src.start(when);
   track(src);
+  return src;
 }
 
 // Starts a loop of the range's audio at `audioStart` (its end is set by retime),
@@ -581,7 +584,9 @@ function startLoop(audioStart) {
   src.connect(gain).connect(ctx.destination);
   src.start(audioStart, range.startMs / 1000);
   track(src);
-  const loop = { audioStart, offsetS: range.startMs / 1000, endS: Infinity, src, gain, clicked: false };
+  const loop = {
+    audioStart, offsetS: range.startMs / 1000, endS: Infinity, src, gain, clicked: false, saved: new Map(),
+  };
   retime(loop, audioStart + (range.endMs - range.startMs) / 1000, ctx.currentTime);
   loops = [...loops.slice(-1), loop];
   return loop;
@@ -600,6 +605,13 @@ function retime(loop, endS, now) {
   g.linearRampToValueAtTime(0, endS);
   loop.src.stop(endS); // a later stop() replaces an earlier one
   loop.endS = endS;
+  // Drop saved clicks the loop no longer reaches; scheduleSaved puts them back if the end moves out again.
+  for (const [i, { src, t }] of loop.saved) {
+    if (t >= endS) {
+      src.stop();
+      loop.saved.delete(i);
+    }
+  }
 }
 
 // Click stage: each loop's click is scheduled as late as possible,
@@ -610,6 +622,17 @@ function scheduleClick(loop, now, horizon) {
   if (t >= horizon) return;
   if (t >= now) playClick(t); // else: the click was dragged past it
   loop.clicked = true;
+}
+
+// Both stages: the clicks already aligned for the song's other syllables sound wherever they fall in the loop.
+function scheduleSaved(loop, now, horizon) {
+  for (const i of indices(clip)) {
+    const r = responses.get(docId(clip.id, i));
+    if (i === target || !r || loop.saved.has(i)) continue;
+    const t = loop.audioStart + r.clickTimeMs / 1000 - loop.offsetS;
+    if (t < loop.audioStart || t < now || t >= loop.endS || t >= horizon) continue;
+    loop.saved.set(i, { src: playClick(t, SAVED_CLICK_GAIN), t });
+  }
 }
 
 function schedule() {
@@ -623,8 +646,13 @@ function schedule() {
   const passed = now > cur.audioStart && playingS < range.startMs / 1000;
   retime(cur, passed ? now : cur.audioStart + range.endMs / 1000 - cur.offsetS, now);
   scheduleClick(cur, now, horizon);
+  scheduleSaved(cur, now, horizon);
 
-  if (cur.endS < horizon) scheduleClick(startLoop(cur.endS), now, horizon);
+  if (cur.endS < horizon) {
+    const loop = startLoop(cur.endS);
+    scheduleClick(loop, now, horizon);
+    scheduleSaved(loop, now, horizon);
+  }
 }
 
 function stop() {
