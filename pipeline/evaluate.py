@@ -1,6 +1,6 @@
 """Step 3: compare MFA's alignment of the Whisper transcript with the manual syllable clicks.
 
-Each manual click marks one syllable of the reference lyrics (clips.json). MFA gives word and
+Each manual click marks one syllable of the reference lyrics (from Firestore, via clips.py). MFA gives word and
 phone intervals for Whisper's words, so:
   1. Each MFA word's ARPAbet phones are split into syllables (one per stressed-digit vowel,
      consonants between vowels split by maximal legal onset).
@@ -26,6 +26,7 @@ from pathlib import Path
 
 import report_html
 import vpr
+from clips import load_clips
 
 ROOT = Path(__file__).resolve().parent.parent
 ANCHORS = ("onset", "vowel", "vpr")
@@ -155,7 +156,7 @@ def main():
     args = p.parse_args()
     out = Path(args.out)
 
-    clips = {c["id"]: c for c in json.loads((ROOT / "clips.json").read_text())["clips"]}
+    clips = {c["id"]: c for c in load_clips()}
     songs = {s["id"]: s for s in json.loads(Path(args.user_data).read_text())["songs"]}
 
     rows, clip_info = [], []

@@ -11,8 +11,10 @@ Every clip records where it came from (source, sourceStartMs), so its clicks can
 onto the full verse: verse time = sourceStartMs + clickTimeMs.
 
 Writes clips/lines/<verse>/<nn>.wav and replaces any line clips already in clips.json, keeping
-the hand-made clips (and their order) ahead of them. Needs num2words (via transcribe.normalize):
-run with .venv-whisper/bin/python.
+the hand-made clips (and their order) ahead of them. The app reads clips from Firestore, not
+clips.json: afterwards, use the admin page's import to copy over the clips Firestore doesn't have
+yet (clips already there, and any edits made to them on the admin page, are left alone).
+Needs num2words (via transcribe.normalize): run with .venv-whisper/bin/python.
 """
 
 import json

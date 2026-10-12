@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Click alignment admin</title>
   <link rel="stylesheet" href="../style.css">
+  <style>#edit-words input[type=number] { width: 4em; }</style>
 </head>
 <body>
   <div id="signed-out" hidden>
@@ -15,9 +16,22 @@
 
   <div id="users" hidden></div>
 
+  <section id="editor" hidden>
+    <h2>Edit a clip</h2>
+    <select id="edit-clip"></select>
+    <p id="edit-warning" hidden></p>
+    <table>
+      <thead><tr><th>Word</th><th>Syllables</th><th></th></tr></thead>
+      <tbody id="edit-words"></tbody>
+    </table>
+    <button id="add-word">Add word</button>
+    <button id="save-clip">Save</button>
+    <p id="edit-status"></p>
+  </section>
+
   <section id="import" hidden>
     <h2>Clips in Firestore</h2>
-    <p>Copies clips from clips.json that aren't in Firestore yet. Clips already there are left alone.</p>
+    <p>Copies clips from clips.json that aren't in Firestore yet, adding them at the end. Clips already there are left alone.</p>
     <button id="import-clips">Import from clips.json</button>
     <p id="import-status"></p>
   </section>
