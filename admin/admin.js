@@ -1,13 +1,14 @@
 // Admin page: for every email that has submitted responses, the songs they've aligned
-// and how many of each song's syllables they've done.
-// Only ADMIN_UID can read other users' responses; the Firestore rules enforce that.
+// and how many of each song's syllables they've done; an editor for each clip's words and
+// syllable counts; and an import of new clips from clips.json.
+// Only ADMIN_UID can read other users' responses or write clips; the Firestore rules enforce that.
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import {
   getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 import {
-  getFirestore, collection, getDocs, doc, writeBatch,
+  getFirestore, collection, query, orderBy, getDocs, doc, updateDoc, writeBatch,
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 import { firebaseConfig } from '../firebase-config.js';
 
@@ -19,6 +20,10 @@ const db = getFirestore(app);
 
 const $ = (id) => document.getElementById(id);
 
+let clips = [];      // Firestore's clips collection, in the app's order
+let responses = [];  // every user's response docs' data
+let draft = null;    // the edited clip's words, as edited so far
+
 function setStatus(text) {
   $('status').textContent = text;
   $('status').hidden = !text;
@@ -27,19 +32,24 @@ function setStatus(text) {
 const syllableCount = (clip) => clip.words.reduce((n, w) => n + w.syllables, 0);
 
 async function loadClipList() {
-  const res = await fetch('../clips.json');
-  if (!res.ok) throw new Error(`Couldn't load clips.json (HTTP ${res.status}).`);
-  return (await res.json()).clips;
+  const snap = await getDocs(query(collection(db, 'clips'), orderBy('order')));
+  return snap.docs.map((d) => d.data());
 }
 
 async function render() {
   setStatus('Loading…');
-  const [clips, snap] = await Promise.all([loadClipList(), getDocs(collection(db, 'responses'))]);
+  const [list, snap] = await Promise.all([loadClipList(), getDocs(collection(db, 'responses'))]);
+  clips = list;
+  responses = snap.docs.map((d) => d.data());
+  renderUsers();
+  renderClipMenu();
+  setStatus(responses.length ? '' : 'No responses yet.');
+}
 
+function renderUsers() {
   // email -> clip id -> Set of aligned syllable indices
   const byEmail = new Map();
-  for (const d of snap.docs) {
-    const { email, clipId, syllableIndex } = d.data();
+  for (const { email, clipId, syllableIndex } of responses) {
     const key = email ?? '(no email)';
     if (!byEmail.has(key)) byEmail.set(key, new Map());
     const songs = byEmail.get(key);
@@ -57,7 +67,7 @@ async function render() {
     const h = document.createElement('h2');
     h.textContent = email;
     const ul = document.createElement('ul');
-    // Songs in clips.json order; clips no longer in clips.json go last.
+    // Songs in the app's order; clips no longer in Firestore go last.
     const ids = [...byEmail.get(email).keys()].sort(
       (a, b) => (clipOrder.get(a) ?? Infinity) - (clipOrder.get(b) ?? Infinity),
     );
@@ -73,24 +83,131 @@ async function render() {
     section.append(h, ul);
     container.append(section);
   }
-
-  setStatus(byEmail.size ? '' : 'No responses yet.');
   container.hidden = false;
 }
 
+// ---------- Clip editor ----------
+
+const editedClip = () => clips.find((c) => c.id === $('edit-clip').value);
+
+// The clip menu, keeping the selected clip if it's still there.
+function renderClipMenu() {
+  const menu = $('edit-clip');
+  const selected = menu.value;
+  menu.replaceChildren(...clips.map((c) => new Option(c.title, c.id)));
+  if (clips.some((c) => c.id === selected)) menu.value = selected;
+  $('editor').hidden = !clips.length;
+  openClip();
+}
+
+function openClip() {
+  const clip = editedClip();
+  draft = clip ? clip.words.map((w) => ({ ...w })) : null;
+  $('edit-status').textContent = '';
+  renderWarning();
+  renderDraft();
+}
+
+// Responses are stored by syllable position, so changing syllable counts moves saved clicks.
+function renderWarning() {
+  const clip = editedClip();
+  const saved = clip ? responses.filter((r) => r.clipId === clip.id) : [];
+  const users = new Set(saved.map((r) => r.uid)).size;
+  $('edit-warning').hidden = !saved.length;
+  $('edit-warning').textContent = `This clip has ${saved.length} saved clicks from ${users} `
+    + `${users === 1 ? 'user' : 'users'}. They're stored by syllable position, so changing a word's `
+    + 'syllable count, or adding or removing a word, moves the clicks after it onto different syllables.';
+}
+
+function renderDraft() {
+  const body = $('edit-words');
+  body.replaceChildren();
+  if (!draft) return;
+  draft.forEach((w, i) => {
+    const text = document.createElement('input');
+    text.value = w.text;
+    text.addEventListener('input', () => { w.text = text.value; });
+
+    const syllables = document.createElement('input');
+    syllables.type = 'number';
+    syllables.min = 1;
+    syllables.value = w.syllables;
+    syllables.addEventListener('input', () => { w.syllables = syllables.valueAsNumber; });
+
+    const remove = document.createElement('button');
+    remove.textContent = 'Remove';
+    remove.addEventListener('click', () => { draft.splice(i, 1); renderDraft(); });
+
+    const row = document.createElement('tr');
+    for (const el of [text, syllables, remove]) {
+      const td = document.createElement('td');
+      td.append(el);
+      row.append(td);
+    }
+    body.append(row);
+  });
+}
+
+async function saveClip() {
+  const clip = editedClip();
+  const words = draft.map((w) => ({ text: w.text.trim(), syllables: w.syllables }));
+  if (!words.length) throw new Error('A clip needs at least one word.');
+  const bad = words.find((w) => !w.text || !Number.isInteger(w.syllables) || w.syllables < 1);
+  if (bad) throw new Error('Every word needs text and a whole number of syllables, at least 1.');
+
+  const counts = (ws) => ws.map((w) => w.syllables).join();
+  const hasClicks = responses.some((r) => r.clipId === clip.id);
+  if (hasClicks && counts(words) !== counts(clip.words)
+      && !confirm('This changes syllable positions in a clip with saved clicks. Save anyway?')) {
+    return 'Not saved.';
+  }
+
+  await updateDoc(doc(db, 'clips', clip.id), { words });
+  clip.words = words;
+  renderUsers();
+  openClip();
+  return 'Saved.';
+}
+
+$('edit-clip').addEventListener('change', openClip);
+
+$('add-word').addEventListener('click', () => {
+  draft.push({ text: '', syllables: 1 });
+  renderDraft();
+});
+
+$('save-clip').addEventListener('click', async () => {
+  $('save-clip').disabled = true;
+  $('edit-status').textContent = 'Saving…';
+  try {
+    $('edit-status').textContent = await saveClip();
+  } catch (err) {
+    $('edit-status').textContent = err.message;
+  } finally {
+    $('save-clip').disabled = false;
+  }
+});
+
+// ---------- Import ----------
+
 // Copies clips.json clips missing from the Firestore clips collection, keyed by clip id.
-// `order` keeps clips.json's ordering, since Firestore doesn't preserve one.
+// They go after the clips already there, in clips.json's order; `order` holds the app's
+// ordering, since Firestore doesn't preserve one.
 async function importClips() {
-  const [clips, snap] = await Promise.all([loadClipList(), getDocs(collection(db, 'clips'))]);
-  const existing = new Set(snap.docs.map((d) => d.id));
-  const missing = clips.map((c, order) => ({ ...c, order })).filter((c) => !existing.has(c.id));
+  const res = await fetch('../clips.json');
+  if (!res.ok) throw new Error(`Couldn't load clips.json (HTTP ${res.status}).`);
+  const staged = (await res.json()).clips;
+  const current = await loadClipList(); // fresh, so a clip is never overwritten
+  const existing = new Set(current.map((c) => c.id));
+  const next = Math.max(-1, ...current.map((c) => c.order)) + 1;
+  const missing = staged.filter((c) => !existing.has(c.id)).map((c, k) => ({ ...c, order: next + k }));
   // A batch holds at most 500 writes.
   for (let i = 0; i < missing.length; i += 500) {
     const batch = writeBatch(db);
     for (const c of missing.slice(i, i + 500)) batch.set(doc(db, 'clips', c.id), c);
     await batch.commit();
   }
-  return { added: missing.length, skipped: clips.length - missing.length };
+  return { added: missing.length, skipped: staged.length - missing.length };
 }
 
 $('import-clips').addEventListener('click', async () => {
@@ -98,6 +215,7 @@ $('import-clips').addEventListener('click', async () => {
   $('import-status').textContent = 'Importing…';
   try {
     const { added, skipped } = await importClips();
+    if (added) await render();
     $('import-status').textContent = `Added ${added} clips; ${skipped} were already in Firestore.`;
   } catch (err) {
     $('import-status').textContent = err.message;
@@ -105,6 +223,8 @@ $('import-clips').addEventListener('click', async () => {
     $('import-clips').disabled = false;
   }
 });
+
+// ---------- Sign-in ----------
 
 $('sign-in').addEventListener('click', () => {
   signInWithPopup(auth, new GoogleAuthProvider()).catch((err) => alert(err.message));
@@ -115,6 +235,7 @@ $('sign-out').addEventListener('click', () => signOut(auth));
 onAuthStateChanged(auth, async (u) => {
   $('users').hidden = true;
   $('users').replaceChildren();
+  $('editor').hidden = true;
   $('import').hidden = true;
   $('import-status').textContent = '';
   $('signed-out').hidden = !!u;

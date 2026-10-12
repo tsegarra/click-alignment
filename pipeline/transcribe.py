@@ -1,6 +1,6 @@
 """Step 1: transcribe each clip with Whisper and build an MFA corpus from the transcripts.
 
-The lyrics in clips.json are deliberately NOT used here; MFA only ever sees Whisper's words.
+The clips' lyrics (from Firestore, via clips.py) are deliberately NOT used here; MFA only ever sees Whisper's words.
 
 Writes, per clip:
   out/whisper/<id>.json        raw Whisper result
@@ -16,6 +16,8 @@ from pathlib import Path
 
 import whisper
 from num2words import num2words
+
+from clips import load_clips
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -43,7 +45,7 @@ def main():
 
     out = Path(args.out)
     (out / "whisper").mkdir(parents=True, exist_ok=True)
-    clips = json.loads((ROOT / "clips.json").read_text())["clips"]
+    clips = load_clips()
 
     model = whisper.load_model(args.model, device="cpu")
     for clip in clips:

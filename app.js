@@ -9,7 +9,7 @@ import {
   getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 import {
-  getFirestore, collection, query, where, getDocs, doc, setDoc, serverTimestamp,
+  getFirestore, collection, query, where, orderBy, getDocs, doc, setDoc, serverTimestamp,
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 import { firebaseConfig } from './firebase-config.js';
 
@@ -36,7 +36,7 @@ const playhead = $('playhead');
 // ---------- App state ----------
 
 let user = null;
-let clips = null;           // from clips.json
+let clips = null;           // from Firestore's clips collection
 let responses = new Map();  // doc id -> response data, for the signed-in user
 let clip = null;            // the song being worked on
 let target = 0;             // flat index of the syllable being aligned
@@ -65,13 +65,12 @@ const docId = (clipId, syllableIndex) => `${user.uid}_${clipId}_${syllableIndex}
 const isAligned = (c, idx) => responses.has(docId(c.id, idx));
 
 async function loadClipList() {
-  const res = await fetch('clips.json');
-  if (!res.ok) throw new Error(`Couldn't load clips.json (HTTP ${res.status}).`);
-  const data = await res.json();
-  for (const c of data.clips) {
+  const snap = await getDocs(query(collection(db, 'clips'), orderBy('order')));
+  const list = snap.docs.map((d) => d.data());
+  for (const c of list) {
     if (c.id.includes('_')) throw new Error(`Clip id "${c.id}" must not contain underscores.`);
   }
-  return data.clips;
+  return list;
 }
 
 // ---------- Songs ----------
