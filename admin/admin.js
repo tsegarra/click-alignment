@@ -7,7 +7,7 @@ import {
   getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 import {
-  getFirestore, collection, getDocs,
+  getFirestore, collection, getDocs, doc, writeBatch,
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 import { firebaseConfig } from '../firebase-config.js';
 
@@ -78,6 +78,34 @@ async function render() {
   container.hidden = false;
 }
 
+// Copies clips.json clips missing from the Firestore clips collection, keyed by clip id.
+// `order` keeps clips.json's ordering, since Firestore doesn't preserve one.
+async function importClips() {
+  const [clips, snap] = await Promise.all([loadClipList(), getDocs(collection(db, 'clips'))]);
+  const existing = new Set(snap.docs.map((d) => d.id));
+  const missing = clips.map((c, order) => ({ ...c, order })).filter((c) => !existing.has(c.id));
+  // A batch holds at most 500 writes.
+  for (let i = 0; i < missing.length; i += 500) {
+    const batch = writeBatch(db);
+    for (const c of missing.slice(i, i + 500)) batch.set(doc(db, 'clips', c.id), c);
+    await batch.commit();
+  }
+  return { added: missing.length, skipped: clips.length - missing.length };
+}
+
+$('import-clips').addEventListener('click', async () => {
+  $('import-clips').disabled = true;
+  $('import-status').textContent = 'Importing…';
+  try {
+    const { added, skipped } = await importClips();
+    $('import-status').textContent = `Added ${added} clips; ${skipped} were already in Firestore.`;
+  } catch (err) {
+    $('import-status').textContent = err.message;
+  } finally {
+    $('import-clips').disabled = false;
+  }
+});
+
 $('sign-in').addEventListener('click', () => {
   signInWithPopup(auth, new GoogleAuthProvider()).catch((err) => alert(err.message));
 });
@@ -87,11 +115,14 @@ $('sign-out').addEventListener('click', () => signOut(auth));
 onAuthStateChanged(auth, async (u) => {
   $('users').hidden = true;
   $('users').replaceChildren();
+  $('import').hidden = true;
+  $('import-status').textContent = '';
   $('signed-out').hidden = !!u;
   $('account').hidden = !u;
   if (!u) { setStatus(''); return; }
   $('who').textContent = `Logged in as ${u.email}`;
   if (u.uid !== ADMIN_UID) { setStatus('Not authorized.'); return; }
+  $('import').hidden = false;
   try {
     await render();
   } catch (err) {
