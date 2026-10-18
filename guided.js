@@ -79,9 +79,11 @@ async function loadGuides() {
 
 const isComplete = (c) => indices(c).every((i) => isAligned(c, i));
 
-// Opens the first song with unaligned syllables, or the all-done page if there are none.
+// Opens the next song after the current one (in menu order, wrapping around) with unaligned
+// syllables, or the all-done page if there are none. With no current song, starts from the first.
 function nextSong() {
-  const c = clips.find((x) => !isComplete(x));
+  const from = clip ? clips.indexOf(clip) + 1 : 0;
+  const c = [...clips.slice(from), ...clips.slice(0, from)].find((x) => !isComplete(x));
   if (c) {
     openClip(c, false);
     return;
