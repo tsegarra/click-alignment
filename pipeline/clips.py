@@ -27,7 +27,7 @@ def _value(v):
 
 
 def load_clips():
-    """Every clip, in the app's order."""
+    """Every clip not excluded from analysis, in the app's order."""
     clips, token = [], None
     while True:
         query = {"pageSize": 300, **({"pageToken": token} if token else {})}
@@ -36,4 +36,4 @@ def load_clips():
         clips += [_value({"mapValue": d}) for d in page.get("documents", [])]
         token = page.get("nextPageToken")
         if not token:
-            return sorted(clips, key=lambda c: c["order"])
+            return sorted((c for c in clips if not c.get("excludeFromAnalysis")), key=lambda c: c["order"])

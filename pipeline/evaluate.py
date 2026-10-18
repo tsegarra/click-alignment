@@ -14,6 +14,9 @@ burst when there is a clear one, and otherwise shifts it by a fixed amount.
 
 Writes out/syllables.csv (one row per manual click), out/report.md and out/report.html.
 Standard library only.
+
+Retired as a scorer: it only knows the hand-made clips, and load_clips() now skips them (they're
+excludeFromAnalysis). Other scripts still use its MFA and VPR helpers (load_mfa, add_vpr).
 """
 
 import argparse

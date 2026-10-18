@@ -34,6 +34,9 @@
     <p>Copies clips from clips.json that aren't in Firestore yet, adding them at the end. Clips already there are left alone.</p>
     <button id="import-clips">Import from clips.json</button>
     <p id="import-status"></p>
+    <p>Excludes every clip with no source (the hand-made clips) from the app and from analysis. Only needed once.</p>
+    <button id="exclude-hand-made">Exclude hand-made clips</button>
+    <p id="exclude-status"></p>
   </section>
 
   <p id="account" hidden><span id="who"></span> <button id="sign-out">Sign out</button></p>

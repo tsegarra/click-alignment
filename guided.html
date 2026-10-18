@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guided click alignment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="signed-out">
+    <button id="sign-in">Sign in with Google</button>
+  </div>
+
+  <div id="loading" hidden>
+    <p id="loading-msg">Loading…</p>
+  </div>
+
+  <div id="line-area" hidden>
+    <div id="line" class="line"></div>
+  </div>
+
+  <div id="overview" hidden>
+    <p id="overview-msg"></p>
+    <p><button id="overview-play" class="play">▶ Play</button></p>
+    <p>
+      <button id="submit" class="advance" disabled>✓ Submit</button>
+      <button id="edit-assignment">Edit syllable assignment</button>
+    </p>
+    <p id="overview-status" class="status"></p>
+  </div>
+
+  <div id="task" hidden>
+    <div id="prompt"></div>
+
+    <p><button id="play" class="play">▶ Play</button></p>
+
+    <div id="bar" class="disabled" aria-disabled="true">
+      <div id="zone"></div>
+      <div id="playhead" hidden></div>
+    </div>
+
+    <div id="handles" class="disabled" aria-disabled="true">
+      <div id="start-row" class="handle-row" aria-label="Drag to move the start of the loop">
+        <div id="start-handle" class="handle">Start</div>
+      </div>
+      <div id="end-row" class="handle-row" aria-label="Drag to move the end of the loop">
+        <div id="end-handle" class="handle">End</div>
+      </div>
+    </div>
+
+    <p>
+      <button id="back">◂ Back</button>
+      <button id="to-overview">◂ Whole line</button>
+      <button id="next" class="advance" disabled>Next ▸</button>
+      <button id="done" class="advance" hidden>✓ Done</button>
+    </p>
+  </div>
+
+  <div id="assignment" hidden>
+    <p>Which syllable each guide click belongs to. Guides set to None aren't played.
+      Changing this replaces every syllable's click with its guide's, and clears your confirmations.</p>
+    <table>
+      <thead><tr><th>Guide</th><th>Time</th><th>Syllable</th></tr></thead>
+      <tbody id="assignment-rows"></tbody>
+    </table>
+    <p id="assignment-status" class="status"></p>
+    <p>
+      <button id="assignment-done">Done</button>
+      <button id="assignment-cancel">Cancel</button>
+    </p>
+  </div>
+
+  <div id="all-done" hidden>
+    <div id="all-lines"></div>
+    <p>That's all the songs I've got so far. Thanks for playing!</p>
+  </div>
+
+  <p id="account" hidden>
+    <span id="who"></span>
+    <select id="song-menu" aria-label="Go to a song"></select>
+    <button id="sign-out">Sign out</button>
+  </p>
+
+  <script type="module" src="guided.js"></script>
+</body>
+</html>

@@ -4,6 +4,7 @@
       "id": "2pac-all-eyez-on-me",
       "title": "All Eyez On Me",
       "file": "clips/2pac_all_eyez.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "was", "syllables": 1 },
         { "text": "hyper", "syllables": 2 },
@@ -20,6 +21,7 @@
       "id": "bdk-set-it-off",
       "title": "Set It Off",
       "file": "clips/bdk_set_it_off.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "I", "syllables": 1 },
         { "text": "get", "syllables": 1 },
@@ -35,6 +37,7 @@
       "id": "eminem-my-name-is",
       "title": "My Name Is",
       "file": "clips/eminem_my_name_is.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "I", "syllables": 1 },
         { "text": "lay", "syllables": 1 },
@@ -51,6 +54,7 @@
       "id": "method-man-plo-style",
       "title": "PLO Style",
       "file": "clips/meth_plo_style.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "anger", "syllables": 2 },
         { "text": "comin'", "syllables": 2 },
@@ -65,6 +69,7 @@
       "id": "nas-it-aint-hard-to-tell",
       "title": "It Ain't Hard To Tell",
       "file": "clips/nas_aint_hard.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "speak", "syllables": 1 },
         { "text": "with", "syllables": 1 },
@@ -80,6 +85,7 @@
       "id": "ice-spice-munch",
       "title": "Munch",
       "file": "clips/ice_spice_munch.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "know", "syllables": 1 },
         { "text": "they", "syllables": 1 },
@@ -96,6 +102,7 @@
       "id": "migos-supastars",
       "title": "Supastars",
       "file": "clips/migos_supastars.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "you", "syllables": 1 },
         { "text": "got", "syllables": 1 },
@@ -114,6 +121,7 @@
       "id": "2pac-hell-is",
       "title": "All Eyez On Me: of hell is where",
       "file": "clips/2pac_hell_is.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "of", "syllables": 1 },
         { "text": "hell", "syllables": 1 },
@@ -125,6 +133,7 @@
       "id": "2pac-holla",
       "title": "All Eyez On Me: nigga holla when",
       "file": "clips/2pac_holla.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "nigga", "syllables": 2 },
         { "text": "holla", "syllables": 2 },
@@ -135,6 +144,7 @@
       "id": "2pac-caravan",
       "title": "All Eyez On Me: got a caravan",
       "file": "clips/2pac_caravan.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "got", "syllables": 1 },
         { "text": "a", "syllables": 1 },
@@ -145,6 +155,7 @@
       "id": "2pac-until",
       "title": "All Eyez On Me: by until I die",
       "file": "clips/2pac_until.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "by", "syllables": 1 },
         { "text": "until", "syllables": 2 },
@@ -156,6 +167,7 @@
       "id": "2pac-later",
       "title": "All Eyez On Me: crossed later the",
       "file": "clips/2pac_later.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "crossed", "syllables": 1 },
         { "text": "later", "syllables": 2 },
@@ -166,6 +178,7 @@
       "id": "2pac-my-eyes",
       "title": "All Eyez On Me: in my eyes",
       "file": "clips/2pac_my_eyes.wav",
+      "excludeFromAnalysis": true,
       "words": [
         { "text": "in", "syllables": 1 },
         { "text": "my", "syllables": 1 },

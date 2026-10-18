@@ -14,7 +14,6 @@ import re
 import shutil
 from pathlib import Path
 
-import whisper
 from num2words import num2words
 
 from clips import load_clips
@@ -46,6 +45,8 @@ def main():
     out = Path(args.out)
     (out / "whisper").mkdir(parents=True, exist_ok=True)
     clips = load_clips()
+
+    import whisper  # here, not at the top, so importing normalize() doesn't need Whisper
 
     model = whisper.load_model(args.model, device="cpu")
     for clip in clips:

@@ -56,6 +56,11 @@
   background: #3a3;
 }
 
+/* Guided page: a guide click, not yet confirmed. */
+.line .syllable.provisional {
+  background: #e8a700;
+}
+
 .line .syllable.aligned {
   cursor: pointer;
 }
@@ -233,7 +238,8 @@ u.orange {
 }
 
 /* Play and Stop share one full-width button; its label and colour follow the playback state. */
-#play {
+#play,
+.play {
   display: block;
   width: 100%;
   padding: 0.75em;
@@ -246,15 +252,18 @@ u.orange {
   cursor: pointer;
 }
 
-#play:hover {
+#play:hover,
+.play:hover {
   background: #154ca8;
 }
 
-#play.playing {
+#play.playing,
+.play.playing {
   background: #c0392b;
 }
 
-#play.playing:hover {
+#play.playing:hover,
+.play.playing:hover {
   background: #a33024;
 }
 
@@ -299,8 +308,14 @@ u.orange {
   cursor: not-allowed;
 }
 
-#status {
+#status,
+.status {
   color: #c0392b;
+}
+
+/* Guided page: two guides assigned to one syllable. */
+#assignment-rows tr.clash select {
+  outline: 2px solid #c0392b;
 }
 
 #song-menu {

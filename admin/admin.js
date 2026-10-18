@@ -1,6 +1,7 @@
 // Admin page: for every email that has submitted responses, the songs they've aligned
 // and how many of each song's syllables they've done; an editor for each clip's words and
-// syllable counts; and an import of new clips from clips.json.
+// syllable counts; an import of new clips from clips.json; and a one-time action that excludes the
+// hand-made clips (those with no source) from analysis.
 // Only ADMIN_UID can read other users' responses or write clips; the Firestore rules enforce that.
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
@@ -50,6 +51,7 @@ function renderUsers() {
   // email -> clip id -> Set of aligned syllable indices
   const byEmail = new Map();
   for (const { email, clipId, syllableIndex } of responses) {
+    if (excluded.has(clipId)) continue;
     const key = email ?? '(no email)';
     if (!byEmail.has(key)) byEmail.set(key, new Map());
     const songs = byEmail.get(key);
@@ -59,6 +61,7 @@ function renderUsers() {
 
   const clipOrder = new Map(clips.map((c, i) => [c.id, i]));
   const clipById = new Map(clips.map((c) => [c.id, c]));
+  const excluded = new Set(clips.filter((c) => c.excludeFromAnalysis).map((c) => c.id));
 
   const container = $('users');
   container.replaceChildren();
@@ -224,6 +227,34 @@ $('import-clips').addEventListener('click', async () => {
   }
 });
 
+// ---------- Exclude the hand-made clips ----------
+
+// Marks every clip with no source (the hand-made ones) excludeFromAnalysis, so the app and the
+// pipeline skip them.
+async function excludeHandMade() {
+  const current = await loadClipList();
+  const todo = current.filter((c) => !c.source && !c.excludeFromAnalysis);
+  const batch = writeBatch(db);
+  for (const c of todo) batch.update(doc(db, 'clips', c.id), { excludeFromAnalysis: true });
+  if (todo.length) await batch.commit();
+  return todo.length;
+}
+
+$('exclude-hand-made').addEventListener('click', async () => {
+  if (!confirm('Exclude every clip with no source from the app and from analysis?')) return;
+  $('exclude-hand-made').disabled = true;
+  $('exclude-status').textContent = 'Saving…';
+  try {
+    const n = await excludeHandMade();
+    if (n) await render();
+    $('exclude-status').textContent = `Excluded ${n} clips.`;
+  } catch (err) {
+    $('exclude-status').textContent = err.message;
+  } finally {
+    $('exclude-hand-made').disabled = false;
+  }
+});
+
 // ---------- Sign-in ----------
 
 $('sign-in').addEventListener('click', () => {
@@ -238,6 +269,7 @@ onAuthStateChanged(auth, async (u) => {
   $('editor').hidden = true;
   $('import').hidden = true;
   $('import-status').textContent = '';
+  $('exclude-status').textContent = '';
   $('signed-out').hidden = !!u;
   $('account').hidden = !u;
   if (!u) { setStatus(''); return; }

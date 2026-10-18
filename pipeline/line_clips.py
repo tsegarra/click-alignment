@@ -79,6 +79,20 @@ def lyric_lines(verse, words):
     return out
 
 
+def line_bounds(lines, n_samples, rate):
+    """lyric_lines() output -> [(first sample, end sample)] of each line's clip, padded."""
+    dur_ms = n_samples / rate * 1000
+    spans = [(cols[0][1][0][0] * 1000, cols[-1][1][-1][1] * 1000) for cols in lines]
+    pad = lambda gap: min(max(gap / 2, PAD_MIN_MS), PAD_MAX_MS)
+    out = []
+    for n, (s, e) in enumerate(spans):
+        prev_end = spans[n - 1][1] if n else 0
+        next_start = spans[n + 1][0] if n + 1 < len(spans) else dur_ms
+        out.append((round(max(0, s - pad(s - prev_end)) * rate / 1000),
+                    round(min(n_samples, (e + pad(next_start - e)) * rate / 1000))))
+    return out
+
+
 def main():
     data = json.loads((ROOT / "clips.json").read_text())
     clips = [c for c in data["clips"] if "source" not in c]
@@ -90,19 +104,11 @@ def main():
             assert params.nchannels == 1 and params.sampwidth == 2, f"{src}: expected mono 16-bit"
             rate = params.framerate
             samples = array("h", w.readframes(params.nframes))
-        dur_ms = len(samples) / rate * 1000
 
         lines = lyric_lines(verse, mfa_words(ROOT / "out/verses/aligned_fmllr" / verse / f"{verse}.json"))
-        spans = [(cols[0][1][0][0] * 1000, cols[-1][1][-1][1] * 1000) for cols in lines]
         outdir = ROOT / "clips/lines" / verse
         outdir.mkdir(parents=True, exist_ok=True)
-        for n, (cols, (s, e)) in enumerate(zip(lines, spans)):
-            prev_end = spans[n - 1][1] if n else 0
-            next_start = spans[n + 1][0] if n + 1 < len(spans) else dur_ms
-            pad = lambda gap: min(max(gap / 2, PAD_MIN_MS), PAD_MAX_MS)
-            a = round(max(0, s - pad(s - prev_end)) * rate / 1000)
-            b = round(min(len(samples), (e + pad(next_start - e)) * rate / 1000))
-
+        for n, (cols, (a, b)) in enumerate(zip(lines, line_bounds(lines, len(samples), rate))):
             cut = samples[a:b]
             fade = round(FADE_MS * rate / 1000)
             for k in range(fade):
