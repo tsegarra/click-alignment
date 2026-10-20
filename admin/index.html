@@ -34,6 +34,9 @@
     <p>Copies clips from clips.json that aren't in Firestore yet, adding them at the end. Clips already there are left alone.</p>
     <button id="import-clips">Import from clips.json</button>
     <p id="import-status"></p>
+    <p>Replaces the words and syllable counts of clips already in Firestore with clips.json's, for the clips where they differ.</p>
+    <button id="update-words">Update words from clips.json</button>
+    <p id="update-status"></p>
     <p>Excludes every clip with no source (the hand-made clips) from the app and from analysis. Only needed once.</p>
     <button id="exclude-hand-made">Exclude hand-made clips</button>
     <p id="exclude-status"></p>

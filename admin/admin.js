@@ -1,6 +1,7 @@
 // Admin page: for every email that has submitted responses, the songs they've aligned
 // and how many of each song's syllables they've done; an editor for each clip's words and
-// syllable counts; an import of new clips from clips.json; and a one-time action that excludes the
+// syllable counts; an import of new clips from clips.json; an update of existing clips' words from
+// clips.json; and a one-time action that excludes the
 // hand-made clips (those with no source) from analysis.
 // Only ADMIN_UID can read other users' responses or write clips; the Firestore rules enforce that.
 
@@ -227,6 +228,54 @@ $('import-clips').addEventListener('click', async () => {
   }
 });
 
+// ---------- Update words ----------
+
+// Overwrites the words of Firestore clips whose words differ from clips.json's. Other fields, and
+// clips missing from either side, are left alone.
+async function updateWords() {
+  const res = await fetch('../clips.json');
+  if (!res.ok) throw new Error(`Couldn't load clips.json (HTTP ${res.status}).`);
+  const staged = new Map((await res.json()).clips.map((c) => [c.id, c]));
+  const current = await loadClipList();
+  // Compared field by field, since Firestore doesn't keep a map's key order.
+  const key = (words) => JSON.stringify(words.map((w) => [w.text, w.syllables]));
+  const same = (a, b) => key(a) === key(b);
+  const changed = current.filter((c) => staged.has(c.id) && !same(c.words, staged.get(c.id).words));
+  if (!changed.length) return [];
+
+  const withClicks = changed.filter((c) => responses.some((r) => r.clipId === c.id));
+  if (withClicks.length && !confirm(`${withClicks.length} of these clips have saved clicks, which `
+      + 'may move onto different syllables:\n\n'
+      + `${withClicks.map((c) => c.title).join('\n')}\n\nUpdate anyway?`)) {
+    throw new Error('Not updated.');
+  }
+  // A batch holds at most 500 writes.
+  for (let i = 0; i < changed.length; i += 500) {
+    const batch = writeBatch(db);
+    for (const c of changed.slice(i, i + 500)) {
+      batch.update(doc(db, 'clips', c.id), { words: staged.get(c.id).words });
+    }
+    await batch.commit();
+  }
+  return changed;
+}
+
+$('update-words').addEventListener('click', async () => {
+  $('update-words').disabled = true;
+  $('update-status').textContent = 'Updating…';
+  try {
+    const changed = await updateWords();
+    if (changed.length) await render();
+    $('update-status').textContent = changed.length
+      ? `Updated ${changed.length} clips: ${changed.map((c) => c.title).join('; ')}.`
+      : 'Every clip already matches clips.json.';
+  } catch (err) {
+    $('update-status').textContent = err.message;
+  } finally {
+    $('update-words').disabled = false;
+  }
+});
+
 // ---------- Exclude the hand-made clips ----------
 
 // Marks every clip with no source (the hand-made ones) excludeFromAnalysis, so the app and the
@@ -269,6 +318,7 @@ onAuthStateChanged(auth, async (u) => {
   $('editor').hidden = true;
   $('import').hidden = true;
   $('import-status').textContent = '';
+  $('update-status').textContent = '';
   $('exclude-status').textContent = '';
   $('signed-out').hidden = !!u;
   $('account').hidden = !u;

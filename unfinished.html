@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unfinished clips</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="signed-out">
+    <button id="sign-in">Sign in with Google</button>
+  </div>
+
+  <div id="loading" hidden>
+    <p id="loading-msg">Loading…</p>
+  </div>
+
+  <div id="unfinished" hidden>
+    <p id="unfinished-msg"></p>
+    <p><label for="marked">Marked for extension:</label></p>
+    <textarea id="marked" rows="6" cols="60" readonly></textarea>
+    <div id="all-lines"></div>
+  </div>
+
+  <p id="account" hidden>
+    <span id="who"></span>
+    <button id="sign-out">Sign out</button>
+  </p>
+
+  <script type="module" src="unfinished.js"></script>
+</body>
+</html>

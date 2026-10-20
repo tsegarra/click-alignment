@@ -940,7 +940,7 @@
       "source": "full_verses/bdk_set_it_off_full.wav",
       "sourceStartMs": 40180.0,
       "words": [
-        { "text": "E-e-e-even", "syllables": 5 },
+        { "text": "E-e-e-even", "syllables": 2 },
         { "text": "if", "syllables": 1 },
         { "text": "I", "syllables": 1 },
         { "text": "stutter,", "syllables": 2 },
@@ -2056,7 +2056,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -2089,7 +2089,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -2122,7 +2122,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -2155,7 +2155,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -2378,7 +2378,7 @@
         { "text": "a", "syllables": 1 },
         { "text": "record", "syllables": 2 },
         { "text": "about", "syllables": 2 },
-        { "text": "doin'", "syllables": 1 },
+        { "text": "doin'", "syllables": 2 },
         { "text": "drugs", "syllables": 1 },
         { "text": "and", "syllables": 1 },
         { "text": "name", "syllables": 1 },
@@ -2493,7 +2493,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -2526,7 +2526,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -2559,7 +2559,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -2592,7 +2592,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -2682,7 +2682,7 @@
         { "text": "I", "syllables": 1 },
         { "text": "comin'", "syllables": 2 },
         { "text": "or", "syllables": 1 },
-        { "text": "goin'?", "syllables": 1 },
+        { "text": "goin'?", "syllables": 2 },
         { "text": "I", "syllables": 1 },
         { "text": "can", "syllables": 1 },
         { "text": "barely", "syllables": 2 },
@@ -2935,7 +2935,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -2968,7 +2968,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -3001,7 +3001,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -3034,7 +3034,7 @@
         { "text": "My", "syllables": 1 },
         { "text": "name", "syllables": 1 },
         { "text": "is,", "syllables": 1 },
-        { "text": "chka-chka,", "syllables": 2 },
+        { "text": "chka-chka,", "syllables": 4 },
         { "text": "Slim", "syllables": 1 },
         { "text": "Shady", "syllables": 2 }
       ]
@@ -3530,7 +3530,7 @@
         { "text": "my,", "syllables": 1 },
         { "text": "out", "syllables": 1 },
         { "text": "my", "syllables": 1 },
-        { "text": "element", "syllables": 2 }
+        { "text": "element", "syllables": 3 }
       ]
     },
     {
@@ -3722,7 +3722,7 @@
       "words": [
         { "text": "On", "syllables": 1 },
         { "text": "more", "syllables": 1 },
-        { "text": "PJs", "syllables": 1 },
+        { "text": "PJs", "syllables": 2 },
         { "text": "than", "syllables": 1 },
         { "text": "Pablo", "syllables": 2 }
       ]
@@ -4045,7 +4045,7 @@
         { "text": "phone,", "syllables": 1 },
         { "text": "Scarface,", "syllables": 2 },
         { "text": "Al", "syllables": 1 },
-        { "text": "Capone", "syllables": 3 }
+        { "text": "Capone", "syllables": 2 }
       ]
     },
     {
@@ -4492,8 +4492,8 @@
         { "text": "Proceed", "syllables": 2 },
         { "text": "with", "syllables": 1 },
         { "text": "caution,", "syllables": 2 },
-        { "text": "skele'", "syllables": 1 },
-        { "text": "AP", "syllables": 1 },
+        { "text": "skele'", "syllables": 2 },
+        { "text": "AP", "syllables": 2 },
         { "text": "is", "syllables": 1 },
         { "text": "frosted", "syllables": 2 }
       ]
@@ -4593,7 +4593,7 @@
         { "text": "rare,", "syllables": 1 },
         { "text": "bling", "syllables": 1 },
         { "text": "bling", "syllables": 1 },
-        { "text": "blaow,", "syllables": 2 },
+        { "text": "blaow,", "syllables": 1 },
         { "text": "yeah", "syllables": 1 }
       ]
     },
@@ -5270,7 +5270,7 @@
         { "text": "'em", "syllables": 1 },
         { "text": "froze,", "syllables": 1 },
         { "text": "like", "syllables": 1 },
-        { "text": "heroin", "syllables": 3 },
+        { "text": "heroin", "syllables": 2 },
         { "text": "in", "syllables": 1 },
         { "text": "your", "syllables": 1 },
         { "text": "nose", "syllables": 1 }
@@ -5302,7 +5302,7 @@
       "sourceStartMs": 105310.0,
       "words": [
         { "text": "This", "syllables": 1 },
-        { "text": "rhythmatic", "syllables": 3 },
+        { "text": "rhythmatic", "syllables": 4 },
         { "text": "explosion", "syllables": 3 }
       ]
     },
@@ -5499,7 +5499,7 @@
       "source": "full_verses/nas_aint_hard_full.wav",
       "sourceStartMs": 133350.0,
       "words": [
-        { "text": "MCs", "syllables": 1 },
+        { "text": "MCs", "syllables": 2 },
         { "text": "eavesdrop,", "syllables": 2 },
         { "text": "though", "syllables": 1 },
         { "text": "they", "syllables": 1 },
@@ -5531,7 +5531,7 @@
       "source": "full_verses/nas_aint_hard_full.wav",
       "sourceStartMs": 137550.0,
       "words": [
-        { "text": "Nas'", "syllables": 1 },
+        { "text": "Nas'", "syllables": 2 },
         { "text": "raps", "syllables": 1 },
         { "text": "should", "syllables": 1 },
         { "text": "be", "syllables": 1 },

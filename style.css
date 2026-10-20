@@ -322,3 +322,10 @@ u.orange {
   margin: 0 0.5em;
   font: inherit;
 }
+
+/* unfinished.html: the copyable list of clips marked for extension. */
+#marked {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: monospace;
+}

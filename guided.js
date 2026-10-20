@@ -79,9 +79,17 @@ async function loadGuides() {
 
 const isComplete = (c) => indices(c).every((i) => isAligned(c, i));
 
-// Opens the first song with unaligned syllables, or the all-done page if there are none.
+// The first song after the current one (wrapping around) with unaligned syllables, or undefined.
+// Starting after the current song means a skipped song comes back only after the rest.
+function nextIncomplete() {
+  const from = clip ? clips.indexOf(clip) + 1 : 0;
+  const order = [...clips.slice(from), ...clips.slice(0, from)];
+  return order.find((x) => x !== clip && !isComplete(x)) ?? (clip && !isComplete(clip) ? clip : undefined);
+}
+
+// Opens the next song with unaligned syllables, or the all-done page if there are none.
 function nextSong() {
-  const c = clips.find((x) => !isComplete(x));
+  const c = nextIncomplete();
   if (c) {
     openClip(c, false);
     return;
@@ -222,7 +230,15 @@ function showOverview() {
 
 function renderOverviewButtons() {
   $('submit').disabled = writing || marks.some((m) => m.ms === null);
+  $('skip').disabled = writing || [undefined, clip].includes(nextIncomplete());
   $('edit-assignment').disabled = writing;
+}
+
+// Moves on to the next unfinished song without saving this one.
+function skip() {
+  if (writing) return;
+  const c = nextIncomplete();
+  if (c && c !== clip) openClip(c, false);
 }
 
 // Saves every new or changed syllable in one batch, then moves on to the next unfinished song.
@@ -561,6 +577,7 @@ $('back').addEventListener('click', back);
 $('done').addEventListener('click', done);
 $('to-overview').addEventListener('click', showOverview);
 $('submit').addEventListener('click', submit);
+$('skip').addEventListener('click', skip);
 $('edit-assignment').addEventListener('click', openAssignment);
 $('assignment-done').addEventListener('click', applyAssignment);
 $('assignment-cancel').addEventListener('click', showOverview);
