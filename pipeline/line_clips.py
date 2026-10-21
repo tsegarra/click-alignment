@@ -11,9 +11,11 @@ Every clip records where it came from (source, sourceStartMs), so its clicks can
 onto the full verse: verse time = sourceStartMs + clickTimeMs.
 
 Writes clips/lines/<verse>/<nn>.wav and replaces any line clips already in clips.json, keeping
-the hand-made clips (and their order) ahead of them. The app reads clips from Firestore, not
-clips.json: afterwards, use the admin page's import to copy over the clips Firestore doesn't have
-yet (clips already there, and any edits made to them on the admin page, are left alone).
+the hand-made clips (and their order) ahead of them. Given verse ids (`line_clips.py
+ice_spice_munch`), it cuts only those verses and leaves the other verses' clips untouched. The
+app reads clips from Firestore, not clips.json: afterwards, use the admin page's import to copy
+over the clips Firestore doesn't have yet (clips already there, and any edits made to them on the
+admin page, are left alone).
 Needs num2words (via transcribe.normalize): run with .venv-whisper/bin/python.
 """
 
@@ -30,6 +32,7 @@ VERSES = [  # (verse id, clip id prefix, title)
     ("2pac_all_eyez_full", "2pac-all-eyez-line", "All Eyez On Me"),
     ("bdk_set_it_off_full", "bdk-set-it-off-line", "Set It Off"),
     ("eminem_my_name_is", "eminem-my-name-is-line", "My Name Is"),
+    ("ice_spice_munch", "ice-spice-munch-line", "Munch"),
     ("meth_plo_style_full", "method-man-plo-style-line", "PLO Style"),
     ("migos_superstar", "migos-supastars-line", "Supastars"),
     ("nas_aint_hard_full", "nas-aint-hard-line", "It Ain't Hard To Tell"),
@@ -93,11 +96,15 @@ def line_bounds(lines, n_samples, rate):
     return out
 
 
-def main():
+def main(only=()):
+    """only: verse ids to cut; the other verses' clips (and their files) are left as they are."""
     data = json.loads((ROOT / "clips.json").read_text())
-    clips = [c for c in data["clips"] if "source" not in c]
+    redo = {f"full_verses/{v}.wav" for v, _, _ in VERSES if not only or v in only}
+    clips = [c for c in data["clips"] if c.get("source") not in redo]
 
     for verse, prefix, title in VERSES:
+        if f"full_verses/{verse}.wav" not in redo:
+            continue
         src = ROOT / "full_verses" / f"{verse}.wav"
         with wave.open(str(src)) as w:
             params = w.getparams()
@@ -139,4 +146,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    main(sys.argv[1:])

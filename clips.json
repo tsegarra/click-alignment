@@ -5545,6 +5545,920 @@
         { "text": "to", "syllables": 1 },
         { "text": "tell", "syllables": 1 }
       ]
+    },
+    {
+      "id": "ice-spice-munch-line01",
+      "title": "Munch: line 1 of 55",
+      "file": "clips/lines/ice_spice_munch/01.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 3540.0,
+      "words": [
+        { "text": "You", "syllables": 1 },
+        { "text": "thought", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "was", "syllables": 1 },
+        { "text": "feelin'", "syllables": 2 },
+        { "text": "you?", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line02",
+      "title": "Munch: line 2 of 55",
+      "file": "clips/lines/ice_spice_munch/02.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 5340.0,
+      "words": [
+        { "text": "That", "syllables": 1 },
+        { "text": "nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "munch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line03",
+      "title": "Munch: line 3 of 55",
+      "file": "clips/lines/ice_spice_munch/03.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 6450.0,
+      "words": [
+        { "text": "Nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "eater,", "syllables": 2 },
+        { "text": "he", "syllables": 1 },
+        { "text": "ate", "syllables": 1 },
+        { "text": "it", "syllables": 1 },
+        { "text": "for", "syllables": 1 },
+        { "text": "lunch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line04",
+      "title": "Munch: line 4 of 55",
+      "file": "clips/lines/ice_spice_munch/04.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 7950.0,
+      "words": [
+        { "text": "Bitch,", "syllables": 1 },
+        { "text": "I'm", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "baddie,", "syllables": 2 },
+        { "text": "I", "syllables": 1 },
+        { "text": "get", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "want,", "syllables": 1 },
+        { "text": "like", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line05",
+      "title": "Munch: line 5 of 55",
+      "file": "clips/lines/ice_spice_munch/05.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 9550.0,
+      "words": [
+        { "text": "You", "syllables": 1 },
+        { "text": "thought", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "was", "syllables": 1 },
+        { "text": "feelin'", "syllables": 2 },
+        { "text": "you?", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line06",
+      "title": "Munch: line 6 of 55",
+      "file": "clips/lines/ice_spice_munch/06.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 11120.0,
+      "words": [
+        { "text": "That", "syllables": 1 },
+        { "text": "nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "munch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line07",
+      "title": "Munch: line 7 of 55",
+      "file": "clips/lines/ice_spice_munch/07.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 12230.0,
+      "words": [
+        { "text": "Nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "eater,", "syllables": 2 },
+        { "text": "he", "syllables": 1 },
+        { "text": "ate", "syllables": 1 },
+        { "text": "it", "syllables": 1 },
+        { "text": "for", "syllables": 1 },
+        { "text": "lunch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line08",
+      "title": "Munch: line 8 of 55",
+      "file": "clips/lines/ice_spice_munch/08.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 13740.0,
+      "words": [
+        { "text": "Bitch,", "syllables": 1 },
+        { "text": "I'm", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "baddie,", "syllables": 2 },
+        { "text": "I", "syllables": 1 },
+        { "text": "get", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "want,", "syllables": 1 },
+        { "text": "like", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line09",
+      "title": "Munch: line 9 of 55",
+      "file": "clips/lines/ice_spice_munch/09.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 15474.989,
+      "words": [
+        { "text": "Bitches", "syllables": 2 },
+        { "text": "ain't", "syllables": 1 },
+        { "text": "bad,", "syllables": 1 },
+        { "text": "let's", "syllables": 1 },
+        { "text": "keep", "syllables": 1 },
+        { "text": "it", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "bean", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line10",
+      "title": "Munch: line 10 of 55",
+      "file": "clips/lines/ice_spice_munch/10.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 16730.0,
+      "words": [
+        { "text": "Know", "syllables": 1 },
+        { "text": "they", "syllables": 1 },
+        { "text": "be", "syllables": 1 },
+        { "text": "mad", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "be", "syllables": 1 },
+        { "text": "on", "syllables": 1 },
+        { "text": "the", "syllables": 1 },
+        { "text": "scene", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line11",
+      "title": "Munch: line 11 of 55",
+      "file": "clips/lines/ice_spice_munch/11.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 18420.0,
+      "words": [
+        { "text": "Ass", "syllables": 1 },
+        { "text": "too", "syllables": 1 },
+        { "text": "fat,", "syllables": 1 },
+        { "text": "can't", "syllables": 1 },
+        { "text": "fit", "syllables": 1 },
+        { "text": "in", "syllables": 1 },
+        { "text": "no", "syllables": 1 },
+        { "text": "jeans", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line12",
+      "title": "Munch: line 12 of 55",
+      "file": "clips/lines/ice_spice_munch/12.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 19590.0,
+      "words": [
+        { "text": "You", "syllables": 1 },
+        { "text": "was", "syllables": 1 },
+        { "text": "my", "syllables": 1 },
+        { "text": "stitch,", "syllables": 1 },
+        { "text": "but", "syllables": 1 },
+        { "text": "it's", "syllables": 1 },
+        { "text": "not", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "it", "syllables": 1 },
+        { "text": "seem", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line13",
+      "title": "Munch: line 13 of 55",
+      "file": "clips/lines/ice_spice_munch/13.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 21030.0,
+      "words": [
+        { "text": "I", "syllables": 1 },
+        { "text": "got", "syllables": 1 },
+        { "text": "that", "syllables": 1 },
+        { "text": "wetty,", "syllables": 2 },
+        { "text": "I'm", "syllables": 1 },
+        { "text": "keepin'", "syllables": 2 },
+        { "text": "it", "syllables": 1 },
+        { "text": "clean", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line14",
+      "title": "Munch: line 14 of 55",
+      "file": "clips/lines/ice_spice_munch/14.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 22750.0,
+      "words": [
+        { "text": "Fuckin'", "syllables": 2 },
+        { "text": "with", "syllables": 1 },
+        { "text": "niggas", "syllables": 2 },
+        { "text": "that's", "syllables": 1 },
+        { "text": "totin'", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "beam", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line15",
+      "title": "Munch: line 15 of 55",
+      "file": "clips/lines/ice_spice_munch/15.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 23920.0,
+      "words": [
+        { "text": "Sayin'", "syllables": 2 },
+        { "text": "you", "syllables": 1 },
+        { "text": "love", "syllables": 1 },
+        { "text": "me,", "syllables": 1 },
+        { "text": "but", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "do", "syllables": 1 },
+        { "text": "you", "syllables": 1 },
+        { "text": "mean?", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line16",
+      "title": "Munch: line 16 of 55",
+      "file": "clips/lines/ice_spice_munch/16.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 25570.0,
+      "words": [
+        { "text": "Pretty", "syllables": 2 },
+        { "text": "as", "syllables": 1 },
+        { "text": "fuck", "syllables": 1 },
+        { "text": "and", "syllables": 1 },
+        { "text": "he", "syllables": 1 },
+        { "text": "like", "syllables": 1 },
+        { "text": "that", "syllables": 1 },
+        { "text": "I'm", "syllables": 1 },
+        { "text": "mean", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line17",
+      "title": "Munch: line 17 of 55",
+      "file": "clips/lines/ice_spice_munch/17.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 26810.0,
+      "words": [
+        { "text": "Baddest", "syllables": 2 },
+        { "text": "bitch", "syllables": 1 },
+        { "text": "out,", "syllables": 1 },
+        { "text": "you", "syllables": 1 },
+        { "text": "shittin'", "syllables": 2 },
+        { "text": "me?", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line18",
+      "title": "Munch: line 18 of 55",
+      "file": "clips/lines/ice_spice_munch/18.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 28290.0,
+      "words": [
+        { "text": "If", "syllables": 1 },
+        { "text": "you", "syllables": 1 },
+        { "text": "ain't", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "baddie,", "syllables": 2 },
+        { "text": "can't", "syllables": 1 },
+        { "text": "sit", "syllables": 1 },
+        { "text": "with", "syllables": 1 },
+        { "text": "me", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line19",
+      "title": "Munch: line 19 of 55",
+      "file": "clips/lines/ice_spice_munch/19.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 29850.0,
+      "words": [
+        { "text": "I", "syllables": 1 },
+        { "text": "swear", "syllables": 1 },
+        { "text": "that", "syllables": 1 },
+        { "text": "these", "syllables": 1 },
+        { "text": "bitches", "syllables": 2 },
+        { "text": "my", "syllables": 1 },
+        { "text": "mini-me's", "syllables": 3 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line20",
+      "title": "Munch: line 20 of 55",
+      "file": "clips/lines/ice_spice_munch/20.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 32580.0,
+      "words": [
+        { "text": "He", "syllables": 1 },
+        { "text": "wanna", "syllables": 2 },
+        { "text": "sex,", "syllables": 1 },
+        { "text": "niggas", "syllables": 2 },
+        { "text": "be", "syllables": 1 },
+        { "text": "dreamin'", "syllables": 2 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line21",
+      "title": "Munch: line 21 of 55",
+      "file": "clips/lines/ice_spice_munch/21.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 34330.0,
+      "words": [
+        { "text": "I'm", "syllables": 1 },
+        { "text": "from", "syllables": 1 },
+        { "text": "the", "syllables": 1 },
+        { "text": "X,", "syllables": 1 },
+        { "text": "niggas", "syllables": 2 },
+        { "text": "be", "syllables": 1 },
+        { "text": "schemin'", "syllables": 2 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line22",
+      "title": "Munch: line 22 of 55",
+      "file": "clips/lines/ice_spice_munch/22.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 35630.0,
+      "words": [
+        { "text": "I'm", "syllables": 1 },
+        { "text": "on", "syllables": 1 },
+        { "text": "they", "syllables": 1 },
+        { "text": "necks,", "syllables": 1 },
+        { "text": "they", "syllables": 1 },
+        { "text": "is", "syllables": 1 },
+        { "text": "not", "syllables": 1 },
+        { "text": "breathin'", "syllables": 2 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line23",
+      "title": "Munch: line 23 of 55",
+      "file": "clips/lines/ice_spice_munch/23.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 37130.0,
+      "words": [
+        { "text": "Thumbin'", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "check,", "syllables": 1 },
+        { "text": "blow", "syllables": 1 },
+        { "text": "it", "syllables": 1 },
+        { "text": "in", "syllables": 1 },
+        { "text": "Neiman's", "syllables": 2 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line24",
+      "title": "Munch: line 24 of 55",
+      "file": "clips/lines/ice_spice_munch/24.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 38520.0,
+      "words": [
+        { "text": "You", "syllables": 1 },
+        { "text": "thought", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "was", "syllables": 1 },
+        { "text": "feelin'", "syllables": 2 },
+        { "text": "you?", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line25",
+      "title": "Munch: line 25 of 55",
+      "file": "clips/lines/ice_spice_munch/25.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 40030.0,
+      "words": [
+        { "text": "That", "syllables": 1 },
+        { "text": "nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "munch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line26",
+      "title": "Munch: line 26 of 55",
+      "file": "clips/lines/ice_spice_munch/26.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 41150.0,
+      "words": [
+        { "text": "Nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "eater,", "syllables": 2 },
+        { "text": "he", "syllables": 1 },
+        { "text": "ate", "syllables": 1 },
+        { "text": "it", "syllables": 1 },
+        { "text": "for", "syllables": 1 },
+        { "text": "lunch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line27",
+      "title": "Munch: line 27 of 55",
+      "file": "clips/lines/ice_spice_munch/27.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 42650.0,
+      "words": [
+        { "text": "Bitch,", "syllables": 1 },
+        { "text": "I'm", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "baddie", "syllables": 2 },
+        { "text": "I", "syllables": 1 },
+        { "text": "get", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "want,", "syllables": 1 },
+        { "text": "like", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line28",
+      "title": "Munch: line 28 of 55",
+      "file": "clips/lines/ice_spice_munch/28.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 44250.0,
+      "words": [
+        { "text": "You", "syllables": 1 },
+        { "text": "thought", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "was", "syllables": 1 },
+        { "text": "feelin'", "syllables": 2 },
+        { "text": "you?", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line29",
+      "title": "Munch: line 29 of 55",
+      "file": "clips/lines/ice_spice_munch/29.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 45820.0,
+      "words": [
+        { "text": "That", "syllables": 1 },
+        { "text": "nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "munch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line30",
+      "title": "Munch: line 30 of 55",
+      "file": "clips/lines/ice_spice_munch/30.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 46930.0,
+      "words": [
+        { "text": "Nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "eater,", "syllables": 2 },
+        { "text": "he", "syllables": 1 },
+        { "text": "ate", "syllables": 1 },
+        { "text": "it", "syllables": 1 },
+        { "text": "for", "syllables": 1 },
+        { "text": "lunch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line31",
+      "title": "Munch: line 31 of 55",
+      "file": "clips/lines/ice_spice_munch/31.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 48430.0,
+      "words": [
+        { "text": "Bitch,", "syllables": 1 },
+        { "text": "I'm", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "baddie", "syllables": 2 },
+        { "text": "I", "syllables": 1 },
+        { "text": "get", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "want,", "syllables": 1 },
+        { "text": "like", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line32",
+      "title": "Munch: line 32 of 55",
+      "file": "clips/lines/ice_spice_munch/32.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 49810.0,
+      "words": [
+        { "text": "Bitch,", "syllables": 1 },
+        { "text": "I'm", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "baddie,", "syllables": 2 },
+        { "text": "I", "syllables": 1 },
+        { "text": "get", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "please", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line33",
+      "title": "Munch: line 33 of 55",
+      "file": "clips/lines/ice_spice_munch/33.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 51280.0,
+      "words": [
+        { "text": "You", "syllables": 1 },
+        { "text": "know", "syllables": 1 },
+        { "text": "my", "syllables": 1 },
+        { "text": "body,", "syllables": 2 },
+        { "text": "I", "syllables": 1 },
+        { "text": "do", "syllables": 1 },
+        { "text": "it", "syllables": 1 },
+        { "text": "with", "syllables": 1 },
+        { "text": "ease", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line34",
+      "title": "Munch: line 34 of 55",
+      "file": "clips/lines/ice_spice_munch/34.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 52710.0,
+      "words": [
+        { "text": "He", "syllables": 1 },
+        { "text": "want", "syllables": 1 },
+        { "text": "my", "syllables": 1 },
+        { "text": "body,", "syllables": 2 },
+        { "text": "he", "syllables": 1 },
+        { "text": "tellin'", "syllables": 2 },
+        { "text": "me,", "syllables": 1 },
+        { "text": "\"Please\"", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line35",
+      "title": "Munch: line 35 of 55",
+      "file": "clips/lines/ice_spice_munch/35.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 54135.011,
+      "words": [
+        { "text": "I'm", "syllables": 1 },
+        { "text": "walkin'", "syllables": 2 },
+        { "text": "past", "syllables": 1 },
+        { "text": "him,", "syllables": 1 },
+        { "text": "he", "syllables": 1 },
+        { "text": "sniffin'", "syllables": 2 },
+        { "text": "my", "syllables": 1 },
+        { "text": "breeze", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line36",
+      "title": "Munch: line 36 of 55",
+      "file": "clips/lines/ice_spice_munch/36.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 55410.0,
+      "words": [
+        { "text": "He", "syllables": 1 },
+        { "text": "jackin'", "syllables": 2 },
+        { "text": "me,", "syllables": 1 },
+        { "text": "but", "syllables": 1 },
+        { "text": "he", "syllables": 1 },
+        { "text": "not", "syllables": 1 },
+        { "text": "my", "syllables": 1 },
+        { "text": "boo", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line37",
+      "title": "Munch: line 37 of 55",
+      "file": "clips/lines/ice_spice_munch/37.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 57065.011,
+      "words": [
+        { "text": "He", "syllables": 1 },
+        { "text": "like", "syllables": 1 },
+        { "text": "the", "syllables": 1 },
+        { "text": "jewelry", "syllables": 2 },
+        { "text": "I", "syllables": 1 },
+        { "text": "wear", "syllables": 1 },
+        { "text": "on", "syllables": 1 },
+        { "text": "my", "syllables": 1 },
+        { "text": "boobs", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line38",
+      "title": "Munch: line 38 of 55",
+      "file": "clips/lines/ice_spice_munch/38.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 58510.0,
+      "words": [
+        { "text": "How", "syllables": 1 },
+        { "text": "can", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "link", "syllables": 1 },
+        { "text": "you", "syllables": 1 },
+        { "text": "when", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "got", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "shoot?", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line39",
+      "title": "Munch: line 39 of 55",
+      "file": "clips/lines/ice_spice_munch/39.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 59960.0,
+      "words": [
+        { "text": "Don't", "syllables": 1 },
+        { "text": "want", "syllables": 1 },
+        { "text": "your", "syllables": 1 },
+        { "text": "love,", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "just", "syllables": 1 },
+        { "text": "want", "syllables": 1 },
+        { "text": "the", "syllables": 1 },
+        { "text": "blue", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line40",
+      "title": "Munch: line 40 of 55",
+      "file": "clips/lines/ice_spice_munch/40.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 61360.0,
+      "words": [
+        { "text": "Grabbin'", "syllables": 2 },
+        { "text": "my", "syllables": 1 },
+        { "text": "ass", "syllables": 1 },
+        { "text": "while", "syllables": 1 },
+        { "text": "I'm", "syllables": 1 },
+        { "text": "doin'", "syllables": 1 },
+        { "text": "my", "syllables": 1 },
+        { "text": "dance", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line41",
+      "title": "Munch: line 41 of 55",
+      "file": "clips/lines/ice_spice_munch/41.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 62790.0,
+      "words": [
+        { "text": "She", "syllables": 1 },
+        { "text": "keep", "syllables": 1 },
+        { "text": "on", "syllables": 1 },
+        { "text": "starin'", "syllables": 2 },
+        { "text": "'cause", "syllables": 1 },
+        { "text": "shorty", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "fan", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line42",
+      "title": "Munch: line 42 of 55",
+      "file": "clips/lines/ice_spice_munch/42.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 64680.0,
+      "words": [
+        { "text": "Gotta", "syllables": 2 },
+        { "text": "stick", "syllables": 1 },
+        { "text": "to", "syllables": 1 },
+        { "text": "the", "syllables": 1 },
+        { "text": "plan", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line43",
+      "title": "Munch: line 43 of 55",
+      "file": "clips/lines/ice_spice_munch/43.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 65730.0,
+      "words": [
+        { "text": "He", "syllables": 1 },
+        { "text": "mad", "syllables": 1 },
+        { "text": "as", "syllables": 1 },
+        { "text": "fuck,", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "won't", "syllables": 1 },
+        { "text": "give", "syllables": 1 },
+        { "text": "him", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "chance", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line44",
+      "title": "Munch: line 44 of 55",
+      "file": "clips/lines/ice_spice_munch/44.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 66930.0,
+      "words": [
+        { "text": "But", "syllables": 1 },
+        { "text": "still", "syllables": 1 },
+        { "text": "he", "syllables": 1 },
+        { "text": "gon'", "syllables": 1 },
+        { "text": "do", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "say", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line45",
+      "title": "Munch: line 45 of 55",
+      "file": "clips/lines/ice_spice_munch/45.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 68010.0,
+      "words": [
+        { "text": "I", "syllables": 1 },
+        { "text": "swear", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "be", "syllables": 1 },
+        { "text": "stuck", "syllables": 1 },
+        { "text": "in", "syllables": 1 },
+        { "text": "my", "syllables": 1 },
+        { "text": "ways", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line46",
+      "title": "Munch: line 46 of 55",
+      "file": "clips/lines/ice_spice_munch/46.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 69884.989,
+      "words": [
+        { "text": "But", "syllables": 1 },
+        { "text": "still", "syllables": 1 },
+        { "text": "he", "syllables": 1 },
+        { "text": "gon'", "syllables": 1 },
+        { "text": "do", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "say", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line47",
+      "title": "Munch: line 47 of 55",
+      "file": "clips/lines/ice_spice_munch/47.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 70910.0,
+      "words": [
+        { "text": "I", "syllables": 1 },
+        { "text": "swear", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "be", "syllables": 1 },
+        { "text": "stuck", "syllables": 1 },
+        { "text": "in", "syllables": 1 },
+        { "text": "my", "syllables": 1 },
+        { "text": "ways", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line48",
+      "title": "Munch: line 48 of 55",
+      "file": "clips/lines/ice_spice_munch/48.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 73044.989,
+      "words": [
+        { "text": "You", "syllables": 1 },
+        { "text": "thought", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "was", "syllables": 1 },
+        { "text": "feelin'", "syllables": 2 },
+        { "text": "you?", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line49",
+      "title": "Munch: line 49 of 55",
+      "file": "clips/lines/ice_spice_munch/49.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 74720.0,
+      "words": [
+        { "text": "That", "syllables": 1 },
+        { "text": "nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "munch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line50",
+      "title": "Munch: line 50 of 55",
+      "file": "clips/lines/ice_spice_munch/50.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 75840.0,
+      "words": [
+        { "text": "Nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "eater,", "syllables": 2 },
+        { "text": "he", "syllables": 1 },
+        { "text": "ate", "syllables": 1 },
+        { "text": "it", "syllables": 1 },
+        { "text": "for", "syllables": 1 },
+        { "text": "lunch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line51",
+      "title": "Munch: line 51 of 55",
+      "file": "clips/lines/ice_spice_munch/51.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 77340.0,
+      "words": [
+        { "text": "Bitch,", "syllables": 1 },
+        { "text": "I'm", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "baddie", "syllables": 2 },
+        { "text": "I", "syllables": 1 },
+        { "text": "get", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "want,", "syllables": 1 },
+        { "text": "like", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line52",
+      "title": "Munch: line 52 of 55",
+      "file": "clips/lines/ice_spice_munch/52.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 78940.0,
+      "words": [
+        { "text": "You", "syllables": 1 },
+        { "text": "thought", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "was", "syllables": 1 },
+        { "text": "feelin'", "syllables": 2 },
+        { "text": "you?", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line53",
+      "title": "Munch: line 53 of 55",
+      "file": "clips/lines/ice_spice_munch/53.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 80500.0,
+      "words": [
+        { "text": "That", "syllables": 1 },
+        { "text": "nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "munch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line54",
+      "title": "Munch: line 54 of 55",
+      "file": "clips/lines/ice_spice_munch/54.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 81620.0,
+      "words": [
+        { "text": "Nigga", "syllables": 2 },
+        { "text": "a", "syllables": 1 },
+        { "text": "eater,", "syllables": 2 },
+        { "text": "he", "syllables": 1 },
+        { "text": "ate", "syllables": 1 },
+        { "text": "it", "syllables": 1 },
+        { "text": "for", "syllables": 1 },
+        { "text": "lunch", "syllables": 1 }
+      ]
+    },
+    {
+      "id": "ice-spice-munch-line55",
+      "title": "Munch: line 55 of 55",
+      "file": "clips/lines/ice_spice_munch/55.wav",
+      "source": "full_verses/ice_spice_munch.wav",
+      "sourceStartMs": 83110.0,
+      "words": [
+        { "text": "Bitch,", "syllables": 1 },
+        { "text": "I'm", "syllables": 1 },
+        { "text": "a", "syllables": 1 },
+        { "text": "baddie", "syllables": 2 },
+        { "text": "I", "syllables": 1 },
+        { "text": "get", "syllables": 1 },
+        { "text": "what", "syllables": 1 },
+        { "text": "I", "syllables": 1 },
+        { "text": "want,", "syllables": 1 },
+        { "text": "like", "syllables": 1 }
+      ]
     }
   ]
 }

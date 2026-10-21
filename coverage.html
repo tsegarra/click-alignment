@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coverage</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .coverage-song { margin: 1.25em 0; }
+    .coverage-bar {
+      position: relative;
+      height: 1.5em;
+      background: #bbb;
+      margin-top: 0.25em;
+    }
+    .coverage-bar .segment {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+    .coverage-bar .segment.aligned { background: #3a3; }
+    .coverage-bar .segment.partial { background: #9d9; }
+    .coverage-legend .swatch {
+      display: inline-block;
+      width: 0.9em;
+      height: 0.9em;
+      vertical-align: middle;
+      margin: 0 0.25em 0 1em;
+    }
+  </style>
+</head>
+<body>
+  <div id="signed-out">
+    <button id="sign-in">Sign in with Google</button>
+  </div>
+
+  <div id="loading" hidden>
+    <p id="loading-msg">Loading…</p>
+  </div>
+
+  <div id="coverage" hidden>
+    <p class="coverage-legend">
+      <span class="swatch" style="background:#3a3"></span>Fully aligned
+      <span class="swatch" style="background:#9d9"></span>Partly aligned
+      <span class="swatch" style="background:#bbb"></span>Not aligned
+    </p>
+    <div id="songs"></div>
+  </div>
+
+  <p id="account" hidden>
+    <span id="who"></span>
+    <button id="sign-out">Sign out</button>
+  </p>
+
+  <script type="module" src="coverage.js"></script>
+</body>
+</html>
