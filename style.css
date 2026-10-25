@@ -71,6 +71,16 @@
   outline-offset: 1px;
 }
 
+/* Guided page: the click picked with the keyboard, which plays at a higher pitch. */
+.line .syllable.selected {
+  outline: 2px solid #06c;
+  outline-offset: 1px;
+}
+
+#keys {
+  font-size: 0.85em;
+}
+
 /* The signed-in account line, set off from the task by a rule. */
 #account {
   border-top: 1px solid #ccc;
