@@ -16,6 +16,7 @@ const MUSIC_GAIN = 0.7;           // volume of the music
 export const CLICK_GAIN = 0.35;   // volume of the clicks
 export const SAVED_CLICK_GAIN = 0.3; // volume of other syllables' clicks heard while aligning, a touch quieter
 const CLICK_HZ = 2000;            // pitch of the click
+const HIGH_CLICK_HZ = 3000;       // pitch of a click picked out from the rest (the guided page's selected click)
 
 // ---------- Firebase ----------
 
@@ -182,7 +183,8 @@ export const clipMs = (c) => buffers.get(c.id).duration * 1000;
 //   buffer():      the clip's AudioBuffer
 //   range():       { startMs, endMs }, the looped part of the clip; the loop follows it as it changes
 //   liveClickMs(): the click being dragged, in clip ms, or null; it's scheduled as late as possible
-//   otherClicks(): [[key, ms, gain]], other clicks that sound wherever they fall in the loop
+//   otherClicks(): [[key, ms, gain, high]], other clicks that sound wherever they fall in the loop
+//                  (high: optional, plays it at a higher pitch)
 let source = null;
 let onPlayState = () => {}; // called whenever playback starts or stops
 
@@ -215,15 +217,16 @@ function makeClickBuffer(hz) {
   return buffer;
 }
 const click = makeClickBuffer(CLICK_HZ);
+const highClick = makeClickBuffer(HIGH_CLICK_HZ);
 
 function track(src) {
   src.onended = () => { sources = sources.filter((s) => s !== src); };
   sources.push(src);
 }
 
-function playClick(when, volume = CLICK_GAIN) {
+function playClick(when, volume = CLICK_GAIN, high = false) {
   const src = ctx.createBufferSource();
-  src.buffer = click;
+  src.buffer = high ? highClick : click;
   const gain = ctx.createGain();
   gain.gain.value = volume;
   src.connect(gain).connect(ctx.destination);
@@ -288,11 +291,11 @@ function scheduleClick(loop, now, horizon) {
 
 // The other clicks sound wherever they fall in the loop.
 function scheduleOthers(loop, now, horizon) {
-  for (const [key, ms, gain] of source.otherClicks()) {
+  for (const [key, ms, gain, high] of source.otherClicks()) {
     if (loop.saved.has(key)) continue;
     const t = loop.audioStart + ms / 1000 - loop.offsetS;
     if (t < loop.audioStart || t < now || t >= loop.endS || t >= horizon) continue;
-    loop.saved.set(key, { src: playClick(t, gain), t });
+    loop.saved.set(key, { src: playClick(t, gain, high), t });
   }
 }
 

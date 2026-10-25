@@ -6,6 +6,8 @@
 // stage). Clicking a gray one starts from index.html's range stage. Done confirms it and returns to
 // the overview.
 // Nothing is written until Submit, which saves the whole clip in one batch.
+// Map Keys sets keyboard shortcuts (kept in localStorage) for playing, stepping through clicks and
+// songs, nudging, deleting and adding clicks, and undo. The selected click plays at a higher pitch.
 
 import {
   GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged,
@@ -33,6 +35,7 @@ let guides = null;          // guide_timestamps.json: clip id -> guide times in 
 let clip = null;            // the song being worked on
 let reviewing = false;      // the song was picked from the footer menu
 let writing = false;        // the clip is being saved
+let opening = 0;            // counts openClip calls, so only the latest one shows its clip
 
 // The clip's staged state, kept in memory until Submit.
 let assignment = []; // guide k -> flat syllable index, or null (not played)
@@ -40,6 +43,10 @@ let marks = [];      // per syllable: { ms, state, guideMs, segment }
                      // (ms: the staged click, or null; state: 'none', 'provisional' or 'confirmed';
                      // guideMs: the guide it started from, or null; segment: what was looping when the
                      // click was placed, or null if it was accepted without adjustment)
+let selected = null; // overview: flat index of the selected click (outlined, higher pitch), or null
+let history = [];    // undo stack: earlier { assignment, marks, selected }
+let lastEdit = null; // { kind, idx } of the last edit, so a run of nudges to one click undoes as one step
+const staged = new Map(); // clip id -> { assignment, marks, history }: unsaved edits of songs left
 
 // Adjusting one syllable.
 let stage = 'overview';     // 'overview', 'range', 'click' or 'assignment'
@@ -61,6 +68,7 @@ const SCREENS = ['signed-out', 'loading', 'overview', 'task', 'assignment', 'all
 function show(name) {
   for (const s of SCREENS) $(s).hidden = s !== name;
   $('account').hidden = name === 'signed-out';
+  $('keys').hidden = name === 'signed-out';
   $('line-area').hidden = !['overview', 'task', 'assignment'].includes(name);
   renderSongMenu();
 }
@@ -100,23 +108,37 @@ function nextSong() {
   renderAllLines();
 }
 
-// Loads the clip and stages its clicks: saved responses (confirmed), else the default assignment's
-// guides (provisional). Returns false if the audio couldn't be loaded.
+// Loads the clip and stages its clicks: unsaved edits from when it was last open, else saved responses
+// (confirmed), else the default assignment's guides (provisional). The song being left keeps its
+// unsaved edits. Returns false if the audio couldn't be loaded, or another song was opened meanwhile.
 async function openClip(c, review) {
   stop();
+  if (clip && history.length) staged.set(clip.id, { assignment, marks, history });
   clip = c;
   reviewing = review;
+  stage = 'loading';
+  const kept = staged.get(c.id);
+  staged.delete(c.id);
+  if (kept) {
+    ({ assignment, marks, history } = kept);
+  } else {
+    const n = syllableCount(c);
+    assignment = guideTimes(c).map((_, k) => (k < n ? k : null));
+    marks = stagedMarks(true);
+    history = [];
+  }
+  selected = null;
+  lastEdit = null;
+  const token = ++opening;
   $('loading-msg').textContent = 'Loading audio…';
   show('loading');
   try {
     await loadBuffer(c);
   } catch (err) {
-    $('loading-msg').textContent = err.message;
+    if (token === opening) $('loading-msg').textContent = err.message;
     return false;
   }
-  const n = syllableCount(c);
-  assignment = guideTimes(c).map((_, k) => (k < n ? k : null));
-  marks = stagedMarks(true);
+  if (token !== opening) return false;
   $('overview-status').textContent = '';
   showOverview();
   return true;
@@ -190,7 +212,7 @@ const STATE_CLASSES = { none: [], provisional: ['provisional'], confirmed: ['ali
 function renderLine(active) {
   buildLine($('line'), clip, {
     active,
-    classOf: (idx) => STATE_CLASSES[marks[idx].state],
+    classOf: (idx) => [...STATE_CLASSES[marks[idx].state], ...(stage === 'overview' && idx === selected ? ['selected'] : [])],
     onSelect: adjust,
   });
   fitLine($('line'));
@@ -208,6 +230,13 @@ function adjacent() {
 
 function showOverview() {
   stage = 'overview';
+  refreshOverview();
+  show('overview');
+  if (isPlaying()) start(); // keep playing, now the whole clip
+}
+
+// Redraws the overview after its clicks change, without restarting playback.
+function refreshOverview() {
   renderLine(null);
   const count = (state) => marks.filter((m) => m.state === state).length;
   const gray = count('none');
@@ -224,8 +253,6 @@ function showOverview() {
   $('overview-msg').textContent = msg.join(' ');
   $('edit-assignment').hidden = !guideTimes(clip).length;
   renderOverviewButtons();
-  show('overview');
-  if (isPlaying()) start(); // keep playing, now the whole clip
 }
 
 function renderOverviewButtons() {
@@ -277,6 +304,7 @@ async function submit() {
     for (const [id, data] of written) responses.set(id, { ...data, updatedAt: new Date() }); // stand-in for the server timestamp
     $('overview-status').textContent = '';
     writing = false;
+    history = []; // nothing unsaved is left to keep
     nextSong();
   } catch (err) {
     $('overview-status').textContent = `Couldn't save: ${err.message}`;
@@ -318,6 +346,7 @@ function adjust(idx) {
 // Confirms the syllable's click and goes back to the overview, looping the whole clip from the top so
 // the new click can be heard in context.
 function done() {
+  record();
   const m = marks[target];
   if (fromGray || clickMoved) {
     m.ms = clickMs();
@@ -473,8 +502,10 @@ function applyAssignment() {
       && !confirm('This will clear your confirmed syllables. Continue?')) {
     return;
   }
+  record();
   assignment = draft;
   marks = stagedMarks(false);
+  selected = null;
   showOverview();
 }
 
@@ -488,7 +519,8 @@ setLoopSource({
   liveClickMs: () => (stage === 'click' ? clickMs() : null),
   otherClicks: () => marks.flatMap((m, i) => {
     if (m.ms === null) return [];
-    if (stage === 'overview') return [[i, m.ms, CLICK_GAIN]];
+    // Keyed by time too, so a click nudged during the loop sounds at its new time.
+    if (stage === 'overview') return [[`${i}@${m.ms}`, m.ms, CLICK_GAIN, i === selected]];
     return i === target ? [] : [[i, m.ms, SAVED_CLICK_GAIN]];
   }),
 });
@@ -536,6 +568,232 @@ function drawPlayhead() {
 }
 requestAnimationFrame(drawPlayhead);
 
+// ---------- Keyboard editing ----------
+
+const NUDGE_MS = 10;
+
+// Saves the staged state for Undo. A run of nudges to one click (same kind and idx) saves only once.
+function record(kind = null, idx = null) {
+  if (!(kind && lastEdit?.kind === kind && lastEdit.idx === idx)) {
+    history.push({ assignment, marks: marks.map((m) => ({ ...m })), selected });
+  }
+  lastEdit = kind && { kind, idx };
+}
+
+function undo() {
+  const prev = history.pop();
+  if (!prev) return;
+  ({ assignment, marks, selected } = prev);
+  lastEdit = null;
+  refreshOverview();
+}
+
+// Syllables with a click, in time order.
+const clickOrder = () => indices(clip).filter((i) => marks[i].ms !== null).sort((a, b) => marks[a].ms - marks[b].ms);
+
+// Selects the next (dir 1) or previous (dir -1) click in time. With none selected, starts from what's
+// playing, or else from the first or last click.
+function stepClick(dir) {
+  const order = clickOrder();
+  if (!order.length) return;
+  let k = order.indexOf(selected);
+  if (k >= 0) {
+    k = clamp(k + dir, 0, order.length - 1);
+  } else {
+    const now = playingMs();
+    if (now !== null) k = dir > 0 ? order.findIndex((i) => marks[i].ms >= now) : order.findLastIndex((i) => marks[i].ms <= now);
+    if (k < 0) k = dir > 0 ? 0 : order.length - 1;
+  }
+  selected = order[k];
+  lastEdit = null;
+  refreshOverview();
+}
+
+// Opens the next or previous song in menu order, still playing if it was.
+async function stepClip(dir) {
+  if (writing) return;
+  const playing = isPlaying();
+  const c = clips[(clips.indexOf(clip) + dir + clips.length) % clips.length];
+  if (await openClip(c, true) && playing) start();
+}
+
+function nudgeSelected(deltaMs) {
+  if (selected === null) return;
+  record('nudge', selected);
+  const m = marks[selected];
+  m.ms += deltaMs;
+  m.state = 'confirmed';
+  m.segment = { startMs: 0, endMs: clipMs() };
+  refreshOverview();
+}
+
+function deleteSelected() {
+  if (selected === null) return;
+  record();
+  marks[selected] = { ms: null, state: 'none', guideMs: null, segment: null };
+  selected = null;
+  refreshOverview();
+}
+
+// Adds a click where the line is playing now, on a gray syllable that keeps the clicks in syllable
+// order (the first gray one after the syllables clicked earlier, and before those clicked later).
+function addClickNow() {
+  const t = playingMs();
+  if (t === null) {
+    $('overview-status').textContent = 'Play the line to add a click where it’s playing.';
+    return;
+  }
+  const n = syllableCount(clip);
+  const has = (i) => marks[i].ms !== null;
+  const before = indices(clip).findLastIndex((i) => has(i) && marks[i].ms <= t);
+  const after = indices(clip).find((i) => has(i) && marks[i].ms > t) ?? n;
+  const idx = indices(clip).find((i) => i > before && i < after && !has(i));
+  if (idx === undefined) {
+    $('overview-status').textContent = 'No syllable without a click fits there. Delete a click first.';
+    return;
+  }
+  record();
+  marks[idx] = { ms: t, state: 'confirmed', guideMs: null, segment: { startMs: 0, endMs: clipMs() } };
+  selected = idx;
+  refreshOverview();
+}
+
+function togglePlay() {
+  if (isPlaying()) {
+    stop();
+    return;
+  }
+  ctx.resume();
+  start();
+}
+
+// ---------- Key mapping ----------
+
+const OPS = [
+  { id: 'play', name: 'Play/stop', help: 'toggle play/stop' },
+  { id: 'clickMode', name: 'Click selection', help: 'click selection mode (hold it down)' },
+  { id: 'clipMode', name: 'Clip selection', help: 'clip selection mode (hold it down)' },
+  { id: 'forward', name: 'Forward', help: 'forward: next click, next clip, or move the selected click +10 ms' },
+  { id: 'back', name: 'Back', help: 'back: previous click, previous clip, or move the selected click −10 ms' },
+  { id: 'delete', name: 'Delete', help: 'delete the selected click' },
+  { id: 'add', name: 'Add', help: 'add a click where it’s playing' },
+  { id: 'undo', name: 'Undo', help: 'undo' },
+];
+const KEY_MAP_STORAGE = 'guided-key-map';
+
+let keyMap = {};    // op id -> { code, label }
+let mapping = null; // while Map Keys runs: { step, map, note }
+let modes = [];     // selection modes whose keys are held, latest last
+try {
+  keyMap = JSON.parse(localStorage.getItem(KEY_MAP_STORAGE)) ?? {};
+} catch { /* no saved keys */ }
+
+const opOf = (code) => OPS.find((op) => keyMap[op.id]?.code === code)?.id;
+const mode = () => modes.at(-1) ?? null;
+
+function keyLabel(e) {
+  const name = e.key === ' ' ? 'Space' : e.key.length === 1 ? e.key.toUpperCase() : e.key;
+  return (['', 'Left ', 'Right ', 'Numpad '][e.location] ?? '') + name;
+}
+
+function renderKeys() {
+  const btn = $('map-keys');
+  btn.disabled = mapping !== null;
+  if (mapping) {
+    const op = OPS[mapping.step];
+    $('keys-prompt').textContent = `${mapping.note ?? ''}Press a key to ${op.help} (${mapping.step + 1} of ${OPS.length}; Esc cancels).`;
+  } else {
+    $('keys-prompt').textContent = { clickMode: 'Click selection mode', clipMode: 'Clip selection mode' }[mode()] ?? '';
+  }
+  $('keys-list').textContent = OPS.every((op) => keyMap[op.id])
+    ? OPS.map((op) => `${op.name}: ${keyMap[op.id].label}`).join(' · ')
+    : 'No keys mapped yet.';
+}
+
+function startMapping() {
+  mapping = { step: 0, map: {}, note: null };
+  modes = [];
+  $('map-keys').blur(); // so Space or Enter don't press it again
+  renderKeys();
+}
+
+function mapKey(e) {
+  if (e.code === 'Escape') {
+    mapping = null;
+  } else {
+    const label = keyLabel(e);
+    const taken = OPS.find((op) => mapping.map[op.id]?.code === e.code);
+    if (taken) {
+      mapping.note = `${label} is already ${taken.name}. `;
+    } else {
+      mapping.map[OPS[mapping.step].id] = { code: e.code, label };
+      mapping.note = null;
+      mapping.step += 1;
+      if (mapping.step === OPS.length) {
+        keyMap = mapping.map;
+        mapping = null;
+        try { localStorage.setItem(KEY_MAP_STORAGE, JSON.stringify(keyMap)); } catch { /* kept for this visit only */ }
+      }
+    }
+  }
+  renderKeys();
+}
+
+document.addEventListener('keydown', (e) => {
+  if (mapping) {
+    e.preventDefault();
+    if (!e.repeat) mapKey(e);
+    return;
+  }
+  const op = opOf(e.code);
+  if (!op || e.target.closest?.('input, select, textarea')) return;
+  e.preventDefault();
+  if (op === 'clickMode' || op === 'clipMode') {
+    if (!modes.includes(op)) modes.push(op);
+    renderKeys();
+    return;
+  }
+  if (!clip || writing) return;
+  if (op === 'play') {
+    if (!e.repeat && (stage === 'overview' || stage === 'range' || stage === 'click')) togglePlay();
+    return;
+  }
+  if (stage !== 'overview') return;
+  if (op === 'forward' || op === 'back') {
+    const dir = op === 'forward' ? 1 : -1;
+    if (mode() === 'clipMode') { if (!e.repeat) stepClip(dir); return; }
+    $('overview-status').textContent = '';
+    if (mode() === 'clickMode') stepClick(dir);
+    else nudgeSelected(dir * NUDGE_MS);
+    return;
+  }
+  if (e.repeat) return;
+  $('overview-status').textContent = '';
+  if (op === 'delete') deleteSelected();
+  else if (op === 'add') addClickNow();
+  else if (op === 'undo') undo();
+});
+
+document.addEventListener('keyup', (e) => {
+  if (mapping) { e.preventDefault(); return; }
+  const op = opOf(e.code);
+  if (!op) return;
+  e.preventDefault(); // e.g. Space on a focused button
+  if (modes.includes(op)) {
+    modes = modes.filter((m) => m !== op);
+    renderKeys();
+  }
+});
+
+// A key released while the page is in the background never sends keyup.
+window.addEventListener('blur', () => {
+  modes = [];
+  renderKeys();
+});
+
+$('map-keys').addEventListener('click', startMapping);
+renderKeys();
+
 // ---------- Events ----------
 
 $('sign-in').addEventListener('click', () => {
@@ -548,6 +806,7 @@ onAuthStateChanged(auth, async (u) => {
   user = u;
   stop();
   clip = null;
+  staged.clear();
   reviewing = false;
   if (!u) { show('signed-out'); return; }
   $('who').textContent = `Logged in as ${u.email}`;
@@ -562,16 +821,7 @@ onAuthStateChanged(auth, async (u) => {
   }
 });
 
-for (const id of ['play', 'overview-play']) {
-  $(id).addEventListener('click', () => {
-    if (isPlaying()) {
-      stop();
-      return;
-    }
-    ctx.resume();
-    start();
-  });
-}
+for (const id of ['play', 'overview-play']) $(id).addEventListener('click', togglePlay);
 $('next').addEventListener('click', next);
 $('back').addEventListener('click', back);
 $('done').addEventListener('click', done);
